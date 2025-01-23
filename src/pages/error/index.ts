@@ -1,0 +1,1 @@
+export { errorPageRoute } from "./error-page-route";

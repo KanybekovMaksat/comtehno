@@ -21,6 +21,9 @@ export const pathKeys = {
   ranking() {
     return pathKeys.root.concat('ranking/');
   },
+  error() {
+    return pathKeys.root.concat('error/');
+  },
   // group({ params }: { params: { slug: string } }) {
   //   return pathKeys.root.concat(`group/${params.slug}/`);
   // },
