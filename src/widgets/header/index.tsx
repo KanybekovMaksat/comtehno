@@ -1,1 +1,1 @@
-export {Header} from "./header.ui.tsx"
+export { Header } from "./header-widget.ui";
