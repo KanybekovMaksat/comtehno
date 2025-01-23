@@ -3,9 +3,10 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom';
-import { dashboardPageRoute } from '../../pages/dashboard';
 import { GenericLayout } from '../../pages/layout';
+import { dashboardPageRoute } from '../../pages/dashboard';
 import { aboutPageRoute } from '~pages/about';
+import { errorPageRoute } from '~pages/error';
 
 function BubbleError() {
   const error = useRouteError();
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
     children: [
       dashboardPageRoute,
       aboutPageRoute,
+      errorPageRoute
     ],
   },
 ]);
