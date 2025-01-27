@@ -5,7 +5,6 @@ import {
   createTheme,
 } from '@mui/material';
 import { QueryClientProvider as TanStackQueryClientProvider } from '@tanstack/react-query';
-import '../index.css';
 import { queryClient } from '~shared/lib/react-query/react-query.lib';
 import { ToastContainer } from 'react-toastify';
 
