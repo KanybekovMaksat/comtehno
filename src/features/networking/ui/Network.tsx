@@ -1,18 +1,20 @@
-import { AppBar, Avatar, IconButton, InputBase, Toolbar, Tooltip, Typography } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
-import { pathKeys } from '~shared/lib/react-router';
+import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+// import { Link, useNavigate } from 'react-router-dom';
+// import { pathKeys } from '~shared/lib/react-router';
 
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
-
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import React from 'react';
 
-export const HeaderTop: React.FC = () => {
+interface NetworkProps {
+  className?: string;
+}
+
+export const Network: React.FC<NetworkProps> = (props) => {
   // const navigate = useNavigate()
-
+  
   const infoHeader = [
     {
       img: <LocalPhoneIcon className="text-black" />,

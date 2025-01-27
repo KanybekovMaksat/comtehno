@@ -1,9 +1,9 @@
-import { HeaderBottom } from "./header-bottom.ui";
-import { HeaderTop } from "./header-top.ui";
+import { Navigate } from "~features/navigation";
+import { Network } from "~features/networking";
 
 export const Header = () => {
   return <>
-    <HeaderTop />
-    <HeaderBottom />
+    <Network />
+    <Navigate />
   </>;
 };

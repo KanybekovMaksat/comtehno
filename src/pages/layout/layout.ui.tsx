@@ -6,9 +6,7 @@ export function GenericLayout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow max-w-[1200px] mx-auto">
-        <Outlet />
-      </main>
+      <Outlet />
       <Footer />
     </div>
   );
