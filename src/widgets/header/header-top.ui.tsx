@@ -11,7 +11,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import React from 'react';
 
 export const HeaderTop: React.FC = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const infoHeader = [
     {
@@ -33,8 +33,8 @@ export const HeaderTop: React.FC = () => {
       <Toolbar className="flex justify-between">
         <div className='flex items-center gap-4'>
           {infoHeader.map((item, index) => (
-            <div>
-              <Tooltip title={item.title} key={index}>
+            <div key={index}>
+              <Tooltip title={item.title}>
                 <IconButton color="inherit">
                   {item.img}
                 </IconButton>

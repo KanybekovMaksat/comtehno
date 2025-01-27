@@ -18,7 +18,6 @@ export const HeaderBottom = () => {
         [name]: value,
       }
     });
-    console.log(selected);
   }
 
   const listLink = [
