@@ -32,7 +32,8 @@ const router = createBrowserRouter([
     children: [
       dashboardPageRoute,
       aboutPageRoute,
-      errorPageRoute
+      errorPageRoute,
+
     ],
   },
 ]);
