@@ -8,6 +8,7 @@ import CodeIcon from '@mui/icons-material/Code';
 
 import React, { useState } from "react";
 import { SpecialCard } from "~entities/specialCard";
+import { DirectoryIcon, HomeIcon, PhythonIcon, PictureIcon, PlanetIcon, PlumpIcon } from "~shared/assets/icons";
 
 export const SpecialityFilter: React.FC = () => {
   const [isActiveFilter, setIsActiveFilter] = useState<number>(null)  
@@ -41,36 +42,42 @@ export const SpecialityFilter: React.FC = () => {
   const specialCardList = [
     {
       icon: <CodeIcon className="text-[#0F766E]" />,
+      img: <PlanetIcon />,
       title: "Программирование",
       name: "Frontend разработчик",
       description: "Техник-программист"
     },
     {
       icon: <CodeIcon className="text-[#0F766E]"  />,
+      img: <PhythonIcon />,
       title: "Программирование",
       name: "Backend разработчик",
       description: "Техник-программист"
     },
     {
       icon: <BrushIcon className="text-[#0F766E]"  />,
+      img: <PictureIcon />,
       title: "Дизайн",
       name: "Графический дизайнер",
       description: "Дизайнер"
     },
     {
       icon: <BrushIcon className="text-[#0F766E]"  />,
+      img: <HomeIcon />,
       title: "Дизайн",
       name: "Интерьерный дизайнер",
       description: "Дизайнер"
     },
     {
       icon: <BrushIcon className="text-[#0F766E]"  />,
+      img: <PlumpIcon />,
       title: "Дизайн",
       name: "Фэшн-дизайнер",
       description: "Дизайнер"
     },
     {
       icon: <WorkOutlineOutlinedIcon className="text-[#0F766E]"  />,
+      img: <DirectoryIcon />,
       title: "Управление проектами и продуктами",
       name: "Продукт менеджер",
       description: "Бизнес-администрирование"
