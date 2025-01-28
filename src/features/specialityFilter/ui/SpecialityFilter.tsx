@@ -78,7 +78,7 @@ export const SpecialityFilter: React.FC = () => {
   ]
 
   return <Box>
-    <Stack className="mb-6" spacing={1} direction={"row"}>
+    <Stack className="mb-6 flex-wrap gap-2" direction={"row"}>
       {specialityFilter.map((specialFilter, index) => (
         <Button 
         key={index} 

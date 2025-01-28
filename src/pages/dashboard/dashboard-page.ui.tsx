@@ -3,7 +3,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import { Pagination, EffectFade, Autoplay } from 'swiper/modules';
-import { Speciality } from '~widgets/speciality';
 
 export function DashboardPage() {
   const slides = [
@@ -62,7 +61,6 @@ export function DashboardPage() {
           ))}
         </Swiper>
       </div>
-      <Speciality />
     </div>
   );
 }
