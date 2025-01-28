@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom';
+
 import { aboutPageRoute } from '~pages/about';
 import { dashboardPageRoute } from '~pages/dashboard';
 import { errorPageRoute } from '~pages/error';
