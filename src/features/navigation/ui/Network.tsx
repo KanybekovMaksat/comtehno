@@ -14,7 +14,7 @@ interface NetworkProps {
 
 export const Network: React.FC<NetworkProps> = (props) => {
   // const navigate = useNavigate()
-  
+
   const infoHeader = [
     {
       img: <LocalPhoneIcon className="text-black" />,
