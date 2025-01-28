@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { AchievementSchema } from './../achievements/achievements.contracts';
 
 export const LoginUserDtoSchema = z.object({
   username: z.string(),
