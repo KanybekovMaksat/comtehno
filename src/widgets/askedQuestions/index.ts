@@ -1,0 +1,1 @@
+export { AskedQuestions } from "./askedQuestions.ui";
