@@ -7,13 +7,12 @@ interface SpecialCardProps {
   img: React.ReactNode;
   name: string;
   description: string;
-  key?: React.Key;
 }
 
 export const SpecialCard: React.FC<SpecialCardProps> = (props) => {
-  const { icon, title, img, name, description, key } = props
+  const { icon, title, img, name, description } = props
 
-  return <Card className="hover:scale-105 hover:bg-[#f5f5f5] transition-all cursor-pointer p-4 w-[450px] max-h-64 rounded-2xl overflow-hidden" key={key}>
+  return <Card className="hover:scale-105 hover:bg-[#f5f5f5] transition-all cursor-pointer p-4 w-[450px] max-h-64 rounded-2xl overflow-hidden">
     <Stack direction={"row"} spacing={1} className="mb-4 items-center">
       {icon}
       <Typography className="text-[#0F766E] font-normal" variant="caption">{title}</Typography>

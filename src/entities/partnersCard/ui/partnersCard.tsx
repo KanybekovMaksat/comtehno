@@ -1,7 +1,7 @@
 import { Card, Typography } from "@mui/material";
 
 interface PartnersCardProps {
-  icon: React.ReactNode;
+  icon: React.JSX;
   nameLogo: string;
   key?: React.Key;
 }

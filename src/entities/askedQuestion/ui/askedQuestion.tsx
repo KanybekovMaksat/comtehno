@@ -49,11 +49,10 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 interface askedQuestionProps {
   title: string;
   description: string;
-  key: number;
 }
 
 export const AskedQuestion: React.FC<askedQuestionProps> = (props) => {
-  const { title, description, key } = props
+  const { title, description } = props
 
   // const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
@@ -63,15 +62,13 @@ export const AskedQuestion: React.FC<askedQuestionProps> = (props) => {
   //   };
 
   return (
-    <div>
-      <Accordion key={key}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography className='text-xl' component="span">{title}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="body1">{description}</Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
-  );
+    <Accordion>
+      <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+        <Typography className='text-xl' component="span">{title}</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography variant="body1">{description}</Typography>
+      </AccordionDetails>
+    </Accordion>
+  )
 }

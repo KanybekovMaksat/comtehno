@@ -13,7 +13,20 @@ import { DirectoryIcon, HomeIcon, PhythonIcon, PictureIcon, PlanetIcon, PlumpIco
 export const SpecialityFilter: React.FC = () => {
   const [isActiveFilter, setIsActiveFilter] = useState<number>(null)  
 
-  const specialityFilter = [
+  interface SpecialityFilterItem {
+    img?: JSX.Element;
+    title: string;
+  }
+
+  interface SpecialCardItem {
+    icon: JSX.Element;
+    img: JSX.Element;
+    title: string;
+    name: string;
+    description: string;
+  }
+
+  const specialityFilter: SpecialityFilterItem[] = [
     {
       title: "Все"
     },
@@ -37,9 +50,9 @@ export const SpecialityFilter: React.FC = () => {
       img: <AssuredWorkloadOutlinedIcon />,
       title: "Финансы и банковское дело"
     },
-  ]
+  ];
 
-  const specialCardList = [
+  const specialCardList: SpecialCardItem[] = [
     {
       icon: <CodeIcon className="text-[#0F766E]" />,
       img: <PlanetIcon />,
@@ -48,45 +61,45 @@ export const SpecialityFilter: React.FC = () => {
       description: "Техник-программист"
     },
     {
-      icon: <CodeIcon className="text-[#0F766E]"  />,
+      icon: <CodeIcon className="text-[#0F766E]" />,
       img: <PhythonIcon />,
       title: "Программирование",
       name: "Backend разработчик",
       description: "Техник-программист"
     },
     {
-      icon: <BrushIcon className="text-[#0F766E]"  />,
+      icon: <BrushIcon className="text-[#0F766E]" />,
       img: <PictureIcon />,
       title: "Дизайн",
       name: "Графический дизайнер",
       description: "Дизайнер"
     },
     {
-      icon: <BrushIcon className="text-[#0F766E]"  />,
+      icon: <BrushIcon className="text-[#0F766E]" />,
       img: <HomeIcon />,
       title: "Дизайн",
       name: "Интерьерный дизайнер",
       description: "Дизайнер"
     },
     {
-      icon: <BrushIcon className="text-[#0F766E]"  />,
+      icon: <BrushIcon className="text-[#0F766E]" />,
       img: <PlumpIcon />,
       title: "Дизайн",
       name: "Фэшн-дизайнер",
       description: "Дизайнер"
     },
     {
-      icon: <WorkOutlineOutlinedIcon className="text-[#0F766E]"  />,
+      icon: <WorkOutlineOutlinedIcon className="text-[#0F766E]" />,
       img: <DirectoryIcon />,
       title: "Управление проектами и продуктами",
       name: "Продукт менеджер",
       description: "Бизнес-администрирование"
     },
-  ]
+  ];
 
   return <Box>
     <Stack className="mb-6 flex-wrap gap-2" direction={"row"}>
-      {specialityFilter.map((specialFilter, index) => (
+      {specialityFilter.map((specialFilter: SpecialityFilterItem, index: number) => (
         <Button 
         key={index} 
         onClick={() => setIsActiveFilter(index)} 
@@ -108,7 +121,7 @@ export const SpecialityFilter: React.FC = () => {
       ))}
     </Stack>
     <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
-      {specialCardList.map((specialCard, index) => (
+      {specialCardList.map((specialCard: SpecialCardItem, index: number) => (
         <SpecialCard {...specialCard} key={index} />
       ))}
     </Stack>
