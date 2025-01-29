@@ -17,7 +17,12 @@ import 'swiper/css/effect-fade';
 import { Autoplay } from 'swiper/modules';
 
 export const PartnersList: React.FC = () => {
-  const parnerLogoList = [
+  type PartnerLogo = {
+    icon: JSX.Element;
+    nameLogo: string;
+  };
+
+  const parnerLogoList: PartnerLogo[] = [
     {
       icon: <WhatsAppIcon className="text-5xl text-green" />,
       nameLogo: "WhatsApp"
@@ -62,7 +67,7 @@ export const PartnersList: React.FC = () => {
       speed={2000}
       className="w-[1440px] h-48 mb-[150px]"
     >
-      {parnerLogoList.map((parnerLogo, index) => (
+      {parnerLogoList.map((parnerLogo: PartnerLogo, index: number) => (
         <SwiperSlide key={index}>
           <PartnersCard {...parnerLogo} />
         </SwiperSlide>

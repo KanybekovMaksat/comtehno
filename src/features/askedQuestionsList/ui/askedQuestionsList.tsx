@@ -2,7 +2,12 @@ import { Stack } from "@mui/material";
 import { AskedQuestion } from "~entities/askedQuestion";
 
 export const AskedQuestionsList: React.FC = () => {
-  const questionList = [
+  type Question = {
+    title: string;
+    description: string;
+  };
+
+  const questionList: Question[] = [
     {
       title: "Можно ли поступить в КОМТЕХНО после 9 класса?",
       description: "Да, вы можете поступить в колледж КОМТЕХНО после 9 класса. Для этого необходимо предоставить следующие документы: "
@@ -23,11 +28,11 @@ export const AskedQuestionsList: React.FC = () => {
       title: "В чем отличие КОМТЕХНО от других колледжей?",
       description: "Колледж ориентирован на IT-специальности, имеет опытных наставников и помогает студентам в профессиональном развитии."
     }
-  ]
+  ];
 
   return <Stack direction={"column"}>
-    {questionList.map((question, index) => (
-      <AskedQuestion {...question} key={index} />
+    {questionList.map((question: Question, index: number) => (
+      <AskedQuestion key={index} {...question} />
     ))}
   </Stack>;
 };
