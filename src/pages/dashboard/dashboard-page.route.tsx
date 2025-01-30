@@ -4,6 +4,6 @@ import { DashboardPage } from './dashboard-page.ui';
 import { pathKeys } from '../../shared/lib/react-router';
 
 export const dashboardPageRoute: RouteObject = {
-  path: pathKeys.home(),
+  path: pathKeys.dashboard(),
   element: createElement(DashboardPage),
 };

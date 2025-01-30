@@ -1,6 +1,6 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { SelectedNavigate } from "./selectedNavigate";
+import { pathKeys } from "~shared/lib/react-router";
 
 export const Navigate: React.FC = () => {
   interface LinkItem {
@@ -10,6 +10,22 @@ export const Navigate: React.FC = () => {
 
   const listLink: LinkItem[] = [
     {
+      title: "Приёмная комиссия 2025",
+      url: "/error"
+    },
+    {
+      title: "О колледже",
+      url: "/error"
+    },
+    {
+      title: "Специальности",
+      url: "/error"
+    },
+    {
+      title: "Абитуриентам",
+      url: "/error"
+    },
+    {
       title: "Новости",
       url: "/news"
     },
@@ -18,24 +34,37 @@ export const Navigate: React.FC = () => {
       url: "/error"
     },
     {
-      title: "Профориентация",
+      title: "Подобрать программу",
       url: "/error"
     },
     {
       title: "Расписание",
       url: "/error"
-    }
+    },
+    {
+      title: "Студентам",
+      url: "/error"
+    },
+    {
+      title: "Отзывы",
+      url: "/error"
+    },
   ];
 
-  return <AppBar position="static" className="bg-white shadow-none font-medium px-6 md:px-20 ">
-    <Toolbar className="flex items-center justify-between">
-      <Typography fontSize={22} className="text-[#0F766E] font-bold" variant="subtitle1">КОМТЕХНО</Typography>
-      <div className="flex items-center gap-4">
-        <SelectedNavigate titleSelected="Колледж" />
+  return <AppBar position="static" className="bg-white shadow-none">
+    <Toolbar className="flex items-center justify-between px-0 py-2">
+      <Stack direction={"row"} flexWrap={"wrap"}
+        className="gap-2 items-center">
+        <Link to={pathKeys.home()} className="font-[Geologica] text-[#0F766E] font-bold text-2xl">КОМТЕХНО</Link>
         {listLink.map((item: LinkItem, index: number) => (
-          <Link to={item.url} key={index} className="text-[#0F766E] font-light">{item.title}</Link>
+          <Link 
+            to={item.url}
+            key={index} 
+            className="font-[Geologica] hover:bg-[#0D9488] hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full">
+              {item.title}
+          </Link>
         ))}
-      </div>
+      </Stack>
     </Toolbar>
   </AppBar>;
 };
