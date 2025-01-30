@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { SelectedNavigate } from "./selectedNavigate";
+import { pathKeys } from "~shared/lib/react-router";
 
 export const Navigate: React.FC = () => {
   interface LinkItem {
@@ -9,6 +9,22 @@ export const Navigate: React.FC = () => {
   }
 
   const listLink: LinkItem[] = [
+    {
+      title: "Приёмная комиссия 2025",
+      url: "/error"
+    },
+    {
+      title: "Абитуриентам",
+      url: "/error"
+    },
+    {
+      title: "Специальности",
+      url: "/error"
+    },
+    {
+      title: "Об Университете",
+      url: "/error"
+    },
     {
       title: "Новости",
       url: "/news"
@@ -24,16 +40,19 @@ export const Navigate: React.FC = () => {
     {
       title: "Расписание",
       url: "/error"
-    }
+    },
+    {
+      title: "Студентам",
+      url: "/error"
+    },
   ];
 
-  return <AppBar position="static" className="bg-white shadow-none font-medium px-6 md:px-20 ">
-    <Toolbar className="flex items-center justify-between">
-      <Typography fontSize={22} className="text-[#0F766E] font-bold" variant="subtitle1">КОМТЕХНО</Typography>
+  return <AppBar position="static" className="bg-white shadow-none">
+    <Toolbar className="flex items-center justify-between p-0">
+      <Link to={pathKeys.home()} className="text-[#0F766E] font-bold text-2xl" >КОМТЕХНО</Link>
       <div className="flex items-center gap-4">
-        <SelectedNavigate titleSelected="Колледж" />
         {listLink.map((item: LinkItem, index: number) => (
-          <Link to={item.url} key={index} className="text-[#0F766E] font-light">{item.title}</Link>
+          <Link to={item.url} key={index} className="text-black font-light hover:text-">{item.title}</Link>
         ))}
       </div>
     </Toolbar>

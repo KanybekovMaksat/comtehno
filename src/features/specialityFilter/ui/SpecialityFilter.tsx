@@ -9,11 +9,11 @@ import CodeIcon from '@mui/icons-material/Code';
 import React, { useState } from "react";
 import { SpecialCard } from "~entities/specialCard";
 import { DirectoryIcon, HomeIcon, PhythonIcon, PictureIcon, PlanetIcon, PlumpIcon } from "~shared/assets/icons";
+import { SpecialFilter } from "./SpecialFilter";
 
 export const SpecialityFilter: React.FC = () => {
-  const [isActiveFilter, setIsActiveFilter] = useState<number>(null)  
-
   interface SpecialityFilterItem {
+    id: number;
     img?: JSX.Element;
     title: string;
   }
@@ -28,25 +28,31 @@ export const SpecialityFilter: React.FC = () => {
 
   const specialityFilter: SpecialityFilterItem[] = [
     {
+      id: 1,
       title: "Все"
     },
     {
+      id: 2,
       img: <LanguageIcon />,
       title: "IT"
     },
     {
+      id: 3,
       img: <BrushIcon />,
       title: "Дизайн"
     },
     {
+      id: 4,
       img: <WorkOutlineOutlinedIcon />,
       title: "Управление и бизнес-аналитика"
     },
     {
+      id: 5,
       img: <WorkOutlineOutlinedIcon />,
       title: "Управление и бизнес-аналитика"
     },
     {
+      id: 6,
       img: <AssuredWorkloadOutlinedIcon />,
       title: "Финансы и банковское дело"
     },
@@ -97,27 +103,15 @@ export const SpecialityFilter: React.FC = () => {
     },
   ];
 
+  const [isActiveFilter, setIsActiveFilter] = useState<number>(null)  
+
   return <Box>
     <Stack className="mb-6 flex-wrap gap-2" direction={"row"}>
       {specialityFilter.map((specialFilter: SpecialityFilterItem, index: number) => (
-        <Button 
-        key={index} 
-        onClick={() => setIsActiveFilter(index)} 
-        sx={{
-          backgroundColor: isActiveFilter === index ? "black" : "white", 
-          color: isActiveFilter === index ? "white" : "black"
-        }} 
-        className="py-2.5 px-4 border-2 border-solid border-[#E4E4E7] rounded-2xl text-inherit gap-1">
-          {specialFilter.img && specialFilter.img}
-          <Typography 
-            variant="caption" 
-            className="font-medium normal-case"
-            sx={{
-              color: isActiveFilter === index ? "white" : "black"
-            }}>
-              {specialFilter.title}
-          </Typography>
-        </Button>
+        <SpecialFilter 
+          isActiveFilter={isActiveFilter} 
+          setIsActiveFilter={setIsActiveFilter} 
+          {...specialFilter} key={index} />
       ))}
     </Stack>
     <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
