@@ -6,20 +6,8 @@ export const pathKeys = {
   about(){
     return pathKeys.root.concat('about/')
   },
-  terms(){
-    return pathKeys.root.concat('terms-of-use/')
-  },
-  policy(){
-    return pathKeys.root.concat('privacy-policy/')
-  },
-  login() {
-    return pathKeys.root.concat('auth/');
-  },
-  program() {
-    return pathKeys.root.concat('course/');
-  },
-  ranking() {
-    return pathKeys.root.concat('ranking/');
+  dashboard() {
+    return pathKeys.root.concat('dashboard/')
   },
   error() {
     return pathKeys.root.concat('error/');

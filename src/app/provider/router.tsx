@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import { aboutPageRoute } from '~pages/about';
+import { dashboardPageRoute } from '~pages/dashboard';
 import { errorPageRoute } from '~pages/error';
 import { homePageRoute } from '~pages/home';
 import { GenericLayout } from '~pages/layout';
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
     children: [
       homePageRoute,
       aboutPageRoute,
-      errorPageRoute
+      errorPageRoute,
+      dashboardPageRoute
     ],
   },
 ]);
