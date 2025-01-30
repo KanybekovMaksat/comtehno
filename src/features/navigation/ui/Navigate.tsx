@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { pathKeys } from "~shared/lib/react-router";
 
@@ -14,7 +14,7 @@ export const Navigate: React.FC = () => {
       url: "/error"
     },
     {
-      title: "Абитуриентам",
+      title: "О колледже",
       url: "/error"
     },
     {
@@ -22,7 +22,7 @@ export const Navigate: React.FC = () => {
       url: "/error"
     },
     {
-      title: "Об Университете",
+      title: "Абитуриентам",
       url: "/error"
     },
     {
@@ -34,7 +34,7 @@ export const Navigate: React.FC = () => {
       url: "/error"
     },
     {
-      title: "Профориентация",
+      title: "Подобрать программу",
       url: "/error"
     },
     {
@@ -45,16 +45,26 @@ export const Navigate: React.FC = () => {
       title: "Студентам",
       url: "/error"
     },
+    {
+      title: "Отзывы",
+      url: "/error"
+    },
   ];
 
   return <AppBar position="static" className="bg-white shadow-none">
-    <Toolbar className="flex items-center justify-between p-0">
-      <Link to={pathKeys.home()} className="text-[#0F766E] font-bold text-2xl" >КОМТЕХНО</Link>
-      <div className="flex items-center gap-4">
+    <Toolbar className="flex items-center justify-between px-0 py-2">
+      <Stack direction={"row"} flexWrap={"wrap"}
+        className="gap-2 items-center">
+        <Link to={pathKeys.home()} className="font-[Geologica] text-[#0F766E] font-bold text-2xl">КОМТЕХНО</Link>
         {listLink.map((item: LinkItem, index: number) => (
-          <Link to={item.url} key={index} className="text-black font-light hover:text-">{item.title}</Link>
+          <Link 
+            to={item.url}
+            key={index} 
+            className="font-[Geologica] hover:bg-[#0D9488] hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full">
+              {item.title}
+          </Link>
         ))}
-      </div>
+      </Stack>
     </Toolbar>
   </AppBar>;
 };

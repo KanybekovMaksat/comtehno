@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Geologica, serif',
   },
 });
 
