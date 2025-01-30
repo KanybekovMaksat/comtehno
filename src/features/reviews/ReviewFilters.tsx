@@ -8,7 +8,7 @@ export const ReviewFilters: React.FC = () => {
   const [role, setRole] = useState<string>("frontend");
 
   return (
-    <div className="flex justify-center items-center mb-6 gap-4">
+    <div className="flex justify-center items-center mb-6 gap-4 w-[85vw]">
       <Accordion
         className="w-[280px] rounded-full text-[19px] bg-[#F4F4F5] shadow-md relative"
         sx={{
