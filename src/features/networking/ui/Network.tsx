@@ -46,7 +46,7 @@ export const Network: React.FC<NetworkProps> = (props) => {
                   {item.img}
                 </IconButton>
               </Tooltip>
-              <Typography className='font-medium' color='black' variant="caption">{item.title}</Typography>
+              <Typography className='font-normal' color='black' variant="caption">{item.title}</Typography>
             </div>
           ))}
         </div>

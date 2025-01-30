@@ -14,7 +14,7 @@ export const SpecialFilter = (props) => {
     {img}
     <Typography
       variant="caption" 
-      className="font-medium normal-case"
+      className="font-normal normal-case"
       sx={{
         color: isActiveFilter === id ? "white" : "black"
       }}>
