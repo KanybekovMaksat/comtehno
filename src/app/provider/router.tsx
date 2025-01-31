@@ -3,10 +3,11 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom';
-import { GenericLayout } from '../../pages/layout';
-import { dashboardPageRoute } from '../../pages/dashboard';
+
 import { aboutPageRoute } from '~pages/about';
 import { errorPageRoute } from '~pages/error';
+import { homePageRoute } from '~pages/home';
+import { GenericLayout } from '~pages/layout';
 
 function BubbleError() {
   const error = useRouteError();
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
     element: <GenericLayout />,
     errorElement: <BubbleError />,
     children: [
-      dashboardPageRoute,
+      homePageRoute,
       aboutPageRoute,
       errorPageRoute
     ],

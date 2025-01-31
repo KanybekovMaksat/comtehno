@@ -1,0 +1,1 @@
+export { SpecialityFilter } from "./ui/SpecialityFilter";

@@ -2,7 +2,7 @@ import { AppBar, FormControl, InputLabel, MenuItem, Select, Toolbar, Typography 
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const HeaderBottom = () => {
+export const Navigate = () => {
   const [selected, setSelected] = useState<object>({
     college: "",
     specialties: "",
@@ -18,7 +18,6 @@ export const HeaderBottom = () => {
         [name]: value,
       }
     });
-    console.log(selected);
   }
 
   const listLink = [
