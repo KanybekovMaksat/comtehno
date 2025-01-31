@@ -11,9 +11,13 @@ import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRig
 import { MakalaBoxIcon } from '~shared/assets/icons';
 import { StartupSlide } from './starupSlide';
 
+import makalaMaks from '../../../shared/assets/img/hero-img.jpg'
+import makalaMaks2 from '../../../shared/assets/img/kapusta.jpg'
+
 export const StartupSlider: React.FC = () => {
   interface Startup {
     id: number,
+    bg: JSX.Element,
     date: {
       icon: JSX.Element;
       title: string;
@@ -42,6 +46,7 @@ export const StartupSlider: React.FC = () => {
   const startupList: Startup[] = [
     {
       id: 1,
+      bg: makalaMaks,
       date: {
         icon: <CalendarMonthOutlinedIcon />,
         title: "2 ноября 2024"
@@ -68,6 +73,7 @@ export const StartupSlider: React.FC = () => {
     },
     {
       id: 2,
+      bg: makalaMaks2,
       date: {
         icon: <CalendarMonthOutlinedIcon />,
         title: "2 ноября 2024"
@@ -80,16 +86,16 @@ export const StartupSlider: React.FC = () => {
         icon: <MakalaBoxIcon />,
         title: "Up-web",
         description: 'Up-web (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
-        buttons: {
-          buttonViseble: {
-            name: "Посетить сайт",
-            icon: <ArrowOutwardOutlinedIcon />,
-          },
-          buttonMoreDetails: {
-            name: "Подробнее",
-            icon: <KeyboardArrowRightOutlinedIcon />
-          }
-        }
+        // buttons: {
+        //   buttonViseble: {
+        //     name: "Посетить сайт",
+        //     icon: <ArrowOutwardOutlinedIcon />,
+        //   },
+        //   buttonMoreDetails: {
+        //     name: "Подробнее",
+        //     icon: <KeyboardArrowRightOutlinedIcon />
+        //   }
+        // }
       }
     }
   ];

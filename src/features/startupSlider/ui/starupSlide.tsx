@@ -4,12 +4,10 @@ import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRig
 import { pathKeys } from "~shared/lib/react-router";
 import { Link } from "react-router-dom";
 
-import makalaMaksat from "../../../shared/assets/img/MakalaMaksat.png";
-
 export const StartupSlide: React.FC = (props) => {
-  const {date, person, startupProject} = props
+  const {bg, date, person, startupProject} = props
 
-  return <Box className="max-w-full h-[720px] p-8 text-white bg-dove rounded-2xl">
+  return <Box style={{backgroundImage: `url(${bg})`}} className="max-w-full h-[720px] bg-no-repeat bg-cover p-8 text-white bg-dove rounded-2xl">
     <Stack direction={'row'} spacing={2} className="mb-96">
       <span className="flex items-center gap-3 text-black py-[10px] px-5 bg-[#F4F4F5] rounded-xl">
         {date?.icon}

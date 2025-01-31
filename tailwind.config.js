@@ -4,8 +4,8 @@ export default {
   important: '#root',
   theme: {
     fontFamily: {
-      serif: ['Montserrat', 'serif'],
-      sans: ['Montserrat', 'sans'],
+      serif: ['Geologica', 'serif'],
+      sans: ['Geologica', 'serif'],
     },
     colors: {
       blue: '#0589c7',
