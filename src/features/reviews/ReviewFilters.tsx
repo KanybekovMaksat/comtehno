@@ -8,9 +8,9 @@ export const ReviewFilters: React.FC = () => {
   const [role, setRole] = useState<string>("frontend");
 
   return (
-    <div className="flex justify-center items-center mb-6 gap-4 w-[85vw]">
+    <div className="flex flex-col sm:flex-row justify-center items-center mb-6 gap-4 w-full sm:max-w-[85vw] min-w-0">
       <Accordion
-        className="w-[280px] rounded-full text-[19px] bg-[#F4F4F5] shadow-md relative"
+        className="w-full sm:max-w-[300px] rounded-full text-[16px] sm:text-[19px] bg-[#F4F4F5] shadow-md relative"
         sx={{
           "&::before": { display: "none" },
           "&.Mui-expanded": { margin: "0" },
@@ -18,12 +18,12 @@ export const ReviewFilters: React.FC = () => {
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          className="h-12 flex items-center rounded-full px-4 "
+          className="h-12 flex items-center rounded-full px-2"
           sx={{ minHeight: "48px", "&.Mui-expanded": { minHeight: "48px" } }}
         >
           {role === "frontend" ? "Frontend разработчик" : "Backend разработчик"}
         </AccordionSummary>
-        <AccordionDetails className="p-0 bg-white rounded-xl absolute z-10">
+        <AccordionDetails className="p-0 bg-white rounded-xl absolute z-10 w-full left-0">
           <div
             className="cursor-pointer px-4 py-3 hover:bg-gray-200 rounded-t-xl"
             onClick={() => setRole("frontend")}
@@ -39,13 +39,14 @@ export const ReviewFilters: React.FC = () => {
         </AccordionDetails>
       </Accordion>
 
-      <div className="relative bg-[#F4F4F5] rounded-full p-1 flex shadow-md">
+      <div className="relative bg-[#F4F4F5] rounded-full p-1 flex shadow-md w-full sm:w-auto min-w-[200px]">
         <div
-          className={`absolute bg-white rounded-full transition-all duration-300 ease-in-out`}
+          className="absolute bg-white rounded-full transition-all duration-300 ease-in-out"
           style={{
-            width: "calc(50% - 8px)",
-            height: "85%",
-            left: tabValue === 0 ? 0 : "50%",
+            width: "50%",
+            height: "calc(100% - 8px)",
+            top: "4px",
+            left: tabValue === 0 ? "4px" : "50%",
           }}
         />
         {["Студенты", "Выпускники"].map((label, index) => (
@@ -53,10 +54,9 @@ export const ReviewFilters: React.FC = () => {
             key={index}
             onClick={() => setTabValue(index)}
             className={clsx(
-              "px-6 py-2 rounded-full text-[19px] transition-all duration-300 ease-in-out",
-              tabValue === index ? "font-medium" : "text-gray-500"
+              "w-1/2 px-4 py-2 rounded-full text-[16px] sm:text-[19px] transition-all duration-300 ease-in-out relative z-10",
+              tabValue === index ? "font-medium text-black" : "text-gray-500"
             )}
-            style={{ position: "relative", zIndex: 1 }}
           >
             {label}
           </button>
