@@ -5,3 +5,7 @@ export { PictureIcon } from "./pictureIcon";
 export { PlumpIcon } from "./plumpIcon";
 export { PhythonIcon } from "./pythonIcon";
 export { PlanetIcon } from "./planetIcon";
+export { WhatsappIcon } from "./whatsappIcon"
+export { GmailIcon } from "./GmailIcon"
+export { InstagramIcon } from './InstagramIcon'
+export { ArrowIcon } from './ArrowIcon'
