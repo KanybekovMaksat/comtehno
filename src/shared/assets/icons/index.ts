@@ -1,4 +1,4 @@
-export { MakalaBoxIcon } from "./makalaBoxICON";
+export { MakalaBoxIcon } from "./makalaBoxIcon";
 export { DirectoryIcon } from "./directoryIcon";
 export { HomeIcon } from "./homeIcon";
 export { PictureIcon } from "./pictureIcon";
