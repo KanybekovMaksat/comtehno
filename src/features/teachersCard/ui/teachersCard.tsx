@@ -1,6 +1,6 @@
 import { useSpring, animated } from "react-spring";
 import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface TeacherCardProps {
   imagen: string;
@@ -15,15 +15,19 @@ interface TeacherCardProps {
 const TeacherCard: React.FC<TeacherCardProps> = ({ imagen, aboutMe, achievements, name, jobTitle, active, onClick }) => {
   const propsCard = useSpring({
     perspective: "1000px",
+    transform: active ? "scale(1)" : "scale(1.1)",
     opacity: active ? "1" : "0.5",
     filter: active ? "brightness(1)" : "brightness(0.5)",
+    config: { tension: 200, friction: 20 }, 
   });
+
   const [isHovered, setIsHovered] = useState(false); 
 
   return (
     <div>
       <animated.div className={`card ${active ? "flip" : ""} 
-        rounded-xl flex flex-column items-center justify-center mt-5 h-[400px] w-[300px]`} 
+        rounded-xl flex flex-column items-center justify-center mt-5 max-sm:h-[320px] max-sm:w-[220px] max-lg:h-[320px]
+        max-lg:w-[220px] max-xl:w-[280px] max-xl:h-[380px] xl:w-[300px] xl:h-[400px]`} 
         style={propsCard} onClick={onClick}
         onMouseEnter={() => setIsHovered(true)} 
         onMouseLeave={() => setIsHovered(false)} 
@@ -40,12 +44,10 @@ const TeacherCard: React.FC<TeacherCardProps> = ({ imagen, aboutMe, achievements
               </div>
             )}
           </div>
-          <div 
-            className="card-back  top-0 bottom-0 left-0 right-0 absolute rounded-xl text-center items-center bg-[#F4F4F5] p-5"
-            style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
-            >
-          <h1 className="text-[20px] font-[500]">Oбо мне</h1>
-            <p className="teachers__card-text text-[14px] w-[261px] mt-1">{aboutMe}</p>
+          <div className="card-back top-0 bottom-0 left-0 right-0 absolute rounded-xl text-center items-center bg-[#F4F4F5] max-sm:p-2 max-md:p-2 max-lg:p-5 lg:p-5 z-10"
+            style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}>
+            <h1 className="max-sm:text-sm max-sm:mt-2 max-md:text-base max-lg:text-base lg:text-xl font-[500]">Oбо мне</h1>
+            <p className="teachers__card-text max-sm:text-xs max-md:text-xs max-lg:text-xs lg:text-sm mt-1">{aboutMe}</p>
             {active && (
               <div className="w-[50px] h-[50px] absolute z-10 bottom-[-25px] left-1/2 transform -translate-x-1/2">
                 <img src="../../../../src/shared/assets/img/category (1).svg" alt="Bottom Image" />
