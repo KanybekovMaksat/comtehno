@@ -1,4 +1,5 @@
 import {
+  Navigate,
   RouterProvider,
   createBrowserRouter,
   useRouteError,
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
     children: [
       homePageRoute,
       aboutPageRoute,
-      errorPageRoute
+      errorPageRoute,
+      {
+        path: '/whatsapp',
+        element: <Navigate to="/whatsApp" />, 
+      }
     ],
   },
 ]);

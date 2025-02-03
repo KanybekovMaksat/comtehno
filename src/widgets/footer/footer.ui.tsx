@@ -1,80 +1,31 @@
-import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import FooterSmal from '~widgets/footerSmall/footerSmall';
+import AccordionUsage from '../../entities/accardionDataFooter/accardionData';
+import AddressSection from '../../features/adressFooter/adressFooter';
+import LogoFooter from '../../shared/assets/svg/logoFooter.svg';
+import LinksSection from '../../features/linkSectionFooter/linkSection';
+import SpecialtiesSection from '../../entities/specialtiesSectionFooter/specialSection';
+import { Container } from '@mui/material';
 
-export function Footer() {
-  return (
-    <Box component="footer" className="bg-violet text-white py-8 px-6 md:px-20">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-        <Link to="/" className="flex items-center mb-6 lg:mb-0">
-          <Typography
-            variant="h6"
-            component="div"
-            className="font-bold text-lg text-center lg:text-left"
-          >
-            Comtehno
-          </Typography>
-        </Link>
+export const Footer: React.FC = () => (
+    <footer className="footer bg-[#FAFAFA] pt-[40px] border-t-[1px] border-[#E4E4E7] md:pt-[80px]">
+      <Container className="max-w-[1440px] mb-[150px]">
 
-        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
-          <Link to="/about" className="text-gray-300 hover:text-white text-sm">
-            О платформе
-          </Link>
-          <Link to="/catalog" className="text-gray-300 hover:text-white text-sm">
-            Каталог
-          </Link>
-          <Link to="/loyalty" className="text-gray-300 hover:text-white text-sm">
-            Программа лояльности
-          </Link>
-          <Link to="/contact" className="text-gray-300 hover:text-white text-sm">
-            Контакты
-          </Link>
+    <div className="container pb-[40px] border-b-[1px] border-[#E4E4E7]">
+        <img className="mb-[40px]" src={LogoFooter} alt="Logo" />
+        <div className="footer_category flex-wrap flex justify-between">
+            <AddressSection />
+            <div className="flex flex-wrap gap-[24px]">
+            <LinksSection title="Колледж" links={['О нас', 'Новости', 'Мероприятия', 'Отзывы']} />
+            <LinksSection title="Полезные ссылки" links={['Makalabox', 'Профориентация', 'Расписание', 'Библиотека']} />
+            <SpecialtiesSection />
+            </div>
         </div>
-
-        <div className="flex space-x-4 mt-6 lg:mt-0">
-          <a
-            href="https://t.me/yourTelegramLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white"
-          >
-            <TelegramIcon />
-          </a>
-          <a
-            href="https://instagram.com/yourInstagramLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white"
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            href="https://facebook.com/yourFacebookLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white"
-          >
-            <FacebookIcon />
-          </a>
+        <div className="sm:hidden block">
+            <AccordionUsage />
         </div>
-      </div>
+        </div>
+        <FooterSmal />
+      </Container>
+  </footer>
+);
 
-      <div className="mt-8 border-t border-gray-600 pt-4">
-        <Typography
-          variant="body2"
-          className="text-gray-400 text-center text-sm"
-        >
-          &copy; {new Date().getFullYear()} Milcase. Все права защищены.
-        </Typography>
-        <Typography
-          variant="body2"
-          className="text-gray-400 text-center text-sm mt-2"
-        >
-          Developed by OurEra Soft
-        </Typography>
-      </div>
-    </Box>
-  );
-}
