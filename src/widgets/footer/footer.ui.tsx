@@ -1,12 +1,13 @@
-import FooterSmal from '~widgets/footerSmall/footerSmall';
 import AccordionUsage from '../../entities/accardionDataFooter/accardionData';
 import AddressSection from '../../features/adressFooter/adressFooter';
 import LogoFooter from '../../shared/assets/svg/logoFooter.svg';
 import LinksSection from '../../features/linkSectionFooter/linkSection';
 import SpecialtiesSection from '../../entities/specialtiesSectionFooter/specialSection';
 import { Container } from '@mui/material';
+import { FooterSmal } from '~widgets/footerSmall/footerSmall';
 
-export const Footer: React.FC = () => (
+export const Footer: React.FC = () => {
+  return (
     <footer className="footer bg-[#FAFAFA] pt-[40px] border-t-[1px] border-[#E4E4E7] md:pt-[80px]">
       <Container className="max-w-[1440px] mb-[150px]">
 
@@ -26,6 +27,7 @@ export const Footer: React.FC = () => (
         </div>
         <FooterSmal />
       </Container>
-  </footer>
-);
+    </footer>
+  )
+};
 
