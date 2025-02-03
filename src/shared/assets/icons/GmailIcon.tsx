@@ -2,7 +2,7 @@ import React from "react"
 
 export const GmailIcon: React.FC = () => {
   return <svg width="43" height="32" viewBox="0 0 43 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g clip-path="url(#clip0_1140_1837)">
+  <g clipPath="url(#clip0_1140_1837)">
   <path d="M2.90909 31.9998H9.69697V15.5149L0 8.24219V29.0907C0 30.7004 1.30424 31.9998 2.90909 31.9998Z" fill="#4285F4"/>
   <path d="M32.9697 31.9998H39.7576C41.3673 31.9998 42.6667 30.6955 42.6667 29.0907V8.24219L32.9697 15.5149" fill="#34A853"/>
   <path d="M32.9697 2.90904V15.5151L42.6667 8.24238V4.36359C42.6667 0.766012 38.56 -1.2849 35.6849 0.872679" fill="#FBBC04"/>

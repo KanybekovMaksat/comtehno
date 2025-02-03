@@ -1,4 +1,3 @@
-import { jsx } from '@emotion/react';
 import { WhatsApp as WhatsAppIcon, Instagram as InstagramIcon, MailOutline as MailOutlineIcon } from '@mui/icons-material';
 
 export const FooterSmal: React.FC = () => {
