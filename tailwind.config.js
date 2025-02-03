@@ -33,7 +33,7 @@ export default {
     container: {
       center: true,
       padding: {
-        DEFAULT: '20px',
+        DEFAULT: '65px',
         sm: '2rem',
         lg: '100px',
         xl: '100px',

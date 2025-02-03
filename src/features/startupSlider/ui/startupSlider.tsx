@@ -1,35 +1,33 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import { Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
+import { Pagination, EffectFade, Autoplay } from 'swiper/modules'
 
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import ArrowOutwardOutlinedIcon from '@mui/icons-material/ArrowOutwardOutlined';
-import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
-import { MakalaBoxIcon } from '~shared/assets/icons';
-import { StartupSlide } from './starupSlide';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
+import { MakalaBoxIcon } from '~shared/assets/icons'
+import { StartupSlide } from './starupSlide'
 
 import makalaMaks from '../../../shared/assets/img/hero-img.jpg'
 import makalaMaks2 from '../../../shared/assets/img/kapusta.jpg'
 
 export const StartupSlider: React.FC = () => {
   interface Startup {
-    id: number,
-    bg: JSX.Element,
+    id: number
+    bg: JSX.Element
     date: {
-      icon: JSX.Element;
-      title: string;
-    };
+      icon: JSX.Element
+      title: string
+    }
     person: {
-      icon: JSX.Element;
-      title: string;
-    };
+      icon: JSX.Element
+      title: string
+    }
     startupProject: {
-      icon: JSX.Element;
-      title: string;
-      description: string;
+      icon: JSX.Element
+      title: string
+      description: string
       // buttons: {
       //   buttonViseble: {
       //     name: string;
@@ -40,7 +38,7 @@ export const StartupSlider: React.FC = () => {
       //     icon: JSX.Element;
       //   };
       // };
-    };
+    }
   }
 
   const startupList: Startup[] = [
@@ -49,16 +47,17 @@ export const StartupSlider: React.FC = () => {
       bg: makalaMaks,
       date: {
         icon: <CalendarMonthOutlinedIcon />,
-        title: "2 ноября 2024"
+        title: '2 ноября 2024',
       },
       person: {
         icon: <PersonOutlineOutlinedIcon />,
-        title: "Каныбеков Максат"
+        title: 'Каныбеков Максат',
       },
       startupProject: {
         icon: <MakalaBoxIcon />,
-        title: "Makala Box",
-        description: 'Makalabox (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
+        title: 'Makala Box',
+        description:
+          'Makalabox (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
         // buttons: {
         //   buttonViseble: {
         //     name: "Посетить сайт",
@@ -69,23 +68,24 @@ export const StartupSlider: React.FC = () => {
         //     icon: <KeyboardArrowRightOutlinedIcon />
         //   }
         // }
-      }
+      },
     },
     {
       id: 2,
       bg: makalaMaks2,
       date: {
         icon: <CalendarMonthOutlinedIcon />,
-        title: "2 ноября 2024"
+        title: '2 ноября 2024',
       },
       person: {
         icon: <PersonOutlineOutlinedIcon />,
-        title: "Сартов Ахмед"
+        title: 'Сартов Ахмед',
       },
       startupProject: {
         icon: <MakalaBoxIcon />,
-        title: "Up-web",
-        description: 'Up-web (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
+        title: 'Up-web',
+        description:
+          'Up-web (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
         // buttons: {
         //   buttonViseble: {
         //     name: "Посетить сайт",
@@ -96,20 +96,23 @@ export const StartupSlider: React.FC = () => {
         //     icon: <KeyboardArrowRightOutlinedIcon />
         //   }
         // }
-      }
-    }
-  ];
+      },
+    },
+  ]
 
-  return <Swiper
-    modules={[Pagination, EffectFade, Autoplay]}
-    pagination={{ clickable: true }}
-    effect="fade"
-    autoplay={{ delay: 3000, disableOnInteraction: false }}
-    loop={true}>
-    {startupList.map((startup: Startup) => (
-      <SwiperSlide key={startup.id}>
-        <StartupSlide {...startup} />
-      </SwiperSlide>
-    ))}
-  </Swiper>
-};
+  return (
+    <Swiper
+      modules={[Pagination, EffectFade, Autoplay]}
+      pagination={{ clickable: true }}
+      effect="fade"
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      loop={true}
+    >
+      {startupList.map((startup: Startup) => (
+        <SwiperSlide key={startup.id}>
+          <StartupSlide {...startup} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  )
+}
