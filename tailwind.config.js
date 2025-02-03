@@ -23,6 +23,23 @@ export default {
       milk: '#fe98c8',
     },
     extend: {},
+    screens: {
+      'r-xs': { max: '359px' },
+      'r-sm': { max: '479px' },
+      'r-md': { max: '767px' },
+      'r-lg': { max: '1023px' },
+      'r-xl': { max: '1439px' },
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '20px',
+        sm: '2rem',
+        lg: '100px',
+        xl: '100px',
+        '2xl': '100px',
+      },
+    },
+    plugins: [],
   },
-  plugins: [],
-};
+}
