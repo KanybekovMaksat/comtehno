@@ -3,6 +3,9 @@ export const pathKeys = {
   home() {
     return pathKeys.root;
   },
+  speciality() {
+    return pathKeys.root.concat('speciality/')
+  },
   about(){
     return pathKeys.root.concat('about/')
   },
@@ -15,20 +18,20 @@ export const pathKeys = {
   // group({ params }: { params: { slug: string } }) {
   //   return pathKeys.root.concat(`group/${params.slug}/`);
   // },
-  course :{
-    root(){
-      return pathKeys.root.concat('courses/')
-    },
-    bySlug(slug: string){
-      return pathKeys.course.root().concat(`${slug}/`)
-    }
-  },
-  profile: {
-    root() {
-      return pathKeys.root.concat('profile/');
-    },
-    badges() {
-      return pathKeys.profile.root().concat('badges/')
-    }
-  },
+  // course :{
+  //   root(){
+  //     return pathKeys.root.concat('courses/')
+  //   },
+  //   bySlug(slug: string){
+  //     return pathKeys.course.root().concat(`${slug}/`)
+  //   }
+  // },
+  // profile: {
+  //   root() {
+  //     return pathKeys.root.concat('profile/');
+  //   },
+  //   badges() {
+  //     return pathKeys.profile.root().concat('badges/')
+  //   }
+  // },
 };

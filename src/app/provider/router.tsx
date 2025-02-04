@@ -1,15 +1,14 @@
 import {
-  Navigate,
   RouterProvider,
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom';
+import { GenericLayout } from '~app/layout';
 
 import { aboutPageRoute } from '~pages/about';
-import { dashboardPageRoute } from '~pages/dashboard';
 import { errorPageRoute } from '~pages/error';
 import { homePageRoute } from '~pages/home';
-import { GenericLayout } from '~pages/layout';
+import { specialityPageRoute } from '~pages/speciality';
 
 function BubbleError() {
   const error = useRouteError();
@@ -36,10 +35,7 @@ const router = createBrowserRouter([
       homePageRoute,
       aboutPageRoute,
       errorPageRoute,
-      {
-        path: '/whatsapp',
-        element: <Navigate to="/whatsApp" />, 
-      }
+      specialityPageRoute,
     ],
   },
 ]);
