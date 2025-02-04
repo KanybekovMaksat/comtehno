@@ -1,27 +1,162 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { CalendarMonth, ArrowForwardIos } from '@mui/icons-material'
 import bg from './assets/img/newsBg.png'
+import { useState } from 'react'
+import { TabPanel } from './ui/tab-panel.ui'
+import { News, newsData } from '~entities/news'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Pagination } from 'swiper/modules'
 
 export const NewsList = () => {
+  const [value, setValue] = useState(0)
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue)
+  }
+
+  const getMonthNames = () => {
+    const date = new Date()
+    const locale = 'ru-RU'
+
+    const currentMonth = date.toLocaleString(locale, { month: 'long' })
+
+    date.setMonth(date.getMonth() + 1)
+    const nextMonth = date.toLocaleString(locale, { month: 'long' })
+
+    date.setMonth(date.getMonth() - 2)
+    const prevMonth = date.toLocaleString(locale, { month: 'long' })
+
+    return { prevMonth, currentMonth, nextMonth }
+  }
+
+  const { prevMonth, currentMonth, nextMonth } = getMonthNames()
+
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
+    }
+  }
+
   return (
     <section>
       <div className="container">
         <Typography variant="h2">Новости</Typography>
-        <Box>
+        <Box className="flex gap-2 mt-5">
           <Box
             sx={{ backgroundImage: `url(${bg})` }}
             className="w-[952px] h-[456px] bg-cover rounded-[16px] flex justify-between items-end p-[24px]"
           >
             <div className="bg-white w-[196px] h-[40px] flex items-center rounded-[12px] justify-center">
-              <CalendarMonth></CalendarMonth>
+              <CalendarMonth />
               <span>30 октября 2024</span>
             </div>
             <div className="bg-white w-[196px] h-[40px] flex items-center rounded-[12px] justify-center">
               <span>Подробнее</span>
-              <ArrowForwardIos className="w-[15px] "></ArrowForwardIos>
+              <ArrowForwardIos className="w-[15px]" />
             </div>
           </Box>
-          
+          <Box>
+            <Box>
+              <Tabs value={value} onChange={handleChange}>
+                <Tab label={prevMonth} {...a11yProps(0)} />
+                <Tab label={currentMonth} {...a11yProps(1)} />
+                <Tab label={nextMonth} {...a11yProps(2)} />
+              </Tabs>
+            </Box>
+            <TabPanel value={value} index={0}>
+              <Swiper
+                direction="vertical"
+                pagination={{
+                  clickable: true,
+                  renderBullet: (index, className) => {
+                    return `<span class="${className} custom-bullet"></span>`
+                  },
+                }}
+                modules={[Pagination]}
+                slidesPerView={3}
+                className="h-[350px] relative pl-5"
+              >
+                {newsData.map((news: News) => (
+                  <SwiperSlide key={news.id} className="flex flex-col">
+                    <Typography variant="h6">
+                      {news.title.length > 30
+                        ? news.title.slice(0, 30) + '…'
+                        : news.title}
+                    </Typography>
+                    <Box className="flex">
+                      <Typography className="border-r-2 border-gray-300 pr-5">
+                        {news.date}
+                      </Typography>
+                      <Typography className="pl-5">{news.category}</Typography>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <Swiper
+                direction="vertical"
+                pagination={{
+                  clickable: true,
+                  renderBullet: (index, className) => {
+                    return `<span class="${className} custom-bullet"></span>`
+                  },
+                }}
+                modules={[Pagination]}
+                slidesPerView={3}
+                className="h-[350px] relative pl-5"
+              >
+                {newsData.map((news: News) => (
+                  <SwiperSlide key={news.id} className="flex flex-col">
+                    <Typography variant="h6">
+                      {news.title.length > 30
+                        ? news.title.slice(0, 30) + '…'
+                        : news.title}
+                    </Typography>
+                    <Box className="flex">
+                      <Typography className="border-r-2 border-gray-300 pr-5">
+                        {news.date}
+                      </Typography>
+                      <Typography className="pl-5">{news.category}</Typography>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <Swiper
+                direction="vertical"
+                pagination={{
+                  clickable: true,
+                  renderBullet: (index, className) => {
+                    return `<span class="${className} custom-bullet"></span>`
+                  },
+                }}
+                modules={[Pagination]}
+                slidesPerView={3}
+                className="h-[350px] relative pl-5"
+              >
+                {newsData.map((news: News) => (
+                  <SwiperSlide key={news.id} className="flex flex-col">
+                    <Typography variant="h6">
+                      {news.title.length > 30
+                        ? news.title.slice(0, 30) + '…'
+                        : news.title}
+                    </Typography>
+                    <Box className="flex">
+                      <Typography className="border-r-2 border-gray-300 pr-5">
+                        {news.date}
+                      </Typography>
+                      <Typography className="pl-5">{news.category}</Typography>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </TabPanel>
+          </Box>
         </Box>
       </div>
     </section>

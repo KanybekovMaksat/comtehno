@@ -21,3 +21,28 @@
   width: 45px;
   transition-delay: 0s;
 }
+
+.swiper-pagination {
+  position: absolute;
+  left: 0px !important;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Промежуток между точками */
+}
+
+/* Линии вместо точек */
+.custom-bullet {
+  width: 6px;
+  height: 30px;
+  background-color: #10b981; /* Зеленый */
+  opacity: 0.5;
+  border-radius: 9999px;
+  transition: opacity 0.3s ease;
+}
+
+/* Выделение активного элемента */
+.custom-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
