@@ -12,11 +12,11 @@ import { DirectoryIcon, HomeIcon, PhythonIcon, PictureIcon, PlanetIcon, PlumpIco
 import { SpecialFilter } from "./SpecialFilter";
 
 export interface SpecialityFilterItem {
+  id: number;
   img?: JSX.Element;
   title: string;
   isActiveFilter: number | null;
   setIsActiveFilter: React.Dispatch<number>
-
 }
 
 export interface SpecialCardItem {
@@ -53,12 +53,15 @@ export const SpecialityFilter: React.FC = () => {
 
   return (
     <>
-      <Stack className="mb-6 gap-2" direction={"row"} >
+      <Stack className="mb-6 gap-2" flexWrap={"wrap"} direction={"row"} >
       {specialityFilter.map((specialFilter: SpecialityFilterItem, index: number) => (
         <SpecialFilter 
           isActiveFilter={isActiveFilter}
           setIsActiveFilter={setIsActiveFilter}
-          {...specialFilter} id={index} key={index} />
+          img={specialFilter.img} 
+          title={specialFilter.title} 
+          id={index} 
+          key={index} />
       ))}
       </Stack>
       <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
