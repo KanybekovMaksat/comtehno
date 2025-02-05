@@ -26,8 +26,8 @@ export const ReviewCard: React.FC<ReviewProps> = ({
   plans,
 }) => {
   return (
-    <Card className="shadow-lg rounded-2xl max-w-[90vw] flex flex-col md:flex-row overflow-hidden">
-      <div className="relative flex-grow md:w-[24rem] h-[250px] md:h-auto">
+    <Card className="shadow-lg rounded-2xl max-w-[90vw] flex r-md:flex-col r-md:h-full h-[600px]  overflow-hidden">
+      <div className="relative flex-grow md:w-[24rem] h-full md:h-auto">
         <img
           src={avatar}
           alt={name}
@@ -61,30 +61,30 @@ export const ReviewCard: React.FC<ReviewProps> = ({
         </div>
       </div>
 
-      <CardContent className="flex-grow flex flex-col gap-4 p-4 md:p-6 w-full">
-        <div className="flex flex-col md:flex-row justify-between">
-          <Typography variant="h6" className="font-semibold md:w-1/3 text-[20px] md:text-[22px]">
+      <CardContent className="flex-grow flex flex-col justify-between gap-4 p-4 md:p-6  w-full">
+        <div className="flex r-md:flex-col justify-between">
+          <Typography variant="h6" className="font-semibold w-1/3 text-[20px] md:text-[22px]">
             {steps1}
           </Typography>
-          <Typography variant="body2" className="md:w-2/3 text-[16px] md:text-[20px]">
+          <Typography variant="body2" className="w-2/3 text-[16px] md:text-[20px]">
             {content1}
           </Typography>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between">
-          <Typography variant="h6" className="font-semibold md:w-1/3 text-[20px] md:text-[22px]">
+        <div className="flex r-md:flex-col justify-between">
+          <Typography variant="h6" className="font-semibold w-1/3 text-[20px] md:text-[22px]">
             {steps2}
           </Typography>
-          <Typography variant="body2" className="md:w-2/3 text-[16px] md:text-[20px]">
+          <Typography variant="body2" className="w-2/3 text-[16px] md:text-[20px]">
             {content2}
           </Typography>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between">
-          <Typography variant="h6" className="font-semibold md:w-1/3 text-[20px] md:text-[22px]">
+        <div className="flex r-md:flex-col justify-between">
+          <Typography variant="h6" className="font-semibold w-1/3 r-md:text-[20px] text-[22px]">
             {steps3}
           </Typography>
-          <Typography variant="body2" className="md:w-2/3 text-[16px] md:text-[20px]">
+          <Typography variant="body2" className="w-2/3 text-[16px] md:text-[20px]">
             {plans}
           </Typography>
         </div>
