@@ -1,2 +1,3 @@
-export { newsData } from './news.data'
-export type { News } from './news.types'
+export * as newsTypes from './news.types'
+export * as newsQueries from './news.queries'
+export * as newsApi from './news.api'
