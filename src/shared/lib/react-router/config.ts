@@ -6,6 +6,9 @@ export const pathKeys = {
   speciality() {
     return pathKeys.root.concat('speciality/')
   },
+  reviews(){
+    return pathKeys.root.concat('reviews/')
+  },
   about(){
     return pathKeys.root.concat('about/')
   },

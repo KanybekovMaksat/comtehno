@@ -8,7 +8,9 @@ import { GenericLayout } from '~app/layout';
 import { aboutPageRoute } from '~pages/about';
 import { errorPageRoute } from '~pages/error';
 import { homePageRoute } from '~pages/home';
+import { reviewsPageRoute } from '~pages/reviewPage';
 import { specialityPageRoute } from '~pages/speciality';
+
 
 function BubbleError() {
   const error = useRouteError();
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       aboutPageRoute,
       errorPageRoute,
       specialityPageRoute,
+      reviewsPageRoute,
     ],
   },
 ]);

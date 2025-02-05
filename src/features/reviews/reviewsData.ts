@@ -5,7 +5,8 @@ export const reviews: ReviewProps[] = [
     name: "Абдрашитов Бек",
     course: "Студент 3 курса",
     specialization: "Frontend-разработчик",
-    avatar: "https://www.fastweb.com/uploads/article_photo/photo/2036641/10-ways-to-be-a-better-student.jpeg",
+    avatar:
+      "https://www.fastweb.com/uploads/article_photo/photo/2036641/10-ways-to-be-a-better-student.jpeg",
     steps1: "Первые шаги и ожидания",
     content1: `Когда я поступил в колледж, мне было немного страшно, но одновременно интересно. Хотелось научиться чему-то новому и встретить людей с похожими интересами.`,
     steps2: "Что нового узнали и чему научились",
@@ -17,7 +18,8 @@ export const reviews: ReviewProps[] = [
     name: "Туратбекова Бегимай",
     course: "Студент 2 курса",
     specialization: "Backend-разработчик",
-    avatar: "https://studyportals.com/app/uploads/2024/11/shutterstock_2345710757-640x384.jpg",
+    avatar:
+      "https://studyportals.com/app/uploads/2024/11/shutterstock_2345710757-640x384.jpg",
     steps1: "Начало пути",
     content1: `Поступление в колледж было для меня волнительным, но я была настроена с оптимизмом. Я стремилась развиваться и завести новых друзей, с которыми разделяла бы общие увлечения.`,
     steps2: "Преодоление первых трудностей",
@@ -25,12 +27,13 @@ export const reviews: ReviewProps[] = [
     steps3: "Глядя в будущее",
     plans: `Я все больше уверена в своих силах и ощущаю, как мой профессиональный путь становится более ясным. В планах — углубленное изучение технологий и подготовка к карьере.`,
   },
-  
+
   {
     name: "Бекболотова Раяна",
     course: "Студент 3 курса",
     specialization: "Frontend-разработчик",
-    avatar: "https://study.gov.pl/sites/default/files/styles/news/public/field/image/news/adobestock_165061057_autor_antonioguillem_1.jpeg?itok=xFmtva__",
+    avatar:
+      "https://study.gov.pl/sites/default/files/styles/news/public/field/image/news/adobestock_165061057_autor_antonioguillem_1.jpeg?itok=xFmtva__",
     steps1: "Первые шаги в обучении",
     content1: `Когда я начала учебу, было много неуверенности, но желание развиваться преобладало. Я с нетерпением ждала момента, когда смогу углубиться в изучение своего направления и наладить связи с единомышленниками.`,
     steps2: "На пути к знаниям",
@@ -38,12 +41,13 @@ export const reviews: ReviewProps[] = [
     steps3: "Перспективы на будущее",
     plans: `Третий курс — это этап, когда я осознаю, что не только изучаю профессию, но и уже начинаю работать с реальными задачами. В будущем планирую развиваться в более узкой специализации.`,
   },
-  
+
   {
     name: "Хохулин Илья",
     course: "Студент 3 курса",
     specialization: "Frontend-разработчик",
-    avatar: "https://i0.wp.com/rollercoasteryears.com/wp-content/uploads/Thrive-During-Finals-.jpg?fit=1000%2C667&ssl=1",
+    avatar:
+      "https://i0.wp.com/rollercoasteryears.com/wp-content/uploads/Thrive-During-Finals-.jpg?fit=1000%2C667&ssl=1",
     steps1: "Первая встреча с учебой",
     content1: `Когда я поступил, все было новым и необычным. Я чувствовал неуверенность, но очень хотел узнать больше и найти людей, которые разделяют мои интересы и цели.`,
     steps2: "Этап освоения",
@@ -51,12 +55,13 @@ export const reviews: ReviewProps[] = [
     steps3: "Карьера и будущее",
     plans: `Чувствую, как мой профессионализм растет, и все больше уверенности в том, что мои навыки будут востребованы. Хочу продолжить развиваться в области frontend-разработки.`,
   },
-  
+
   {
     name: "Замирбек уулу Рахим",
     course: "Студент 3 курса",
     specialization: "Frontend-разработчик",
-    avatar: "https://www.malvernbh.com/wp-content/uploads/2023/02/shutterstock_1079701271-1-min-1010x673.jpg",
+    avatar:
+      "https://www.malvernbh.com/wp-content/uploads/2023/02/shutterstock_1079701271-1-min-1010x673.jpg",
     steps1: "Трудности начала пути",
     content1: `С самого начала учебы было не так легко, но мои ожидания были полны оптимизма. Я знал, что в колледже найду возможность для личностного и профессионального роста.`,
     steps2: "Что дало мне обучение",
@@ -64,5 +69,43 @@ export const reviews: ReviewProps[] = [
     steps3: "Дальнейшие планы",
     plans: `Я вижу, как мои знания становятся более глубокими, и в планах на будущее — продолжать углублять свои навыки, чтобы стать экспертом в frontend-разработке.`,
   },
-  
+];
+
+export const developers = [
+  {
+    image: "https://www.fastweb.com/uploads/article_photo/photo/2036641/10-ways-to-be-a-better-student.jpeg",
+    date: "26 января 2025",
+    category: "Frontend разработчик",
+    title: "Абдрашитов Бек",
+  },
+  {
+    image: "https://studyportals.com/app/uploads/2024/11/shutterstock_2345710757-640x384.jpg",
+    date: "1 января 2025",
+    category: "Frontend разработчик",
+    title: "Туратбекова Бегимай",
+  },
+  {
+    image: "https://study.gov.pl/sites/default/files/styles/news/public/field/image/news/adobestock_165061057_autor_antonioguillem_1.jpeg?itok=xFmtva__",
+    date: "12 декабря 2024",
+    category: "Frontend разработчик",
+    title: "Бекболотова Раяна",
+  },
+  {
+    image: "https://i0.wp.com/rollercoasteryears.com/wp-content/uploads/Thrive-During-Finals-.jpg?fit=1000%2C667&ssl=1",
+    date: "9 ноября 2024",
+    category: "Frontend разработчик",
+    title: "Хохулин Илья",
+  },
+  {
+    image: "https://www.malvernbh.com/wp-content/uploads/2023/02/shutterstock_1079701271-1-min-1010x673.jpg",
+    date: "13 октября",
+    category: "Frontend разработчик",
+    title: "Замирбек уулу Рахим",
+  },
+  {
+    image: "https://opis-cdn.tinkoffjournal.ru/mercury/in-student-situations.tmmnovfwyaqx..jpg",
+    date: "24 августа 2024",
+    category: "Frontend разработчик",
+    title: "Таалайбек уулу Байэли",
+  },
 ];
