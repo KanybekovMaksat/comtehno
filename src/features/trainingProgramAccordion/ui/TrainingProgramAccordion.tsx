@@ -8,7 +8,9 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { courseListTypes } from './TrainingProgramList';
-import AddIcon from '@mui/icons-material/Add';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+
+// import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
 
 const Accordion = styled((props: AccordionProps) => (
@@ -25,7 +27,7 @@ const Accordion = styled((props: AccordionProps) => (
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<AddIcon sx={{ fontSize: '2rem', color: "red" }} /> }
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1rem' }} /> }
     {...props}
   />
 ))(({ theme }) => ({

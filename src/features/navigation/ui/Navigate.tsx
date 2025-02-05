@@ -15,16 +15,16 @@ import { Link } from "react-router-dom";
 import { pathKeys } from "~shared/lib/react-router";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export const Navigate: React.FC = () => {
-  interface LinkItem {
-    title: string;
-    url: string;
-  }
+interface linkItem {
+  title: string;
+  url: string;
+}
 
-  const listLink: LinkItem[] = [
+export const Navigate: React.FC = () => {
+  const listLink: linkItem[] = [
     { title: "Приёмная комиссия 2025", url: "/error" },
     { title: "О колледже", url: "/error" },
-    { title: "Специальности", url: "/error" },
+    { title: "Специальности", url: "/speciality" },
     { title: "Абитуриентам", url: "/error" },
     { title: "Новости", url: "/news" },
     { title: "Мероприятия", url: "/error" },
@@ -54,11 +54,10 @@ export const Navigate: React.FC = () => {
               <IconButton edge="start" color="inherit" onClick={toggleDrawer(true)}>
                 <MenuIcon className="text-black" />
               </IconButton>
-
               <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
                 <List className="w-64">
-                  {listLink.map((item, index) => (
-                    <ListItem button key={index} onClick={toggleDrawer(false)}>
+                  {listLink.map((item: linkItem, index: number) => (
+                    <ListItem key={index} onClick={toggleDrawer(false)}>
                       <Link to={item.url} className="text-black w-full block p-2">
                         <ListItemText primary={item.title} />
                       </Link>
@@ -68,7 +67,7 @@ export const Navigate: React.FC = () => {
               </Drawer>
             </>
           ) : (
-            listLink.map((item, index) => (
+            listLink.map((item: linkItem, index: number) => (
               <Link 
                 to={item.url}
                 key={index} 
