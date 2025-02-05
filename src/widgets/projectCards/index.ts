@@ -1,0 +1,2 @@
+export { ProjectsGrid } from "./projectsCardGrid";
+
