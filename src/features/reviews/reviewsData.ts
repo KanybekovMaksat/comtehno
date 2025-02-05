@@ -108,4 +108,5 @@ export const developers = [
     category: "Frontend разработчик",
     title: "Таалайбек уулу Байэли",
   },
+  
 ];

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import clsx from "clsx";
+import { Button, Box } from "@mui/material";
 
 export const ReviewPageFilters: React.FC = () => {
   const [activeRole, setActiveRole] = useState<string>("Все");
@@ -16,21 +16,37 @@ export const ReviewPageFilters: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center gap-2 overflow-x-auto w-full ">
+    <Box
+      sx={{
+        overflowX: "auto",
+        whiteSpace: "nowrap",
+        width: "100%",
+        display: "flex",
+        gap: 1,
+        p: 1,
+        scrollbarWidth: "none",
+        "&::-webkit-scrollbar": { display: "none" },
+      }}
+    >
       {roles.map((role) => (
-        <button
+        <Button
           key={role}
           onClick={() => setActiveRole(role)}
-          className={clsx(
-            "px-4 py-2 rounded-full text-sm sm:text-base transition-all whitespace-nowrap",
-            activeRole === role
-              ? "bg-black text-white font-medium"
-              : "bg-gray-100 text-gray-600 hover:bg-gray-200 border "
-          )}
+          variant={activeRole === role ? "contained" : "outlined"}
+          sx={{
+            flexShrink: 0,
+            borderColor: "black",
+            borderRadius: 4,
+            backgroundColor: activeRole === role ? "black" : "transparent",
+            color: activeRole === role ? "white" : "inherit",
+            "&:hover": {
+              backgroundColor: activeRole === role ? "black" : "rgba(0, 0, 0, 0.08)",
+            },
+          }}
         >
           {role}
-        </button>
+        </Button>
       ))}
-    </div>
+    </Box>
   );
 };
