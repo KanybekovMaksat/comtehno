@@ -16,10 +16,10 @@ export const NewsPage = () => {
 
   console.log(newsData)
 
-  if (newsLoading && isLoading) {
+  if (newsLoading || isLoading) {
     return <div>Загрузка</div>
   }
-  if (newsError && isError) {
+  if (newsError || isError) {
     return <div>Ошибка при получении данных</div>
   }
   return (

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = 'https://new.comtehno.kg/api'
+const URL = 'https://new.comtehno.kg/api/'
 
 export const getNews = () => {
   return axios.get(`${URL}/posts/`)
