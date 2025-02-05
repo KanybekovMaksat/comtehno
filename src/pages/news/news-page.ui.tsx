@@ -1,8 +1,9 @@
 import { Box, Typography } from '@mui/material'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { newsQueries, newsTypes } from '~entities/news'
 import { pathKeys } from '~shared/lib/react-router'
 import { formatDate } from '~shared/ui/date'
+import { Sidebar } from '~shared/ui/sidebar'
 
 export const NewsPage = () => {
   const { slug } = useParams()
@@ -41,29 +42,11 @@ export const NewsPage = () => {
         ></Box>
         <div dangerouslySetInnerHTML={{ __html: newsData.data.content }}></div>
       </Box>
-      <Box>
-        <Typography variant="h3" className="mb-[8px]">
-          Новости
-        </Typography>
-        <Box className="flex flex-col gap-[24px]">
-          {newsListData.data.map((news: newsTypes.News) => (
-            <Link to={pathKeys.news.bySlug(news.slug)}>
-              <Box className="flex gap-[16px]">
-                <Box
-                  component={'img'}
-                  src={news.photo}
-                  alt={news.title}
-                  className="w-[220px] rounded-[8px]"
-                ></Box>
-                <Box>
-                  <Typography>{formatDate(news.createdAt)}</Typography>
-                  <Typography>{news.title}</Typography>
-                </Box>
-              </Box>
-            </Link>
-          ))}
-        </Box>
-      </Box>
+      <Sidebar
+        data={newsListData.data}
+        title={'Новости'}
+        pathKey={'news'}
+      ></Sidebar>
     </Box>
   )
 }
