@@ -1,7 +1,11 @@
 export interface News {
-  id: number
   title: string
-  subtitle: string
-  date: string
-  category: string
+  slug: string
+  photo: string
+  category: {
+    id: number
+    name: string
+  }
+  createdAt: string
+  updatedAt: string
 }

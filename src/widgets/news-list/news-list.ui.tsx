@@ -3,17 +3,26 @@ import { CalendarMonth, ArrowForwardIos } from '@mui/icons-material'
 import bg from './assets/img/newsBg.png'
 import { useState } from 'react'
 import { TabPanel } from './ui/tab-panel.ui'
-import { News, newsData } from '~entities/news'
+import { newsQueries, newsTypes } from '~entities/news'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 
 export const NewsList = () => {
+  const { data: newsData, isLoading, isError } = newsQueries.useGetNews()
   const [value, setValue] = useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
+  }
+  const formatDate = (isoString) => {
+    const date = new Date(isoString)
+    return new Intl.DateTimeFormat('ru-RU', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(date)
   }
 
   const getMonthNames = () => {
@@ -30,6 +39,12 @@ export const NewsList = () => {
 
     return { prevMonth, currentMonth, nextMonth }
   }
+  const filterNewsByMonth = (newsList, month) => {
+    return newsList.filter((news) => {
+      const newsDate = new Date(news.createdAt)
+      return newsDate.toLocaleString('ru-RU', { month: 'long' }) === month
+    })
+  }
 
   const { prevMonth, currentMonth, nextMonth } = getMonthNames()
 
@@ -38,6 +53,12 @@ export const NewsList = () => {
       id: `simple-tab-${index}`,
       'aria-controls': `simple-tabpanel-${index}`,
     }
+  }
+  if (isError) {
+    return <div>Ошибка</div>
+  }
+  if (isLoading) {
+    return <div>Загрузка</div>
   }
 
   return (
@@ -76,26 +97,29 @@ export const NewsList = () => {
                   },
                 }}
                 modules={[Pagination]}
-                slidesPerView={3}
-                className="h-[350px] relative pl-5"
+                slidesPerView={4}
+                className="h-[400px] relative pl-4 cursor-pointer"
               >
-                {newsData.map((news: News) => (
-                  <SwiperSlide key={news.id} className="flex flex-col">
+                {filterNewsByMonth(newsData.data, prevMonth).map((news, i) => (
+                  <SwiperSlide key={i} className="flex flex-col">
                     <Typography variant="h6">
-                      {news.title.length > 30
-                        ? news.title.slice(0, 30) + '…'
+                      {news.title.length > 25
+                        ? news.title.slice(0, 25) + '…'
                         : news.title}
                     </Typography>
-                    <Box className="flex">
-                      <Typography className="border-r-2 border-gray-300 pr-5">
-                        {news.date}
+                    <Box className="flex items-center">
+                      <Typography className="border-r-2 border-gray-300 pr-2">
+                        {formatDate(news.createdAt)}
                       </Typography>
-                      <Typography className="pl-5">{news.category}</Typography>
+                      <Typography className="pl-2">
+                        {news.category.name}
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </TabPanel>
+
             <TabPanel value={value} index={1}>
               <Swiper
                 direction="vertical"
@@ -106,26 +130,31 @@ export const NewsList = () => {
                   },
                 }}
                 modules={[Pagination]}
-                slidesPerView={3}
-                className="h-[350px] relative pl-5"
+                slidesPerView={4}
+                className="h-[400px] relative pl-4 cursor-pointer"
               >
-                {newsData.map((news: News) => (
-                  <SwiperSlide key={news.id} className="flex flex-col">
-                    <Typography variant="h6">
-                      {news.title.length > 30
-                        ? news.title.slice(0, 30) + '…'
-                        : news.title}
-                    </Typography>
-                    <Box className="flex">
-                      <Typography className="border-r-2 border-gray-300 pr-5">
-                        {news.date}
+                {filterNewsByMonth(newsData.data, currentMonth).map(
+                  (news, i) => (
+                    <SwiperSlide key={i} className="flex flex-col">
+                      <Typography variant="h6">
+                        {news.title.length > 25
+                          ? news.title.slice(0, 25) + '…'
+                          : news.title}
                       </Typography>
-                      <Typography className="pl-5">{news.category}</Typography>
-                    </Box>
-                  </SwiperSlide>
-                ))}
+                      <Box className="flex items-center">
+                        <Typography className="border-r-2 border-gray-300 pr-2">
+                          {formatDate(news.createdAt)}
+                        </Typography>
+                        <Typography className="pl-2">
+                          {news.category.name}
+                        </Typography>
+                      </Box>
+                    </SwiperSlide>
+                  )
+                )}
               </Swiper>
             </TabPanel>
+
             <TabPanel value={value} index={2}>
               <Swiper
                 direction="vertical"
@@ -136,21 +165,23 @@ export const NewsList = () => {
                   },
                 }}
                 modules={[Pagination]}
-                slidesPerView={3}
-                className="h-[350px] relative pl-5"
+                slidesPerView={4}
+                className="h-[400px] relative pl-4 cursor-pointer"
               >
-                {newsData.map((news: News) => (
-                  <SwiperSlide key={news.id} className="flex flex-col">
+                {filterNewsByMonth(newsData.data, nextMonth).map((news, i) => (
+                  <SwiperSlide key={i} className="flex flex-col">
                     <Typography variant="h6">
-                      {news.title.length > 30
-                        ? news.title.slice(0, 30) + '…'
+                      {news.title.length > 25
+                        ? news.title.slice(0, 25) + '…'
                         : news.title}
                     </Typography>
-                    <Box className="flex">
-                      <Typography className="border-r-2 border-gray-300 pr-5">
-                        {news.date}
+                    <Box className="flex items-center">
+                      <Typography className="border-r-2 border-gray-300 pr-2">
+                        {formatDate(news.createdAt)}
                       </Typography>
-                      <Typography className="pl-5">{news.category}</Typography>
+                      <Typography className="pl-2">
+                        {news.category.name}
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                 ))}
