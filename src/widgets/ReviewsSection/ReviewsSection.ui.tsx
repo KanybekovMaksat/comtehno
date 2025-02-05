@@ -13,7 +13,7 @@ export const ReviewsSection: React.FC = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/review");
+    navigate("/reviews");
   };
 
   return (

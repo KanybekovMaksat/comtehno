@@ -3,7 +3,13 @@ export const pathKeys = {
   home() {
     return pathKeys.root
   },
-  about() {
+  speciality() {
+    return pathKeys.root.concat('speciality/')
+  },
+  reviews(){
+    return pathKeys.root.concat('reviews/')
+  },
+  about(){
     return pathKeys.root.concat('about/')
   },
   dashboard() {
@@ -12,23 +18,12 @@ export const pathKeys = {
   error() {
     return pathKeys.root.concat('error/')
   },
-  // group({ params }: { params: { slug: string } }) {
-  //   return pathKeys.root.concat(`group/${params.slug}/`);
-  // },
   course: {
     root() {
       return pathKeys.root.concat('courses/')
     },
     bySlug(slug: string) {
       return pathKeys.course.root().concat(`${slug}/`)
-    },
-  },
-  profile: {
-    root() {
-      return pathKeys.root.concat('profile/')
-    },
-    badges() {
-      return pathKeys.profile.root().concat('badges/')
     },
   },
   news: {
@@ -40,3 +35,4 @@ export const pathKeys = {
     },
   },
 }
+};
