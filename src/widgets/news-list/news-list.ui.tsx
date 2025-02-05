@@ -3,26 +3,17 @@ import { CalendarMonth, ArrowForwardIos } from '@mui/icons-material'
 import bg from './assets/img/newsBg.png'
 import { useState } from 'react'
 import { TabPanel } from './ui/tab-panel.ui'
-import { newsQueries, newsTypes } from '~entities/news'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { newsQueries } from '~entities/news'
+
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Pagination } from 'swiper/modules'
 
 export const NewsList = () => {
   const { data: newsData, isLoading, isError } = newsQueries.useGetNews()
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(1)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
-  }
-  const formatDate = (isoString) => {
-    const date = new Date(isoString)
-    return new Intl.DateTimeFormat('ru-RU', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    }).format(date)
   }
 
   const getMonthNames = () => {
@@ -31,19 +22,17 @@ export const NewsList = () => {
 
     const currentMonth = date.toLocaleString(locale, { month: 'long' })
 
-    date.setMonth(date.getMonth() + 1)
-    const nextMonth = date.toLocaleString(locale, { month: 'long' })
+    const nextMonth = new Date(date)
+    nextMonth.setMonth(date.getMonth() + 1)
 
-    date.setMonth(date.getMonth() - 2)
-    const prevMonth = date.toLocaleString(locale, { month: 'long' })
+    const prevMonth = new Date(date)
+    prevMonth.setMonth(date.getMonth() - 1)
 
-    return { prevMonth, currentMonth, nextMonth }
-  }
-  const filterNewsByMonth = (newsList, month) => {
-    return newsList.filter((news) => {
-      const newsDate = new Date(news.createdAt)
-      return newsDate.toLocaleString('ru-RU', { month: 'long' }) === month
-    })
+    return {
+      prevMonth: prevMonth.toLocaleString(locale, { month: 'long' }),
+      currentMonth,
+      nextMonth: nextMonth.toLocaleString(locale, { month: 'long' }),
+    }
   }
 
   const { prevMonth, currentMonth, nextMonth } = getMonthNames()
@@ -87,106 +76,26 @@ export const NewsList = () => {
                 <Tab label={nextMonth} {...a11yProps(2)} />
               </Tabs>
             </Box>
-            <TabPanel value={value} index={0}>
-              <Swiper
-                direction="vertical"
-                pagination={{
-                  clickable: true,
-                  renderBullet: (index, className) => {
-                    return `<span class="${className} custom-bullet"></span>`
-                  },
-                }}
-                modules={[Pagination]}
-                slidesPerView={4}
-                className="h-[400px] relative pl-4 cursor-pointer"
-              >
-                {filterNewsByMonth(newsData.data, prevMonth).map((news, i) => (
-                  <SwiperSlide key={i} className="flex flex-col">
-                    <Typography variant="h6">
-                      {news.title.length > 25
-                        ? news.title.slice(0, 25) + '…'
-                        : news.title}
-                    </Typography>
-                    <Box className="flex items-center">
-                      <Typography className="border-r-2 border-gray-300 pr-2">
-                        {formatDate(news.createdAt)}
-                      </Typography>
-                      <Typography className="pl-2">
-                        {news.category.name}
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </TabPanel>
+            <TabPanel
+              value={value}
+              index={0}
+              data={newsData.data}
+              month={prevMonth}
+            />
 
-            <TabPanel value={value} index={1}>
-              <Swiper
-                direction="vertical"
-                pagination={{
-                  clickable: true,
-                  renderBullet: (index, className) => {
-                    return `<span class="${className} custom-bullet"></span>`
-                  },
-                }}
-                modules={[Pagination]}
-                slidesPerView={4}
-                className="h-[400px] relative pl-4 cursor-pointer"
-              >
-                {filterNewsByMonth(newsData.data, currentMonth).map(
-                  (news, i) => (
-                    <SwiperSlide key={i} className="flex flex-col">
-                      <Typography variant="h6">
-                        {news.title.length > 25
-                          ? news.title.slice(0, 25) + '…'
-                          : news.title}
-                      </Typography>
-                      <Box className="flex items-center">
-                        <Typography className="border-r-2 border-gray-300 pr-2">
-                          {formatDate(news.createdAt)}
-                        </Typography>
-                        <Typography className="pl-2">
-                          {news.category.name}
-                        </Typography>
-                      </Box>
-                    </SwiperSlide>
-                  )
-                )}
-              </Swiper>
-            </TabPanel>
+            <TabPanel
+              value={value}
+              index={1}
+              data={newsData.data}
+              month={currentMonth}
+            />
 
-            <TabPanel value={value} index={2}>
-              <Swiper
-                direction="vertical"
-                pagination={{
-                  clickable: true,
-                  renderBullet: (index, className) => {
-                    return `<span class="${className} custom-bullet"></span>`
-                  },
-                }}
-                modules={[Pagination]}
-                slidesPerView={4}
-                className="h-[400px] relative pl-4 cursor-pointer"
-              >
-                {filterNewsByMonth(newsData.data, nextMonth).map((news, i) => (
-                  <SwiperSlide key={i} className="flex flex-col">
-                    <Typography variant="h6">
-                      {news.title.length > 25
-                        ? news.title.slice(0, 25) + '…'
-                        : news.title}
-                    </Typography>
-                    <Box className="flex items-center">
-                      <Typography className="border-r-2 border-gray-300 pr-2">
-                        {formatDate(news.createdAt)}
-                      </Typography>
-                      <Typography className="pl-2">
-                        {news.category.name}
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </TabPanel>
+            <TabPanel
+              value={value}
+              index={2}
+              data={newsData.data}
+              month={nextMonth}
+            />
           </Box>
         </Box>
       </div>
