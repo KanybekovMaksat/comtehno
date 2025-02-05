@@ -1,1 +1,0 @@
-export { PartnersCard } from "./ui/partnersCard";

@@ -15,10 +15,13 @@ const caruselist: ApiItem[] = [
   { id: 7, banner: "banner 7" },
 ];
 
- const Carusel: React.FC = () => {
+const Carusel: React.FC = () => {
   return (
     <div className="w-full overflow-hidden my-10">
-      <Marquee direction="left" speed={150} pauseOnHover className="mb-3 overflow-x-none">
+      <Marquee 
+        direction="left" 
+        speed={150} 
+        className="mb-3 overflow-x-none">
         <div className="flex items-center gap-4 ml-4">
           {caruselist.map((carusel: ApiItem) => (
             <div
