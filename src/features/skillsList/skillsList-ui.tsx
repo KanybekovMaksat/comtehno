@@ -14,7 +14,7 @@ export const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
 
   return (
     <Box
-      p={3}
+      p={1}
       borderRadius="12px"
       bgcolor="#f6f6f7"
       sx={{ maxWidth: 600, width: "100%" }}

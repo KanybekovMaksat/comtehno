@@ -22,8 +22,8 @@ export const Resume = () => {
   };
 
   return (
-    <Stack spacing={4} p={4} maxWidth={1440} mx="auto">
-      <Typography variant="h4" fontWeight="bold" textAlign="center">
+    <Stack spacing={4} maxWidth={1440} mx="auto" my={8}>
+      <Typography variant="h4" textAlign="center" className="r-sm:text-start">
         Ваше резюме после выпуска
       </Typography>
       <div className="flex justify-around r-md:flex-col r-md:gap-5">
