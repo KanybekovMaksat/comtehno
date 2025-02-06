@@ -24,7 +24,7 @@ export const Navigate: React.FC = () => {
   const listLink: linkItem[] = [
     { title: "Приёмная комиссия 2025", url: "/error" },
     { title: "О колледже", url: "/error" },
-    { title: "Специальности", url: "/speciality" },
+    { title: "Специальности", url: "/error" },
     { title: "Абитуриентам", url: "/error" },
     { title: "Новости", url: "/news" },
     { title: "Мероприятия", url: "/error" },
