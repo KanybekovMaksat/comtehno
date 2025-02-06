@@ -16,7 +16,7 @@ export const UserCard: React.FC<UserCardProps> = ({
 }) => {
   return (
     <Stack spacing={2} alignItems=" ">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 r-sm:flex-col r-sm:items-start">
         <Avatar src={avatar} alt={name} />
         <div className="flex flex-col justify-between">
           <Typography variant="h5" fontWeight="bold">
