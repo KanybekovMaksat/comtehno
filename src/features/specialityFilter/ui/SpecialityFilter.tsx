@@ -1,15 +1,14 @@
-import {  Button, Stack, Tab, Tabs, Typography, useMediaQuery } from "@mui/material";
+import {  Button, Stack, Typography, useMediaQuery } from "@mui/material";
 
 import LanguageIcon from '@mui/icons-material/Language';
 import BrushIcon from '@mui/icons-material/Brush';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import AssuredWorkloadOutlinedIcon from '@mui/icons-material/AssuredWorkloadOutlined';
-import CodeIcon from '@mui/icons-material/Code';
 
 import React, { useState } from "react";
-import { SpecialCard } from "~entities/specialCard";
-import { DirectoryIcon, HomeIcon, PhythonIcon, PictureIcon, PlanetIcon, PlumpIcon } from "~shared/assets/icons";
 import { SpecialFilter } from "./SpecialFilter";
+import { specialityQuery } from "~entities/speciality";
+import { SpecialCard } from "./SpecialCard";
 
 export interface SpecialityFilterItem {
   id: number;
@@ -19,15 +18,9 @@ export interface SpecialityFilterItem {
   setIsActiveFilter: React.Dispatch<number>
 }
 
-export interface SpecialCardItem {
-  icon: JSX.Element;
-  img: JSX.Element;
-  title: string;
-  name: string;
-  description: string;
-}
-
 export const SpecialityFilter: React.FC = () => {
+  const {data: specialCardList, isLoading, isError} = specialityQuery.useGetSpeciality()  
+
   const specialityFilter: SpecialityFilterItem[] = [
     {title: "Все"},
     {img: <LanguageIcon />,title: "IT"},
@@ -37,19 +30,18 @@ export const SpecialityFilter: React.FC = () => {
     {img: <AssuredWorkloadOutlinedIcon />,title: "Финансы и банковское дело"},
   ];
 
-  const specialCardList: SpecialCardItem[] = [
-    { icon: <CodeIcon className="text-[#0F766E]" />, img: <PlanetIcon />, title: "Программирование", name: "Frontend разработчик", description: "Техник-программист"},
-    { icon: <CodeIcon className="text-[#0F766E]" />, img: <PhythonIcon />, title: "Программирование", name: "Backend разработчик", description: "Техник-программист"},
-    { icon: <BrushIcon className="text-[#0F766E]" />, img: <PictureIcon />, title: "Дизайн", name: "Графический дизайнер", description: "Дизайнер"},
-    { icon: <BrushIcon className="text-[#0F766E]" />, img: <HomeIcon />, title: "Дизайн", name: "Интерьерный дизайнер", description: "Дизайнер"},
-    { icon: <BrushIcon className="text-[#0F766E]" />, img: <PlumpIcon />, title: "Дизайн", name: "Фэшн-дизайнер", description: "Дизайнер"},
-    { icon: <WorkOutlineOutlinedIcon className="text-[#0F766E]" />, img: <DirectoryIcon />, title: "Управление проектами и продуктами", name: "Продукт менеджер", description: "Бизнес-администрирование"},
-  ];
-
   const [isActiveFilter, setIsActiveFilter] = useState<number | null>(null)
 
   // const theme = useTheme()
   // const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+
+  if (isLoading) {
+    return <Typography variant="h1">Loading...</Typography>
+  }
+
+  if (isError) {
+    return <Typography variant="h1">Error 404</Typography>
+  }
 
   return (
     <>
@@ -65,8 +57,8 @@ export const SpecialityFilter: React.FC = () => {
       ))}
       </Stack>
       <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
-        {specialCardList.map((specialCard: SpecialCardItem, index: number) => (
-          <SpecialCard {...specialCard} key={index} />
+        {specialCardList?.data.map((specialCard) => (
+          <SpecialCard {...specialCard} key={specialCard.id} />
         ))}
       </Stack>
       <div className="text-center">

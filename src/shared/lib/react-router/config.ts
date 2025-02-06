@@ -3,8 +3,13 @@ export const pathKeys = {
   home() {
     return pathKeys.root
   },
-  speciality() {
-    return pathKeys.root.concat('speciality/')
+  speciality: {
+    root() {
+      return pathKeys.root.concat('speciality/')
+    },
+    bySlug(slug: string) {
+      return pathKeys.speciality.root().concat(`${slug}/`)
+    }
   },
   reviews(){
     return pathKeys.root.concat('reviews/')
