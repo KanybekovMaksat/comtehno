@@ -1,1 +1,1 @@
-export { Network } from "../navigation/ui/Network";
+export { Network } from "./ui/Network";

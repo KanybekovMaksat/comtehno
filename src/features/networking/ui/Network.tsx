@@ -15,7 +15,12 @@ interface NetworkProps {
 export const Network: React.FC<NetworkProps> = (props) => {
   // const navigate = useNavigate()
 
-  const infoHeader = [
+  interface InfoHeaderItem {
+    img: JSX.Element;
+    title: string;
+  }
+
+  const infoHeader: InfoHeaderItem[] = [
     {
       img: <LocalPhoneIcon className="text-black" />,
       title: "+996 707 379 957",
@@ -28,20 +33,20 @@ export const Network: React.FC<NetworkProps> = (props) => {
       img: <LocationOnIcon className="text-black" />,
       title: "Виноградная улица, 1/14",
     }
-  ]
+  ];
 
   return (
-    <AppBar position="static" className="bg-white shadow-none font-medium px-6 md:px-20 border-b-2 border-solid border-[#A1A1AA] mb-2">
-      <Toolbar className="flex justify-between">
+    <AppBar position="static" className="bg-white shadow-none border-b-[1px] border-solid border-[#A1A1AA] mb-2">
+      <Toolbar className="flex justify-between p-0">
         <div className='flex items-center gap-4'>
-          {infoHeader.map((item, index) => (
+          {infoHeader.map((item: InfoHeaderItem, index: number) => (
             <div key={index}>
               <Tooltip title={item.title}>
                 <IconButton color="inherit">
                   {item.img}
                 </IconButton>
               </Tooltip>
-              <Typography className='font-medium' color='black' variant="caption">{item.title}</Typography>
+              <Typography className='font-normal' color='black' variant="caption">{item.title}</Typography>
             </div>
           ))}
         </div>

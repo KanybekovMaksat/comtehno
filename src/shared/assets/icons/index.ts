@@ -1,7 +1,11 @@
+export { MakalaBoxIcon } from "./makalaBoxIcon";
 export { DirectoryIcon } from "./directoryIcon";
 export { HomeIcon } from "./homeIcon";
 export { PictureIcon } from "./pictureIcon";
 export { PlumpIcon } from "./plumpIcon";
 export { PhythonIcon } from "./pythonIcon";
 export { PlanetIcon } from "./planetIcon";
-
+export { WhatsappIcon } from "./whatsappIcon"
+export { GmailIcon } from "./GmailIcon"
+export { InstagramIcon } from './InstagramIcon'
+export { ArrowIcon } from './ArrowIcon'

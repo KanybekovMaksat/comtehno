@@ -1,84 +1,83 @@
-import { AppBar, FormControl, InputLabel, MenuItem, Select, Toolbar, Typography } from "@mui/material";
+import { 
+  AppBar, 
+  Drawer, 
+  IconButton, 
+  List, 
+  ListItem, 
+  ListItemText, 
+  Stack, 
+  Toolbar, 
+  useMediaQuery, 
+  useTheme 
+} from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { pathKeys } from "~shared/lib/react-router";
+import MenuIcon from "@mui/icons-material/Menu";
 
-export const Navigate = () => {
-  const [selected, setSelected] = useState<object>({
-    college: "",
-    specialties: "",
-  });
+interface linkItem {
+  title: string;
+  url: string;
+}
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown, name: string }>) => {
-    const name = event.target.name as string;
-    const value = event.target.value as string;
+export const Navigate: React.FC = () => {
+  const listLink: linkItem[] = [
+    { title: "Приёмная комиссия 2025", url: "/error" },
+    { title: "О колледже", url: "/error" },
+    { title: "Специальности", url: "/speciality" },
+    { title: "Абитуриентам", url: "/error" },
+    { title: "Новости", url: "/news" },
+    { title: "Мероприятия", url: "/error" },
+    { title: "Подобрать программу", url: "/error" },
+    { title: "Расписание", url: "/error" },
+    { title: "Студентам", url: "/error" },
+    { title: "Отзывы", url: "/error" },
+  ];
 
-    setSelected((prevSelected) => {
-      return {
-        ...prevSelected,
-        [name]: value,
-      }
-    });
-  }
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const listLink = [
-    {
-      title: "Новости",
-      url: "/news"
-    },
-    {
-      title: "Мероприятия",
-      url: "/error"
-    },
-    {
-      title: "Профориентация",
-      url: "/error"
-    },
-    {
-      title: "Расписание",
-      url: "/error"
-    }
-  ]
+  const [open, setOpen] = useState<boolean>(false);
 
-  return <AppBar position="static" className="bg-white shadow-none font-medium px-6 md:px-20 ">
-    <Toolbar className="flex items-center justify-between">
-      <Typography fontSize={22} className="text-[#0F766E] font-bold" variant="subtitle1">КОМТЕХНО</Typography>
-      <div className="flex items-center gap-4">
-        <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel className="text-sm" id="demo-simple-select-label">Колледж</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={selected.college}
-            onChange={handleChange}
-            label="Age"
-            name="college"
-            variant="standard"
-          >
-            <MenuItem value={"Comtehno"}>Comtehno</MenuItem>
-            <MenuItem value={"Cite"}>Cite</MenuItem>
-            <MenuItem value={"Intuit"}>Intuit</MenuItem>
-          </Select>
-        </FormControl>
-        <FormControl className="" sx={{ minWidth: 120 }}>
-          <InputLabel className="text-sm" id="demo-simple-select-label">Специальности</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={selected.specialties}
-            onChange={handleChange}
-            label="Age"
-            name="specialties"
-            variant="standard"
-          >
-            <MenuItem value={"Comtehno"}>Comtehno</MenuItem>
-            <MenuItem value={"Cite"}>Cite</MenuItem>
-            <MenuItem value={"Intuit"}>Intuit</MenuItem>
-          </Select>
-        </FormControl>
-        {listLink.map((item, index) => (
-          <Link to={item.url} key={index} className="text-[#0F766E] font-light">{item.title}</Link>
-        ))}
-      </div>
-    </Toolbar>
-  </AppBar>;
+  // Функция управления Drawer
+  const toggleDrawer = (state: boolean) => () => {
+    setOpen(state);
+  };
+
+  return (
+    <AppBar position="static" className="bg-white shadow-none">
+      <Toolbar className="flex items-center justify-between px-0 py-2">
+        <Stack sx={{justifyContent: isMobile && "space-between"}} direction="row" flexWrap="wrap" className="gap-2 items-center w-full">
+          <Link to={pathKeys.home()} className="font-[Geologica] text-[#0F766E] font-bold text-2xl">КОМТЕХНО</Link>
+          {isMobile ? (
+            <>
+              <IconButton edge="start" color="inherit" onClick={toggleDrawer(true)}>
+                <MenuIcon className="text-black" />
+              </IconButton>
+              <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+                <List className="w-64">
+                  {listLink.map((item: linkItem, index: number) => (
+                    <ListItem key={index} onClick={toggleDrawer(false)}>
+                      <Link to={item.url} className="text-black w-full block p-2">
+                        <ListItemText primary={item.title} />
+                      </Link>
+                    </ListItem>
+                  ))}
+                </List>
+              </Drawer>
+            </>
+          ) : (
+            listLink.map((item: linkItem, index: number) => (
+              <Link 
+                to={item.url}
+                key={index} 
+                className="font-[Geologica] hover:bg-[#0D9488] hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full">
+                  {item.title}
+              </Link>
+            ))
+          )}
+        </Stack>
+      </Toolbar>
+    </AppBar>
+  );
 };
