@@ -1,3 +1,11 @@
+export { VueJsIcon } from "./vueIcon";
+export { MiroIcon } from "./miroIcon";
+export { CssIcon } from "./cssIcon";
+export { ReactIcon } from "./reactIcon";
+export { NodeJsIcon } from "./nodeIcon";
+export { HtmlIcon } from "./htmlIcon";
+export { JSIcon } from "./jsIcon";
+
 export { MakalaBoxIcon } from "./makalaBoxIcon";
 export { DirectoryIcon } from "./directoryIcon";
 export { HomeIcon } from "./homeIcon";

@@ -1,0 +1,1 @@
+import {PriceTag} from "./priceTag.ui"

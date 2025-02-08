@@ -22,12 +22,6 @@
   transition-delay: 0s;
 }
 
-/* teachersSlider */
-.css-1fzpoyk{
-  opacity: 1 !important;
-}
-
-
 .swiper-pagination {
   position: absolute;
   left: 0px !important;
@@ -52,4 +46,9 @@
 /* Выделение активного элемента */
 .custom-bullet.swiper-pagination-bullet-active {
   opacity: 1;
+}
+
+/* teachersSlider */
+.css-1fzpoyk{
+  opacity: 1 !important;
 }

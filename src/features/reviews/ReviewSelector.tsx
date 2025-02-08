@@ -21,7 +21,7 @@ export const ReviewSelector: React.FC<ReviewSelectorProps> = ({
       }}
       variant="scrollable"
       scrollButtons="auto"
-      className="mb-6 border-b border-gray-300 w-[85vw]"
+      className="container mb-6 border-b border-gray-300 w-[85vw]"
     >
       {reviews.map((review, index) => (
         <Tab

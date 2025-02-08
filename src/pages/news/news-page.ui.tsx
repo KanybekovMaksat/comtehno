@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
-import { newsQueries, newsTypes } from '~entities/news'
-import { pathKeys } from '~shared/lib/react-router'
+import { newsQueries } from '~entities/news'
 import { formatDate } from '~shared/ui/date'
 import { Sidebar } from '~shared/ui/sidebar'
 
