@@ -1,8 +1,5 @@
 import { Container } from "@mui/material";
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from "@mui/icons-material/Instagram";
-import EmailIcon from "@mui/icons-material/Email";
-import { ArrowIcon } from "~shared/assets/icons";
+import { CourseInfoContact } from "~entities/courseInfoContact/courseInfoContact";
 
 export const CourseInfo: React.FC = () => {
   return (
@@ -67,33 +64,11 @@ export const CourseInfo: React.FC = () => {
                     </ul>
                 </div>
             </div>
-            <div className="r-md:w-full w-[40%] p-6 bg-[#0D9488] rounded-2xl flex flex-col justify-between">
+            <div className="r-md:w-full w-[40%] r-lg:p-4 p-6 bg-[#0D9488] rounded-2xl flex flex-col justify-between">
                 <h1 className="text-white r-sm:text-2xl r-lg:text-3xl text-[44px]">
                     Хотите поступить? Свяжитесь с нами
                 </h1>
-                <div className="flex flex-col gap-6 r-md:mt-8">
-                    <a href="tel:+996707379957" className="flex justify-between items-center bg-white text-teal-700 r-sm:p-4 p-6 rounded-xl">
-                        <div>
-                            <WhatsAppIcon className="text-green r-lg:text-2xl text-4xl"/>
-                            <span className="pl-2 r-sm:text-sm r-lg:text-base text-[22px]">+996 707 379 957</span>
-                        </div>
-                        <ArrowIcon />
-                    </a>
-                    <a href="https://instagram.com/comtehno.kg" className="flex justify-between items-center bg-white text-teal-700 r-sm:p-4 p-6 rounded-xl">
-                        <div>
-                            <InstagramIcon className="r-lg:text-2xl text-4xl" />
-                            <span className="pl-2 r-sm:text-sm r-lg:text-base text-[22px]">comtehno.kg</span>
-                        </div>
-                        <ArrowIcon />
-                    </a>
-                    <a href="mailto:comtehno.kg@gmail.com" className="flex justify-between items-center bg-white text-teal-700 r-sm:p-4 p-6 rounded-xl">
-                        <div>
-                            <EmailIcon className="r-lg:text-2xl text-4xl" />
-                            <span className="pl-2 r-sm:text-sm r-lg:text-base text-[22px]">comtehno.kg@gmail.com</span>
-                        </div>
-                        <ArrowIcon />
-                    </a>
-                </div>
+                <CourseInfoContact />
             </div>
         </div>
     </Container>
