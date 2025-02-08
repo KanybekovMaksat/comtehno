@@ -3,7 +3,7 @@ import { AboutPageCards } from "./infoCards";
 
 export const Hero = () => {
   return (
-    <div className="rounded-xl mb-[150px] flex flex-col gap-16">
+    <div className="rounded-xl mb-[150px] r-md:mb-8 flex flex-col gap-16">
       <img
         src="https://s3-alpha-sig.figma.com/img/62af/3f67/a8359c9b0a95a9bbe5fbfbd5c3580bda?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=EeP5C56cb~SzznVtEIBTD-qM~o6ELds3xBRPUJHS3qEI8k82q-FwS9bg20W~FSxy~QiukjHwnLCFiDzOLlscNlkueBPGorUGNeNIXBG3Y3hAAk9vTOV9SIh7KCmkANlNYseHyKi0sydtKsk5YBZeEL4YTW~FQuTW0rudFvxlCGk5CzgpOc7-CgwtizT1mRLF4SKRidvI2hd97~t3vT~f~mUYMhQFlKhBa8GRbnXKarbBkVLeDKnWzpYeJavOBBr1x4XVuYams5qsEbd3aGj7WXiYeLGZgws0EXhPTo6uNJUVzNgmWyq8MVctaDkwKuXnxacAAndw7ZLg5P0Ue4VoJQ__"
         alt="Комтехно"
