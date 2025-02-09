@@ -21,7 +21,7 @@ export const pathKeys = {
     return pathKeys.root.concat('dashboard/')
   },
   error() {
-    return pathKeys.root.concat('error/')
+    return pathKeys.root.concat('*')
   },
   course: {
     root() {
