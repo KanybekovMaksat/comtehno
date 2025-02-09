@@ -15,13 +15,13 @@ export const Footer: React.FC = () => {
         <img className="mb-[40px]" src={LogoFooter} alt="Logo" />
         <div className="footer_category flex-wrap flex justify-between">
             <AddressSection />
-            <div className="flex flex-wrap gap-[24px]">
+            <div className="flex r-md:hidden block flex-wrap gap-[24px]">
             <LinksSection title="Колледж" links={['О нас', 'Новости', 'Мероприятия', 'Отзывы']} />
             <LinksSection title="Полезные ссылки" links={['Makalabox', 'Профориентация', 'Расписание', 'Библиотека']} />
             <SpecialtiesSection />
             </div>
         </div>
-        <div className="sm:hidden block">
+        <div className="r-md:block hidden ">
             <AccordionUsage />
         </div>
         </div>

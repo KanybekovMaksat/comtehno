@@ -17,7 +17,7 @@ export const FooterSmal: React.FC = () => {
   return (
     <footer className='pt-[40px] pb-[40px]'>
     <div className="container flex flex-wrap justify-between">
-      <div className='flex flex-col w-full max-w-[576px] sm:flex-row mb-[24px] gap-[10px] sm:gap-[24px]'>
+      <div className='flex flex-row w-full max-w-[576px] r-md:flex-col mb-[24px] gap-[10px] sm:gap-[24px]'>
         {contactsFooter.map(({ icon, text, href }: contactsFooterProps, index: number) => (
           <a key={index} className='flex gap-[4px]' href={href} target="_blank" rel="noopener noreferrer">
             {icon}
