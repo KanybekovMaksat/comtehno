@@ -11,10 +11,9 @@ import { newsPageRoute } from "~pages/news";
 import { GenericLayout } from "~app/layout";
 
 import { reviewsPageRoute } from "~pages/reviewPage";
-import { specialityPageRoute } from "~pages/speciality";
 import { EventPageRoute } from "~pages/event";
 import { EventDetailsPageRoute } from "~pages/EventDetailPage";
-import { pathKeys } from "~shared/lib/react-router";
+import { specialityPageRoute } from "~pages/speciality";
 
 function BubbleError() {
   const error = useRouteError();
@@ -42,11 +41,8 @@ const router = createBrowserRouter([
       errorPageRoute,
       newsPageRoute,
       specialityPageRoute,
-
       EventPageRoute,
-
       EventDetailsPageRoute,
-
       reviewsPageRoute,
     ],
   },

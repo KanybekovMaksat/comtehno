@@ -147,8 +147,9 @@ export const CardSwiper: React.FC = () => {
       { opacity: 1, scale: 1, duration: 0.1 }
     );
   }, [activeIndex]);
+
   return (
-    <Container className="max-w-[1440px]">
+    <Container className="max-w-[1440px] mb-36">
       <Box className="text-center">
         <Typography variant="h2" className="text-[44px] font-light">
           Наши преподаватели
@@ -161,7 +162,7 @@ export const CardSwiper: React.FC = () => {
           люди, которые вдохновляют учиться и развиваться
         </Typography>
 
-        <Box className="flex  justify-center gap-x-[90px]">
+        <Box className="flex justify-center gap-x-[90px]">
           <Box className="w-[464px] text-left   ">
             <Box className=" max-w-[40px] rounded-[8px] p-[8px] bg-[#18181B] m-auto">
               <img src={quote} alt="quote" className="w-[24px] h-[24px] " />

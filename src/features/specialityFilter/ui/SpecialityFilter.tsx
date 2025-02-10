@@ -1,4 +1,4 @@
-import {  Button, Stack, Typography, useMediaQuery } from "@mui/material";
+import {  Button, CircularProgress, Stack, Typography, useMediaQuery } from "@mui/material";
 
 import LanguageIcon from '@mui/icons-material/Language';
 import BrushIcon from '@mui/icons-material/Brush';
@@ -36,7 +36,7 @@ export const SpecialityFilter: React.FC = () => {
   // const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
 
   if (isLoading) {
-    return <Typography variant="h1">Loading...</Typography>
+    return <CircularProgress />
   }
 
   if (isError) {
