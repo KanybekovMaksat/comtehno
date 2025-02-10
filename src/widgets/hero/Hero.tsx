@@ -12,7 +12,7 @@ export function Hero() {
     >
       <Container className="max-w-[1440px]">
         <div>
-          <Typography variant="h3" className="mb-16 text-white font-geologica text-[120px] font-[600] text-center">
+          <Typography variant="h3" className="mb-16 text-white r-md:text-[50px] r-md:font-[500] font-geologica text-[120px] font-[600] text-center">
             Подберите Программу обучения за 5 минут
           </Typography>
           <div className="flex align-center justify-center">
