@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 interface ApiItem {
   id: number;
@@ -20,20 +21,16 @@ const Carusel: React.FC = () => {
     <div className="w-full overflow-hidden my-10">
       <Marquee 
         direction="left" 
-        speed={150} 
+        speed={100} 
         className="mb-3 overflow-x-none">
         <div className="flex items-center gap-4 ml-4">
           {caruselist.map((carusel: ApiItem) => (
             <div
               key={carusel.id}
-              className="w-[400px] h-[98px] bg-white/10 backdrop-blur-xl text-white font-geologica flex items-center justify-center rounded-2xl px-4"
+              className="w-[400px] pt-[40px] h-[150px] bg-[url('https://i.pinimg.com/736x/8d/9d/41/8d9d4126465173e64f3f8745cc8cbb07.jpg')] bg-cover text-white font-geologica flex flex-col rounded-2xl px-4"
             >
-              <h3 className="w-[170px] text-[19px] font-normal">{carusel.banner}</h3>
-              <img
-                className="w-[146px] h-[82px] rounded-lg"
-                src="https://s3-alpha-sig.figma.com/img/2e02/8952/1b5573a9f7c718850f076dce7766cd1b?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=a4Ge8kthLPwXTGKuw-iPdTbPs90GpaxSiksDw9GNv9so-d2hhgqS1VO4wGalwwbKQeJcAWAjfrEjtnM5wI5ZQ6za8OHHuZyJTeRbDyGUaACJ2eGU3qdBHAme3EC1VHMpissRL6wJdML1GQRM1ie8hTFPhOhkbszj1HSdRItKyQLwqbijUuRyIL7Q5QOkSeAE-EHxxtWxnbdYPgfCe6qM0hCOh3yTa5P8fbFncy~deZvRAlP3TB2p~eTc1p~XEtO9WBSC0xuYFtdwLpFRdFbychT0u~Ur2YrJrHVV-fMo7QfG7lSSxe6PpdQ1PpPsl9zBk~XQjGp80MhrGVMK1z1I3g__"
-                alt="Баннер"
-              />
+              <h3 className="w-[90%] text-[19px] font-normal">{carusel.banner}</h3>
+              <Link className="border" to="/mission">Миссия</Link>
             </div>
           ))}
         </div>

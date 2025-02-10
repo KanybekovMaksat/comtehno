@@ -22,16 +22,16 @@ interface linkItem {
 
 export const Navigate: React.FC = () => {
   const listLink: linkItem[] = [
-    { title: "Приёмная комиссия 2025", url: "/error" },
+    // { title: "Приёмная комиссия 2025", url: "/error" },
     { title: "О колледже", url: "/about" },
     { title: "Специальности", url: "/speciality" },
     { title: "Абитуриентам", url: "/error" },
-    { title: "Новости", url: "/news" },
-    { title: "Мероприятия", url: "/error" },
-    { title: "Подобрать программу", url: "/error" },
+    // { title: "Новости", url: "/news" },
+    // { title: "Мероприятия", url: "/error" },
+    // { title: "Подобрать программу", url: "/error" },
     { title: "Расписание", url: "/error" },
     { title: "Студентам", url: "/error" },
-    { title: "Отзывы", url: "/error" },
+    // { title: "Отзывы", url: "/error" },
   ];
 
   const theme = useTheme();
