@@ -6,11 +6,13 @@ import { Resume } from "~widgets/resume/Resume-ui";
 import { PriceTag } from "~widgets/priceTag/priceTag.ui";
 
 export const SpecialityPage: React.FC = () => {
-  return <Container className="max-w-[1440px] container">
-    <SpecialHero />
-    <TrainingProgram />
-    <ProjectsGrid/>
-    <Resume/>
-    <PriceTag/>
-  </Container>;
+  return (
+    <Container className="max-w-[1440px] container">
+      <SpecialHero />
+      <TrainingProgram />
+      <ProjectsGrid />
+      <Resume />
+      <PriceTag />
+    </Container>
+  );
 };
