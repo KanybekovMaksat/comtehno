@@ -16,6 +16,8 @@ export const SpecialCard: React.FC = (props: specialCardProps) => {
       <Typography variant="caption">{specialty}</Typography>
       <img className="absolute top-[-18px] right-[-20px]" src={previewPhoto} alt="" />
     </Box>
-    <Link to={pathKeys.speciality.bySlug(slug)} className="w-full hover:bg-[#096059] py-3 bg-[#0D9488] text-white rounded-xl normal-case">Поступить</Link>
+    <Link to={pathKeys.speciality.bySlug(slug)}>
+      <div className="w-full text-center hover:bg-[#096059] py-3 bg-[#0D9488] text-white rounded-xl normal-case">Поступить</div>
+    </Link>
   </Card>;
 };
