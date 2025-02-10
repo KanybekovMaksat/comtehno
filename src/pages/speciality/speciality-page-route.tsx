@@ -4,4 +4,4 @@ import { SpecialityPage } from "./speciality-ui";
 export const specialityPageRoute: RouteObject = {
   path: 'speciality/:slug',
   element: <SpecialityPage />
-}
+} 

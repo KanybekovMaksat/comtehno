@@ -1,1 +1,1 @@
-export { pathKeys } from './config.ts';
+export { pathKeys } from "./config.ts";
