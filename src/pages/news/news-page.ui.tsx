@@ -2,7 +2,10 @@ import { Box, Typography } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { newsQueries } from '~entities/news'
 import { formatDate } from '~shared/ui/date'
-import { Sidebar } from '~shared/ui/sidebar'
+import { Sidebar } from '~features/sidebar'
+import { BackButton } from '~shared/ui/back'
+import { CalendarMonth, Place } from '@mui/icons-material'
+import { RecomendationList } from '~widgets/recomendation-list'
 
 export const NewsPage = () => {
   const { slug } = useParams()
@@ -12,9 +15,6 @@ export const NewsPage = () => {
     isError: newsError,
   } = newsQueries.useGetNewsDetail(slug)
   const { data: newsListData, isLoading, isError } = newsQueries.useGetNews()
-  console.log(slug)
-
-  console.log(newsData)
 
   if (newsLoading || isLoading) {
     return <div>Загрузка</div>
@@ -23,29 +23,50 @@ export const NewsPage = () => {
     return <div>Ошибка при получении данных</div>
   }
   return (
-    <Box className="grid grid-cols-[1fr_464px] container">
-      <Box>
-        <Box className="flex items-center gap-[8px]">
-          <Typography variant="subtitle2">
-            {formatDate(newsData.data.createdAt)}
-          </Typography>
-          <Typography className="uppercase" variant="h6">
-            {newsData.data.category.name}
-          </Typography>
+    <Box className="relative w-full container pb-20">
+      <BackButton></BackButton>
+      <Box className="grid grid-cols-[1fr_464px] ">
+        <Box>
+          <Box className="flex items-center gap-[8px]">
+            <Typography variant="subtitle2">
+              {formatDate(newsData.data.createdAt)}
+            </Typography>
+            <Typography className="uppercase" variant="h6">
+              {newsData.data.category.name}
+            </Typography>
+          </Box>
+          <Typography variant="h2">{newsData.data.title}</Typography>
+          <Box
+            component={'img'}
+            src={newsData.data.photo}
+            alt={newsData.data.title}
+          ></Box>
+          <Box className="flex items-center gap-x-[16px] my-5 w-full  r-sm:grid r-sm:gap-4">
+            <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
+              <CalendarMonth className="w-[24px] h-[24px]"></CalendarMonth>
+              {formatDate(newsData.data.createdAt)}
+            </span>
+            <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
+              <Place></Place>
+              Анкара 1/17
+              {/* <CalendarMonth></CalendarMonth> */}
+              {/* <img src={location} alt="" /> {event.location} */}
+            </span>
+          </Box>
+          <div
+            dangerouslySetInnerHTML={{ __html: newsData.data.content }}
+          ></div>
         </Box>
-        <Typography variant="h2">{newsData.data.title}</Typography>
-        <Box
-          component={'img'}
-          src={newsData.data.photo}
-          alt={newsData.data.title}
-        ></Box>
-        <div dangerouslySetInnerHTML={{ __html: newsData.data.content }}></div>
+        <Sidebar
+          data={newsListData.data}
+          title={'Новости'}
+          pathKey={'news'}
+        ></Sidebar>
       </Box>
-      <Sidebar
-        data={newsListData.data}
-        title={'Новости'}
-        pathKey={'news'}
-      ></Sidebar>
+      <Box>
+        <Typography variant="h4">Вам может понравиться</Typography>
+        <RecomendationList data={newsListData.data}></RecomendationList>
+      </Box>
     </Box>
   )
 }
