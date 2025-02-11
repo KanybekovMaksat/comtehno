@@ -1,3 +1,5 @@
+export { ProjectsGrid } from "./projectCards";
+export { SpecialHero } from "./specialHero";
 export { TrainingProgram } from "./trainingProgram";
 export { Footer } from "./footer";
 export { Startup } from "./startup";

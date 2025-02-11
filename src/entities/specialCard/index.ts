@@ -1,1 +1,0 @@
-export { SpecialCard } from "./ui/specialCard";

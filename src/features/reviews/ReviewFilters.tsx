@@ -8,9 +8,9 @@ export const ReviewFilters: React.FC = () => {
   const [role, setRole] = useState<string>("frontend");
 
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center mb-6 gap-4 w-full sm:max-w-[85vw] min-w-0">
+    <div className="flex r-md:flex-col justify-center container items-center mb-6 gap-4 w-full sm:max-w-[85vw] min-w-0">
       <Accordion
-        className="w-full sm:max-w-[300px] rounded-full text-[16px] sm:text-[19px] bg-[#F4F4F5] shadow-md relative"
+        className="w-[300px]  r-md:w-full rounded-full text-[16px] sm:text-[19px] bg-[#F4F4F5] shadow-md relative"
         sx={{
           "&::before": { display: "none" },
           "&.Mui-expanded": { margin: "0" },
@@ -39,7 +39,7 @@ export const ReviewFilters: React.FC = () => {
         </AccordionDetails>
       </Accordion>
 
-      <div className="relative bg-[#F4F4F5] rounded-full p-1 flex shadow-md w-full sm:w-auto min-w-[200px]">
+      <div className="relative bg-[#F4F4F5] rounded-full p-1 flex shadow-md  sm:w-auto w-[350px] r-md:w-full">
         <div
           className="absolute bg-white rounded-full transition-all duration-300 ease-in-out"
           style={{

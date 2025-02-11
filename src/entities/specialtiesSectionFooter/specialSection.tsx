@@ -27,7 +27,7 @@ const SpecialtiesSection: React.FC = () => {
   const columns = chunkArray(specialties, Math.ceil(specialties.length / 2));
 
   return (
-    <div className="sm:block hidden">
+    <div className="block">
       <h2 className="mb-[16px] text-[15px] md:text-[19px] font-[400] leading-[23.75px] text-[#18181B]">
         Специальности
       </h2>

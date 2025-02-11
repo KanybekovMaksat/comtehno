@@ -3,14 +3,16 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom'
-import { GenericLayout } from '~app/layout'
 
 import { aboutPageRoute } from '~pages/about'
 import { errorPageRoute } from '~pages/error'
 import { homePageRoute } from '~pages/home'
 import { newsPageRoute } from '~pages/news'
+import { GenericLayout } from '~app/layout'
 
 import { reviewsPageRoute } from '~pages/reviewPage'
+import { EventPageRoute } from '~pages/event'
+import { EventDetailsPageRoute } from '~pages/EventDetailPage'
 import { specialityPageRoute } from '~pages/speciality'
 
 function BubbleError() {
@@ -39,6 +41,8 @@ const router = createBrowserRouter([
       errorPageRoute,
       newsPageRoute,
       specialityPageRoute,
+      EventPageRoute,
+      EventDetailsPageRoute,
       reviewsPageRoute,
     ],
   },

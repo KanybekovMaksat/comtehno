@@ -1,10 +1,18 @@
-import { CalendarMonth } from "@mui/icons-material";
-import { Container, Stack, Typography } from "@mui/material";
+import { Container } from "@mui/material";
+import { SpecialHero } from "~widgets/specialHero";
 import { TrainingProgram } from "~widgets/trainingProgram";
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import { ProjectsGrid } from "~widgets/projectCards";
+import { Resume } from "~widgets/resume/Resume-ui";
+import { PriceTag } from "~widgets/priceTag/priceTag.ui";
 
 export const SpecialityPage: React.FC = () => {
-  return <Container className="max-w-[1440px]">
-    <TrainingProgram />
-  </Container>;
+  return (
+    <Container className="max-w-[1440px] container">
+      <SpecialHero />
+      <TrainingProgram />
+      <ProjectsGrid />
+      <Resume />
+      <PriceTag />
+    </Container>
+  );
 };

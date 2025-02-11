@@ -3,8 +3,13 @@ export const pathKeys = {
   home() {
     return pathKeys.root
   },
-  speciality() {
-    return pathKeys.root.concat('speciality/')
+  speciality: {
+    root() {
+      return pathKeys.root.concat('speciality/')
+    },
+    bySlug(slug: string) {
+      return pathKeys.speciality.root().concat(`${slug}/`)
+    },
   },
   reviews() {
     return pathKeys.root.concat('reviews/')
@@ -16,7 +21,15 @@ export const pathKeys = {
     return pathKeys.root.concat('dashboard/')
   },
   error() {
-    return pathKeys.root.concat('error/')
+    return pathKeys.root.concat('*')
+  },
+  event: {
+    root() {
+      return pathKeys.root.concat('event/')
+    },
+    bySlug(slug: string) {
+      return pathKeys.event.root().concat(`${slug}`)
+    },
   },
   course: {
     root() {

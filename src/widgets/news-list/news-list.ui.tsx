@@ -52,7 +52,7 @@ export const NewsList = () => {
 
   return (
     <section>
-      <div className="container">
+      <div className="container mb-36">
         <Typography variant="h2">Новости</Typography>
         <Box className="flex gap-2 mt-5">
           <Box

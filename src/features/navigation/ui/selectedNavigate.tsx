@@ -3,17 +3,17 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CodeOffIcon from '@mui/icons-material/CodeOff';
 import { Box } from '@mui/material';
 
-import CodeOffIcon from '@mui/icons-material/CodeOff';
+interface SpecialDate {
+  icon: JSX.Element;
+  direction: string;
+  title: string;
+  body: string;
+}
 
 export const SelectedNavigate: React.FC = (titleSelected: string) => {  
-  interface SpecialDate {
-    icon: JSX.Element;
-    direction: string;
-    title: string;
-    body: string;
-  }
 
   const specialDateList: SpecialDate[] = [
     {
