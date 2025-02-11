@@ -27,7 +27,7 @@ export const Navigate: React.FC = () => {
     // { title: "Специальности", url: "/speciality" },
     { title: "Абитуриентам", url: "/error" },
     // { title: "Новости", url: "/news" },
-    // { title: "Мероприятия", url: "/event" },
+    { title: "Мероприятия", url: "/event" },
     { title: "Подобрать программу", url: "/error" },
     { title: "Расписание", url: "/error" },
     { title: "Студентам", url: "/error" },
