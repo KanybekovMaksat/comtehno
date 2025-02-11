@@ -7,7 +7,7 @@ import {
 import { aboutPageRoute } from '~pages/about'
 import { errorPageRoute } from '~pages/error'
 import { homePageRoute } from '~pages/home'
-import { newsPageRoute } from '~pages/news'
+import { newsDetailsPageRoute, newsPageRoute } from '~pages/news'
 import { GenericLayout } from '~app/layout'
 
 import { reviewsPageRoute } from '~pages/reviewPage'
@@ -39,11 +39,12 @@ const router = createBrowserRouter([
       homePageRoute,
       aboutPageRoute,
       errorPageRoute,
-      newsPageRoute,
+      newsDetailsPageRoute,
       specialityPageRoute,
       EventPageRoute,
       EventDetailsPageRoute,
       reviewsPageRoute,
+      newsPageRoute,
     ],
   },
 ])

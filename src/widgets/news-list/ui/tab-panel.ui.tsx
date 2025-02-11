@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Button, IconButton } from '@mui/material'
 import { newsTypes } from '~entities/news'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -7,6 +7,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { formatDate } from '~shared/ui/date'
 import { pathKeys } from '~shared/lib/react-router'
+import { useRef } from 'react'
+import { KeyboardArrowUp, KeyboardArrowDown } from '@mui/icons-material'
 
 interface TabPanelProps {
   index: number
@@ -14,6 +16,7 @@ interface TabPanelProps {
   data: newsTypes.News[]
   month: string
 }
+
 const filterNewsByMonth = (newsList: newsTypes.News[], month: string) => {
   return newsList.filter((news) => {
     const newsDate = new Date(news.createdAt)
@@ -23,6 +26,7 @@ const filterNewsByMonth = (newsList: newsTypes.News[], month: string) => {
 
 export function TabPanel(props: TabPanelProps) {
   const { value, index, data, month } = props
+  const swiperRef = useRef<any>(null)
 
   return (
     <div
@@ -34,6 +38,7 @@ export function TabPanel(props: TabPanelProps) {
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Swiper
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
             direction="vertical"
             pagination={{
               clickable: true,
@@ -43,30 +48,56 @@ export function TabPanel(props: TabPanelProps) {
             }}
             modules={[Pagination]}
             slidesPerView={4}
-            className="h-[400px] relative pl-4 cursor-pointer"
+            className="h-[350px] relative pl-4 cursor-pointer"
           >
-            {filterNewsByMonth(data, month).map(
-              (news: newsTypes.News, i: number) => (
-                <SwiperSlide className="flex flex-col" key={news.slug}>
-                  <Link to={pathKeys.news.bySlug(news.slug)}>
-                    <Typography variant="h6">
-                      {news.title.length > 25
-                        ? news.title.slice(0, 25) + '…'
-                        : news.title}
+            {filterNewsByMonth(data, month).map((news) => (
+              <SwiperSlide className="flex flex-col" key={news.slug}>
+                <Link to={pathKeys.news.bySlug(news.slug)}>
+                  <Typography variant="h6">
+                    {news.title.length > 25
+                      ? news.title.slice(0, 25) + '…'
+                      : news.title}
+                  </Typography>
+                  <Box className="flex items-center">
+                    <Typography className="border-r-2 border-gray-300 pr-2">
+                      {formatDate(news.createdAt)}
                     </Typography>
-                    <Box className="flex items-center">
-                      <Typography className="border-r-2 border-gray-300 pr-2">
-                        {formatDate(news.createdAt)}
-                      </Typography>
-                      <Typography className="pl-2">
-                        {news.category.name}
-                      </Typography>
-                    </Box>
-                  </Link>
-                </SwiperSlide>
-              )
-            )}
+                    <Typography className="pl-2">
+                      {news.category.name}
+                    </Typography>
+                  </Box>
+                </Link>
+              </SwiperSlide>
+            ))}
           </Swiper>
+
+          {/* Контейнер для кнопок */}
+          <Box className="flex items-center mt-4 gap-5">
+            <Link to={`${pathKeys.news.root()}`}>
+              <Button
+                variant="outlined"
+                className=" border-black border-opacity-50 text-black lowercase"
+              >
+                Все новости
+              </Button>
+            </Link>
+            <Box className="flex items-center">
+              <IconButton
+                className="text-black"
+                onClick={() => swiperRef.current?.slidePrev()}
+                sx={{ mt: 1 }}
+              >
+                <KeyboardArrowUp></KeyboardArrowUp>
+              </IconButton>
+              <IconButton
+                className="text-black border"
+                onClick={() => swiperRef.current?.slideNext()}
+                sx={{ mt: 1 }}
+              >
+                <KeyboardArrowDown></KeyboardArrowDown>
+              </IconButton>
+            </Box>
+          </Box>
         </Box>
       )}
     </div>

@@ -1,16 +1,16 @@
-import { Container, useMediaQuery } from "@mui/material";
-import { Navigate } from "~features/navigation";
-import { Network } from "~features/networking";
-import { useTheme } from "@mui/material/styles";
+import { Container, useMediaQuery } from '@mui/material'
+import { Navigate } from '~features/navigation'
+import { Network } from '~features/networking'
+import { useTheme } from '@mui/material/styles'
 
 export const Header: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Container className="max-w-[1440px]">
+    <Container className="max-w-[1440px] mb-10">
       {!isMobile && <Network />}
       <Navigate />
     </Container>
-  );
-};
+  )
+}
