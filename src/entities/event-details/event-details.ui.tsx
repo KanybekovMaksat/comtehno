@@ -1,22 +1,13 @@
-import { Typography, Box, Button } from "@mui/material";
-import calendar from "~widgets/eventSwiper/assets/icon/calendar.png";
-import location from "~widgets/eventSwiper/assets/icon/location.png";
-import { Event } from "~entities/eventSwiperCard";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import { useNavigate } from "react-router-dom";
+import { Typography, Box } from '@mui/material'
+import calendar from '~widgets/eventSwiper/assets/icon/calendar.png'
+import location from '~widgets/eventSwiper/assets/icon/location.png'
+import { Event } from '~entities/eventSwiperCard'
+import { BackButton } from '~shared/ui/back'
 
 export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
-  const navigate = useNavigate();
-
   return (
     <Box className="relative  w-full ">
-      <Button
-        onClick={() => navigate(-1)}
-        sx={{ position: "absolute", left: "-70px", top: "0px" }}
-        className="p-3 border rounded-xl border-[#E4E4E7] border-solid min-w-[0px]"
-      >
-        <KeyboardArrowLeftIcon className="text-black w-6 h-6" />
-      </Button>
+      <BackButton></BackButton>
 
       <Box className="flex items-center gap-x-[8px] ">
         <Typography
@@ -27,7 +18,7 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
         </Typography>
         <Typography
           className={`uppercase font-normal text-base ${
-            event.colorCategory || "text-black"
+            event.colorCategory || 'text-black'
           }`}
           variant="h5"
         >
@@ -43,9 +34,9 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
       </Typography>
 
       <img
-        src={event.image}
+        src={event.photo}
         alt={event.title}
-        style={{ borderRadius: 16, objectFit: "cover" }}
+        style={{ borderRadius: 16, objectFit: 'cover' }}
         className="w-full h-[467px] lg:w-full r-sm:h-[224px]"
       />
 
@@ -61,10 +52,10 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
 
       <Box
         sx={{
-          whiteSpace: "pre-line",
+          whiteSpace: 'pre-line',
           lineHeight: 1.6,
-          "& ul": { pl: 3, mb: 2 },
-          "& li": { mb: 1 },
+          '& ul': { pl: 3, mb: 2 },
+          '& li': { mb: 1 },
         }}
         className="font-light text-[20px]"
       >
@@ -94,5 +85,5 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
         </Typography>
       </Box>
     </Box>
-  );
-};
+  )
+}
