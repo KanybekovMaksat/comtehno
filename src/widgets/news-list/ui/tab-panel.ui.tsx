@@ -36,7 +36,7 @@ export function TabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box>
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             direction="vertical"
@@ -48,21 +48,21 @@ export function TabPanel(props: TabPanelProps) {
             }}
             modules={[Pagination]}
             slidesPerView={4}
-            className="h-[350px] relative pl-4 cursor-pointer"
+            className="h-[350px] relative pl-4 cursor-pointer r-sm:h-[550px]"
           >
             {filterNewsByMonth(data, month).map((news) => (
               <SwiperSlide className="flex flex-col" key={news.slug}>
                 <Link to={pathKeys.news.bySlug(news.slug)}>
-                  <Typography variant="h6">
+                  <Typography variant="h6" className="r-lg:text-center">
                     {news.title.length > 25
                       ? news.title.slice(0, 25) + '…'
                       : news.title}
                   </Typography>
                   <Box className="flex items-center">
-                    <Typography className="border-r-2 border-gray-300 pr-2">
+                    <Typography className="border-r-2 border-gray-300 pr-2 r-lg:text-right">
                       {formatDate(news.createdAt)}
                     </Typography>
-                    <Typography className="pl-2">
+                    <Typography className="pl-2 r-lg:text-left">
                       {news.category.name}
                     </Typography>
                   </Box>
@@ -72,7 +72,7 @@ export function TabPanel(props: TabPanelProps) {
           </Swiper>
 
           {/* Контейнер для кнопок */}
-          <Box className="flex items-center mt-4 gap-5">
+          <Box className="flex items-center mt-4 gap-5 r-lg:flex-col-reverse">
             <Link to={`${pathKeys.news.root()}`}>
               <Button
                 variant="outlined"
