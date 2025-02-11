@@ -3,19 +3,15 @@ import {
   createBrowserRouter,
   useRouteError,
 } from 'react-router-dom'
+import { GenericLayout } from '~app/layout'
 
 import { aboutPageRoute } from '~pages/about'
 import { errorPageRoute } from '~pages/error'
 import { homePageRoute } from '~pages/home'
-import { GenericLayout } from '~pages/layout'
 import { newsPageRoute } from '~pages/news'
-import { GenericLayout } from '~app/layout';
 
-import { aboutPageRoute } from '~pages/about';
-import { errorPageRoute } from '~pages/error';
-import { homePageRoute } from '~pages/home';
-import { reviewsPageRoute } from '~pages/reviewPage';
-import { specialityPageRoute } from '~pages/speciality';
+import { reviewsPageRoute } from '~pages/reviewPage'
+import { specialityPageRoute } from '~pages/speciality'
 
 function BubbleError() {
   const error = useRouteError()

@@ -6,10 +6,10 @@ export const pathKeys = {
   speciality() {
     return pathKeys.root.concat('speciality/')
   },
-  reviews(){
+  reviews() {
     return pathKeys.root.concat('reviews/')
   },
-  about(){
+  about() {
     return pathKeys.root.concat('about/')
   },
   dashboard() {
@@ -35,4 +35,3 @@ export const pathKeys = {
     },
   },
 }
-};
