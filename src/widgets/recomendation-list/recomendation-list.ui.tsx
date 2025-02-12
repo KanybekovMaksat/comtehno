@@ -21,7 +21,7 @@ export const RecomendationList = ({ data }) => {
       {/* Кастомные кнопки */}
       <button
         ref={prevRef}
-        className={`absolute left-[45%] top-[350px] z-10 h-[48px] w-[48px] pl-[8px] 
+        className={`absolute left-[45%] top-[350px] z-10 h-[48px] w-[48px] pl-[8px] r-lg:left-[5%] r-lg:right-[5%] 
         bg-gray-200 rounded-full bg-[#F4F4F5] transition-opacity ${
           isBeginning ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
         }`}
@@ -65,6 +65,17 @@ export const RecomendationList = ({ data }) => {
         onSlideChange={(swiper) => {
           setIsBeginning(swiper.isBeginning)
           setIsEnd(swiper.isEnd)
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          768: {
+            slidesPerView: 2.5,
+          },
+          1024: {
+            slidesPerView: 3.5,
+          },
         }}
       >
         {data.map((item, index: number) => (

@@ -6,22 +6,21 @@ export const Sidebar = ({ data, pathKey, title }) => {
   const navigate = useNavigate()
 
   return (
-    <Box className="max-w-[464px]">
+    <Box className="max-w-[464px] r-lg:mt-10">
       <Typography
         variant="h3"
         className="mb-[8px] text-[#52525B] font-light text-[25px]"
       >
         {title}
       </Typography>
-      <Box className="flex flex-col gap-[24px]">
+      <Box className="flex flex-col gap-[24px] r-lg:flex-row r-lg:flex-wrap">
         {data.map((item) => (
           <Link key={item.slug} to={pathKeys[pathKey].bySlug(item.slug)}>
             <Box
-              key={item.id}
               onClick={() => navigate(`/item/${item.slug}`)}
               className="cursor-pointer"
             >
-              <Box className="flex  gap-x-[16px] items-start">
+              <Box className="flex  gap-x-[16px] items-start r-lg:flex-col">
                 <img
                   src={item.photo}
                   alt={item.title}

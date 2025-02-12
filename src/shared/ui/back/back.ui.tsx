@@ -7,7 +7,7 @@ export const BackButton = () => {
   return (
     <Button
       onClick={() => navigate(-1)}
-      className="p-3 border rounded-xl border-[#E4E4E7] border-solid min-w-[0px] absolute left-2"
+      className="p-3 border rounded-xl border-[#E4E4E7] border-solid min-w-[0px] absolute left-2 r-md:top-[-50px]"
     >
       <KeyboardArrowLeft className="text-black w-6 h-6" />
     </Button>

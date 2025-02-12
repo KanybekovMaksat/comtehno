@@ -54,10 +54,10 @@ export const NewsList = () => {
     <section>
       <div className="container mb-36">
         <Typography variant="h2">Новости</Typography>
-        <Box className="flex gap-2 mt-5">
+        <Box className="flex gap-2 mt-5 r-lg:flex-col">
           <Box
             sx={{ backgroundImage: `url(${bg})` }}
-            className="w-[952px] h-[456px] bg-cover rounded-[16px] flex justify-between items-end p-[24px]"
+            className="w-[952px] h-[456px] bg-cover rounded-[16px] flex justify-between items-end p-[24px] r-lg:w-full r-md:flex-col r-lg:bg-center"
           >
             <div className="bg-white w-[196px] h-[40px] flex items-center rounded-[12px] justify-center">
               <CalendarMonth />
@@ -68,7 +68,7 @@ export const NewsList = () => {
               <ArrowForwardIos className="w-[15px]" />
             </div>
           </Box>
-          <Box>
+          <Box className="r-lg:flex r-lg:flex-col r-lg:gap-3 items-center">
             <Box>
               <Tabs value={value} onChange={handleChange}>
                 <Tab label={prevMonth} {...a11yProps(0)} />

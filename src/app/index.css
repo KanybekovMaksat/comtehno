@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,11 +40,15 @@
   background-color: #10b981; /* Зеленый */
   opacity: 0.5;
   border-radius: 9999px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #10b981 !important; /* Оставляем зеленый цвет */
+  opacity: 1 !important; /* Делаем активную кнопку полностью видимой */
 }
 
 .swiper {
   width: 100%;
   height: 100%;
 }
-
