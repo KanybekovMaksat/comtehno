@@ -1,152 +1,152 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-cards";
-import { Container, Typography, Box } from "@mui/material";
-import { SwiperNavigationButtons } from "~shared/ui/SwiperNavigationButtons";
-import { useSpring, animated } from "@react-spring/web";
-import gsap from "gsap";
-import maks from "./assets/img/maksat.png";
-import danil from "./assets/img/danil.png";
-import ramzan from "./assets/img/ramzan.png";
-import quote from "./assets/icon/quote.png";
-import trophy from "./assets/icon/trophy.png";
-import ormon from "./assets/img/Ormon.png";
-import danya from "./assets/img/Даня.jpg";
-import Ahmed from "./assets/img/Ахмед.jpg";
-import Kuma from "./assets/img/Кума.png";
+import React, { useState, useRef, useEffect } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCards } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-cards'
+import { Container, Typography, Box } from '@mui/material'
+import { SwiperNavigationButtons } from '~shared/ui/SwiperNavigationButtons'
+import { useSpring, animated } from '@react-spring/web'
+import gsap from 'gsap'
+import maks from './assets/img/maksat.png'
+import danil from './assets/img/danil.png'
+import ramzan from './assets/img/ramzan.png'
+import quote from './assets/icon/quote.png'
+import trophy from './assets/icon/trophy.png'
+import ormon from './assets/img/Ormon.png'
+import danya from './assets/img/Даня.jpg'
+import Ahmed from './assets/img/Ахмед.jpg'
+import Kuma from './assets/img/Кума.png'
 const teachers = [
   {
     id: 1,
-    name: "Каныбеков Максат",
-    role: "Ментор по продукт и проектному менеджменту",
+    name: 'Каныбеков Максат',
+    role: 'Ментор по продукт и проектному менеджменту',
     image: maks,
     about:
-      "Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Front-End уже 2 года. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу, увлечен созданием веб- и мобильных приложений, развиваюсь в Mobile Development.",
+      'Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Front-End уже 2 года. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу, увлечен созданием веб- и мобильных приложений, развиваюсь в Mobile Development.',
     achievements: [
-      "Окончил Бишкекский колледж с дипломом с отличием",
-      "Получил сертификат за участие в хакатоне Startup Nation",
-      "Стал финалистом хакатона Digital Technologies",
-      "Получил диплом 1 степени на конференции Инновационные технологии",
+      'Окончил Бишкекский колледж с дипломом с отличием',
+      'Получил сертификат за участие в хакатоне Startup Nation',
+      'Стал финалистом хакатона Digital Technologies',
+      'Получил диплом 1 степени на конференции Инновационные технологии',
     ],
   },
   {
     id: 2,
-    name: "Петров Данил",
-    role: "Преподаватель Back-End разработки",
+    name: 'Петров Данил',
+    role: 'Преподаватель Back-End разработки',
     image: danil,
     about:
-      "Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Back-End уже 5 лет. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу Опытный разработчик с 5-летним стажем. Преподаю Back-End разработку и учу студентов создавать масштабируемые серверные приложения.",
+      'Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Back-End уже 5 лет. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу Опытный разработчик с 5-летним стажем. Преподаю Back-End разработку и учу студентов создавать масштабируемые серверные приложения.',
     achievements: [
-      "Победитель хакатона CodeFest 2023",
-      "Автор курса по Node.js на платформе Udemy",
-      "Победитель хакатона Frontend Nation",
-      "Автор курса по React на платформе Udemy",
+      'Победитель хакатона CodeFest 2023',
+      'Автор курса по Node.js на платформе Udemy',
+      'Победитель хакатона Frontend Nation',
+      'Автор курса по React на платформе Udemy',
     ],
   },
   {
     id: 3,
-    name: "Эрнистов Данил",
-    role: "Студент ПОАС-3-22",
+    name: 'Эрнистов Данил',
+    role: 'Студент ПОАС-3-22',
     image: danya,
     about:
-      "Опытный дизайнер с 10-летним стажем. Преподаю UI/UX дизайн и помогаю студентам создавать удобные интерфейсы. Дизайнер с опытом работы в крупных компаниях. Преподаю основы UI/UX дизайна и помогаю студентам создавать удобные интерфейсы.",
+      'Опытный дизайнер с 10-летним стажем. Преподаю UI/UX дизайн и помогаю студентам создавать удобные интерфейсы. Дизайнер с опытом работы в крупных компаниях. Преподаю основы UI/UX дизайна и помогаю студентам создавать удобные интерфейсы.',
 
     achievements: [
-      "Автор курса по Figma на платформе Coursera",
-      "Победитель хакатона Город будущего",
-      "Дизайнер проекта Tanda",
-      "Чиловый парень",
-      "Автор курса по Figma на платформе Udemy",
+      'Автор курса по Figma на платформе Coursera',
+      'Победитель хакатона Город будущего',
+      'Дизайнер проекта Tanda',
+      'Чиловый парень',
+      'Автор курса по Figma на платформе Udemy',
     ],
   },
   {
     id: 4,
-    name: "Рамзан",
-    role: "Преподаватель UI/UX дизайна",
+    name: 'Рамзан',
+    role: 'Преподаватель UI/UX дизайна',
     image: ramzan,
     about:
-      "Опытный дизайнер с 10-летним стажем. Преподаю UI/UX дизайн и помогаю студентам создавать удобные интерфейсы. Дизайнер с опытом работы в крупных компаниях. Преподаю основы UI/UX дизайна и помогаю студентам создавать удобные интерфейсы.",
+      'Опытный дизайнер с 10-летним стажем. Преподаю UI/UX дизайн и помогаю студентам создавать удобные интерфейсы. Дизайнер с опытом работы в крупных компаниях. Преподаю основы UI/UX дизайна и помогаю студентам создавать удобные интерфейсы.',
 
     achievements: [
-      "Победитель конкурса Design Awards 2022",
-      "Автор курса по Figma на платформе Coursera",
-      "Победитель хакатона Frontend Nation",
-      "Автор курса по Figma на платформе Udemy",
+      'Победитель конкурса Design Awards 2022',
+      'Автор курса по Figma на платформе Coursera',
+      'Победитель хакатона Frontend Nation',
+      'Автор курса по Figma на платформе Udemy',
     ],
   },
   {
     id: 5,
-    name: "Мамбеткулов Ормон",
-    role: "Студент ПОАС-3-22",
+    name: 'Мамбеткулов Ормон',
+    role: 'Студент ПОАС-3-22',
     image: ormon,
     about:
-      "Опытный разработчик с 3-летним стажем. Работал над множеством проектов, включая сайты и приложения для колледжей и бизнеса. Мой опыт в создании интерфейсов и оптимизации пользовательского опыта позволяет обучать студентов созданию эффективных и удобных веб-решений. Активно использую библиотеки и фреймворки, такие как React и Material UI, для разработки интерактивных и динамичных приложений.",
+      'Опытный разработчик с 3-летним стажем. Работал над множеством проектов, включая сайты и приложения для колледжей и бизнеса. Мой опыт в создании интерфейсов и оптимизации пользовательского опыта позволяет обучать студентов созданию эффективных и удобных веб-решений. Активно использую библиотеки и фреймворки, такие как React и Material UI, для разработки интерактивных и динамичных приложений.',
 
     achievements: [
-      "Преподаватель на курсах Codify",
-      "Победитель хакатона TUNDUK",
-      "Победитель хакатона Город будущего",
-      "Победитель хакатона IT-FEST",
-      "Автор проекта Tanda",
-      "Разработчик модерации в Makalabox",
+      'Преподаватель на курсах Codify',
+      'Победитель хакатона TUNDUK',
+      'Победитель хакатона Город будущего',
+      'Победитель хакатона IT-FEST',
+      'Автор проекта Tanda',
+      'Разработчик модерации в Makalabox',
     ],
   },
   {
     id: 6,
-    name: "Сартов Ахмед",
-    role: "Преподователь FrontEnd",
+    name: 'Сартов Ахмед',
+    role: 'Преподователь FrontEnd',
     image: Ahmed,
     about:
-      "Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Front-End уже 2 года. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу, увлечен созданием веб- и мобильных приложений, развиваюсь в Mobile Development.",
+      'Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Front-End уже 2 года. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу, увлечен созданием веб- и мобильных приложений, развиваюсь в Mobile Development.',
     achievements: [
-      "Окончил Бишкекский колледж с дипломом с отличием",
-      "Получил сертификат за участие в хакатоне Startup Nation",
-      "Стал финалистом хакатона Digital Technologies",
-      "Получил диплом 1 степени на конференции Инновационные технологии",
+      'Окончил Бишкекский колледж с дипломом с отличием',
+      'Получил сертификат за участие в хакатоне Startup Nation',
+      'Стал финалистом хакатона Digital Technologies',
+      'Получил диплом 1 степени на конференции Инновационные технологии',
     ],
   },
   {
     id: 7,
-    name: "Курманбек",
-    role: "Преподаватель Back-End разработки",
+    name: 'Курманбек',
+    role: 'Преподаватель Back-End разработки',
     image: Kuma,
     about:
-      "Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Back-End уже 5 лет. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу Опытный разработчик с 5-летним стажем. Преподаю Back-End разработку и учу студентов создавать масштабируемые серверные приложения.",
+      'Я преподаю программирование в колледже КОМТЕХНО и работаю преподавателем Back-End уже 5 лет. Обучение помогает мне развивать навыки общения и лидерства. Успешно совмещаю работу и учебу Опытный разработчик с 5-летним стажем. Преподаю Back-End разработку и учу студентов создавать масштабируемые серверные приложения.',
     achievements: [
-      "Победитель хакатона CodeFest 2023",
-      "Автор курса по Node.js на платформе Udemy",
-      "Победитель хакатона Frontend Nation",
-      "Автор курса по React на платформе Udemy",
+      'Победитель хакатона CodeFest 2023',
+      'Автор курса по Node.js на платформе Udemy',
+      'Победитель хакатона Frontend Nation',
+      'Автор курса по React на платформе Udemy',
     ],
   },
-];
+]
 
 export const CardSwiper: React.FC = () => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<any>(null)
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0)
   const aboutSpring = useSpring({
     opacity: 1,
     from: { opacity: 0 },
     reset: true,
-  });
+  })
 
   const listSpring = useSpring({
     opacity: 1,
-    transform: "translateY(0px)",
-    from: { opacity: 0, transform: "translateY(10px)" },
+    transform: 'translateY(0px)',
+    from: { opacity: 0, transform: 'translateY(10px)' },
     reset: true,
-  });
+  })
 
   useEffect(() => {
     gsap.fromTo(
-      ".swiper-slide img",
+      '.swiper-slide img',
       { opacity: 0, scale: 1 },
       { opacity: 1, scale: 1, duration: 0.1 }
-    );
-  }, [activeIndex]);
+    )
+  }, [activeIndex])
 
   return (
     <Container className="max-w-[1440px] r-sm:mb-20 mb-36">
@@ -174,7 +174,7 @@ export const CardSwiper: React.FC = () => {
               Обо мне
             </Typography>
             <animated.div style={aboutSpring}>
-              {" "}
+              {' '}
               <Typography
                 variant="body1"
                 className="text-[20px] font-light text-[#18181B]"
@@ -186,7 +186,7 @@ export const CardSwiper: React.FC = () => {
 
           <Box className="flex flex-col items-center gap-2">
             <Swiper
-              effect={"cards"}
+              effect={'cards'}
               grabCursor={true}
               initialSlide={1}
               modules={[EffectCards]}
@@ -254,5 +254,5 @@ export const CardSwiper: React.FC = () => {
         </Box>
       </Box>
     </Container>
-  );
-};
+  )
+}

@@ -3,8 +3,8 @@ import { PriceTagContact } from "~entities/priceTagContact/priceTagContact";
 
 export const PriceTag: React.FC = () => {
   return (
-    <div className="flex flex-wrap justify-between r-sm:mb-20 mb-[150px] gap-[24px]">
-      <div className="flex flex-col gap-[24px]">
+    <div className="flex flex-wrap justify-between r-lg:justify-center">
+      <div className="mb-[24px] flex flex-col gap-[24px]">
         <div className="max-w-[830px] rounded-[16px] h-[164px] p-[24px] bg-[#0D9488]">
           <h2 className="mb-[16px] text-[22px] sm:text-[36px] font-[400] sm:font-[300] leading-[27.75px] text-[#FAFAFA]">
             Стоимость обучения
@@ -34,13 +34,11 @@ export const PriceTag: React.FC = () => {
           </ol>
         </div>
       </div>
-      <div className="p-[24px] sm:w-[586px] sm:h-[566px] bg-[#0D9488] rounded-[16px] flex flex-col justify-between gap-[24px] items-start">
+      <div className="p-[24px] r-lg:w-[640px] w-[500px] h-[566px] bg-[#0D9488] rounded-[16px] flex flex-col justify-between gap-[24px] items-start">
         <h2 className="text-[32px] sm:pl-[24px] sm:text-[44px] font-[300] leading-[40px] sm:leading-[55px] text-[#FAFAFA]">
           Хотите поступить? <br /> Свяжитесь с нами
         </h2>
-        {/* <div className="flex w-full justify-center mt-2 space-x-4 max-sm:flex-col max-sm:items-center max-sm:gap-5"> */}
         <PriceTagContact />
-        {/* </div> */}
       </div>
     </div>
   );

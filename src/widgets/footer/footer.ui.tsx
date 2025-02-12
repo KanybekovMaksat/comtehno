@@ -1,10 +1,10 @@
-import AccordionUsage from '../../entities/accardionDataFooter/accardionData';
-import AddressSection from '../../features/adressFooter/adressFooter';
-import LogoFooter from '../../shared/assets/svg/logoFooter.svg';
-import LinksSection from '../../features/linkSectionFooter/linkSection';
-import SpecialtiesSection from '../../entities/specialtiesSectionFooter/specialSection';
-import { Container } from '@mui/material';
-import { FooterSmal } from '~widgets/footerSmall/footerSmall';
+import AccordionUsage from '../../entities/accardionDataFooter/accardionData'
+import AddressSection from '../../features/adressFooter/adressFooter'
+import LogoFooter from '../../shared/assets/svg/logoFooter.svg'
+import LinksSection from '../../features/linkSectionFooter/linkSection'
+import SpecialtiesSection from '../../entities/specialtiesSectionFooter/specialSection'
+import { Container } from '@mui/material'
+import { FooterSmal } from '~widgets/footerSmall/footerSmall'
 
 export const Footer: React.FC = () => {
   return (
@@ -16,18 +16,28 @@ export const Footer: React.FC = () => {
         <div className="footer_category flex-wrap flex justify-between">
             <AddressSection />
             <div className="flex r-md:hidden block flex-wrap gap-[24px]">
-            <LinksSection title="Колледж" links={['О нас', 'Новости', 'Мероприятия', 'Отзывы']} />
-            <LinksSection title="Полезные ссылки" links={['Makalabox', 'Профориентация', 'Расписание', 'Библиотека']} />
-            <SpecialtiesSection />
+              <LinksSection
+                title="Колледж"
+                links={['О нас', 'Новости', 'Мероприятия', 'Отзывы']}
+              />
+              <LinksSection
+                title="Полезные ссылки"
+                links={[
+                  'Makalabox',
+                  'Профориентация',
+                  'Расписание',
+                  'Библиотека',
+                ]}
+              />
+              <SpecialtiesSection />
             </div>
-        </div>
-        <div className="r-md:block hidden ">
+          </div>
+          <div className="r-md:block hidden ">
             <AccordionUsage />
-        </div>
+          </div>
         </div>
         <FooterSmal />
       </Container>
     </footer>
   )
-};
-
+}
