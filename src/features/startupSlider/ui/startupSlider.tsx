@@ -9,37 +9,38 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import { MakalaBoxIcon } from '~shared/assets/icons'
 import { StartupSlide } from './starupSlide'
 
-import makalaMaks from '../../../shared/assets/img/hero-img.jpg'
-import makalaMaks2 from '../../../shared/assets/img/kapusta.jpg'
+import makalaMaks from '../images/akhmed-akay.png'
+import makalaMaks2 from '../images/startup-maksat.png'
+
+interface Startup {
+  id: number
+  bg: string
+  date: {
+    icon: JSX.Element
+    title: string
+  }
+  person: {
+    icon: JSX.Element
+    title: string
+  }
+  startupProject: {
+    icon: JSX.Element
+    title: string
+    description: string
+    // buttons: {
+    //   buttonViseble: {
+    //     name: string;
+    //     icon: JSX.Element;
+    //   };
+    //   buttonMoreDetails: {
+    //     name: string;
+    //     icon: JSX.Element;
+    //   };
+    // };
+  }
+}
 
 export const StartupSlider: React.FC = () => {
-  interface Startup {
-    id: number
-    bg: JSX.Element
-    date: {
-      icon: JSX.Element
-      title: string
-    }
-    person: {
-      icon: JSX.Element
-      title: string
-    }
-    startupProject: {
-      icon: JSX.Element
-      title: string
-      description: string
-      // buttons: {
-      //   buttonViseble: {
-      //     name: string;
-      //     icon: JSX.Element;
-      //   };
-      //   buttonMoreDetails: {
-      //     name: string;
-      //     icon: JSX.Element;
-      //   };
-      // };
-    }
-  }
 
   const startupList: Startup[] = [
     {

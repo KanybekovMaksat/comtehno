@@ -17,7 +17,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-8 container bg-gray-100 flex justify-center mb-[150px]">
+    <section className="py-8 container bg-gray-100 flex justify-center r-sm:mb-20 mb-[150px]">
       <div className="container flex flex-col items-center max-w-[1440px] min-w-[320px] gap-4">
         <Typography
           variant="h4"
@@ -49,7 +49,7 @@ export const ReviewsSection: React.FC = () => {
           {selectedReview && <ReviewCard {...selectedReview} />}
         </div>
 
-        <div className="flex items-center justify-between bg-[#F4F4F5] h-[72px] w-full sm:w-[85vw] px-4 rounded-2xl max-sm:flex-col max-sm:h-[120px] max-sm:justify-evenly">
+        <div className="flex items-center justify-between bg-[#F4F4F5] h-[72px] w-full sm:w-[85vw] px-4 rounded-2xl r-sm:flex-col r-sm:h-[120px] r-sm:justify-evenly">
           <Typography
             variant="subtitle2"
             sx={{ fontSize: { xs: "16px", sm: "19px" }, fontWeight: 400 }}

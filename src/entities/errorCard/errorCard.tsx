@@ -7,7 +7,7 @@ export const ErrorCard = () => {
         Что-то случилось? <br /> Свяжитесь с нами
       </h2>
       <div
-        className="flex w-full justify-center mt-2 space-x-4 max-sm:flex-col max-sm:items-center max-sm:gap-5"
+        className="flex w-full justify-center mt-2 space-x-4 r-sm:flex-col r-sm:items-center r-sm:gap-5"
       >
         <PriceTagContact />
       </div>
