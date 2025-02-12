@@ -149,7 +149,7 @@ export const CardSwiper: React.FC = () => {
   }, [activeIndex]);
 
   return (
-    <Container className="max-w-[1440px] mb-36">
+    <Container className="max-w-[1440px] r-sm:mb-20 mb-36">
       <Box className="text-center">
         <Typography variant="h2" className="text-[44px] font-light">
           Наши преподаватели

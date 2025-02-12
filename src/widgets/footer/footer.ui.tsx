@@ -9,7 +9,7 @@ import { FooterSmal } from '~widgets/footerSmall/footerSmall';
 export const Footer: React.FC = () => {
   return (
     <footer className="footer bg-[#FAFAFA] r-md:pt-[40px] border-t-[1px] border-[#E4E4E7] pt-[80px]">
-      <Container className="max-w-[1440px] mb-[150px]">
+      <Container className="max-w-[1440px] r-sm:mb-20 mb-[150px]">
 
     <div className="pb-[40px] border-b-[1px] border-[#E4E4E7]">
         <img className="mb-[40px]" src={LogoFooter} alt="Logo" />

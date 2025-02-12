@@ -3,7 +3,7 @@ import { PriceTagContact } from "~entities/priceTagContact/priceTagContact";
 
 export const PriceTag: React.FC = () => {
   return (
-    <div className="flex flex-wrap justify-between gap-[24px]">
+    <div className="flex flex-wrap justify-between r-sm:mb-20 mb-[150px] gap-[24px]">
       <div className="flex flex-col gap-[24px]">
         <div className="max-w-[830px] rounded-[16px] h-[164px] p-[24px] bg-[#0D9488]">
           <h2 className="mb-[16px] text-[22px] sm:text-[36px] font-[400] sm:font-[300] leading-[27.75px] text-[#FAFAFA]">

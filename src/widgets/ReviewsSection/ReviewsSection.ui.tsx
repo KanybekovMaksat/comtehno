@@ -17,7 +17,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-8 container bg-gray-100 flex justify-center mb-[150px]">
+    <section className="py-8 container bg-gray-100 flex justify-center r-sm:mb-20 mb-[150px]">
       <div className="container flex flex-col items-center max-w-[1440px] min-w-[320px] gap-4">
         <Typography
           variant="h4"
