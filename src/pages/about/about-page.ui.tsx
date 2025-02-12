@@ -1,22 +1,19 @@
-import { Hero } from "~features/aboutPageHero";
-import { ContactSection } from "~features/ContactSection/ContactSection";
 import { AskedQuestions } from "~widgets/askedQuestions";
 import { Speciality } from "~widgets/speciality";
-import { AboutAccordion } from "~features/AboutAccordion/AboutAccordion";
 import { DirectionsList } from "~widgets/directions-list";
-
-
-
+import { Hero } from "~widgets/aboutHero";
+import { AboutAccordion } from "~widgets/AboutAccordion";
+import { ContactSection } from "~widgets/ContactSection";
 
 export function AboutPage() {
   return (
-    <div className="px-4 ">
+    <>
       <Hero />
-      <DirectionsList/>
-      <AboutAccordion/>
-      <Speciality/>
-      <AskedQuestions/>
-      <ContactSection/>
-    </div>
+      <DirectionsList />
+      <AboutAccordion />
+      <Speciality />
+      <AskedQuestions />
+      <ContactSection />
+    </>
   );
 }

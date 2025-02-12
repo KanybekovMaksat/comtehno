@@ -14,9 +14,6 @@ export const SpecialityFilter: React.FC = () => {
     isError
   } = useSpecialFilter();  
 
-  // const theme = useTheme()
-  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
-
   if (isLoading) {
     return <CircularProgress />
   }
@@ -27,7 +24,7 @@ export const SpecialityFilter: React.FC = () => {
 
   return (
     <>
-      <Stack className="mb-6" direction={"row"} spacing={1}>
+      <div className="flex flex-wrap gap-2 mb-6">
         {filters.map((filter, index) => (
           <Button
             key={index}
@@ -44,7 +41,7 @@ export const SpecialityFilter: React.FC = () => {
             {filter.title}
           </Button>
         ))}
-      </Stack>
+      </div>
       <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
         {filteredList.map((specialCard) => (
           <SpecialCard {...specialCard} key={specialCard.id} />

@@ -1,12 +1,12 @@
 import { Stack } from "@mui/material";
 import { AskedQuestion } from "~entities/askedQuestion";
 
-export const AskedQuestionsList: React.FC = () => {
-  type Question = {
-    title: string;
-    description: string;
-  };
+interface Question {
+  title: string;
+  description: string;
+};
 
+export const AskedQuestionsList: React.FC = () => {
   const questionList: Question[] = [
     {
       title: "Можно ли поступить в КОМТЕХНО после 9 класса?",

@@ -1,15 +1,13 @@
-import { FC } from "react";
 import { ContactCard } from "~entities/contactCard/ContactCard";
 import { InstagramIcon } from "~shared/assets/icons";
 import { GmailIcon } from "~shared/assets/icons";
 import { WhatsappIcon } from "~shared/assets/icons";
 
-export const ContactSection: FC = () => {
+export const ContactSection = () => {
   return (
-    <div className="text-center my-10  pb-10">
-      <h2 className="text-4xl font-light text-[#18181B] leading-[45px]">Не нашли ответа на вопрос?</h2>
-      <p className="text-[#0F766E] leading-[45px] text-4xl font-light mb-8">Свяжитесь с нами</p>
-
+    <div className="text-center my-10 pb-10">
+      <h2 className="r-sm:text-3xl text-4xl font-light text-[#18181B] leading-[45px]">Не нашли ответа на вопрос?</h2>
+      <p className="text-[#0F766E] leading-[45px] r-sm:text-3xl text-4xl font-light mb-8">Свяжитесь с нами</p>
       <div className="flex justify-center space-x-4 r-sm:flex-col r-sm:items-center r-sm:gap-5">
         <ContactCard
           icon={<WhatsappIcon/>}
