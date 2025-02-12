@@ -25,12 +25,12 @@ export const Navigate: React.FC = () => {
     // { title: "Приёмная комиссия 2025", url: "/error" },
     { title: "О колледже", url: "/about" },
     // { title: "Специальности", url: "/speciality" },
-    { title: "Абитуриентам", url: "/error" },
+    { title: "Абитуриентам", url: "/reviews" },
     // { title: "Новости", url: "/news" },
     { title: "Мероприятия", url: "/event" },
     { title: "Подобрать программу", url: "/error" },
     { title: "Расписание", url: "/error" },
-    { title: "Студентам", url: "/error" },
+    { title: "Студентам", url: "/reviews" },
     // { title: "Отзывы", url: "/error" },
   ];
 

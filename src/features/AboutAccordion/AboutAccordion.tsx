@@ -24,7 +24,7 @@ export const AboutAccordion: FC = () => {
   const [selected, setSelected] = useState<number | null>(0);
 
   return (
-    <div className="mb-[150px] r-md:mb-8 px-[100px] r-md:px-0 w-full">
+    <div className="r-sm:mb-20 mb-[150px] r-md:mb-8 px-[100px] r-md:px-0 w-full">
       <Typography className="mb-4 text-[#18181B] font-light text-5xl r-sm:text-[32px]">
         От знаний к делу
       </Typography>

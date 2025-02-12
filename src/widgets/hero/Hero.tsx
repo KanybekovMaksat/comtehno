@@ -5,7 +5,7 @@ import heroBg from "./img/hero-bg.jpeg";
 export function Hero() {
   return (
     <section
-      className="bg-cover py-32 px-4 md:px-8 lg:px-16 mb-[150px]"
+      className="bg-cover py-32 px-4 md:px-8 lg:px-16 r-sm:mb-20 mb-[150px]"
       style={{
         backgroundImage: `url('${heroBg}')`,
       }}

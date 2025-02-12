@@ -7,14 +7,10 @@ import { WhatsappIcon } from "~shared/assets/icons";
 export const ContactSection: FC = () => {
   return (
     <div className="text-center my-10  pb-10">
-      <h2 className="text-4xl font-light text-[#18181B] leading-[45px]">
-        Не нашли ответа на вопрос?
-      </h2>
-      <p className="text-[#0F766E] leading-[45px] text-4xl font-light ">
-        Свяжитесь с нами
-      </p>
+      <h2 className="text-4xl font-light text-[#18181B] leading-[45px]">Не нашли ответа на вопрос?</h2>
+      <p className="text-[#0F766E] leading-[45px] text-4xl font-light mb-8">Свяжитесь с нами</p>
 
-      <div className="flex justify-center mt-2 space-x-4 max-sm:flex-col max-sm:items-center max-sm:gap-5">
+      <div className="flex justify-center space-x-4 r-sm:flex-col r-sm:items-center r-sm:gap-5">
         <ContactCard
           icon={<WhatsappIcon/>}
           text="+996 707 379 957"
