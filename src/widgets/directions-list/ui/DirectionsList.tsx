@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import { DirectionCard } from "~entities/direction-card";
 import { BooksIcon, CubeIcon, DStarIcon } from "~shared/assets/icons";
 
@@ -22,13 +23,14 @@ const directions = [
   },
 ];
 
-
 export const DirectionsList = () => {
   return (
-    <div className="px-[65px] r-md:px-0 flex items-center max-w-[1440px] container gap-6 r-md:flex-col r-md:gap-8 mb-[150px] r-md:mb-4">
-      {directions.map((direction) => (
-        <DirectionCard key={direction.title} {...direction} />
-      ))}
-    </div>
+    <Container className="max-w-[1440px] r-sm:mb-20 mb-[150px]">
+      <div className="flex items-center gap-6 r-md:flex-col r-md:gap-8 r-md:mb-4">
+        {directions.map((direction) => (
+          <DirectionCard key={direction.title} {...direction} />
+        ))}
+      </div>
+    </Container>
   );
 };

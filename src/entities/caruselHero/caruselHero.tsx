@@ -37,13 +37,13 @@ const Carusel: React.FC = () => {
   return (
     <div className="w-full overflow-hidden">
       <Marquee direction="left" speed={100} className="mb-3 overflow-x-none">
-        <div className="flex items-center gap-4 ml-4">
+        <div className="flex items-center r-sm:gap-3 r-sm:ml-3 gap-4 ml-4">
           {EventData.map((carusel) => (
             <div
               key={carusel.id}
               className="relative flex justify-end w-[400px] h-[150px] 
               bg-[url('https://i.pinimg.com/736x/8d/9d/41/8d9d4126465173e64f3f8745cc8cbb07.jpg')]
-               bg-cover bg-center text-white font-geologica flex-col rounded-2xl p-4 transition "
+              bg-cover bg-center text-white font-geologica flex-col rounded-2xl p-4 transition "
             >
               <div className="absolute inset-0 bg-black/50 rounded-2xl"></div>
 
