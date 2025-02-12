@@ -49,7 +49,7 @@ export const ReviewsSection: React.FC = () => {
           {selectedReview && <ReviewCard {...selectedReview} />}
         </div>
 
-        <div className="flex items-center justify-between bg-[#F4F4F5] h-[72px] w-full sm:w-[85vw] px-4 rounded-2xl max-sm:flex-col max-sm:h-[120px] max-sm:justify-evenly">
+        <div className="flex items-center justify-between bg-[#F4F4F5] h-[72px] w-full sm:w-[85vw] px-4 rounded-2xl r-sm:flex-col r-sm:h-[120px] r-sm:justify-evenly">
           <Typography
             variant="subtitle2"
             sx={{ fontSize: { xs: "16px", sm: "19px" }, fontWeight: 400 }}
