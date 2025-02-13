@@ -7,10 +7,12 @@ import { ReviewFilters } from "~features/reviews/ReviewFilters";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { useTranslation } from 'react-i18next';
 
 export const ReviewsSection: React.FC = () => {
   const [selectedReview, setSelectedReview] = useState(reviews[0]);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleClick = () => {
     navigate("/reviews");
@@ -22,14 +24,15 @@ export const ReviewsSection: React.FC = () => {
         <Typography variant="h4" className="text-center mb-6 font-bold w-full sm:w-[85vw]">
           <div className="text-[32px] sm:text-[44px] font-light">
             <span className="text-green-500">
-              Свыше <span className="text-[#0F766E] font-bold">1700</span>
+              {t('reviews.over')} <span className="text-[#0F766E] font-bold">{t('reviews.studentsCount')}</span>
               {" "}
-              студентов
+              {t('reviews.students')}
             </span>
-            {" "}и{" "}
-            <span className="text-[#0F766E] font-bold">50 000 выпускников</span>
+            {" "}{t('reviews.and')}{" "}
+            <span className="text-[#0F766E] font-bold">{t('reviews.graduatesCount')} </span>
+            {t('reviews.graduates')}
           </div>
-          <span className="text-[#52525B] text-center mb-6 text-[24px] sm:text-[36px] font-light">поделимся их отзывами</span>
+          <span className="text-[#52525B] text-center mb-6 text-[24px] sm:text-[36px] font-light">{t('reviews.shareFeedback')}</span>
         </Typography>
         <ReviewFilters />
         <ReviewSelector selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
@@ -41,14 +44,14 @@ export const ReviewsSection: React.FC = () => {
             variant="subtitle2"
             sx={{ fontSize: { xs: "16px", sm: "19px" }, fontWeight: 400 }}
             gutterBottom>
-            Смотреть продолжение и другие{" "}
-            <span className="text-[#0F766E]">256</span> отзывов
+            {t('reviews.viewMore')} {" "}
+            <span className="text-[#0F766E]">{t('reviews.moreReviewsCount')}</span> {t('reviews.moreReviews')}
           </Typography>
           <Button
             variant="contained"
             sx={{ backgroundColor: "#0D9488", borderRadius: "12px" }}
             onClick={handleClick}>
-            Перейти <NavigateNextIcon />
+            {t('reviews.goTo')} <NavigateNextIcon />
           </Button>
         </div>
       </div>
