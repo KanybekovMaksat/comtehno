@@ -1,9 +1,9 @@
 import { Container, Typography } from '@mui/material'
-import Carusel from '~entities/caruselHero/caruselHero'
 import heroBg from './img/hero-bg.jpeg'
 import { useTranslation } from 'react-i18next'
+import { HeroCarousel } from '~features/heroCarousel'
 
-export function Hero() {
+export const HomeHero = () => {
   const { t } = useTranslation() // инициализируем перевод
 
   return (
@@ -22,7 +22,7 @@ export function Hero() {
             {t('homepage.title')}
           </Typography>
         </div>
-        <Carusel />
+        <HeroCarousel />
       </Container>
     </section>
   )

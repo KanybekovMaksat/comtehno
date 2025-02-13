@@ -8,7 +8,6 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
   return (
     <Box className="relative  w-full ">
       <BackButton></BackButton>
-
       <Box className="flex items-center gap-x-[8px] ">
         <Typography
           className="text-[#52525B] font-normal text-base"
