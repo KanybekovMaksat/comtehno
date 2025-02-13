@@ -6,14 +6,8 @@ import { BackButton } from "~shared/ui/back";
 
 export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
   return (
-<<<<<<< Updated upstream
-    <Box className="relative  w-full ">
-      <BackButton></BackButton>
-=======
-    <Box className="relative container  w-full ">
+    <Box className="relative container w-full ">
       <BackButton/>
-
->>>>>>> Stashed changes
       <Box className="flex items-center gap-x-[8px] ">
         <Typography
           className="text-[#52525B] font-normal text-base"
