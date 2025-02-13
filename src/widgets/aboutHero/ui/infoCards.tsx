@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 export const AboutPageCards = () => {
   return (
-    <div className="flex gap-4 mt-6 justify-center items-center container r-md:flex-col r-sm:items-center ">
+    <div className="flex gap-4 justify-center items-center r-md:flex-col r-sm:items-center ">
       {[
         { value: "2005", label: "год основания" },
         { value: "1700", label: "студентов" },

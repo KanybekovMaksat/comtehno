@@ -1,16 +1,16 @@
-import { Card, Typography, Button, Box } from "@mui/material";
-import calendar from "~widgets/eventSwiper/assets/icon/calendar.png";
-import location from "~widgets/eventSwiper/assets/icon/location.png";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { useNavigate } from "react-router-dom";
-import { Event } from "./event.data";
+import { Card, Typography, Button, Box } from '@mui/material'
+import calendar from '~widgets/eventSwiper/assets/icon/calendar.png'
+import location from '~widgets/eventSwiper/assets/icon/location.png'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import { useNavigate } from 'react-router-dom'
+import { Event } from './event.data'
 
 export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <Card className="relative overflow-hidden rounded-lg ">
       <img
-        src={event.image}
+        src={event.photo}
         alt={event.title}
         className="w-full h-[535px]  object-cover"
       />
@@ -26,7 +26,7 @@ export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
           <Typography
             variant="h6"
             className={`px-4 py-2 rounded-lg text-white font-normal text-[16px] uppercase ${
-              event.bgCategory || "bg-gray-400 text-white"
+              event.bgCategory || 'bg-gray-400 text-white'
             }`}
           >
             {event.category}
@@ -36,7 +36,7 @@ export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
         <Box className="flex items-center justify-between absolute bottom-6 left-0 right-0 px-[24px]">
           <Box className="flex items-center gap-x-[16px]">
             <span className="bg-[#FFFFFFCC] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
-              <img className="w-[24px] h-[24px]" src={calendar} alt="" />{" "}
+              <img className="w-[24px] h-[24px]" src={calendar} alt="" />{' '}
               {event.date}
             </span>
             <span className="bg-[#FFFFFFCC] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
@@ -53,5 +53,5 @@ export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
         </Box>
       </Box>
     </Card>
-  );
-};
+  )
+}

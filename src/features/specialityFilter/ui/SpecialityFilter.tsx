@@ -1,39 +1,18 @@
-import {  Button, CircularProgress, Stack, Typography, useMediaQuery } from "@mui/material";
+import {  Button, CircularProgress, Stack, Typography } from "@mui/material";
 
-import LanguageIcon from '@mui/icons-material/Language';
-import BrushIcon from '@mui/icons-material/Brush';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import AssuredWorkloadOutlinedIcon from '@mui/icons-material/AssuredWorkloadOutlined';
-
-import React, { useState } from "react";
-import { SpecialFilter } from "./SpecialFilter";
-import { specialityQuery } from "~entities/speciality";
+import React from "react";
 import { SpecialCard } from "./SpecialCard";
-
-export interface SpecialityFilterItem {
-  id: number;
-  img?: JSX.Element;
-  title: string;
-  isActiveFilter: number | null;
-  setIsActiveFilter: React.Dispatch<number>
-}
+import { useSpecialFilter } from "../useSpecialFilter";
 
 export const SpecialityFilter: React.FC = () => {
-  const {data: specialCardList, isLoading, isError} = specialityQuery.useGetSpeciality()  
-
-  const specialityFilter: SpecialityFilterItem[] = [
-    {title: "Все"},
-    {img: <LanguageIcon />,title: "IT"},
-    { img: <BrushIcon />, title: "Дизайн"},
-    { img: <WorkOutlineOutlinedIcon />, title: "Управление и бизнес-аналитика"},
-    { img: <WorkOutlineOutlinedIcon />, title: "Управление и бизнес-аналитика"},
-    {img: <AssuredWorkloadOutlinedIcon />,title: "Финансы и банковское дело"},
-  ];
-
-  const [isActiveFilter, setIsActiveFilter] = useState<number | null>(null)
-
-  // const theme = useTheme()
-  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+  const {
+    setActiveFilter,
+    activeFilter,
+    filteredList,
+    isLoading,
+    filters,
+    isError
+  } = useSpecialFilter();  
 
   if (isLoading) {
     return <CircularProgress />
@@ -45,19 +24,26 @@ export const SpecialityFilter: React.FC = () => {
 
   return (
     <>
-      <Stack className="mb-6 gap-2" flexWrap={"wrap"} direction={"row"} >
-      {specialityFilter.map((specialFilter: SpecialityFilterItem, index: number) => (
-        <SpecialFilter 
-          isActiveFilter={isActiveFilter}
-          setIsActiveFilter={setIsActiveFilter}
-          img={specialFilter.img} 
-          title={specialFilter.title} 
-          id={index} 
-          key={index} />
-      ))}
-      </Stack>
+      <div className="flex flex-wrap gap-2 mb-6">
+        {filters.map((filter, index) => (
+          <Button
+            key={index}
+            onClick={() => setActiveFilter(filter.category)}
+            className={`gap-2 border border-solid border-[#E4E4E7] px-4 transition-colors duration-300 normal-case rounded-[12px] text-[#18181B] font-normal text-base
+            ${
+              activeFilter === filter.category
+                ? "bg-[#18181B] text-white"
+                : "hover:bg-[#18181B] hover:text-white"
+            }`}
+            sx={{ whiteSpace: "nowrap", height: "36px", minWidth: "unset" }}
+          >
+            {filter.icon}
+            {filter.title}
+          </Button>
+        ))}
+      </div>
       <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
-        {specialCardList?.data.map((specialCard) => (
+        {filteredList.map((specialCard) => (
           <SpecialCard {...specialCard} key={specialCard.id} />
         ))}
       </Stack>

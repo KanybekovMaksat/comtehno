@@ -9,14 +9,14 @@ import { useMediaQuery } from "@mui/material";
 import { EventLine } from "~features/eventLine";
 
 export const EventDetailsPage: React.FC = () => {
-  const isSmallScreen = useMediaQuery("(max-width: 1350px)");
+  const isSmallScreen = useMediaQuery('(max-width: 1350px)')
 
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams<{ slug: string }>()
 
-  const event = EventData.find((e) => e.slug.toString() === slug);
+  const event = EventData.find((e) => e.slug.toString() === slug)
 
   if (!event) {
-    return <div>Событие не найдено</div>;
+    return <div>Событие не найдено</div>
   }
 
   return (
@@ -31,5 +31,5 @@ export const EventDetailsPage: React.FC = () => {
         {!isSmallScreen && <Sidebar event={event} />}
       </Box>
     </Container>
-  );
-};
+  )
+}
