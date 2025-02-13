@@ -1,17 +1,17 @@
-import { Box, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { newsQueries, newsTypes } from '~entities/news'
-import { pathKeys } from '~shared/lib/react-router'
-import { formatDate } from '~shared/ui/date'
+import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { newsQueries, newsTypes } from "~entities/news";
+import { pathKeys } from "~shared/lib/react-router";
+import { formatDate } from "~shared/ui/date";
 
 export const NewsPage = () => {
-  const { data: newsListData, isLoading, isError } = newsQueries.useGetNews()
+  const { data: newsListData, isLoading, isError } = newsQueries.useGetNews();
 
   if (isLoading) {
-    return <div>Загрузка</div>
+    return <div>Загрузка</div>;
   }
   if (isError) {
-    return <div>Ошибка</div>
+    return <div>Ошибка</div>;
   }
 
   return (
@@ -48,5 +48,5 @@ export const NewsPage = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

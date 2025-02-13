@@ -1,15 +1,15 @@
-import React, { useRef } from 'react'
-import { Box, Typography, Container, Button, TextField } from '@mui/material'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
-import { EventCardSwiper } from '~entities/eventSwiperCard'
-import { EventCard } from '~entities/eventCard'
-import { useEventFilter } from '~features/eventFilter/eventFilter.ui'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import { SwiperNavigationButtons } from '~shared/ui/SwiperNavigationButtons'
-import SearchIcon from '@mui/icons-material/Search'
-import { useMediaQuery } from '@mui/material'
+import React, { useRef } from "react";
+import { Box, Typography, Container, Button, TextField } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { EventCardSwiper } from "~entities/eventSwiperCard";
+import { EventCard } from "~entities/eventCard";
+import { useEventFilter } from "~features/eventFilter/eventFilter.ui";
+import "swiper/css";
+import "swiper/css/navigation";
+import { SwiperNavigationButtons } from "~shared/ui/SwiperNavigationButtons";
+import SearchIcon from "@mui/icons-material/Search";
+import { useMediaQuery } from "@mui/material";
 
 export const EventsSection: React.FC = () => {
   const {
@@ -19,9 +19,9 @@ export const EventsSection: React.FC = () => {
     setSearchQuery,
     filters,
     filteredEvents,
-  } = useEventFilter()
-  const swiperRef = useRef(null)
-  const isSmallScreen = useMediaQuery('(max-width: 704px)')
+  } = useEventFilter();
+  const swiperRef = useRef(null);
+  const isSmallScreen = useMediaQuery("(max-width: 704px)");
 
   return (
     <Box>
@@ -35,26 +35,26 @@ export const EventsSection: React.FC = () => {
 
         <Box
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: '24px',
-            '@media (max-width:1450px)': { display: 'grid', gap: '10px' },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "24px",
+            "@media (max-width:1450px)": { display: "grid", gap: "10px" },
           }}
         >
           <Box
             sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              columnGap: '8px',
-              '@media (max-width: 600px)': {
-                flexWrap: 'nowrap',
-                overflowX: 'auto',
-                justifyContent: 'flex-start',
-                scrollbarWidth: 'none',
-                '-ms-overflow-style': 'none',
-                '&::-webkit-scrollbar': { display: 'none' },
-                paddingBottom: '8px',
+              display: "flex",
+              flexWrap: "wrap",
+              columnGap: "8px",
+              "@media (max-width: 600px)": {
+                flexWrap: "nowrap",
+                overflowX: "auto",
+                justifyContent: "flex-start",
+                scrollbarWidth: "none",
+                "-ms-overflow-style": "none",
+                "&::-webkit-scrollbar": { display: "none" },
+                paddingBottom: "8px",
               },
             }}
           >
@@ -65,10 +65,10 @@ export const EventsSection: React.FC = () => {
                 className={`border border-solid border-[#E4E4E7] px-4 transition-colors duration-300 normal-case rounded-[12px] text-[#18181B] font-normal text-base mt-[10px]
                 ${
                   activeFilter === filter
-                    ? 'bg-[#18181B] text-white'
-                    : 'hover:bg-[#18181B] hover:text-white'
+                    ? "bg-[#18181B] text-white"
+                    : "hover:bg-[#18181B] hover:text-white"
                 }`}
-                sx={{ whiteSpace: 'nowrap', height: '36px', minWidth: 'unset' }}
+                sx={{ whiteSpace: "nowrap", height: "36px", minWidth: "unset" }}
               >
                 {filter}
               </Button>
@@ -82,22 +82,22 @@ export const EventsSection: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               sx={{
-                background: '#F4F4F5',
-                border: '1px solid #D4D4D8',
-                borderRadius: '12px',
-                '& .MuiOutlinedInput-root': {
-                  padding: '8px 16px',
-                  '& fieldset': { border: 'none' },
-                  '&:hover fieldset': { border: 'none' },
-                  '&.Mui-focused fieldset': { border: 'none' },
+                background: "#F4F4F5",
+                border: "1px solid #D4D4D8",
+                borderRadius: "12px",
+                "& .MuiOutlinedInput-root": {
+                  padding: "8px 16px",
+                  "& fieldset": { border: "none" },
+                  "&:hover fieldset": { border: "none" },
+                  "&.Mui-focused fieldset": { border: "none" },
                 },
               }}
               InputProps={{
                 sx: {
-                  '& input': { padding: '0px 10px' },
+                  "& input": { padding: "0px 10px" },
                 },
                 startAdornment: (
-                  <span style={{ marginRight: '8px' }}>
+                  <span style={{ marginRight: "8px" }}>
                     <SearchIcon />
                   </span>
                 ),
@@ -107,16 +107,16 @@ export const EventsSection: React.FC = () => {
         </Box>
 
         {!isSmallScreen && (
-          <Box sx={{ position: 'relative', marginBottom: '40px' }}>
+          <Box sx={{ position: "relative", marginBottom: "40px" }}>
             <Swiper
               onSwiper={(swiper) => {
-                swiperRef.current = swiper
+                swiperRef.current = swiper;
               }}
               slidesPerView={1.5}
               spaceBetween={20}
               navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
               }}
               modules={[Navigation]}
               breakpoints={{
@@ -150,5 +150,5 @@ export const EventsSection: React.FC = () => {
         )}
       </Container>
     </Box>
-  )
-}
+  );
+};
