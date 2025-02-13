@@ -4,9 +4,9 @@ import { EventData } from "~entities/eventSwiperCard";
 import { Container, Box } from "@mui/material";
 import { EventDetails } from "~entities/event-details";
 import { ScrollTop } from "~shared/lib/react-router/scroll-top";
-import { Sidebar } from "~shared/ui/sidebar";
 import { useMediaQuery } from "@mui/material";
 import { EventLine } from "~features/eventLine";
+import { Sidebar } from "~features/sidebar";
 
 export const EventDetailsPage: React.FC = () => {
   const isSmallScreen = useMediaQuery('(max-width: 1350px)')
