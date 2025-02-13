@@ -3,35 +3,44 @@ import Marquee from 'react-fast-marquee'
 import { Link } from 'react-router-dom'
 import { EventData } from '~entities/eventSwiperCard'
 
-// const caruselist: ApiItem[] = [
-//   {
-//     id: 1,
-//     banner: 'Новый сайт КОМТЕХНО',
-//     link: { title: 'Посетить сайт', to: '/error' },
-//   },
-//   {
-//     id: 2,
-//     banner: 'Новогоднее чудо в КОМТЕХНО',
-//     link: { title: 'Какое чудо?', to: '/error' },
-//   },
-//   {
-//     id: 3,
-//     banner: 'Молодежный форум разработчиков',
-//     link: { title: 'Посетить форум', to: '/error' },
-//   },
-//   {
-//     id: 4,
-//     banner: 'КОМТЕХНО развивает профессионализм',
-//     link: { title: 'Стать профессионалом', to: '/error' },
-//   },
-//   {
-//     id: 5,
-//     banner: 'День учителя',
-//     link: { title: 'Посетить сайт', to: '/error' },
-//   },
-//   { id: 6, banner: 'banner 6', link: { title: 'Посетить сайт', to: '/error' } },
-//   { id: 7, banner: 'banner 7', link: { title: 'Посетить сайт', to: '/error' } },
-// ]
+interface ApiItem {
+  id: number;
+  banner: string;
+  link: {
+    title: string;
+    to: string;
+  };
+}
+
+const caruselist: ApiItem[] = [
+  {
+    id: 1,
+    banner: "Новый сайт КОМТЕХНО",
+    link: { title: "Посетить сайт", to: "/error" },
+  },
+  {
+    id: 2,
+    banner: "Новогоднее чудо в КОМТЕХНО",
+    link: { title: "Какое чудо?", to: "/error" },
+  },
+  {
+    id: 3,
+    banner: "Молодежный форум разработчиков",
+    link: { title: "Посетить форум", to: "/error" },
+  },
+  {
+    id: 4,
+    banner: "КОМТЕХНО развивает профессионализм",
+    link: { title: "Стать профессионалом", to: "/error" },
+  },
+  {
+    id: 5,
+    banner: "День учителя",
+    link: { title: "Посетить сайт", to: "/error" },
+  },
+  { id: 6, banner: "banner 6", link: { title: "Посетить сайт", to: "/error" } },
+  { id: 7, banner: "banner 7", link: { title: "Посетить сайт", to: "/error" } },
+];
 
 const Carusel: React.FC = () => {
   return (
@@ -69,4 +78,4 @@ const Carusel: React.FC = () => {
   )
 }
 
-export default Carusel
+export default Carusel;
