@@ -6,7 +6,7 @@ export const Sidebar = ({ data, pathKey, title }) => {
   const navigate = useNavigate()
 
   return (
-    <Box className="max-w-[464px] r-lg:mt-10">
+    <Box className="max-w-[464px] r-xl:hidden">
       <Typography
         variant="h3"
         className="mb-[8px] text-[#52525B] font-light text-[25px]"

@@ -25,7 +25,7 @@ export const NewsDetailPage = () => {
   return (
     <Box className="relative w-full container pb-20 r-lg:mt-5 r-md:container">
       <BackButton></BackButton>
-      <Box className="grid grid-cols-[1fr_464px] r-lg:grid-cols-[1fr]">
+      <Box className="grid grid-cols-[1fr_464px] r-xl:grid-cols-[1fr]">
         <Box>
           <Box className="flex items-center gap-[8px]">
             <Typography variant="subtitle2">
@@ -42,7 +42,7 @@ export const NewsDetailPage = () => {
             component={'img'}
             src={newsData.data.photo}
             alt={newsData.data.title}
-            className="r-md:w-full"
+            className="r-xl:w-full"
           ></Box>
           <Box className="flex items-center gap-x-[16px] my-5 w-full  r-sm:grid r-sm:gap-4">
             <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
@@ -52,8 +52,6 @@ export const NewsDetailPage = () => {
             <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
               <Place></Place>
               Анкара 1/17
-              {/* <CalendarMonth></CalendarMonth> */}
-              {/* <img src={location} alt="" /> {event.location} */}
             </span>
           </Box>
           <div
@@ -66,9 +64,12 @@ export const NewsDetailPage = () => {
           pathKey={'news'}
         ></Sidebar>
       </Box>
-      <Box className="r-lg:mt-10">
+      <Box className="mt-10">
         <Typography variant="h4">Вам может понравиться</Typography>
-        <RecomendationList data={newsListData.data}></RecomendationList>
+        <RecomendationList
+          data={newsListData.data}
+          slug={slug}
+        ></RecomendationList>
       </Box>
     </Box>
   )
