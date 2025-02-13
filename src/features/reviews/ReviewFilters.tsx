@@ -8,9 +8,9 @@ export const ReviewFilters: React.FC = () => {
   const [role, setRole] = useState<string>("frontend");
 
   return (
-    <div className="flex r-md:flex-col justify-center container items-center mb-6 gap-4 w-full sm:max-w-[85vw] min-w-0">
+    <div className="flex r-md:flex-col justify-center container items-center mb-6 gap-4 w-full  min-w-0">
       <Accordion
-        className="w-[300px]  r-md:w-full rounded-full text-[16px] sm:text-[19px] bg-[#F4F4F5] shadow-md relative"
+        className="w-[700px] r-md:w-auto rounded-full text-[16px] bg-[#F4F4F5] shadow-md relative"
         sx={{
           "&::before": { display: "none" },
           "&.Mui-expanded": { margin: "0" },
@@ -39,7 +39,7 @@ export const ReviewFilters: React.FC = () => {
         </AccordionDetails>
       </Accordion>
 
-      <div className="relative bg-[#F4F4F5] rounded-full p-1 flex shadow-md  sm:w-auto w-[350px] r-md:w-full">
+      <div className="relative bg-[#F4F4F5] rounded-full p-1 flex shadow-md  r-sm:w-auto w-[350px] r-md:w-full">
         <div
           className="absolute bg-white rounded-full transition-all duration-300 ease-in-out"
           style={{
@@ -54,7 +54,7 @@ export const ReviewFilters: React.FC = () => {
             key={index}
             onClick={() => setTabValue(index)}
             className={clsx(
-              "w-1/2 px-4 py-2 rounded-full text-[16px] sm:text-[19px] transition-all duration-300 ease-in-out relative z-10",
+              "w-1/2 px-4 py-2 rounded-full text-[16px]  transition-all duration-300 ease-in-out relative z-10",
               tabValue === index ? "font-medium text-black" : "text-gray-500"
             )}
           >
