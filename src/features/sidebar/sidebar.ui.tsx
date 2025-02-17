@@ -1,10 +1,8 @@
 import { Box, Typography } from '@mui/material'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { pathKeys } from '~shared/lib/react-router'
 
 export const Sidebar = ({ data, pathKey, title }) => {
-  const navigate = useNavigate()
-
   return (
     <Box className="max-w-[464px] r-xl:hidden">
       <Typography
@@ -14,12 +12,9 @@ export const Sidebar = ({ data, pathKey, title }) => {
         {title}
       </Typography>
       <Box className="flex flex-col gap-[24px] r-lg:flex-row r-lg:flex-wrap">
-        {data.map((item) => (
-          <Link key={item.slug} to={pathKeys[pathKey].bySlug(item.slug)}>
-            <Box
-              onClick={() => navigate(`/item/${item.slug}`)}
-              className="cursor-pointer"
-            >
+        {data.map((item, i) => (
+          <Link key={i} to={pathKeys[pathKey].bySlug(item.slug)}>
+            <Box className="cursor-pointer">
               <Box className="flex  gap-x-[16px] items-start r-lg:flex-col">
                 <img
                   src={item.photo}

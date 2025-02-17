@@ -7,6 +7,21 @@ import img7 from '~widgets/eventSwiper/assets/image/hackathon.png'
 import img8 from '~widgets/eventSwiper/assets/image/forum.png'
 import img9 from '~widgets/eventSwiper/assets/image/day.png'
 
+  export interface EventCategory {
+    id: number;
+    name: string;
+  }
+
+  export interface EventApi {
+    title: string;
+    slug: string;
+    photo: string;
+    place: string;
+    category: EventCategory;
+    createdAt: string;
+    updatedAt: string;
+  }
+
 export interface Event {
   slug: string
   id: number

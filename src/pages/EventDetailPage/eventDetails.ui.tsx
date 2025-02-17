@@ -11,6 +11,8 @@ import { Sidebar } from '~features/sidebar'
 export const EventDetailsPage: React.FC = () => {
   const isSmallScreen = useMediaQuery('(max-width: 1350px)')
 
+  EventData.map((item) => console.log(item.slug))
+
   const { slug } = useParams<{ slug: string }>()
 
   const event = EventData.find((e) => e.slug.toString() === slug)
@@ -22,13 +24,14 @@ export const EventDetailsPage: React.FC = () => {
   return (
     <Container className="max-w-[1440px]">
       <ScrollTop />
-
       <Box className="flex gap-x-[146px] pb-[152px] pt-[40px]">
         <div className="flex flex-col gap-[40px]">
           <EventDetails event={event} />
           <EventLine />
         </div>
-        {!isSmallScreen && <Sidebar event={event} />}
+        {!isSmallScreen && (
+          <Sidebar data={EventData} pathKey={'event'} title={'События'} />
+        )}
       </Box>
     </Container>
   )
