@@ -1,22 +1,24 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { EventData } from "~entities/eventSwiperCard";
-import { Container, Box } from "@mui/material";
-import { EventDetails } from "~entities/event-details";
-import { ScrollTop } from "~shared/lib/react-router/scroll-top";
-import { useMediaQuery } from "@mui/material";
-import { EventLine } from "~features/eventLine";
-import { Sidebar } from "~features/sidebar";
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { EventData } from '~entities/eventSwiperCard'
+import { Container, Box } from '@mui/material'
+import { EventDetails } from '~entities/event-details'
+import { ScrollTop } from '~shared/lib/react-router/scroll-top'
+import { useMediaQuery } from '@mui/material'
+import { EventLine } from '~features/eventLine'
+import { Sidebar } from '~features/sidebar'
 
 export const EventDetailsPage: React.FC = () => {
-  const isSmallScreen = useMediaQuery("(max-width: 1350px)");
+  const isSmallScreen = useMediaQuery('(max-width: 1350px)')
 
-  const { slug } = useParams<{ slug: string }>();
+  EventData.map((item) => console.log(item.slug))
 
-  const event = EventData.find((e) => e.slug.toString() === slug);
+  const { slug } = useParams<{ slug: string }>()
+
+  const event = EventData.find((e) => e.slug.toString() === slug)
 
   if (!event) {
-    return <div>Событие не найдено</div>;
+    return <div>Событие не найдено</div>
   }
 
   return (
@@ -27,8 +29,10 @@ export const EventDetailsPage: React.FC = () => {
           <EventDetails event={event} />
           <EventLine />
         </div>
-        {!isSmallScreen && <Sidebar event={event} />}
+        {!isSmallScreen && (
+          <Sidebar data={EventData} pathKey={'event'} title={'События'} />
+        )}
       </Box>
     </Container>
-  );
-};
+  )
+}

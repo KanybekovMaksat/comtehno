@@ -23,14 +23,7 @@ export const pathKeys = {
   error() {
     return pathKeys.root.concat('*')
   },
-  event: {
-    root() {
-      return pathKeys.root.concat('event/')
-    },
-    bySlug(slug: string) {
-      return pathKeys.event.root().concat(`${slug}`)
-    },
-  },
+
   course: {
     root() {
       return pathKeys.root.concat('courses/')
@@ -45,6 +38,14 @@ export const pathKeys = {
     },
     bySlug(slug: string) {
       return pathKeys.news.root().concat(`${slug}`)
+    },
+  },
+  event: {
+    root() {
+      return pathKeys.root.concat('event/')
+    },
+    bySlug(slug: string) {
+      return pathKeys.event.root().concat(`${slug}`)
     },
   },
 }

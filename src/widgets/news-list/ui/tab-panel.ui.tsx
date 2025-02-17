@@ -50,25 +50,29 @@ export function TabPanel(props: TabPanelProps) {
             slidesPerView={4}
             className="h-[350px] relative pl-4 cursor-pointer r-sm:h-[550px]"
           >
-            {filterNewsByMonth(data, month).map((news) => (
-              <SwiperSlide className="flex flex-col" key={news.slug}>
-                <Link to={pathKeys.news.bySlug(news.slug)}>
-                  <Typography variant="h6" className="r-lg:text-center">
-                    {news.title.length > 25
-                      ? news.title.slice(0, 25) + '…'
-                      : news.title}
-                  </Typography>
-                  <Box className="flex items-center">
-                    <Typography className="border-r-2 border-gray-300 pr-2 r-lg:text-right">
-                      {formatDate(news.createdAt)}
-                    </Typography>
-                    <Typography className="pl-2 r-lg:text-left">
-                      {news.category.name}
-                    </Typography>
-                  </Box>
-                </Link>
-              </SwiperSlide>
-            ))}
+            {filterNewsByMonth(data, month).map((news, i: number) => {
+              if (i > 0) {
+                return (
+                  <SwiperSlide className="flex flex-col" key={news.slug}>
+                    <Link to={pathKeys.news.bySlug(news.slug)}>
+                      <Typography variant="h6" className="r-lg:text-center">
+                        {news.title.length > 25
+                          ? news.title.slice(0, 25) + '…'
+                          : news.title}
+                      </Typography>
+                      <Box className="flex items-center">
+                        <Typography className="border-r-2 border-gray-300 pr-2 r-lg:text-right">
+                          {formatDate(news.createdAt)}
+                        </Typography>
+                        <Typography className="pl-2 r-lg:text-left">
+                          {news.category.name}
+                        </Typography>
+                      </Box>
+                    </Link>
+                  </SwiperSlide>
+                )
+              }
+            })}
           </Swiper>
 
           {/* Контейнер для кнопок */}
