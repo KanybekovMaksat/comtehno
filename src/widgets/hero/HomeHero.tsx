@@ -1,10 +1,10 @@
-import { Container, Typography } from '@mui/material'
-import heroBg from './img/hero-bg.jpeg'
-import { useTranslation } from 'react-i18next'
-import { HeroCarousel } from '~features/heroCarousel'
+import { Container, Typography } from "@mui/material";
+import heroBg from "./img/hero-bg.jpeg";
+import { useTranslation } from "react-i18next";
+import { HeroCarousel } from "~features/heroCarousel";
 
 export const HomeHero = () => {
-  const { t } = useTranslation() // инициализируем перевод
+  const { t } = useTranslation(); // инициализируем перевод
 
   return (
     <section
@@ -17,13 +17,13 @@ export const HomeHero = () => {
         <div className="mb-10">
           <Typography
             variant="h1"
-            className="r-sm:text-2xl mb-16 text-white font-geologica text-6xl font-[600] text-center"
+            className="m-auto max-w-3xl r-sm:text-2xl mb-16 text-white font-geologica text-6xl font-[600] text-center"
           >
-            {t('homepage.title')}
+            {t("homepage.title")}
           </Typography>
         </div>
         <HeroCarousel />
       </Container>
     </section>
-  )
-}
+  );
+};

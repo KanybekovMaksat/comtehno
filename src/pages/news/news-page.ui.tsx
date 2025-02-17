@@ -20,10 +20,7 @@ export const NewsPage = () => {
         <Typography variant="h3" className="mb-5 r-md:text-[50px]">
           Новости
         </Typography>
-        <div
-          className="grid grid-cols-[1fr_1fr_1fr] gap-[24px] 
-         r-md:grid-cols-[1fr] r-lg:grid-cols-[1fr_1fr]"
-        >
+        <div className="grid grid-cols-[1fr_1fr_1fr] gap-[24px] r-md:grid-cols-[1fr] r-lg:grid-cols-[1fr_1fr]">
           {newsListData.data.map((item: newsTypes.News) => (
             <div key={item.slug}>
               <Link to={pathKeys.news.bySlug(item.slug)}>

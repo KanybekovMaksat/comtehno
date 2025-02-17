@@ -28,7 +28,7 @@ export const Navigate: React.FC = () => {
     { title: 'О колледже', url: '/about' },
     // { title: "Специальности", url: "/speciality" },
     { title: 'Абитуриентам', url: '/reviews' },
-    // { title: "Новости", url: "/news" },
+    { title: "Новости", url: "/news" },
     { title: 'Мероприятия', url: '/event' },
     { title: 'Подобрать программу', url: '/error' },
     { title: 'Расписание', url: '/error' },
