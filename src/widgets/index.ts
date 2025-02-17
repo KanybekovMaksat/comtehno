@@ -1,3 +1,5 @@
+import { Review } from "./reviews";
+
 export { HomeHero } from "./hero";
 export { ContactSection } from "./ContactSection";
 export { AboutAccordion } from "./AboutAccordion";
