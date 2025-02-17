@@ -1,25 +1,25 @@
-import { AskedQuestions } from '~widgets/askedQuestions'
-import { ReviewsSection } from '~widgets/ReviewsSection'
-import { Speciality } from '~widgets/speciality'
-import { Startup } from '~widgets/startup'
-import { ContactSection } from '~features/ContactSection/ContactSection'
-import { Hero } from '~widgets/hero/Hero'
-import { NewsList } from '~widgets/news-list'
-import { Partners } from '~widgets/partners'
-import { Teachers } from '~widgets/teachers'
+import { AskedQuestions } from "~widgets/askedQuestions";
+import { ReviewsSection } from "~widgets/ReviewsSection";
+import { Speciality } from "~widgets/speciality";
+import { Startup } from "~widgets/startup";
+import { NewsList } from "~widgets/news-list";
+import { Partners } from "~widgets/partners";
+import { CardSwiper } from "~widgets/teacherSwiper";
+import { ContactSection } from "~widgets/ContactSection";
+import { HomeHero } from "~widgets/hero";
 
 export const HomePage: React.FC = () => {
   return (
     <>
-      <Hero />
+      <HomeHero />
       <Speciality />
       <ReviewsSection />
       <Partners />
-      <Teachers />
+      <CardSwiper />
       <Startup />
       <NewsList />
       <AskedQuestions />
       <ContactSection />
     </>
-  )
-}
+  );
+};

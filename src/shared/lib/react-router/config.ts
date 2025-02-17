@@ -9,19 +9,27 @@ export const pathKeys = {
     },
     bySlug(slug: string) {
       return pathKeys.speciality.root().concat(`${slug}/`)
-    }
+    },
   },
-  reviews(){
+  reviews() {
     return pathKeys.root.concat('reviews/')
   },
-  about(){
+  about() {
     return pathKeys.root.concat('about/')
   },
   dashboard() {
     return pathKeys.root.concat('dashboard/')
   },
   error() {
-    return pathKeys.root.concat('error/')
+    return pathKeys.root.concat('*')
+  },
+  event: {
+    root() {
+      return pathKeys.root.concat('event/')
+    },
+    bySlug(slug: string) {
+      return pathKeys.event.root().concat(`${slug}`)
+    },
   },
   course: {
     root() {

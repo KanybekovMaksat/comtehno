@@ -7,7 +7,7 @@ import GTranslateIcon from '@mui/icons-material/GTranslate';
 import ExtensionIcon from '@mui/icons-material/Extension';
 
 import Marquee from 'react-fast-marquee';
-import { PartnersCard } from './partnersCard';
+import { PartnersCard } from './PartnersCard';
 
 export interface PartnerCard {
   icon: JSX.Element;
@@ -29,7 +29,7 @@ export const PartnersList: React.FC = () => {
     direction="left"
     speed={100}
     gradient={true}
-    className="mb-[150px] h-[200px] w-full">
+    className="r-sm:mb-20 mb-[150px] h-[200px] w-full">
       <div className='flex gap-6 mr-6'>
         {parnerLogoList.map((partnerCard: PartnerCard, index: number) => (
           <PartnersCard key={index} {...partnerCard} />

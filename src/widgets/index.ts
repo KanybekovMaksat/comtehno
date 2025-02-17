@@ -1,3 +1,7 @@
+export { HomeHero } from "./hero";
+export { ContactSection } from "./ContactSection";
+export { AboutAccordion } from "./AboutAccordion";
+export { Hero } from "./aboutHero";
 export { ProjectsGrid } from "./projectCards";
 export { SpecialHero } from "./specialHero";
 export { TrainingProgram } from "./trainingProgram";

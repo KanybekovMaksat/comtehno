@@ -1,3 +1,4 @@
+export { HeroCarousel } from './heroCarousel';
 export { PartnersList } from './partnersList';
 export { TrainingProgramList } from './trainingProgramAccordion';
 export { StartupSlider } from './startupSlider';

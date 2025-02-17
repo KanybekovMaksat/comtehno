@@ -1,15 +1,17 @@
-import { Outlet} from 'react-router-dom';
-import { Footer } from '~widgets/footer';
-import { Header } from '~widgets/header';
+import { Outlet } from 'react-router-dom'
+import { ScrollTop } from '~shared/lib/react-router'
+import { Footer } from '~widgets/footer'
+import { Header } from '~widgets/header'
 
 export function GenericLayout() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollTop />
       <Header />
       <Outlet />
       <Footer />
     </div>
-  );
+  )
 }
 
 export function IntroLayout() {
@@ -17,6 +19,5 @@ export function IntroLayout() {
     <div className="h-screen flex items-center justify-center">
       <Outlet />
     </div>
-  );
+  )
 }
-

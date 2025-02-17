@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { CircularProgress, Stack, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { specialityQuery } from "~entities/speciality";
 
@@ -7,7 +7,7 @@ export const SpecialHero: React.FC = () => {
   const { data: specialData, isLoading, isError } = specialityQuery.useGetSpecialityDetail(slug)
   
   if (isLoading) {
-    return <Typography variant="h1">Loadong...</Typography>
+    return <CircularProgress />
   }
 
   if (isError) {

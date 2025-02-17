@@ -1,0 +1,142 @@
+{
+  "homepage": {
+    "title": "Comtehno - Technologies. Innovation. Quality. Future."
+  },
+  "errorPage": {
+    "pageNotFound": "Page not found",
+    "goToHome": "Go to the main page",
+    "errorText": "Error 404",
+    "contactUs": "Something went wrong? Contact us"
+  },
+  "cardSwiper": {
+    "title": "Our Teachers",
+    "subtitle": "People who inspire learning and development",
+    "aboutMe": "About me",
+    "achievements": "My Achievements"
+  },
+  "teachers": {
+    "1": {
+      "name": "Kanybekov Maksat",
+      "role": "Mentor in Product and Project Management",
+      "about": "I teach programming at KOMTECHNO College and have been teaching Front-End for 2 years. Teaching helps me develop communication and leadership skills. I successfully combine work and study, passionate about creating web and mobile applications, and am growing in Mobile Development.",
+      "achievements": {
+        "1": "Graduated from Bishkek College with honors",
+        "2": "Received a certificate for participating in the Startup Nation hackathon",
+        "3": "Became a finalist in the Digital Technologies hackathon",
+        "4": "Received a first-degree diploma at the Innovative Technologies conference"
+      }
+    },
+    "2": {
+      "name": "Petrov Danil",
+      "role": "Back-End Development Instructor",
+      "about": "I teach programming at KOMTECHNO College and have been teaching Back-End for 5 years. Teaching helps me develop communication and leadership skills. I successfully combine work and study. I am an experienced developer with 5 years of experience. I teach Back-End development and train students to create scalable server applications.",
+      "achievements": {
+        "1": "Winner of the CodeFest 2023 hackathon",
+        "2": "Author of a Node.js course on Udemy",
+        "3": "Winner of the Frontend Nation hackathon",
+        "4": "Author of a React course on Udemy"
+      }
+    },
+    "3": {
+      "name": "Ernistov Danil",
+      "role": "Student of POAS-3-22",
+      "about": "An experienced designer with 10 years of experience. I teach UI/UX design and help students create user-friendly interfaces. A designer with experience in large companies. I teach the basics of UI/UX design and help students create user-friendly interfaces.",
+      "achievements": {
+        "1": "Author of a Figma course on Coursera",
+        "2": "Winner of the Future City hackathon",
+        "3": "Designer of the Tanda project",
+        "4": "Chill guy",
+        "5": "Author of a Figma course on Udemy"
+      }
+    },
+    "4": {
+      "name": "Ramzan",
+      "role": "UI/UX Design Instructor",
+      "about": "An experienced designer with 10 years of experience. I teach UI/UX design and help students create user-friendly interfaces. A designer with experience in large companies. I teach the basics of UI/UX design and help students create user-friendly interfaces.",
+      "achievements": {
+        "1": "Winner of the Design Awards 2022 competition",
+        "2": "Author of a Figma course on Coursera",
+        "3": "Winner of the Frontend Nation hackathon",
+        "4": "Author of a Figma course on Udemy"
+      }
+    },
+    "5": {
+      "name": "Mambetkulov Ormon",
+      "role": "Student of POAS-3-22",
+      "about": "An experienced developer with 3 years of experience. Worked on numerous projects, including websites and apps for colleges and businesses. My experience in creating interfaces and optimizing user experiences allows me to teach students how to create effective and user-friendly web solutions. I actively use libraries and frameworks like React and Material UI to develop interactive and dynamic applications.",
+      "achievements": {
+        "1": "Instructor at Codify courses",
+        "2": "Winner of the TUNDUK hackathon",
+        "3": "Winner of the Future City hackathon",
+        "4": "Winner of the IT-FEST hackathon",
+        "5": "Author of the Tanda project",
+        "6": "Developer of moderation in Makalabox"
+      }
+    },
+    "6": {
+      "name": "Sartov Akhmed",
+      "role": "Front-End Instructor",
+      "about": "I teach programming at KOMTECHNO College and have been teaching Front-End for 2 years. Teaching helps me develop communication and leadership skills. I successfully combine work and study, passionate about creating web and mobile applications, and am growing in Mobile Development.",
+      "achievements": {
+        "1": "Graduated from Bishkek College with honors",
+        "2": "Received a certificate for participating in the Startup Nation hackathon",
+        "3": "Became a finalist in the Digital Technologies hackathon",
+        "4": "Received a first-degree diploma at the Innovative Technologies conference"
+      }
+    },
+    "7": {
+      "name": "Kurmanbek",
+      "role": "Back-End Development Instructor",
+      "about": "I teach programming at KOMTECHNO College and have been teaching Back-End for 5 years. Teaching helps me develop communication and leadership skills. I successfully combine work and study. I am an experienced developer with 5 years of experience. I teach Back-End development and train students to create scalable server applications.",
+      "achievements": {
+        "1": "Winner of the CodeFest 2023 hackathon",
+        "2": "Author of a Node.js course on Udemy",
+        "3": "Winner of the Frontend Nation hackathon",
+        "4": "Author of a React course on Udemy"
+      }
+    }
+  },
+  "reviews": {
+    "over": "Over",
+    "studentsCount": "1700",
+    "students": "students",
+    "and": "and",
+    "graduatesCount": "50,000",
+    "graduates": "graduates",
+    "shareFeedback": "share their feedback",
+    "viewMore": "View more and other",
+    "moreReviewsCount": "256",
+    "moreReviews": "reviews",
+    "goTo": "Go to",
+    "studentsFilter": "students",
+    "graduatesFilter": "graduates",
+    "frontend": "Frontend",
+    "backend": "Backend"
+  },
+  "aboutPage": {
+    "title": "Comtehno",
+    "text": "- This is a modern educational institution where students receive quality education and skills that are in demand in the labor market.",
+    "cards": {
+      "founded": "Founded",
+      "students": "Students",
+      "graduates": "Graduates",
+      "mentors": "Mentors"
+    },
+    "directions": {
+      "college": "COLLEGE",
+      "courses": "COURSES",
+      "bachelor": "BACHELOR"
+    },
+    "faculties": "Faculties",
+    "programs": "Programs",
+    "learnMore": "Learn more",
+    "mission": "Mission",
+    "missionContent": "We prepare professionals who combine knowledge with practice. In our case, theory is always backed by real experience: students participate in projects, internships, and solving current problems.",
+    "values": "Values",
+    "valuesContent": "Our values are professionalism, innovation, responsibility, and a commitment to knowledge. We believe that only through honesty and teamwork can high results be achieved in education and career.",
+    "vision": "Vision",
+    "visionContent": "We strive to create an educational environment in which every student can develop and apply knowledge in practice. Our graduates become professionals ready to meet the challenges of the modern world.",
+    "knowledgeToAction": "From knowledge to action"
+    
+  }
+}

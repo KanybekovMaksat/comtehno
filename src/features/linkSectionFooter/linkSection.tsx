@@ -4,7 +4,7 @@ const LinksSection: React.FC<{ title: string, links: string[] }> = ({ title, lin
   const formatTitleForURL = (title: string) => title.toLowerCase().replace(/\s+/g, '-');
 
   return (
-    <div className="sm:block hidden">
+    <div className="block">
       <Link 
         to={`/${formatTitleForURL(title)}`} 
         className="mb-[16px] text-[15px] md:text-[19px] font-[400] leading-[23.75px] text-[#18181B]"

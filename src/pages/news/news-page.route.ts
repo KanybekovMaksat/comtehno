@@ -1,8 +1,8 @@
 import { createElement } from 'react'
-import { NewsPage } from './news-page.ui'
 import { RouteObject } from 'react-router'
+import { NewsPage } from './news-page.ui'
 
 export const newsPageRoute: RouteObject = {
-  path: 'news/:slug',
+  path: '/news',
   element: createElement(NewsPage),
 }
