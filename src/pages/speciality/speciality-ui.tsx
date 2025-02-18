@@ -7,7 +7,7 @@ import { PriceTag } from "~widgets/priceTag/priceTag.ui";
 
 export const SpecialityPage: React.FC = () => {
   return (
-    <Container className="max-w-[1440px] container">
+    <Container className="max-w-[1440px]">
       <SpecialHero />
       <TrainingProgram />
       <ProjectsGrid />
