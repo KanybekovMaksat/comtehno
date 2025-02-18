@@ -4,6 +4,9 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    sourcemap: false, // Disable source maps to save memory
+  },
   server: {
     host: '0.0.0.0',
     port: 3000,
