@@ -12,7 +12,7 @@ import { GenericLayout } from "~app/layout";
 import { EventPageRoute } from "~pages/event";
 import { EventDetailsPageRoute } from "~pages/EventDetailPage";
 import { specialityPageRoute } from "~pages/speciality";
-import { reviewsPageRoute } from "~pages/reviews";
+import { reviewDetailPageRoute, reviewsPageRoute } from "~pages/reviews";
 
 function BubbleError() {
   const error = useRouteError();
@@ -38,12 +38,16 @@ const router = createBrowserRouter([
       homePageRoute,
       aboutPageRoute,
       errorPageRoute,
-      newsDetailsPageRoute,
       specialityPageRoute,
+      // Events
       EventPageRoute,
       EventDetailsPageRoute,
+      // Reviews
       reviewsPageRoute,
+      reviewDetailPageRoute,
+      // News
       newsPageRoute,
+      newsDetailsPageRoute,
     ],
   },
 ]);
