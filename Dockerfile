@@ -5,7 +5,7 @@ RUN npm install
 RUN npm install serve -g
 COPY . .
 ENV NODE_OPTIONS="--max-old-space-size=4096"
-RUN npm run build
+RUN npm run build --verbose
 EXPOSE 3000
 
 CMD ["cp", "-r", "/app/dist/.", "/frontend_static/"]
