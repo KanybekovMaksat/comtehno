@@ -1,4 +1,4 @@
-import { TrainingProgramAccordion } from "./trainingProgramAccordion"
+import { TrainingProgramAccordion } from "./TrainingProgramAccordion"
 
 export interface courseListTypes {
   title: string,
