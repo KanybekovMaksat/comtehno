@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 export const StartupSlide = ({bg, date, person, startupProject}) => {
 
-  // const theme = useTheme();
-  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return <div style={{backgroundImage: `url(${bg})`}} className="max-w-full h-[720px] bg-no-repeat bg-cover p-8 text-white bg-dove rounded-2xl">
   <div className="flex gap-2 mb-96">

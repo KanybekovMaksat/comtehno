@@ -10,9 +10,9 @@ export const ReviewFilters: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col justify-center container items-center mb-6 gap-4 w-full min-w-0">
+    <div className="flex r-md:flex-col justify-center container items-center mb-6 gap-4 w-full min-w-0">
       <Accordion
-        className="w-full max-w-[700px] rounded-full text-[16px] bg-[#F4F4F5] shadow-md relative"
+        className="w-full max-w-[350px] rounded-full text-[16px] bg-[#F4F4F5] shadow-md relative"
         sx={{
           "&::before": { display: "none" },
           "&.Mui-expanded": { margin: "0" },
@@ -20,13 +20,13 @@ export const ReviewFilters: React.FC = () => {
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          className="h-12 flex items-center rounded-full px-2"
+          className="h-12 flex items-center rounded-full px-2  "
           aria-controls="role-content"
           id="role-header"
         >
           {role === "frontend" ? t('reviews.frontend') : t('reviews.backend')}
         </AccordionSummary>
-        <AccordionDetails className="p-0 bg-white rounded-xl absolute z-10 w-full left-0">
+        <AccordionDetails className="p-0 bg-white rounded-xl absolute z-10 left-0 w-full">
           <div
             className="cursor-pointer px-4 py-3 hover:bg-gray-200 rounded-t-xl"
             onClick={() => setRole("frontend")}
@@ -37,7 +37,7 @@ export const ReviewFilters: React.FC = () => {
             {t('reviews.frontend')}
           </div>
           <div
-            className="cursor-pointer px-4 py-3 hover:bg-gray-200 rounded-b-xl"
+            className="cursor-pointer px-4 py-3 hover:bg-gray-200 rounded-b-xl w-full"
             onClick={() => setRole("backend")}
             role="button"
             tabIndex={0}
