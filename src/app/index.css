@@ -3,6 +3,46 @@
 @tailwind components;
 @tailwind utilities;
 
+.container {
+  padding-left: 65px;
+  padding-right: 65px;
+}
+
+@media (max-width: 1449px) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .slider-banner .swiper-pagination-bullet {
   width: 15px;
   height: 6px;

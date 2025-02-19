@@ -1,5 +1,47 @@
 {
   "homepage": {
-    "title": "Comtehno - Technologies. Innovation. Quality. Future."
+    "title": "Bishkek College of Computer Systems and Technologies"
+  },
+  "reviews": {
+    "over": "Over",
+    "studentsCount": "1700",
+    "students": "students",
+    "and": "and",
+    "graduatesCount": "50,000",
+    "graduates": "graduates",
+    "shareFeedback": "share their feedback",
+    "viewMore": "View more and other",
+    "moreReviewsCount": "256",
+    "moreReviews": "reviews",
+    "goTo": "Go to",
+    "studentsFilter": "students",
+    "graduatesFilter": "graduates",
+    "frontend": "Frontend",
+    "backend": "Backend"
+  },
+  "aboutPage": {
+    "title": "Comtehno",
+    "text": "- This is a modern educational institution where students receive quality education and skills that are in demand in the labor market.",
+    "cards": {
+      "founded": "Founded",
+      "students": "Students",
+      "graduates": "Graduates",
+      "mentors": "Mentors"
+    },
+    "directions": {
+      "college": "COLLEGE",
+      "courses": "COURSES",
+      "bachelor": "BACHELOR"
+    },
+    "faculties": "Faculties",
+    "programs": "Programs",
+    "learnMore": "Learn more",
+    "mission": "Mission",
+    "missionContent": "We prepare professionals who combine knowledge with practice. In our case, theory is always backed by real experience: students participate in projects, internships, and solving current problems.",
+    "values": "Values",
+    "valuesContent": "Our values are professionalism, innovation, responsibility, and a commitment to knowledge. We believe that only through honesty and teamwork can high results be achieved in education and career.",
+    "vision": "Vision",
+    "visionContent": "We strive to create an educational environment in which every student can develop and apply knowledge in practice. Our graduates become professionals ready to meet the challenges of the modern world.",
+    "knowledgeToAction": "From knowledge to action"
   }
 }

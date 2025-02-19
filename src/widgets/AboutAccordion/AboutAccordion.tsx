@@ -1,32 +1,32 @@
 import { useState } from "react";
 import { Typography, Box, Container } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import clsx from "clsx";
+import img from "./img/comtehno.png";
 
 const items = [
   {
-    title: "Миссия",
-    content:
-      "Мы готовим профессионалов, которые соединяют знания с практикой. У нас теория всегда подкрепляется реальным опытом: студенты участвуют в проектах, стажировках и решении актуальных задач.",
+    title: "aboutPage.mission",
+    content: "aboutPage.missionContent",
   },
   {
-    title: "Ценности",
-    content:
-      "Наши ценности — это профессионализм, инновации, ответственность и стремление к знаниям. Мы верим, что только через честность и командную работу можно достичь высоких результатов в обучении и карьере.",
+    title: "aboutPage.values",
+    content: "aboutPage.valuesContent",
   },
   {
-    title: "Видение",
-    content:
-      "Мы стремимся создать образовательную среду, в которой каждый студент может развиваться и применять знания на практике. Наши выпускники становятся профессионалами, готовыми к вызовам современного мира.",
+    title: "aboutPage.vision",
+    content: "aboutPage.visionContent",
   },
 ];
 
 export const AboutAccordion = () => {
   const [selected, setSelected] = useState<number | null>(0);
+  const { t } = useTranslation();
 
   return (
     <Container className="r-sm:mb-20 mb-[150px] max-w-[1440px] r-md:mb-8">
       <Typography className="mb-4 text-[#18181B] font-light text-5xl r-sm:text-[32px]">
-        От знаний к делу
+        {t("aboutPage.knowledgeToAction")}
       </Typography>
       <div className="flex gap-8 items-start r-md:flex-col w-full">
         <div className="w-1/2 r-md:w-full">
@@ -42,7 +42,7 @@ export const AboutAccordion = () => {
                   )}
                   onClick={() => setSelected(index === selected ? null : index)}
                 >
-                  {item.title}
+                  {t(item.title)}
                 </button>
 
                 <div
@@ -53,7 +53,7 @@ export const AboutAccordion = () => {
                 >
                   <div className="h-36 p-4  rounded-md shadow-sm scrollbar-thin">
                     <Typography className="text-[#18181B] text-2xl r-sm:text-[18px] font-light">
-                      {item.content}
+                      {t(item.content)}
                     </Typography>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ export const AboutAccordion = () => {
 
         <div className="w-1/2 r-md:w-full">
           <img
-            src="https://s3-alpha-sig.figma.com/img/53b4/50bb/57b51602d51737fbe7a29c27fafdf36e?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=t858Q3Sd7OHKpjq2D-fqZ2FbGgKzx2lX-YmqUY0PF6AZkh7UNCmuZabBuSvabTdiS9e9A4M6ZWNqaMA5J2-b6tCa57-BrpOBrpoCqGUo0bfkJJWLQCQkT2C7sBSDR6CWM~sqcyu6mdcCrRJVYsDRRNy~tVytWIbppusOTTU~dhcilQy6QOYvzjSgcNkjdQyF6BoQrrE0l6I7EttqZA1zCYPTggBLijywnYIiV89YGS4xNGPsVV~5dA5aVlV0iPPqJUKvR5fyUBeWAN~Nj88zXkeVoNHo76OgGOYNUPbRQH~QGTbEPSEiHFAarYIRu-cZkTrxZW4p26iaglX6U7WI5w__"
+            src={img}
             alt="Здание"
             className="rounded-lg shadow-md w-full h-auto"
           />

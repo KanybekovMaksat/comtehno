@@ -1,17 +1,17 @@
-import { Box, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { newsQueries, newsTypes } from '~entities/news'
-import { pathKeys } from '~shared/lib/react-router'
-import { formatDate } from '~shared/ui/date'
+import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { newsQueries, newsTypes } from "~entities/news";
+import { pathKeys } from "~shared/lib/react-router";
+import { formatDate } from "~shared/ui/date";
 
 export const NewsPage = () => {
-  const { data: newsListData, isLoading, isError } = newsQueries.useGetNews()
+  const { data: newsListData, isLoading, isError } = newsQueries.useGetNews();
 
   if (isLoading) {
-    return <div>Загрузка</div>
+    return <div>Загрузка</div>;
   }
   if (isError) {
-    return <div>Ошибка</div>
+    return <div>Ошибка</div>;
   }
 
   return (
@@ -20,10 +20,7 @@ export const NewsPage = () => {
         <Typography variant="h3" className="mb-5 r-md:text-[50px]">
           Новости
         </Typography>
-        <div
-          className="grid grid-cols-[1fr_1fr_1fr] gap-[24px] 
-         r-md:grid-cols-[1fr] r-lg:grid-cols-[1fr_1fr]"
-        >
+        <div className="grid grid-cols-[1fr_1fr_1fr] gap-[24px] r-md:grid-cols-[1fr] r-lg:grid-cols-[1fr_1fr]">
           {newsListData.data.map((item: newsTypes.News) => (
             <div key={item.slug}>
               <Link to={pathKeys.news.bySlug(item.slug)}>
@@ -48,5 +45,5 @@ export const NewsPage = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

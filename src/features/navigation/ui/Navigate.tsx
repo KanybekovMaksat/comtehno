@@ -9,79 +9,78 @@ import {
   Toolbar,
   useMediaQuery,
   useTheme,
-} from '@mui/material'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { pathKeys } from '~shared/lib/react-router'
-import MenuIcon from '@mui/icons-material/Menu'
-import { useTranslation } from 'react-i18next'
-import { getLanguage, setLanguage } from '~shared/lib/i18n'
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { pathKeys } from "~shared/lib/react-router";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTranslation } from "react-i18next";
+import { getLanguage, setLanguage } from "~shared/lib/i18n";
 
 interface linkItem {
-  title: string
-  url: string
+  title: string;
+  url: string;
 }
 
 export const Navigate: React.FC = () => {
   const listLink: linkItem[] = [
     // { title: "Приёмная комиссия 2025", url: "/error" },
-    { title: 'О колледже', url: '/about' },
+    { title: "О колледже", url: "/about" },
     // { title: "Специальности", url: "/speciality" },
-    { title: 'Абитуриентам', url: '/reviews' },
-    // { title: "Новости", url: "/news" },
-    { title: 'Мероприятия', url: '/event' },
-    { title: 'Подобрать программу', url: '/error' },
-    { title: 'Расписание', url: '/error' },
-    { title: 'Студентам', url: '/reviews' },
+    { title: "Абитуриентам", url: "/reviews" },
+    { title: "Новости", url: "/news" },
+    { title: "Мероприятия", url: "/event" },
+    { title: "Подобрать программу", url: "/error" },
+    { title: "Расписание", url: "/error" },
+    { title: "Студентам", url: "/reviews" },
     // { title: "Отзывы", url: "/error" },
-  ]
+  ];
 
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const [open, setOpen] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false);
 
   // Функция управления Drawer
   const toggleDrawer = (state: boolean) => () => {
-    setOpen(state)
-  }
+    setOpen(state);
+  };
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const { i18n } = useTranslation()
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
-    const savedLanguage = getLanguage()
+    const savedLanguage = getLanguage();
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage)
+      i18n.changeLanguage(savedLanguage);
     }
-  }, [i18n])
+  }, [i18n]);
 
   const handleLanguageChange = (lng: string) => {
-    setLanguage(lng)
-    window.location.reload()
-  }
+    setLanguage(lng);
+    window.location.reload();
+  };
 
   const languageMap: { [key: string]: string } = {
-    en: 'English',
-    ru: 'Русский',
-    ky: 'Кыргызча',
-  }
+    en: "English",
+    ru: "Русский",
+    ky: "Кыргызча",
+  };
 
-  const currentLanguage = languageMap[i18n.language] || 'Language'
+  const currentLanguage = languageMap[i18n.language] || "Language";
 
   return (
-    <AppBar position="static" className="bg-white shadow-none">
+    <AppBar position="sticky" className="bg-white shadow-none">
       <Toolbar className="flex items-center justify-between px-0 py-2">
         <Stack
-          sx={{ justifyContent: isMobile && 'space-between' }}
           direction="row"
           flexWrap="wrap"
           className="gap-2 items-center w-full flex justify-between"
         >
-          <div className="flex gap-2 items-center">
+          <div className="r-lg:w-full r-lg:justify-between flex gap-2 items-center">
             <Link
               to={pathKeys.home()}
-              className="font-[Geologica] text-[#0F766E] font-bold text-2xl"
+              className="font-[Geologica] text-primary font-bold text-2xl"
             >
               КОМТЕХНО
             </Link>
@@ -101,11 +100,7 @@ export const Navigate: React.FC = () => {
                 >
                   <List className="w-64">
                     {listLink.map((item, index) => (
-                      <ListItem
-                        button
-                        key={index}
-                        onClick={toggleDrawer(false)}
-                      >
+                      <ListItem key={index} onClick={toggleDrawer(false)}>
                         <Link
                           to={item.url}
                           className="text-black w-full block p-2"
@@ -118,19 +113,21 @@ export const Navigate: React.FC = () => {
                 </Drawer>
               </>
             ) : (
-              listLink.map((item, index) => (
-                <Link
-                  to={item.url}
-                  key={index}
-                  className="font-[Geologica] hover:bg-[#0D9488] hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full"
-                >
-                  {item.title}
-                </Link>
-              ))
+              <div className="flex gap-2 flex-wrap items-center">
+                {listLink.map((item, index) => (
+                  <Link
+                    to={item.url}
+                    key={index}
+                    className="font-[Geologica] hover:bg-primary hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
             )}
           </div>
           {/* Интернационализация */}
-          <div className="relative md:hidden justify-self-end">
+          <div className="relative r-lg:hidden justify-self-end">
             <button
               className="text-[black] text-md font-medium hover:text-gray-400 flex items-center"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -139,7 +136,7 @@ export const Navigate: React.FC = () => {
               {currentLanguage}
               <svg
                 className={`w-5 h-5 ml-2 transition-transform ${
-                  isDropdownOpen ? 'rotate-180' : ''
+                  isDropdownOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -174,5 +171,5 @@ export const Navigate: React.FC = () => {
         </Stack>
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};

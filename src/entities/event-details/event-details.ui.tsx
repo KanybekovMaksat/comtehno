@@ -1,14 +1,13 @@
-import { Typography, Box } from '@mui/material'
-import calendar from '~widgets/eventSwiper/assets/icon/calendar.png'
-import location from '~widgets/eventSwiper/assets/icon/location.png'
-import { Event } from '~entities/eventSwiperCard'
-import { BackButton } from '~shared/ui/back'
+import { Typography, Box } from "@mui/material";
+import calendar from "~widgets/eventSwiper/assets/icon/calendar.png";
+import location from "~widgets/eventSwiper/assets/icon/location.png";
+import { Event } from "~entities/eventSwiperCard";
+import { BackButton } from "~shared/ui/back";
 
 export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
   return (
-    <Box className="relative  w-full ">
-      <BackButton></BackButton>
-
+    <Box className="relative container w-full ">
+      <BackButton/>
       <Box className="flex items-center gap-x-[8px] ">
         <Typography
           className="text-[#52525B] font-normal text-base"
@@ -18,7 +17,7 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
         </Typography>
         <Typography
           className={`uppercase font-normal text-base ${
-            event.colorCategory || 'text-black'
+            event.colorCategory || "text-black"
           }`}
           variant="h5"
         >
@@ -36,7 +35,7 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
       <img
         src={event.photo}
         alt={event.title}
-        style={{ borderRadius: 16, objectFit: 'cover' }}
+        style={{ borderRadius: 16, objectFit: "cover" }}
         className="w-full h-[467px] lg:w-full r-sm:h-[224px]"
       />
 
@@ -52,10 +51,10 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
 
       <Box
         sx={{
-          whiteSpace: 'pre-line',
+          whiteSpace: "pre-line",
           lineHeight: 1.6,
-          '& ul': { pl: 3, mb: 2 },
-          '& li': { mb: 1 },
+          "& ul": { pl: 3, mb: 2 },
+          "& li": { mb: 1 },
         }}
         className="font-light text-[20px]"
       >
@@ -85,5 +84,5 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
         </Typography>
       </Box>
     </Box>
-  )
-}
+  );
+};
