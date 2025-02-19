@@ -67,8 +67,8 @@ export const ReviewCard: React.FC<ReviewProps> = ({
         </div>
       </div>
 
-      <CardContent className="flex-grow flex flex-col gap-4 p-4 md:p-6 w-full">
-        <div className="flex flex-col md:flex-row justify-between">
+      <CardContent className="flex-grow flex flex-col justify-around gap-4 p-4 r-md:p-6 w-full">
+        <div className="flex r-md:flex-col justify-between">
           <Typography
             variant="h6"
             className="font-semibold md:w-1/3 text-[20px] md:text-[22px]"
@@ -77,13 +77,13 @@ export const ReviewCard: React.FC<ReviewProps> = ({
           </Typography>
           <Typography
             variant="body2"
-            className="md:w-2/3 text-[16px] md:text-[20px]"
+            className="w-1/2 r-md:w-full text-[16px] md:text-[20px]"
           >
             {content1}
           </Typography>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex r-md:flex-col justify-between">
           <Typography
             variant="h6"
             className="font-semibold md:w-1/3 text-[20px] md:text-[22px]"
@@ -92,13 +92,13 @@ export const ReviewCard: React.FC<ReviewProps> = ({
           </Typography>
           <Typography
             variant="body2"
-            className="md:w-2/3 text-[16px] md:text-[20px]"
+            className="w-1/2 r-md:w-full text-[16px] md:text-[20px]"
           >
             {content2}
           </Typography>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex r-md:flex-col justify-between">
           <Typography
             variant="h6"
             className="font-semibold md:w-1/3 text-[20px] md:text-[22px]"
@@ -107,7 +107,7 @@ export const ReviewCard: React.FC<ReviewProps> = ({
           </Typography>
           <Typography
             variant="body2"
-            className="md:w-2/3 text-[16px] md:text-[20px]"
+            className="w-1/2 r-md:w-full text-[16px] md:text-[20px]"
           >
             {plans}
           </Typography>
