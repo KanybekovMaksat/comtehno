@@ -9,84 +9,102 @@ import {
   Toolbar,
   useMediaQuery,
   useTheme,
-} from '@mui/material'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { pathKeys } from '~shared/lib/react-router'
-import MenuIcon from '@mui/icons-material/Menu'
-import { useTranslation } from 'react-i18next'
-import { getLanguage, setLanguage } from '~shared/lib/i18n'
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { pathKeys } from "~shared/lib/react-router";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTranslation } from "react-i18next";
+import { getLanguage, setLanguage } from "~shared/lib/i18n";
 
 interface linkItem {
-  title: string
-  url: string
+  title: string;
+  url: string;
 }
 
 export const Navigate: React.FC = () => {
   const listLink: linkItem[] = [
     // { title: "Приёмная комиссия 2025", url: "/error" },
-    { title: 'О колледже', url: '/about' },
+    { title: "О колледже", url: "/about" },
     // { title: "Специальности", url: "/speciality" },
-    { title: 'Абитуриентам', url: '/reviews' },
+    { title: "Абитуриентам", url: "/reviews" },
     { title: "Новости", url: "/news" },
-    { title: 'Мероприятия', url: '/event' },
-    { title: 'Подобрать программу', url: '/error' },
-    { title: 'Расписание', url: '/error' },
-    { title: 'Студентам', url: '/reviews' },
+    { title: "Мероприятия", url: "/event" },
+    { title: "Подобрать программу", url: "/error" },
+    { title: "Расписание", url: "/error" },
+    { title: "Студентам", url: "/reviews" },
     // { title: "Отзывы", url: "/error" },
-  ]
+  ];
 
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const [open, setOpen] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false);
 
   // Функция управления Drawer
   const toggleDrawer = (state: boolean) => () => {
-    setOpen(state)
-  }
+    setOpen(state);
+  };
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const { i18n } = useTranslation()
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
-    const savedLanguage = getLanguage()
+    const savedLanguage = getLanguage();
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage)
+      i18n.changeLanguage(savedLanguage);
     }
-  }, [i18n])
+  }, [i18n]);
 
   const handleLanguageChange = (lng: string) => {
-    setLanguage(lng)
-    window.location.reload()
-  }
+    setLanguage(lng);
+    window.location.reload();
+  };
 
   const languageMap: { [key: string]: string } = {
-    en: 'English',
-    ru: 'Русский',
-    ky: 'Кыргызча',
-  }
+    en: "English",
+    ru: "Русский",
+    ky: "Кыргызча",
+  };
 
-  const currentLanguage = languageMap[i18n.language] || 'Language'
+  const currentLanguage = languageMap[i18n.language] || "Language";
 
   return (
-    <AppBar position="static" className="bg-white shadow-none">
+    <AppBar position="sticky" className="bg-white shadow-none">
       <Toolbar className="flex items-center justify-between px-0 py-2">
-        <Stack direction="row" flexWrap="wrap" className="gap-2 items-center w-full flex justify-between" >
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          className="gap-2 items-center w-full flex justify-between"
+        >
           <div className="r-lg:w-full r-lg:justify-between flex gap-2 items-center">
-            <Link to={pathKeys.home()} className="font-[Geologica] text-primary font-bold text-2xl" >
+            <Link
+              to={pathKeys.home()}
+              className="font-[Geologica] text-primary font-bold text-2xl"
+            >
               КОМТЕХНО
             </Link>
             {isMobile ? (
               <>
-                <IconButton edge="start" color="inherit" onClick={toggleDrawer(true)} >
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  onClick={toggleDrawer(true)}
+                >
                   <MenuIcon className="text-black" />
                 </IconButton>
-                <Drawer anchor="right" open={open} onClose={toggleDrawer(false)} >
+                <Drawer
+                  anchor="right"
+                  open={open}
+                  onClose={toggleDrawer(false)}
+                >
                   <List className="w-64">
                     {listLink.map((item, index) => (
-                      <ListItem key={index} onClick={toggleDrawer(false)} >
-                        <Link to={item.url} className="text-black w-full block p-2" >
+                      <ListItem key={index} onClick={toggleDrawer(false)}>
+                        <Link
+                          to={item.url}
+                          className="text-black w-full block p-2"
+                        >
                           <ListItemText primary={item.title} />
                         </Link>
                       </ListItem>
@@ -95,12 +113,16 @@ export const Navigate: React.FC = () => {
                 </Drawer>
               </>
             ) : (
-              <div className='flex gap-2 flex-wrap items-center'>
+              <div className="flex gap-2 flex-wrap items-center">
                 {listLink.map((item, index) => (
-                    <Link to={item.url} key={index} className="font-[Geologica] hover:bg-primary hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full" >
-                      {item.title}
-                    </Link>
-                  ))}
+                  <Link
+                    to={item.url}
+                    key={index}
+                    className="font-[Geologica] hover:bg-primary hover:text-white transition-all border-[#E4E4E7] text-base text-black font-light border p-2 rounded-full"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
@@ -109,18 +131,24 @@ export const Navigate: React.FC = () => {
             <button
               className="text-[black] text-md font-medium hover:text-gray-400 flex items-center"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
+            >
               {/* <LanguageIcon className="mr-2" /> */}
               {currentLanguage}
               <svg
                 className={`w-5 h-5 ml-2 transition-transform ${
-                  isDropdownOpen ? 'rotate-180' : ''
+                  isDropdownOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" ></path>
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
               </svg>
             </button>
             {isDropdownOpen && (
@@ -143,5 +171,5 @@ export const Navigate: React.FC = () => {
         </Stack>
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};
