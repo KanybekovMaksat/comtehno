@@ -15,8 +15,8 @@ export const Filters: React.FC = () => {
 
   return (
     <div>
-      <div className="flex">
-        <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex r-md:flex-wrap mb-6">
+        <div className="flex flex-wrap r-md:flex-nowrap r-lg:overflow-x-auto r-md:h-14 gap-2 mb-2">
           {data.filter.map((filter, index) => (
             <Button
               key={index}
@@ -33,33 +33,20 @@ export const Filters: React.FC = () => {
             </Button>
           ))}
         </div>
-        <TextField
-          fullWidth
+        <input
+          type="text"
           placeholder="Поиск студента"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          sx={{
+          style={{
             width: "342px",
             height: "40px",
             background: "#F4F4F5",
             border: "1px solid #D4D4D8",
             borderRadius: "12px",
-            "& .MuiOutlinedInput-root": {
-              padding: "8px 16px",
-              "& fieldset": { border: "none" },
-              "&:hover fieldset": { border: "none" },
-              "&.Mui-focused fieldset": { border: "none" },
-            },
-          }}
-          InputProps={{
-            sx: {
-              "& input": { padding: "0px 10px" },
-            },
-            startAdornment: (
-              <span style={{ marginRight: "8px" }}>
-                <SearchIcon />
-              </span>
-            ),
+            padding: "8px 16px",
+            fontSize: "16px",
+            outline: "none",
           }}
         />
       </div>
@@ -68,7 +55,7 @@ export const Filters: React.FC = () => {
           <div key={index}>
             <Link to={card.slug}>
               <img
-                className="rounded-lg mb-4 w-[440px] h-[260px]"
+                className="rounded-lg mb-4 w-[440px] r-sm:h-[220px] h-[260px]"
                 src={card.image}
                 alt="img"
               />

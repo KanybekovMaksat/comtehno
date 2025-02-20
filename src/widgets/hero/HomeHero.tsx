@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import heroBg from "./img/hero-bg.jpeg";
+import heroBg from "./img/hero-bg-comtehno.jpeg";
 import { useTranslation } from "react-i18next";
 import { HeroCarousel } from "~features/heroCarousel";
 
