@@ -20,7 +20,7 @@ export const EventDetailsPage: React.FC = () => {
   }
 
   return (
-    <Container className="max-w-[1440px]">
+    <Container className="max-w-[1440px] container">
       <BackButton />
       <Box className="flex gap-x-[146px] mb-[152px]">
         <div className="flex flex-col gap-[40px]">

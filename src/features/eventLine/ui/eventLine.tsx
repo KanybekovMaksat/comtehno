@@ -9,22 +9,22 @@ export const EventLine: React.FC = () => {
   useEffect(() => {
     // Инициализация AOS с параметром once: false, чтобы анимация повторялась при скроллинге
     AOS.init({
-      duration: 900, 
+      duration: 900,
       once: false, // Повторение анимации при повторном скроллинге
       easing: "ease-in-out",
     });
 
     // Обработчик событий для обновления AOS при прокрутке
-    window.addEventListener('scroll', AOS.refresh);
+    window.addEventListener("scroll", AOS.refresh);
 
     return () => {
       // Очистить обработчик при размонтировании компонента
-      window.removeEventListener('scroll', AOS.refresh);
+      window.removeEventListener("scroll", AOS.refresh);
     };
   }, []);
 
   return (
-    <Container className="max-w-[1440px]">
+    <Container className="max-w-[1440px] px-0">
       <div className="flex flex-col pb-[120px] r-md:pb-[80px] r-xl:items-center items-start justify-center">
         {events.map((event, index) => (
           <div key={index} className="flex r-sm:gap-[6px] gap-[8px]">
