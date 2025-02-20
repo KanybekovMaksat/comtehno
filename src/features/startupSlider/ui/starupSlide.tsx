@@ -4,9 +4,10 @@ import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRig
 import { pathKeys } from "~shared/lib/react-router";
 import { Link } from "react-router-dom";
 
-export const StartupSlide = ({ bg, date, person, startupProject }) => {
-  // const theme = useTheme();
-  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+export const StartupSlide = ({bg, date, person, startupProject}) => {
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div

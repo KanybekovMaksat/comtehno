@@ -43,5 +43,34 @@
     "vision": "Vision",
     "visionContent": "We strive to create an educational environment in which every student can develop and apply knowledge in practice. Our graduates become professionals ready to meet the challenges of the modern world.",
     "knowledgeToAction": "From knowledge to action"
+  },
+  "contacts":{
+    "notFoundAnswer": "Didn't find an answer to the question?",
+    "callUs": "Contact us"
+  },
+  "resume":{
+    "title": "Your resume after graduation",
+    "name": "Kanybekov Maksat",
+    "role": "Frontend developer",
+    "skills": "Skills"
+  },
+  "skillsList":{
+    "skill1": "I do adaptive cross-browser layout in HTML and CSS",
+    "skill2": "I work in Figma",
+    "skill3": "I work in VS Code",
+    "skill4": "I know JavaScript and TypeScript",
+    "skill5": "I know React.js / Vue.js / Angular",
+    "skill6": "I write server code in Node.js",
+    "skill7": "I work with Git",
+    "skill8": "Testing and optimizing web applications",
+    "skill9": "Sociable, understands my role in the team"
+  },
+  "projects":{
+    "project1": "Restaurant complex",
+    "project2": "Computer courses",
+    "project3": "Online store",
+    "project4": "Jewelry store",
+    "project5": "Hair Treatment Center",
+    "project6": "Beauty salon"
   }
 }

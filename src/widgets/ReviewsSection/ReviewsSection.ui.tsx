@@ -35,6 +35,7 @@ export const ReviewsSection: React.FC = () => {
           <span className="text-[#52525B] text-center mb-6 text-[24px] sm:text-[36px] font-light">{t('reviews.shareFeedback')}</span>
         </Typography>
         <ReviewFilters />
+        
         <ReviewSelector selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
         <div className="flex flex-col items-center mb-6 justify-center gap-6">
           {selectedReview && <ReviewCard {...selectedReview} />}
