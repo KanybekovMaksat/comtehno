@@ -1,32 +1,32 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/effect-fade'
-import { Pagination, EffectFade, Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
-import { MakalaBoxIcon } from '~shared/assets/icons'
-import { StartupSlide } from './starupSlide'
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { MakalaBoxIcon } from "~shared/assets/icons";
+import { StartupSlide } from "./starupSlide";
 
-import makalaMaks from '../images/akhmed-akay.png'
-import makalaMaks2 from '../images/startup-maksat.png'
+import makalaMaks from "../images/akhmed-akay.png";
+import makalaMaks2 from "../images/startup-maksat.png";
 
 interface Startup {
-  id: number
-  bg: string
+  id: number;
+  bg: string;
   date: {
-    icon: JSX.Element
-    title: string
-  }
+    icon: JSX.Element;
+    title: string;
+  };
   person: {
-    icon: JSX.Element
-    title: string
-  }
+    icon: JSX.Element;
+    title: string;
+  };
   startupProject: {
-    icon: JSX.Element
-    title: string
-    description: string
+    icon: JSX.Element;
+    title: string;
+    description: string;
     // buttons: {
     //   buttonViseble: {
     //     name: string;
@@ -37,28 +37,27 @@ interface Startup {
     //     icon: JSX.Element;
     //   };
     // };
-  }
+  };
 }
 
 export const StartupSlider: React.FC = () => {
-
   const startupList: Startup[] = [
     {
       id: 1,
       bg: makalaMaks,
       date: {
         icon: <CalendarMonthOutlinedIcon />,
-        title: '2 ноября 2024',
+        title: "2 ноября 2024",
       },
       person: {
         icon: <PersonOutlineOutlinedIcon />,
-        title: 'Каныбеков Максат',
+        title: "Каныбеков Максат",
       },
       startupProject: {
         icon: <MakalaBoxIcon />,
-        title: 'Makala Box',
+        title: "Makala Box",
         description:
-          'Makalabox (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
+          "Makalabox (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.",
         // buttons: {
         //   buttonViseble: {
         //     name: "Посетить сайт",
@@ -76,17 +75,17 @@ export const StartupSlider: React.FC = () => {
       bg: makalaMaks2,
       date: {
         icon: <CalendarMonthOutlinedIcon />,
-        title: '2 ноября 2024',
+        title: "2 ноября 2024",
       },
       person: {
         icon: <PersonOutlineOutlinedIcon />,
-        title: 'Сартов Ахмед',
+        title: "Сартов Ахмед",
       },
       startupProject: {
         icon: <MakalaBoxIcon />,
-        title: 'Up-web',
+        title: "Up-web",
         description:
-          'Up-web (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.',
+          "Up-web (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.",
         // buttons: {
         //   buttonViseble: {
         //     name: "Посетить сайт",
@@ -99,7 +98,7 @@ export const StartupSlider: React.FC = () => {
         // }
       },
     },
-  ]
+  ];
 
   return (
     <Swiper
@@ -115,5 +114,5 @@ export const StartupSlider: React.FC = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-  )
-}
+  );
+};
