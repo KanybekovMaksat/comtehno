@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { EventData } from "~entities/eventSwiperCard";
 import { Container, Box } from "@mui/material";
 import { EventDetails } from "~entities/event-details";
-import { ScrollTop } from "~shared/lib/react-router/scroll-top";
 import { useMediaQuery } from "@mui/material";
 import { EventLine } from "~features/eventLine";
 import { Sidebar } from "~features/sidebar";
+import { BackButton } from "~shared/ui/back";
 
 export const EventDetailsPage: React.FC = () => {
   const isSmallScreen = useMediaQuery("(max-width: 1350px)");
@@ -21,8 +21,8 @@ export const EventDetailsPage: React.FC = () => {
 
   return (
     <Container className="max-w-[1440px]">
-      <ScrollTop />
-      <Box className="flex gap-x-[146px] pb-[152px] pt-[40px]">
+      <BackButton />
+      <Box className="flex gap-x-[146px] mb-[152px]">
         <div className="flex flex-col gap-[40px]">
           <EventDetails event={event} />
           <EventLine />

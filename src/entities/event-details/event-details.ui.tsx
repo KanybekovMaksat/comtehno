@@ -2,12 +2,10 @@ import { Typography, Box } from "@mui/material";
 import calendar from "~widgets/eventSwiper/assets/icon/calendar.png";
 import location from "~widgets/eventSwiper/assets/icon/location.png";
 import { Event } from "~entities/eventSwiperCard";
-import { BackButton } from "~shared/ui/back";
 
 export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
   return (
-    <Box className="relative container w-full ">
-      <BackButton/>
+    <Box className="relative w-full ">
       <Box className="flex items-center gap-x-[8px] ">
         <Typography
           className="text-[#52525B] font-normal text-base"

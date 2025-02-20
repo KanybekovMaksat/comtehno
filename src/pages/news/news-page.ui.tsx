@@ -10,8 +10,13 @@ export const NewsPage = () => {
   if (isLoading) {
     return <div>Загрузка</div>;
   }
+
   if (isError) {
-    return <div>Ошибка</div>;
+    return (
+      <Typography className="text-center text-dove" variant="caption">
+        Нет результатов
+      </Typography>
+    );
   }
 
   return (
