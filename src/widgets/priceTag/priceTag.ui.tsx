@@ -34,7 +34,7 @@ export const PriceTag: React.FC = () => {
           </ol>
         </div>
       </div>
-      <div className="p-[24px] r-lg:w-[640px] w-[500px] h-[566px] bg-[#0D9488] rounded-[16px] flex flex-col justify-between gap-[24px] items-start">
+      <div className="p-[24px] r-lg:w-[640px] w-[500px] bg-[#0D9488] rounded-[16px] flex flex-col justify-between gap-[24px] items-start">
         <h2 className="text-[32px] sm:pl-[24px] sm:text-[44px] font-[300] leading-[40px] sm:leading-[55px] text-[#FAFAFA]">
           Хотите поступить? <br /> Свяжитесь с нами
         </h2>
