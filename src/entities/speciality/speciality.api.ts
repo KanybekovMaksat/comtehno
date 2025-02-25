@@ -1,15 +1,14 @@
-import axios, { AxiosResponse } from "axios"
+import axios, { AxiosResponse } from "axios";
 
-const URL = "https://new.comtehno.kg/api/"
+const API_URL = import.meta.env.VITE_BASE_URL as string;
 
 export const getSpeciality = () => {
-  return axios.get(`${URL}/specialties`)
-}
+  return axios.get(`${API_URL}/specialties`);
+};
 
 export const getSpecialityDetails = (slug: string) => {
-  return axios.get(`${URL}/specialties/${slug}`)
-}
-
+  return axios.get(`${API_URL}/specialties/${slug}`);
+};
 
 // Testing types query
 
