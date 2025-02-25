@@ -1,11 +1,11 @@
-import axios from 'axios'
+import axios from "axios";
 
-const URL = 'https://new.comtehno.kg/api/'
+const API_URL = import.meta.env.VITE_BASE_URL as string;
 
 export const getNews = () => {
-  return axios.get(`${URL}/posts/`)
-}
+  return axios.get(`${API_URL}/posts/`);
+};
 
 export const getNewsDetails = (slug: string) => {
-  return axios.get(`${URL}/posts/${slug}`)
-}
+  return axios.get(`${API_URL}/posts/${slug}`);
+};
