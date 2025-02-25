@@ -56,16 +56,20 @@ export const TrainingProgramAccordion: React.FC = ({
 }: courseListTypes) => {
   return (
     <Accordion>
-      <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+      <AccordionSummary
+        className="p-0"
+        aria-controls="panel1d-content"
+        id="panel1d-header"
+      >
         <Typography className="text-3xl" component="span">
           {title}
         </Typography>
       </AccordionSummary>
-      <AccordionDetails className="flex gap-4 border-b-[1px] border-[#D4D4D8]">
+      <AccordionDetails className="flex flex-wrap p-0 pb-4 gap-4 border-b-[1px] border-[#D4D4D8]">
         {body.map((card, index) => (
           <div className="rounded-2xl w-80 p-4 bg-[#F4F4F5]" key={index}>
             <Typography
-              className="rounded-lg py-2 px-4 text-white bg-[#0D9488]"
+              className="rounded-lg py-2 px-4 text-base text-white bg-[#0D9488]"
               variant="caption"
             >
               {card.number}

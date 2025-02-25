@@ -1,6 +1,7 @@
 import { CircularProgress, Stack, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { specialityQuery } from "~entities/speciality";
+import { BackButton } from "~shared/ui/back";
 
 export const SpecialHero: React.FC = () => {
   const { slug } = useParams();
@@ -28,6 +29,7 @@ export const SpecialHero: React.FC = () => {
       direction={"row"}
       justifyContent={"space-between"}
     >
+      <BackButton />
       <div>
         <div className="flex r-sm:gap-2 gap-4 mb-6 items-center">
           <img src={specialData?.data?.category.photo} alt="" />
