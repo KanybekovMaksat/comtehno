@@ -11,6 +11,7 @@ import { StartupSlide } from "./starupSlide";
 
 import makalaMaks from "../images/akhmed-akay.png";
 import makalaMaks2 from "../images/startup-maksat.png";
+import { useTranslation } from "react-i18next";
 
 interface Startup {
   id: number;
@@ -41,6 +42,7 @@ interface Startup {
 }
 
 export const StartupSlider: React.FC = () => {
+  const { t } = useTranslation();
   const startupList: Startup[] = [
     {
       id: 1,
@@ -57,7 +59,7 @@ export const StartupSlider: React.FC = () => {
         icon: <MakalaBoxIcon />,
         title: "Makala Box",
         description:
-          "Makalabox (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.",
+          t("startup.makalaBoxDescription"),
         // buttons: {
         //   buttonViseble: {
         //     name: "Посетить сайт",
@@ -85,7 +87,7 @@ export const StartupSlider: React.FC = () => {
         icon: <MakalaBoxIcon />,
         title: "Up-web",
         description:
-          "Up-web (Коробка Статей) — это университетский веб-сайт, организованный в формате системы тематических блогов, называемых боксами, и включающий элементы новостного портала.",
+          t("startup.upWebDescription"),
         // buttons: {
         //   buttonViseble: {
         //     name: "Посетить сайт",
