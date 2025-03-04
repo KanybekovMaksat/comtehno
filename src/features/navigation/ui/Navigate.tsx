@@ -30,10 +30,10 @@ export const Navigate: React.FC = () => {
     { title: 'Абитуриентам', url: '/reviews' },
     { title: 'Новости', url: '/news' },
     { title: 'Мероприятия', url: '/event' },
-    { title: 'Подобрать программу', url: '/error' },
-    { title: 'Расписание', url: '/error' },
+    // { title: 'Подобрать программу', url: '/error' },
+    { title: 'Расписание', url: '/timetable' },
     { title: 'Студентам', url: '/reviews' },
-    { title: 'Документы', url: '/documents' },
+    { title: 'Структурные подразделения', url: '/documents' },
     // { title: "Отзывы", url: "/error" },
   ]
 
