@@ -10,7 +10,7 @@ export const PriceTag: React.FC = () => {
             Стоимость обучения
           </h2>
           <h2 className="text-[33px] md:text-[44px] font-[700] leading-[55px] text-[#FAFAFA]">
-            50 000 сом в год
+            55 000 сом в год
           </h2>
         </div>
         <div className="flex flex-wrap gap-[24px]">
