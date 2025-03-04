@@ -5,8 +5,6 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-// import { Link, useNavigate } from 'react-router-dom';
-// import { pathKeys } from '~shared/lib/react-router';
 
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -14,30 +12,38 @@ import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
+import { Link } from "react-router-dom";
+import { pathLinks } from "~shared/lib";
+import { useTranslation } from "react-i18next";
+
 interface NetworkProps {
   className?: string;
 }
 
-export const Network: React.FC<NetworkProps> = (props) => {
-  // const navigate = useNavigate()
+interface InfoHeaderItem {
+  img: JSX.Element;
+  title: string;
+  link: string;
+}
 
-  interface InfoHeaderItem {
-    img: JSX.Element;
-    title: string;
-  }
+export const Network: React.FC<NetworkProps> = () => {
+  const { t } = useTranslation();
 
   const infoHeader: InfoHeaderItem[] = [
     {
       img: <LocalPhoneIcon className="text-black" />,
       title: "+996 707 379 957",
+      link: pathLinks.whatsapp,
     },
     {
       img: <EmailIcon className="text-black" />,
       title: "comtehno.kg@gmail.com",
+      link: pathLinks.gmail,
     },
     {
       img: <LocationOnIcon className="text-black" />,
-      title: "Виноградная улица, 1/14",
+      title: t("homepage.header.headerTop.location"),
+      link: pathLinks.location,
     },
   ];
 
@@ -49,7 +55,7 @@ export const Network: React.FC<NetworkProps> = (props) => {
       <Toolbar className="flex justify-between p-0">
         <div className="flex items-center gap-4">
           {infoHeader.map((item: InfoHeaderItem, index: number) => (
-            <div key={index}>
+            <Link target="_blank" to={item.link} key={index}>
               <Tooltip title={item.title}>
                 <IconButton color="inherit">{item.img}</IconButton>
               </Tooltip>
@@ -60,20 +66,24 @@ export const Network: React.FC<NetworkProps> = (props) => {
               >
                 {item.title}
               </Typography>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex gap-3">
-          <Tooltip title="Instagram">
-            <IconButton>
-              <InstagramIcon className="text-black" />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="WhatsApp">
-            <IconButton>
-              <WhatsAppIcon className="text-black" />
-            </IconButton>
-          </Tooltip>
+          <Link target="_blank" to={pathLinks.instangram}>
+            <Tooltip title="Instagram">
+              <IconButton>
+                <InstagramIcon className="text-black" />
+              </IconButton>
+            </Tooltip>
+          </Link>
+          <Link target="_blank" to={pathLinks.whatsapp}>
+            <Tooltip title="WhatsApp">
+              <IconButton>
+                <WhatsAppIcon className="text-black" />
+              </IconButton>
+            </Tooltip>
+          </Link>
         </div>
       </Toolbar>
     </AppBar>

@@ -1,5 +1,23 @@
 {
   "homepage": {
+    "header": {
+      "headerTop": {
+        "location": "Isakeeva street, 34/1"
+      },
+      "headerBottom": {
+        "logo": "COMTEHNO",
+        "navigation": {
+          "about": "About",
+          "applicants": "For applicants",
+          "news": "News",
+          "events": "Events",
+          "selectProgram": "Select a program",
+          "schedule": "Schedule",
+          "students": "Students",
+          "documents": "Documents"
+        }
+      }
+    },
     "title": "Bishkek College of Computer Systems and Technologies"
   },
   "reviews": {
@@ -73,19 +91,19 @@
     "project5": "Hair Treatment Center",
     "project6": "Beauty salon"
   },
-  "partners" : {
+  "partners": {
     "title": "Our graduates are building a career in leading companies"
   },
-  "startup":{
+  "startup": {
     "title": "Projects and startups of our students",
     "makalaBoxDescription": "Makalabox is a university website organized in the format of a system of thematic blogs called boxes and including elements of a news portal.",
     "upWebDescription": "Up-web is a university website organized in the format of a system of thematic blogs called boxes and including elements of a news portal."
   },
-  "teacherSlider":{
+  "teacherSlider": {
     "title": "Our teachers",
     "subtitle": "people who inspire learning and development"
   },
-  "specialities":{
+  "specialities": {
     "title": "Specialties"
   }
 }

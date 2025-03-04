@@ -24,8 +24,8 @@ export const ReviewDetailPage: React.FC = () => {
 
   if (isError) {
     return (
-      <Typography className="text-center" variant="h1">
-        Нет результатов
+      <Typography className="text-center text-2xl" variant="h1">
+        Ошибка при загрузке данных
       </Typography>
     );
   }

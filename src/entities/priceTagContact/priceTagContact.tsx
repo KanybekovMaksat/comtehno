@@ -1,7 +1,10 @@
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import path from "path";
+import { Link } from "react-router-dom";
 import { InstagramIcon } from "~shared/assets/icons";
 import { GmailIcon } from "~shared/assets/icons";
 import { WhatsappIcon } from "~shared/assets/icons";
+import { pathLinks } from "~shared/lib";
 
 interface Contact {
   id: number;
@@ -15,19 +18,19 @@ const contacts: Contact[] = [
     id: 1,
     icon: <WhatsappIcon />,
     text: "+996 707 379 957",
-    link: "https://wa.me/996707379957",
+    link: pathLinks.whatsapp,
   },
   {
     id: 2,
     icon: <InstagramIcon />,
     text: "comtehno.kg",
-    link: "https://www.instagram.com/comtehno.kg",
+    link: pathLinks.instangram,
   },
   {
     id: 3,
     icon: <GmailIcon />,
     text: "comtehno.kg@gmail.com",
-    link: "mailto:comtehno.kg@gmail.com",
+    link: pathLinks.gmail,
   },
 ];
 
@@ -35,9 +38,9 @@ export const PriceTagContact = () => {
   return (
     <div className="flex flex-col w-full gap-6 justify-center">
       {contacts.map((contact: Contact) => (
-        <a
+        <Link
           key={contact.id}
-          href={contact.link}
+          to={contact.link}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full"
@@ -51,7 +54,7 @@ export const PriceTagContact = () => {
             </div>
             <ArrowOutwardIcon className="w-6 h-6" />
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
