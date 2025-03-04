@@ -98,7 +98,7 @@ export const Navigate: React.FC = () => {
   const currentLanguage = languageMap[i18n.language] || "Language";
 
   return (
-    <AppBar position="sticky" className="bg-white shadow-none">
+    <AppBar className="bg-white shadow-none static">
       <Toolbar className="flex items-center justify-between px-0 py-2">
         <Stack
           direction="row"
