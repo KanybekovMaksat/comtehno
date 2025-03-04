@@ -1,5 +1,5 @@
 import { AskedQuestions } from "~widgets/askedQuestions";
-import { ReviewsSection } from "~widgets/ReviewsSection";
+// import { ReviewsSection } from "~widgets/ReviewsSection";
 import { Speciality } from "~widgets/speciality";
 import { Startup } from "~widgets/startup";
 import { NewsList } from "~widgets/news-list";
@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
     <>
       <HomeHero />
       <Speciality />
-      <ReviewsSection />
+      {/* <ReviewsSection /> */} // Further development is required
       <Partners />
       <CardSwiper />
       <Startup />

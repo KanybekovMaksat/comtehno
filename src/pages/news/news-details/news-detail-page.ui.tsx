@@ -23,10 +23,10 @@ export const NewsDetailPage = () => {
     return <div>Ошибка при получении данных</div>;
   }
   return (
-    <Box className="relative w-full container pb-20 r-lg:mt-5 r-md:container">
+    <div className="relative w-full container pb-20 r-lg:mt-5 r-md:container">
       <BackButton />
-      <Box className="grid grid-cols-[1fr_464px] r-xl:grid-cols-[1fr]">
-        <Box>
+      <div className="flex justify-between r-lg:flex-col">
+        <div className="max-w-[830px]">
           <Box className="flex items-center gap-[8px]">
             <Typography variant="subtitle2">
               {formatDate(newsData.data.createdAt)}
@@ -38,12 +38,7 @@ export const NewsDetailPage = () => {
           <Typography className="r-md:text-[25px]" variant="h2">
             {newsData.data.title}
           </Typography>
-          <Box
-            component={"img"}
-            src={newsData.data.photo}
-            alt={newsData.data.title}
-            className="r-xl:w-full"
-          />
+          <img className="w-full" src={newsData.data.photo} alt="img" />
           <Box className="flex items-center gap-x-[16px] my-5 w-full  r-sm:grid r-sm:gap-4">
             <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
               <CalendarMonth className="w-[24px] h-[24px]"></CalendarMonth>
@@ -57,13 +52,13 @@ export const NewsDetailPage = () => {
           <div
             dangerouslySetInnerHTML={{ __html: newsData.data.content }}
           ></div>
-        </Box>
+        </div>
         <Sidebar data={newsListData.data} title={"Новости"} pathKey={"news"} />
-      </Box>
+      </div>
       <Box className="mt-10">
         <Typography variant="h4">Вам может понравиться</Typography>
         <RecomendationList data={newsListData.data} slug={slug} />
       </Box>
-    </Box>
+    </div>
   );
 };

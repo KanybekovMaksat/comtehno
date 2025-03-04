@@ -1,1 +1,1 @@
-export { Filters } from "./lib";
+export { Filters, pathLinks } from "./lib";

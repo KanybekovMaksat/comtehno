@@ -13,9 +13,9 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { pathKeys } from "~shared/lib/react-router";
-import MenuIcon from "@mui/icons-material/Menu";
 import { useTranslation } from "react-i18next";
 import { getLanguage, setLanguage } from "~shared/lib/i18n";
+import MenuIcon from "@mui/icons-material/Menu";
 
 interface linkItem {
   title: string;
@@ -23,16 +23,43 @@ interface linkItem {
 }
 
 export const Navigate: React.FC = () => {
+  const { t } = useTranslation();
+
   const listLink: linkItem[] = [
     // { title: "Приёмная комиссия 2025", url: "/error" },
-    { title: "О колледже", url: "/about" },
+    {
+      title: t("homepage.header.headerBottom.navigation.about"),
+      url: "/about",
+    },
     // { title: "Специальности", url: "/speciality" },
-    { title: "Абитуриентам", url: "/reviews" },
-    { title: "Новости", url: "/news" },
-    { title: "Мероприятия", url: "/event" },
-    { title: "Подобрать программу", url: "/error" },
-    { title: "Расписание", url: "/error" },
-    { title: "Студентам", url: "/reviews" },
+    {
+      title: t("homepage.header.headerBottom.navigation.applicants"),
+      url: "/reviews",
+    },
+    {
+      title: t("homepage.header.headerBottom.navigation.news"),
+      url: "/news",
+    },
+    {
+      title: t("homepage.header.headerBottom.navigation.events"),
+      url: "/event",
+    },
+    {
+      title: t("homepage.header.headerBottom.navigation.selectProgram"),
+      url: "/error",
+    },
+    {
+      title: t("homepage.header.headerBottom.navigation.schedule"),
+      url: "/error",
+    },
+    {
+      title: t("homepage.header.headerBottom.navigation.students"),
+      url: "/reviews",
+    },
+    {
+      title: t("homepage.header.headerBottom.navigation.documents"),
+      url: "/documents",
+    },
     // { title: "Отзывы", url: "/error" },
   ];
 
@@ -82,7 +109,7 @@ export const Navigate: React.FC = () => {
               to={pathKeys.home()}
               className="font-[Geologica] text-primary font-bold text-2xl"
             >
-              КОМТЕХНО
+              {t("homepage.header.headerBottom.logo")}
             </Link>
             {isMobile ? (
               <>
@@ -113,7 +140,7 @@ export const Navigate: React.FC = () => {
                 </Drawer>
               </>
             ) : (
-              <div className="flex gap-2 flex-wrap items-center">
+              <div className="flex gap-2 flex-wrap items-center max-w-[1080px]">
                 {listLink.map((item, index) => (
                   <Link
                     to={item.url}

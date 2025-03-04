@@ -1,5 +1,23 @@
 {
   "homepage": {
+    "header": {
+      "headerTop": {
+        "location": "Isakeeva street, 34/1"
+      },
+      "headerBottom": {
+        "logo": "COMTEHNO",
+        "navigation": {
+          "about": "About",
+          "applicants": "For applicants",
+          "news": "News",
+          "events": "Events",
+          "selectProgram": "Select a program",
+          "schedule": "Schedule",
+          "students": "Students",
+          "documents": "Documents"
+        }
+      }
+    },
     "title": "Bishkek College of Computer Systems and Technologies"
   },
   "reviews": {
@@ -44,17 +62,17 @@
     "visionContent": "We strive to create an educational environment in which every student can develop and apply knowledge in practice. Our graduates become professionals ready to meet the challenges of the modern world.",
     "knowledgeToAction": "From knowledge to action"
   },
-  "contacts":{
+  "contacts": {
     "notFoundAnswer": "Didn't find an answer to the question?",
     "callUs": "Contact us"
   },
-  "resume":{
+  "resume": {
     "title": "Your resume after graduation",
     "name": "Kanybekov Maksat",
     "role": "Frontend developer",
     "skills": "Skills"
   },
-  "skillsList":{
+  "skillsList": {
     "skill1": "I do adaptive cross-browser layout in HTML and CSS",
     "skill2": "I work in Figma",
     "skill3": "I work in VS Code",
@@ -65,7 +83,7 @@
     "skill8": "Testing and optimizing web applications",
     "skill9": "Sociable, understands my role in the team"
   },
-  "projects":{
+  "projects": {
     "project1": "Restaurant complex",
     "project2": "Computer courses",
     "project3": "Online store",
@@ -73,19 +91,19 @@
     "project5": "Hair Treatment Center",
     "project6": "Beauty salon"
   },
-  "partners" : {
+  "partners": {
     "title": "Our graduates are building a career in leading companies"
   },
-  "startup":{
+  "startup": {
     "title": "Projects and startups of our students",
     "makalaBoxDescription": "Makalabox is a university website organized in the format of a system of thematic blogs called boxes and including elements of a news portal.",
     "upWebDescription": "Up-web is a university website organized in the format of a system of thematic blogs called boxes and including elements of a news portal."
   },
-  "teacherSlider":{
+  "teacherSlider": {
     "title": "Our teachers",
     "subtitle": "people who inspire learning and development"
   },
-  "specialities":{
+  "specialities": {
     "title": "Specialties"
   }
 }
