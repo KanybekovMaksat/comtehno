@@ -18,6 +18,9 @@ import ormon from "./assets/img/Ormon.png";
 import danya from "./assets/img/Даня.jpg";
 import Ahmed from "./assets/img/Ахмед.jpg";
 import Kuma from "./assets/img/Кума.png";
+import { useTranslation } from "react-i18next";
+
+
 const teachers = [
   {
     id: 1,
@@ -126,6 +129,8 @@ const teachers = [
 ];
 
 export const CardSwiper: React.FC = () => {
+
+  const { t } = useTranslation();
   const swiperRef = useRef<any>(null);
   const isSmallScreen = useMediaQuery("(max-width: 1240px)");
 
@@ -150,14 +155,14 @@ export const CardSwiper: React.FC = () => {
           variant="h2"
           className="text-[44px] font-light  r-md:text-[32px]"
         >
-          Наши преподаватели
+          {t("teacherSlider.title")}
         </Typography>
 
         <Typography
           variant="h2"
           className="text-[#52525B] text-4xl font-light pt-[8px] pb-[40px] r-md:pt-0 r-md:text-[28px]"
         >
-          люди, которые вдохновляют учиться и развиваться
+          {t("teacherSlider.subtitle")}
         </Typography>
 
         <Box className="flex justify-center gap-x-[30px] ">
