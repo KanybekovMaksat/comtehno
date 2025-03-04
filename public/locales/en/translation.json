@@ -105,5 +105,17 @@
   },
   "specialities": {
     "title": "Specialties"
+  },
+  "questionList":{
+    "title1":"Can I enroll in COMTEHNO after the 9th grade?",
+    "answer1":"Yes, you can enroll in the college after the 9th grade.",
+    "title2":"What documents are required for admission to COMTEHNO?",
+    "answer2":"Certificate of basic general education (9th grade). 6 photos 3×4 cm. Copy of passport or birth certificate. Military ID or registration certificate (if any).",
+    "title3":"What entrance exams do I need to take?",
+    "answer3":"No entrance exams are required, admission is based on the average score of the certificate.",
+    "title4":"Can I transfer from another educational institution to your college?",
+    "answer4":"Yes, transfer is possible if there are vacancies.",
+    "title5":"What is the difference between COMTEHNO and other colleges?",
+    "answer5":"The college is focused on IT specialties, has experienced mentors and helps students in their professional development."
   }
 }

@@ -1,5 +1,6 @@
 import { Stack } from "@mui/material";
 import { AskedQuestion } from "~entities/askedQuestion";
+import { useTranslation } from "react-i18next";
 
 interface Question {
   title: string;
@@ -7,26 +8,29 @@ interface Question {
 };
 
 export const AskedQuestionsList: React.FC = () => {
+
+  const { t } = useTranslation();
+
   const questionList: Question[] = [
     {
-      title: "Можно ли поступить в КОМТЕХНО после 9 класса?",
-      description: "Да, вы можете поступить в колледж КОМТЕХНО после 9 класса. Для этого необходимо предоставить следующие документы: "
+      title: t('questionList.title1'),
+      description: t('questionList.answer1')
     },
     {
-      title: "Какие документы необходимы для зачисления в колледж?",
-      description: "Аттестат об основном общем образовании (9 класс). 6 фотографий 3×4 см. Копия паспорта или свидетельства о рождении. Военный билет или приписное свидетельство (если есть)."
+      title: t('questionList.title2'),
+      description: t('questionList.answer2')
     },
     {
-      title: "Какие вступительные экзамены нужно сдать?",
-      description: "Вступительные экзамены не требуются, зачисление проходит по среднему баллу аттестата."
+      title: t('questionList.title3'),
+      description: t('questionList.answer3')
     },
     {
-      title: "Можно ли перевестись из другого учебного заведения в ваш колледж?",
-      description: "Да, перевод возможен при наличии свободных мест."
+      title: t('questionList.title4'),
+      description: t('questionList.answer4')
     },
     {
-      title: "В чем отличие КОМТЕХНО от других колледжей?",
-      description: "Колледж ориентирован на IT-специальности, имеет опытных наставников и помогает студентам в профессиональном развитии."
+      title: t('questionList.title5'),
+      description: t('questionList.answer5')
     }
   ];
 
