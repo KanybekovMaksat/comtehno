@@ -16,7 +16,7 @@ export const HomePage: React.FC = () => {
       <NewsList />
       <AboutAccordion />
       <Speciality />
-      {/* <ReviewsSection /> */} // Further development is required
+      {/* <ReviewsSection /> */}
       <Partners />
       <CardSwiper />
       <Startup />

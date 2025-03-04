@@ -7,6 +7,7 @@ import {
   ListItemText,
   Stack,
   Toolbar,
+  Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -44,10 +45,10 @@ export const Navigate: React.FC = () => {
       title: t("homepage.header.headerBottom.navigation.events"),
       url: "/event",
     },
-    {
-      title: t("homepage.header.headerBottom.navigation.selectProgram"),
-      url: "/error",
-    },
+    // {
+    //   title: t("homepage.header.headerBottom.navigation.selectProgram"),
+    //   url: "/error",
+    // },
     {
       title: t("homepage.header.headerBottom.navigation.schedule"),
       url: "/error",
@@ -107,7 +108,7 @@ export const Navigate: React.FC = () => {
           <div className="r-lg:w-full r-lg:justify-between flex gap-2 items-center">
             <Link
               to={pathKeys.home()}
-              className="font-[Geologica] text-primary font-bold text-2xl"
+              className="font-[Geologica] text-[#0F766E] font-bold text-2xl"
             >
               {t("homepage.header.headerBottom.logo")}
             </Link>
@@ -160,7 +161,7 @@ export const Navigate: React.FC = () => {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               {/* <LanguageIcon className="mr-2" /> */}
-              {currentLanguage}
+              <Typography className="font-normal">{currentLanguage}</Typography>
               <svg
                 className={`w-5 h-5 ml-2 transition-transform ${
                   isDropdownOpen ? "rotate-180" : ""
@@ -184,7 +185,7 @@ export const Navigate: React.FC = () => {
                   {Object.entries(languageMap).map(([key, label]) => (
                     <li key={key}>
                       <button
-                        className="text-black block px-4 py-2 hover:bg-primary hover:text-white w-full text-left"
+                        className="text-black text-sm block px-4 py-2 hover:bg-primary hover:text-white w-full text-left"
                         onClick={() => handleLanguageChange(key)}
                       >
                         {label}

@@ -1,20 +1,26 @@
 import { CircularProgress, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { newsQueries } from "~entities/news";
+import { reviewsQuery } from "~entities/reviews";
 import { Sidebar } from "~features/sidebar";
-import { useFilters } from "~shared/lib/filters/useFilters";
+// import { useFilters } from "~shared/lib/filters/useFilters";
 import { BackButton } from "~shared/ui/back";
 import { ReviewsDetails } from "~widgets/reviews";
 
 export const ReviewDetailPage: React.FC = () => {
-  const { filteredList } = useFilters();
-  const { slug } = useParams<{ slug: string }>();
+  // const { filteredList } = useFilters();
+  // const reviewData = filteredList.find((e) => e.slug.toString() === slug);
 
-  const reviewData = filteredList.find((e) => e.slug.toString() === slug);
+  const { slug } = useParams<{ slug: string }>();
+  const {
+    data: reviewData,
+    isError: reviewError,
+    isLoading: reviewLoading,
+  } = reviewsQuery.useGetReviewsDetail(slug);
 
   const { data: newsListData, isLoading, isError } = newsQueries.useGetNews();
 
-  if (isLoading) {
+  if (isLoading || reviewLoading) {
     return (
       <div className="m-auto">
         <CircularProgress />;
@@ -22,7 +28,7 @@ export const ReviewDetailPage: React.FC = () => {
     );
   }
 
-  if (isError) {
+  if (isError || reviewError) {
     return (
       <Typography className="text-center text-2xl" variant="h1">
         Ошибка при загрузке данных
@@ -34,7 +40,7 @@ export const ReviewDetailPage: React.FC = () => {
     <Container className="max-w-[1440px]">
       <BackButton />
       <div className="flex justify-between">
-        <ReviewsDetails {...reviewData} />
+        <ReviewsDetails {...reviewData.data} />
         <Sidebar data={newsListData?.data} title={"Новости"} pathKey={"news"} />
       </div>
     </Container>
