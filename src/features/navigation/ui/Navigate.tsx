@@ -9,65 +9,66 @@ import {
   Toolbar,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { pathKeys } from "~shared/lib/react-router";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useTranslation } from "react-i18next";
-import { getLanguage, setLanguage } from "~shared/lib/i18n";
+} from '@mui/material'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { pathKeys } from '~shared/lib/react-router'
+import MenuIcon from '@mui/icons-material/Menu'
+import { useTranslation } from 'react-i18next'
+import { getLanguage, setLanguage } from '~shared/lib/i18n'
 
 interface linkItem {
-  title: string;
-  url: string;
+  title: string
+  url: string
 }
 
 export const Navigate: React.FC = () => {
   const listLink: linkItem[] = [
     // { title: "Приёмная комиссия 2025", url: "/error" },
-    { title: "О колледже", url: "/about" },
+    { title: 'О колледже', url: '/about' },
     // { title: "Специальности", url: "/speciality" },
-    { title: "Абитуриентам", url: "/reviews" },
-    { title: "Новости", url: "/news" },
-    { title: "Мероприятия", url: "/event" },
-    { title: "Подобрать программу", url: "/error" },
-    { title: "Расписание", url: "/error" },
-    { title: "Студентам", url: "/reviews" },
+    { title: 'Абитуриентам', url: '/reviews' },
+    { title: 'Новости', url: '/news' },
+    { title: 'Мероприятия', url: '/event' },
+    { title: 'Подобрать программу', url: '/error' },
+    { title: 'Расписание', url: '/error' },
+    { title: 'Студентам', url: '/reviews' },
+    { title: 'Документы', url: '/documents' },
     // { title: "Отзывы", url: "/error" },
-  ];
+  ]
 
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false)
 
   // Функция управления Drawer
   const toggleDrawer = (state: boolean) => () => {
-    setOpen(state);
-  };
+    setOpen(state)
+  }
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { i18n } = useTranslation();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const { i18n } = useTranslation()
 
   useEffect(() => {
-    const savedLanguage = getLanguage();
+    const savedLanguage = getLanguage()
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage);
+      i18n.changeLanguage(savedLanguage)
     }
-  }, [i18n]);
+  }, [i18n])
 
   const handleLanguageChange = (lng: string) => {
-    setLanguage(lng);
-    window.location.reload();
-  };
+    setLanguage(lng)
+    window.location.reload()
+  }
 
   const languageMap: { [key: string]: string } = {
-    en: "English",
-    ru: "Русский",
-    ky: "Кыргызча",
-  };
+    en: 'English',
+    ru: 'Русский',
+    ky: 'Кыргызча',
+  }
 
-  const currentLanguage = languageMap[i18n.language] || "Language";
+  const currentLanguage = languageMap[i18n.language] || 'Language'
 
   return (
     <AppBar position="sticky" className="bg-white shadow-none">
@@ -136,7 +137,7 @@ export const Navigate: React.FC = () => {
               {currentLanguage}
               <svg
                 className={`w-5 h-5 ml-2 transition-transform ${
-                  isDropdownOpen ? "rotate-180" : ""
+                  isDropdownOpen ? 'rotate-180' : ''
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -171,5 +172,5 @@ export const Navigate: React.FC = () => {
         </Stack>
       </Toolbar>
     </AppBar>
-  );
-};
+  )
+}
