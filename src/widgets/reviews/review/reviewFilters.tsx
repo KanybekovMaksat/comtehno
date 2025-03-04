@@ -1,20 +1,31 @@
 import { Button, Typography } from "@mui/material";
-import { useFilters } from "./useFilters";
+import { useReviewFilters } from "./useReviewFilters";
 import { Link } from "react-router-dom";
+import { reviewsQuery } from "~entities/reviews";
+import { formatDate } from "~shared/ui/date";
 
-export const Filters: React.FC = () => {
+export const ReviewFilters: React.FC = () => {
+  // const {
+  //   setActiveFilter,
+  //   activeFilter,
+  //   setSearchQuery,
+  //   searchQuery,
+  //   filteredList,
+  //   data,
+  // } = useReviewFilters();
+
   const {
-    setActiveFilter,
-    activeFilter,
-    setSearchQuery,
-    searchQuery,
-    filteredList,
-    data,
-  } = useFilters();
+    data: reviewsData,
+    isLoading,
+    isError,
+  } = reviewsQuery.useGetReviews();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
 
   return (
     <div>
-      <div className="flex r-md:flex-wrap mb-6">
+      {/* <div className="flex r-md:flex-wrap mb-6">
         <div className="flex flex-wrap r-md:flex-nowrap r-lg:overflow-x-auto r-md:h-14 gap-2 mb-2">
           {data.filter.map((filter, index) => (
             <Button
@@ -48,23 +59,23 @@ export const Filters: React.FC = () => {
             outline: "none",
           }}
         />
-      </div>
+      </div> */}
       <div className="flex flex-wrap gap-6">
-        {filteredList.map((card, index) => (
-          <div key={index}>
-            <Link to={card.slug}>
+        {reviewsData.data.map((reviewsCard) => (
+          <div key={reviewsCard.id}>
+            <Link to={reviewsCard.slug}>
               <img
                 className="rounded-lg mb-4 w-[440px] r-sm:h-[220px] h-[260px]"
-                src={card.image}
+                src={reviewsCard.studentPhoto}
                 alt="img"
               />
             </Link>
             <div className="flex gap-2 text-[#52525B]">
-              <span>{card.date}</span>
-              <span>{card.category}</span>
+              <span>{formatDate(reviewsCard.createdAt)}</span>
+              <span>{reviewsCard.studentCategory}</span>
             </div>
             <Typography className="text-[22px]" variant="caption">
-              {card.title}
+              {reviewsCard.studentFullName}
             </Typography>
           </div>
         ))}

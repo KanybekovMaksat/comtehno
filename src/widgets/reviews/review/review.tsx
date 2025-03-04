@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
-import { Filters } from "~shared/lib";
+// import { Filters } from "~shared/lib";
+import { ReviewFilters } from "./reviewFilters";
 
 export const Review: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ export const Review: React.FC = () => {
       >
         Отзывы студентов и выпускников
       </Typography>
-      <Filters />
+      <ReviewFilters />
     </>
   );
 };
