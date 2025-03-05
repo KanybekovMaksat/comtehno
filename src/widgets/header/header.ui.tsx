@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Container className="max-w-[1440px] r-lg:mb-0 mt-20 mb-6">
+    <Container className="max-w-[1440px] r-lg:mb-0 mt-20 r-md:mt-10 mb-6">
       {!isMobile && <Network />}
       <Navigate />
     </Container>
