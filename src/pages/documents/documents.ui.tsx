@@ -12,7 +12,7 @@ export const DocumentsPage = () => {
         className="font-normal text-center mb-8 text-gray-800"
         style={{ fontSize: "clamp(1.5rem, 5vw, 2.4rem)" }}
       >
-        Структура подразделений
+        Структурные подразделения
       </Typography>
       <Box
         display="flex"
@@ -44,7 +44,6 @@ export const DocumentsPage = () => {
                   sx={{
                     color: "text.secondary",
                   }}
-                  className="text-center"
                 >
                   {document.subtitle}
                 </Typography>

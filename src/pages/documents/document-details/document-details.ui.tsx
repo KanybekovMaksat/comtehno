@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 // import { documentQueries } from '~entities/document'
 // import Fancybox from '~widgets/diplom-list/Fancybox'
 
@@ -9,21 +9,21 @@ import {
   Typography,
   Container,
   CircularProgress,
-} from '@mui/material'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { documentQueries } from '~entities/document'
-import { Fancybox } from '~widgets/fancyapps'
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { documentQueries } from "~entities/document";
+import { Fancybox } from "~widgets/fancyapps";
 
 export const DocumentDetailsPage = () => {
-  const { slug } = useParams()
+  const { slug } = useParams();
 
   const {
     data: documentData,
     isError,
     isLoading,
-  } = documentQueries.useGetDetailsDocuments(slug)
+  } = documentQueries.useGetDetailsDocuments(slug);
   if (isError) {
-    return <div>Произошла Ошибка</div>
+    return <div>Произошла Ошибка</div>;
   }
 
   if (isLoading) {
@@ -32,15 +32,15 @@ export const DocumentDetailsPage = () => {
         <CircularProgress className="text-blue" />
         <Typography variant="h6">Загрузка</Typography>
       </div>
-    )
+    );
   }
 
   return (
     <Container maxWidth="lg" className="py-10">
       <Typography
-        variant="h4"
-        className="font-bold text-center mb-8 text-gray-800"
-        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}
+        variant="h3"
+        className="font-semibold text-center mb-8 text-gray-800"
+        style={{ fontSize: "clamp(1.5rem, 5vw, 2.5rem)" }}
       >
         {documentData?.data.title}
       </Typography>
@@ -79,5 +79,5 @@ export const DocumentDetailsPage = () => {
         ))}
       </Fancybox>
     </Container>
-  )
-}
+  );
+};
