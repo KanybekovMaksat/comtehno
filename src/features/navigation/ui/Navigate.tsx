@@ -51,7 +51,7 @@ export const Navigate: React.FC = () => {
     // },
     {
       title: t("homepage.header.headerBottom.navigation.schedule"),
-      url: "/shedule",
+      url: "/timetable",
     },
     {
       title: t("homepage.header.headerBottom.navigation.students"),
