@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { colors, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ErrorCard } from "~entities/errorCard/errorCard";
 

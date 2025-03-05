@@ -1,25 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { ScrollTop } from "~shared/lib/react-router";
 import { Footer } from "~widgets/footer";
 import { Header } from "~widgets/header";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import {
-  Button,
-  Container,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Fab,
-  TextField,
-  useScrollTrigger,
-  Zoom,
-} from "@mui/material";
-import { useState } from "react";
+import { Fab, useScrollTrigger, Zoom } from "@mui/material";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import { pathLinks } from "~shared/lib";
 
 export function GenericLayout() {
-  // const [open, setOpen] = useState(false);
-
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100, // Когда появится кнопка (100px вниз)
@@ -32,12 +20,22 @@ export function GenericLayout() {
   return (
     <div className="flex flex-col min-h-screen">
       <ScrollTop />
-      <div className="h-28 w-full m-0 flex items-center justify-evenly z-10 bg-dove fixed">
-        <span className="text-5xl bg-tundora px-6 py-2 rounded-xl text-white">
-          Время выбрать себя
-        </span>
-        <span className="text-xl rotate-6 bg-tundora px-6 py-2 rounded-xl text-white">
-          скидка 60%
+      <div className="h-16 w-full m-0 flex items-center justify-around z-10 bg-opacity-30 bg-[#0F766E] fixed">
+        <div className="flex items-center gap-10">
+          <span className="text-2xl bg-primary px-6 py-1 rounded-xl text-white">
+            Время выбрать себя
+          </span>
+          <Link
+            target="_blanck"
+            to={pathLinks.whatsapp}
+            className="bg-blue text-2xl animate-bounce hover:bg-[#2275C7] px-6 cursor-pointer hover:scale-105 transition-all py-1 rounded-xl text-white"
+          >
+            <span className="mr-2">Оставьте заявку</span>
+            <VerifiedIcon />
+          </Link>
+        </div>
+        <span className="text-lg rotate-3 bg-primary px-4 py-1 rounded-xl text-white">
+          Лучше сейчас чем никогда!
         </span>
       </div>
       <Header />
@@ -52,24 +50,6 @@ export function GenericLayout() {
           <KeyboardArrowUpIcon />
         </Fab>
       </Zoom>
-      {/* <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle>Обратная связь</DialogTitle>
-        <DialogContent>
-          <TextField
-            fullWidth
-            label="Ваш отзыв"
-            multiline
-            rows={4}
-            variant="outlined"
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpen(false)}>Отмена</Button>
-          <Button variant="contained" color="primary">
-            Отправить
-          </Button>
-        </DialogActions>
-      </Dialog> */}
       <Footer />
     </div>
   );
