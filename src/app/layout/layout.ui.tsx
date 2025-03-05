@@ -28,7 +28,7 @@ export function GenericLayout() {
           <Link
             target="_blanck"
             to={pathLinks.whatsapp}
-            className="bg-blue text-2xl flex rotate-3 r-lg:text-xl items-center animate-bounce hover:bg-[#2275C7] px-2 cursor-pointer hover:scale-105 transition-all py-1 rounded-xl text-white"
+            className="bg-sun text-2xl flex rotate-3 r-lg:text-xl items-center animate-bounce hover:bg-[#2275C7] px-2 cursor-pointer hover:scale-105 transition-all py-1 rounded-xl text-white"
           >
             <span className="mr-2 r-md:text-sm">Оставьте заявку</span>
             <VerifiedIcon />
