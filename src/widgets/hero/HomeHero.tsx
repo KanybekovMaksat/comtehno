@@ -10,7 +10,7 @@ export const HomeHero = () => {
   const { t } = useTranslation(); // инициализируем перевод
   const premList = [
     "Ранний старт в IT",
-    "В году проводим 3 раза",
+    "Диплом гос.образца",
     "Занятия ведут опытные педагоги",
   ];
 
@@ -28,10 +28,6 @@ export const HomeHero = () => {
               <span className="bg-sun r-md:truncate r-md:text-[12px] r-md:py-1 r-md:max-w-52 r-md:px-4 text-white px-6 py-2 rounded-2xl r-md:mr-2 mr-4">
                 Среднее профессиональное образование
               </span>
-              <div className="bg-primary flex items-center r-md:text-[12px] r-md:py-1 r-md:px-4 cursor-pointer animate-bounce px-6 py-2 rounded-2xl text-white">
-                <span className="mr-2">Поступить</span>
-                <SchoolIcon />
-              </div>
             </div>
             <Typography
               variant="h1"
