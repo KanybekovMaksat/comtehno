@@ -1,8 +1,7 @@
 import { Container, Typography } from "@mui/material";
-import heroBg from "./img/hero-bg-comtehno.jpeg";
 import { useTranslation } from "react-i18next";
 import { HeroCarousel } from "~features/heroCarousel";
-import SchoolIcon from "@mui/icons-material/School";
+import heroBg from "./img/abstract-background-with-flowing-lines.jpg";
 
 import pythonImg from "./img/python-com.png";
 
