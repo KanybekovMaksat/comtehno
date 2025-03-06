@@ -1,10 +1,12 @@
 import { Box, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { UpComingData } from '~features/upcoming-events/data-upcoming/upcoming-data'
 import { pathKeys } from '~shared/lib/react-router'
 
 export const Sidebar = ({ data, pathKey, title }) => {
   return (
     <Box className="max-w-[464px] r-xl:hidden">
+      <UpComingData/>
       <Typography
         variant="h3"
         className="mb-[8px] text-[#52525B] font-light text-[25px]"

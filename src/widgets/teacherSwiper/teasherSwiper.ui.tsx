@@ -212,7 +212,7 @@ export const CardSwiper: React.FC = () => {
                 359: {slidesPerView:1},
                 479: {slidesPerView:2}
               }}
-              className="swiper-container max-w-[514px] max-h-[464px] py-12 r-xl-r:max-w-[767px] r-xl-r:max-h-[550px]  r-md:max-w-[605px] r-mdl:max-w-[479px] r-sm:max-w-[369px] r-sm:max-h-[380px]"
+              className="swiper-container max-w-[514px] max-h-[500px] py-12 r-xl-r:max-w-[767px] r-xl-r:max-h-[550px]  r-md:max-w-[605px] r-mdl:max-w-[479px] r-sm:max-w-[369px] r-sm:max-h-[500px]"
             >
               {teachers.map((teacher, index) => (
                 <SwiperSlide
