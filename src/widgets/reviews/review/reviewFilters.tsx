@@ -4,6 +4,21 @@ import { Link } from "react-router-dom";
 import { reviewsQuery } from "~entities/reviews";
 import { formatDate } from "~shared/ui/date";
 
+export interface ReviewsDetailsProps {
+  createdAt: string;
+  slug: string;
+  category: {
+    name: string;
+  };
+  course: string;
+  fullName: string;
+  photo: string;
+  questionAnswers: {
+    question: string;
+    answer: string;
+  }[];
+}
+
 export const ReviewFilters: React.FC = () => {
   const {
     setActiveFilter,
@@ -63,21 +78,23 @@ export const ReviewFilters: React.FC = () => {
         />
       </div>
       <div className="flex flex-wrap gap-6">
-        {filteredList.map((reviewsCard, index) => (
-          <div key={index}>
+        {filteredList.map((reviewsCard: ReviewsDetailsProps, index: number) => (
+          <div className="max-w-96" key={index}>
             <Link to={reviewsCard.slug}>
               <img
-                className="rounded-lg mb-4 max-w-[440px] w-[100%] border r-sm:max-h-[220px] h-[260px]"
-                src={reviewsCard.studentPhoto}
+                className="rounded-lg mb-4 w-[350px] border r-sm:max-h-[220px] h-[350px]"
+                src={reviewsCard.photo}
                 alt="img"
               />
             </Link>
             <div className="flex gap-2 text-[#52525B]">
-              <span>{formatDate(reviewsCard.createdAt)}</span>
-              <span>{reviewsCard.studentCategory}</span>
+              <span className="bg-sun text-white px-2 rounded-md">
+                {formatDate(reviewsCard.createdAt)}
+              </span>
+              <span>{reviewsCard.category.name}</span>
             </div>
-            <Typography className="text-[22px]" variant="caption">
-              {reviewsCard.studentFullName}
+            <Typography className="break-words text-[22px]" variant="caption">
+              {reviewsCard.fullName}
             </Typography>
           </div>
         ))}
