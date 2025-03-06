@@ -9,7 +9,7 @@ export const AboutHistoryCardCollege = () => {
     <div className="flex r-lg:flex-wrap justify-between gap-[20px]">
       <div
         className="flex r-md:h-[300px] r-lg:w-full flex-col justify-end relative rounded-[16px] p-[24px] w-[586px] h-[400px] bg-[#F4F4F5]"
-        data-aos="fade-left"
+        data-aos="fade-right"
       >
         <img
           className="absolute r-sm:w-[200px] r-md:w-[250px] right-[0px] top-[10px]"
@@ -26,8 +26,8 @@ export const AboutHistoryCardCollege = () => {
 
       <div
         className="flex r-md:flex-wrap justify-between gap-[24px] r-lg:w-full r-xl:w-[700px]"
-        data-aos="fade-right"
-      >
+        data-aos="fade-up"
+        >
         <div className="flex r-md:h-[300px] r-lg:w-[700px] flex-col justify-end relative rounded-[16px] p-[24px] w-[586px] h-[400px] bg-[#F4F4F5]">
           <img
             className="absolute r-sm:w-[150px] r-md:w-[200px] right-[0px] top-[10px]"
@@ -44,7 +44,7 @@ export const AboutHistoryCardCollege = () => {
 
         <div
           className="flex flex-col r-md:w-full r-md:flex-wrap r-md:gap-[24px] justify-between"
-          data-aos="fade-left"
+          data-aos="fade-up"
         >
           <div className="flex flex-col gap-[24px] r-md:flex-row">
             <div className="flex r-md:w-full flex-col justify-end relative rounded-[16px] p-[24px] w-[220px] h-[117px] bg-[#F4F4F5]">

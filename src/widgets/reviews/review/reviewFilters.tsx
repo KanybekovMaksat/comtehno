@@ -67,7 +67,7 @@ export const ReviewFilters: React.FC = () => {
           <div key={index}>
             <Link to={reviewsCard.slug}>
               <img
-                className="rounded-lg mb-4 w-[440px] r-sm:h-[220px] h-[260px]"
+                className="rounded-lg mb-4 max-w-[440px] w-[100%] border r-sm:max-h-[220px] h-[260px]"
                 src={reviewsCard.studentPhoto}
                 alt="img"
               />
