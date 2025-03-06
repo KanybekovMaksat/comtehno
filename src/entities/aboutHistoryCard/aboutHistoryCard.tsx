@@ -6,8 +6,8 @@ export const AboutHistoryCard = () => {
     <div className="flex r-md:flex-col gap-[24px]">
       <div
         className="flex flex-col r-md:h-[270px] r-md:w-full justify-end relative rounded-[16px] p-[24px] w-[708px] h-[324px] bg-[#F4F4F5]"
-        data-aos="fade-up"
-      >
+        data-aos="fade-right"
+        >
         <img
           className="absolute r-sm:w-[180px] right-[0px] top-[10px]"
           src={ImageCssTeap}
@@ -25,7 +25,7 @@ export const AboutHistoryCard = () => {
       <div
         className="flex flex-col r-sm:h-[270px] r-md:w-full justify-end relative rounded-[16px] p-[24px] w-[708px] h-[324px] bg-[#F4F4F5]"
         data-aos="fade-up"
-      >
+        >
         <img
           className="absolute r-sm:w-[200px] right-[0px] top-[10px]"
           src={ImageRecktorat}

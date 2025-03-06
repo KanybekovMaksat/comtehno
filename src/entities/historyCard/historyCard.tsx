@@ -8,8 +8,8 @@ export const HistoryCard = () => {
     <div className="flex r-lg:flex-col gap-[24px]">
       <div
         className="flex r-lg:w-full r-sm:h-[300px] r-md:h-[350px] flex-col justify-end relative rounded-[16px] p-[24px] w-[708px] h-[545px] bg-[#F4F4F5]"
-        data-aos="fade-left"
-      >
+        data-aos="fade-up"
+        >
         <img
           className="absolute r-sm:w-[200px] r-md:w-[240px] right-[0px] top-[10px]"
           src={ImageReyting}
@@ -28,7 +28,7 @@ export const HistoryCard = () => {
           <div
             className="flex r-md:h-[150px] r-md:w-full flex-col r-lg:w-full justify-end relative rounded-[16px] p-[24px] w-[342px] h-[197px] bg-[#F4F4F5]"
             data-aos="fade-right"
-          >
+            >
             <img
               className="absolute r-sm:w-[80px] r-md:w-[100px] right-[0px] top-[5px]"
               src={ImageNormative}
@@ -41,8 +41,8 @@ export const HistoryCard = () => {
 
           <div
             className="flex r-md:w-full r-md:h-[150px] r-lg:w-full flex-col justify-end relative rounded-[16px] p-[24px] w-[342px] h-[197px] bg-[#F4F4F5]"
-            data-aos="fade-left"
-          >
+            data-aos="fade-up"
+            >
             <img
               className="absolute r-sm:w-[80px] r-sm:right-[10px] r-sm:top-[10px] r-md:w-[100px] right-[0px] top-[5px]"
               src={ImageAnketa}
@@ -56,7 +56,7 @@ export const HistoryCard = () => {
 
         <div
           className="flex r-lg:w-full r-md:h-[250px] flex-col justify-end relative rounded-[16px] p-[24px] w-[708px] h-[324px] bg-[#F4F4F5]"
-          data-aos="fade-up"
+          data-aos="fade-right"
         >
           <img
             className="absolute r-sm:w-[120px] r-md:w-[150px] right-[0px] top-[10px]"
