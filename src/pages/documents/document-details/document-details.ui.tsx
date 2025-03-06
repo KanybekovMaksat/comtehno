@@ -38,9 +38,9 @@ export const DocumentDetailsPage = () => {
   return (
     <Container maxWidth="lg" className="py-10">
       <Typography
-        variant="h3"
+        variant="h2"
         className="font-semibold text-center mb-8 text-gray-800"
-        style={{ fontSize: "clamp(1.5rem, 5vw, 2.5rem)" }}
+        style={{ fontSize: "clamp(1rem, 5vw, 2rem)" }}
       >
         {documentData?.data.title}
       </Typography>
