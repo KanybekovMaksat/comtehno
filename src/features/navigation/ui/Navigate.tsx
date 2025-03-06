@@ -53,10 +53,10 @@ export const Navigate: React.FC = () => {
       title: t("homepage.header.headerBottom.navigation.schedule"),
       url: "/timetable",
     },
-    {
-      title: t("homepage.header.headerBottom.navigation.students"),
-      url: "/reviews",
-    },
+    // {
+    //   title: t("homepage.header.headerBottom.navigation.students"),
+    //   url: "/reviews",
+    // },
     {
       title: t("homepage.header.headerBottom.navigation.documents"),
       url: "/documents",
@@ -128,14 +128,14 @@ export const Navigate: React.FC = () => {
                 >
                   <List className="w-64">
                     {listLink.map((item, index) => (
-                      <ListItem key={index} onClick={toggleDrawer(false)}>
-                        <Link
-                          to={item.url}
-                          className="text-black w-full block p-2"
-                        >
+                      <Link
+                        to={item.url}
+                        className="text-black w-full block p-2"
+                      >
+                        <ListItem key={index} onClick={toggleDrawer(false)}>
                           <ListItemText primary={item.title} />
-                        </Link>
-                      </ListItem>
+                        </ListItem>
+                      </Link>
                     ))}
                   </List>
                 </Drawer>
@@ -154,6 +154,7 @@ export const Navigate: React.FC = () => {
               </div>
             )}
           </div>
+
           {/* Интернационализация */}
           <div className="relative r-lg:hidden justify-self-end">
             <button
