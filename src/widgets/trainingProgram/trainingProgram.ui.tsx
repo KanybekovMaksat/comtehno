@@ -1,9 +1,31 @@
 import { CalendarMonth } from "@mui/icons-material";
-import { Typography } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import { TrainingProgramList } from "~features/trainingProgramAccordion";
+import { specialityQuery } from "~entities/speciality";
+import { useParams } from "react-router-dom";
 
 export const TrainingProgram: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const {
+    data: trainingProgramData,
+    isError,
+    isLoading,
+  } = specialityQuery.useGetSpecialityDetail(slug);
+
+  if (isError) return <Typography>Error 404!</Typography>;
+  if (isLoading)
+    return (
+      <div className="m-auto">
+        <CircularProgress />;
+      </div>
+    );
+
+  const { portfolioProjects, trainingTime } =
+    trainingProgramData?.data?.trainingProgram;
+
+  const data = trainingProgramData?.data?.trainingProgram;
+
   return (
     <>
       <Typography
@@ -16,17 +38,17 @@ export const TrainingProgram: React.FC = () => {
         <div className="flex items-center gap-2">
           <CalendarMonth />
           <Typography variant="caption" className="r-md:text-base text-xl">
-            2 года 10 месяцев
+            {portfolioProjects}
           </Typography>
         </div>
         <div className="flex items-center gap-2">
           <WorkOutlineIcon />
           <Typography variant="caption" className="r-md:text-base text-xl">
-            10+ практических работ в портфолио
+            {trainingTime}
           </Typography>
         </div>
       </div>
-      <TrainingProgramList />
+      <TrainingProgramList {...data} />
     </>
   );
 };

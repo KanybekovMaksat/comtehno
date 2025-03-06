@@ -51,8 +51,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export const TrainingProgramAccordion: React.FC = ({
-  title,
-  body,
+  name,
+  modules,
 }: courseListTypes) => {
   return (
     <Accordion>
@@ -62,20 +62,20 @@ export const TrainingProgramAccordion: React.FC = ({
         id="panel1d-header"
       >
         <Typography className="text-3xl" component="span">
-          {title}
+          {name}
         </Typography>
       </AccordionSummary>
       <AccordionDetails className="flex flex-wrap p-0 pb-4 gap-4 border-b-[1px] border-[#D4D4D8]">
-        {body.map((card, index) => (
+        {modules.map((courseCard, index: number) => (
           <div className="rounded-2xl w-80 p-4 bg-[#F4F4F5]" key={index}>
             <Typography
               className="rounded-lg py-2 px-4 text-base text-white bg-[#0D9488]"
               variant="caption"
             >
-              {card.number}
+              {index + 1}
             </Typography>
-            <Typography className="text-[20px] mt-6" variant="h4">
-              {card.description}
+            <Typography className="text-primary text-[20px] mt-6" variant="h4">
+              {courseCard.name}
             </Typography>
           </div>
         ))}
