@@ -45,7 +45,7 @@ export const AboutAccordion: React.FC = () => {
   const documentList: documentListTypes = [
     {
       title: "Лицензия",
-      link: "/public/file/licenthia_comtehno.pdf",
+      link: "../../../public/file/licenthia_comtehno.pdf",
     },
     {
       title: "Устав",
