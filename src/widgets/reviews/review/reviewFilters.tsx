@@ -21,19 +21,13 @@ export const ReviewFilters: React.FC = () => {
     isError: isTestError,
   } = reviewsQuery.useGetReviewsCategory();
 
-  // const {
-  //   data: reviewsData,
-  //   isLoading,
-  //   isError,
-  // } = reviewsQuery.useGetReviews();
-
   if (isLoading || isTestLoading) return <div>Loading...</div>;
   if (isError || isTestError) return <div>Error</div>;
 
   return (
     <div>
-      <div className="flex r-md:flex-wrap mb-6">
-        <div className="flex flex-wrap r-md:flex-nowrap r-lg:overflow-x-auto r-md:h-14 gap-2 mb-2">
+      <div className="flex r-md:flex-wrap justify-between mb-6">
+        <div className="flex flex-wrap max-w-4xl r-md:flex-nowrap r-lg:overflow-x-auto r-md:h-14 gap-2 mb-2">
           {/* <button>Все</button> */}
           {categoryData.map((filter, index) => (
             <Button
