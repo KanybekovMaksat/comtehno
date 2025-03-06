@@ -1,25 +1,27 @@
-import { useEffect } from "react";
-import { Card } from "@mui/material";
+import DG from "2gis-maps";
+import { useEffect } from 'react';
 
-const MapBlock: React.FC = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets.2gis.com/js/DGWidgetLoader.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+import mapIcon from "../../../../public/comtehno.png"
 
-  return (
-    <Card className="w-full max-w-3xl mx-auto p-4 shadow-lg rounded-xl">
-      <div
-        className="w-full h-96"
-        id="map-container"
-        dangerouslySetInnerHTML={{
-          __html: `<div class="dg-widget" data-src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%5B37.6173%2C55.7558%5D%2C%22zoom%22%3A13%2C%22org%22%3A%5B%5D%7D" style="width: 100%; height: 100%;"></div>`,
-        }}
-      />
-    </Card>
-  );
-};
+export const Map = () => {
+    useEffect(() => {
+        let gis
+        gis = DG.map("map-container", {
+            center:[42.8593904, 74.667780],
+            zoom: 15
+        })
 
-export default MapBlock;
+        const icon = DG.icon({
+            iconUrl: mapIcon,
+            iconSize: [30, 30]
+        })
+
+        DG.marker([42.8593904, 74.667780], {icon: icon}).addTo(gis).bindPopup("Open!")
+    },[])
+    return (
+        <div id='map-container' className="w-full mb-[40px] rounded-[20px] r-md:h-[300px] h-[500px]">
+
+        </div>
+    )
+
+}
