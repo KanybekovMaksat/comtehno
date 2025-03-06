@@ -14,7 +14,7 @@ export const HomeHero = () => {
 
   return (
     <section
-      className="r-sm:mx-2 r-sm:h-[360px] mx-5 bg-white rounded-3xl r-sm:mb-16 mb-[150px] relative overflow-hidden"
+      className="r-sm:mx-2 r-sm:h-[360px] mx-5 bg-white rounded-3xl r-sm:mb-16 mb-20 relative overflow-hidden"
       style={{
         background:
           "linear-gradient(121.65deg, #4D5FF5 2.13%, #5649BF 36.86%, #38E569 96%)",

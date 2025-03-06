@@ -1,15 +1,15 @@
-import { Typography } from '@mui/material'
-import { useTranslation } from 'react-i18next'
+import { Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export const AboutPageCards = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const cards = [
-    { value: '2005', label: t('aboutPage.cards.founded') },
-    { value: '1700', label: t('aboutPage.cards.students') },
-    { value: '5000', label: t('aboutPage.cards.graduates') },
-    { value: '50', label: t('aboutPage.cards.mentors') },
-  ]
+    { value: "2005", label: t("aboutPage.cards.founded") },
+    { value: "1700", label: t("aboutPage.cards.students") },
+    { value: "5000", label: t("aboutPage.cards.graduates") },
+    { value: "50", label: t("aboutPage.cards.mentors") },
+  ];
 
   return (
     <div className="flex gap-4 justify-center items-center r-md:flex-col r-sm:items-center">
@@ -33,5 +33,5 @@ export const AboutPageCards = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};

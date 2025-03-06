@@ -65,8 +65,8 @@ export const AboutAccordion: React.FC = () => {
       <Typography className="mb-4 text-[#18181B] font-light text-5xl r-sm:text-[32px]">
         {t("aboutPage.knowledgeToAction")}
       </Typography>
-      <div className="flex gap-20 items-center r-lg:items-start r-lg:flex-col w-full">
-        <div className="w-1/2 r-md:w-full">
+      <div className="flex items-center r-sm:mb-10 gap-10 r-lg:items-start r-lg:flex-col w-full">
+        <div className="r-lg:mb-8 r-sm:mb-0 r-md:w-full">
           <Box className="flex flex-col gap-2">
             {items.map((item, index) => (
               <div key={index}>
