@@ -5,41 +5,43 @@ import { reviewsQuery } from "~entities/reviews";
 import { formatDate } from "~shared/ui/date";
 
 export const ReviewFilters: React.FC = () => {
-  // const {
-  //   setActiveFilter,
-  //   activeFilter,
-  //   setSearchQuery,
-  //   searchQuery,
-  //   filteredList,
-  //   data,
-  // } = useReviewFilters();
-
   const {
-    data: reviewsData,
+    setActiveFilter,
+    activeFilter,
     isLoading,
     isError,
-  } = reviewsQuery.useGetReviews();
+    filteredList,
+    setSearchQuery,
+    searchQuery,
+  } = useReviewFilters();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
+  const {
+    data: categoryData,
+    isLoading: isTestLoading,
+    isError: isTestError,
+  } = reviewsQuery.useGetReviewsCategory();
+
+  if (isLoading || isTestLoading) return <div>Loading...</div>;
+  if (isError || isTestError) return <div>Error</div>;
 
   return (
     <div>
-      {/* <div className="flex r-md:flex-wrap mb-6">
-        <div className="flex flex-wrap r-md:flex-nowrap r-lg:overflow-x-auto r-md:h-14 gap-2 mb-2">
-          {data.filter.map((filter, index) => (
+      <div className="flex r-md:flex-wrap justify-between mb-6">
+        <div className="flex flex-wrap max-w-4xl r-md:flex-nowrap r-lg:overflow-x-auto r-md:h-14 gap-2 mb-2">
+          {/* <button>Все</button> */}
+          {categoryData.map((filter, index) => (
             <Button
               key={index}
-              onClick={() => setActiveFilter(filter.category)}
+              onClick={() => setActiveFilter(filter.name)}
               className={`gap-2 border border-solid border-[#E4E4E7] px-4 transition-colors duration-300 normal-case rounded-[12px] text-black font-normal text-base
               ${
-                activeFilter === filter.category
+                activeFilter === filter.name
                   ? "bg-black text-white"
                   : "hover:bg-black hover:text-white"
               }`}
               sx={{ whiteSpace: "nowrap", height: "36px", minWidth: "unset" }}
             >
-              {filter.title}
+              {filter.name}
             </Button>
           ))}
         </div>
@@ -59,10 +61,10 @@ export const ReviewFilters: React.FC = () => {
             outline: "none",
           }}
         />
-      </div> */}
+      </div>
       <div className="flex flex-wrap gap-6">
-        {reviewsData.data.map((reviewsCard) => (
-          <div key={reviewsCard.id}>
+        {filteredList.map((reviewsCard, index) => (
+          <div key={index}>
             <Link to={reviewsCard.slug}>
               <img
                 className="rounded-lg mb-4 w-[440px] r-sm:h-[220px] h-[260px]"
