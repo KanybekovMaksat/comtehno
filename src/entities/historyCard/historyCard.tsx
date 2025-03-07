@@ -16,7 +16,7 @@ export const HistoryCard = () => {
           alt=""
         />
         <h2 className="r-sm:text-[34px] mb-[24px] z-[2] text-[44px] break-words font-[300] text-[#18181B] leading-[55px]">
-          Рейтинг преподавательского состава
+          Рейтинг студентического состава
         </h2>
         <p className="text-[28px] r-md:hidden block z-[2] font-[300] text-[#52525B] leading-[35px]">
           Посмотрите рейтинг лучших преподавателей колледжа
@@ -35,7 +35,7 @@ export const HistoryCard = () => {
               alt=""
             />
             <h3 className="text-[36px] r-sm:text-[32px] z-[2] font-[300] text-[#18181B] leading-[45px]">
-              Нормативные документы
+              IT Отделение
             </h3>
           </div>
 
@@ -49,7 +49,7 @@ export const HistoryCard = () => {
               alt=""
             />
             <h3 className="text-[36px] r-sm:text-[32px] z-[2] font-[300] text-[#18181B] leading-[45px]">
-              Аккредитация
+              Отделение Экономики
             </h3>
           </div>
         </div>
@@ -64,7 +64,7 @@ export const HistoryCard = () => {
             alt=""
           />
           <h2 className="mb-[24px] r-sm:text-[36px] text-[44px] z-[2] font-[300] text-[#18181B] leading-[55px]">
-            Ректорат
+            студентическое Самоуправление 
           </h2>
           <p className="text-[28px] font-[300] r-sm:text-[24px] z-[2] text-[#52525B] leading-[35px]">
             Узнайте больше о нашем Ректорате

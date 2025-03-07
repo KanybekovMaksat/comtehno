@@ -17,15 +17,20 @@ export const Footer: React.FC = () => {
             <div className="flex r-md:hidden block flex-wrap gap-[24px]">
               <LinksSection
                 title="Колледж"
-                links={['О нас', 'Новости', 'Мероприятия', 'Отзывы']}
+                links={[
+                  { title: 'О нас', href: '/about' },
+                  { title: 'Новости', href: '/news' },
+                  { title: 'Мероприятия', href: '/event' },
+                  { title: 'Отзывы', href: '/reviews' },
+                ]}
               />
               <LinksSection
                 title="Полезные ссылки"
                 links={[
-                  'Makalabox',
-                  'Профориентация',
-                  'Расписание',
-                  'Библиотека',
+                  { title: 'Makalabox', href: 'http://makalabox.com' },
+                  { title: 'Профориентация', href: '/about' },
+                  { title: 'Расписание', href: '/timetable' },
+                  { title: 'Библиотека', href: 'https://intuit.kg/faculties/lib-intuit-online/' },
                 ]}
               />
               <SpecialtiesSection />

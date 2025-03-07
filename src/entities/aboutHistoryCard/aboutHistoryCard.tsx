@@ -14,7 +14,7 @@ export const AboutHistoryCard = () => {
           alt=""
         />
         <h2 className="mb-[24px] z-[2] r-sm:text-[36px] text-[44px] font-[300] text-[#18181B] leading-[55px]">
-          CSSTEAP
+          Отделение
         </h2>
         <p className="text-[28px] z-[2] r-sm:text-[20px] font-[300] text-[#52525B] leading-[35px]">
           Centre for Space Science and Technology Education in Asia and the
@@ -32,10 +32,10 @@ export const AboutHistoryCard = () => {
           alt=""
         />
         <h2 className="r-sm:text-[36px] mb-[24px] z-[2] text-[44px] font-[300] text-[#18181B] leading-[55px]">
-          Ректорат
+          Директорат
         </h2>
         <p className="text-[28px] r-sm:text-[20px] z-[2] font-[300] text-[#52525B] leading-[35px]">
-          Узнайте больше о нашем Ректорате
+          Узнайте больше о нашем Директоре
         </p>
       </div>
     </div>

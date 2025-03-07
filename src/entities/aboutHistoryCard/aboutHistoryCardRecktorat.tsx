@@ -35,7 +35,7 @@ export const AboutHistoryCardCollege = () => {
             alt=""
           />
           <h2 className="mb-[24px] r-sm:text-[36px] z-[2] text-[44px] font-[300] text-[#18181B] leading-[55px]">
-            Видение колледжа
+            ООККО
           </h2>
           <p className="text-[28px] font-[300] r-sm:text-[20px] z-[2] text-[#52525B] leading-[35px]">
             Наша миссия и цели в современном образовании
@@ -80,7 +80,7 @@ export const AboutHistoryCardCollege = () => {
               alt=""
             />
             <h3 className="text-[24px] z-[2] font-[300] text-[#18181B] leading-[30px]">
-              Докторантура <br /> (PhD)
+              Специальности
             </h3>
           </div>
         </div>
