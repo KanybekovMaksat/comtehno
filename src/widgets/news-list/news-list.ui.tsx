@@ -11,9 +11,9 @@ import { newsQueries } from "~entities/news";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { formatDate } from "~shared/ui/date";
 import { Link } from "react-router-dom";
 import { pathKeys } from "~shared/lib/react-router";
+import { formatDate } from "~shared/lib";
 
 export const NewsList = () => {
   const { data: newsData, isLoading, isError } = newsQueries.useGetNews();

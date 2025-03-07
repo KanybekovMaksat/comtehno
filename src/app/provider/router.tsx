@@ -7,7 +7,6 @@ import {
 import { aboutPageRoute } from "~pages/about";
 import { errorPageRoute } from "~pages/error";
 import { homePageRoute } from "~pages/home";
-import { newsDetailsPageRoute, newsPageRoute } from "~pages/news";
 import { GenericLayout } from "~app/layout";
 import { EventPageRoute } from "~pages/event";
 import { EventDetailsPageRoute } from "~pages/EventDetailPage";
@@ -15,6 +14,7 @@ import { specialityPageRoute } from "~pages/speciality";
 import { reviewDetailPageRoute, reviewsPageRoute } from "~pages/reviews";
 import { documentDetailsPageRoute, documentsPageRoute } from "~pages/documents";
 import { shedulePageRoute } from "~pages/schedule";
+import { newsDetailsPageRoute, newsPageRoute } from "~pages/news";
 
 function BubbleError() {
   const error = useRouteError();

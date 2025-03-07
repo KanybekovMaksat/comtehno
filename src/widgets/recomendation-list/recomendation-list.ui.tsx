@@ -7,8 +7,8 @@ import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // Или твои иконки
 import { pathKeys } from "~shared/lib/react-router";
-import { formatDate } from "~shared/ui/date";
 import { newsTypes } from "~entities/news";
+import { formatDate } from "~shared/lib";
 
 export const RecomendationList = ({ data, slug }) => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
