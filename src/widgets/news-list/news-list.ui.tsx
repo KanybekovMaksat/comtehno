@@ -64,7 +64,7 @@ export const NewsList = () => {
         <Typography variant="h2" className="text-[50px]">
           Новости
         </Typography>
-        <Box className="flex gap-2 mt-5 r-lg:flex-col">
+        <Box className="flex gap-12 mt-5 r-lg:flex-col">
           <Box
             sx={{ backgroundImage: `url(${newsData.data[currentNew].photo})` }}
             className="w-[952px] h-[456px] bg-cover rounded-[16px] flex justify-between items-end p-[24px] r-lg:w-full r-sm:h-[190px] r-lg:h-[50vh]"
@@ -97,87 +97,73 @@ export const NewsList = () => {
               {formatDate(newsData.data[currentNew].createdAt)}{' '}
             </Typography>
           </Box>
-          <Box className="r-lg:flex-col r-lg:gap-3 items-center r-lg:hidden">
-            <Box>
-              <Tabs
+          <div>
+            <Box className="r-lg:flex-col r-lg:gap-3 items-center r-lg:hidden">
+              <Box>
+                <Tabs value={value} onChange={handleChange}>
+                  <Tab label={prevMonth} {...a11yProps(0)} />
+                  <Tab label={currentMonth} {...a11yProps(1)} />
+                  <Tab label={nextMonth} {...a11yProps(2)} />
+                </Tabs>
+              </Box>
+              <TabPanel
                 value={value}
-                onChange={handleChange}
-                TabIndicatorProps={{ style: { backgroundColor: '#0D9488' } }} // Меняем цвет линии
-              >
-                <Tab
-                  className={value == 0 && 'text-primary '}
-                  label={prevMonth}
-                  {...a11yProps(0)}
-                />
-                <Tab
-                  className={value == 1 && 'text-primary '}
-                  label={currentMonth}
-                  {...a11yProps(1)}
-                />
-                <Tab
-                  className={value == 2 && 'text-primary '}
-                  label={nextMonth}
-                  {...a11yProps(2)}
-                />
-              </Tabs>
-            </Box>
-            <TabPanel
-              value={value}
-              index={0}
-              data={newsData.data}
-              month={prevMonth}
-            />
+                index={0}
+                data={newsData.data}
+                month={prevMonth}
+              />
 
-            <TabPanel
-              value={value}
-              index={1}
-              data={newsData.data}
-              month={currentMonth}
-            />
+              <TabPanel
+                value={value}
+                index={1}
+                data={newsData.data}
+                month={currentMonth}
+              />
 
-            <TabPanel
-              value={value}
-              index={2}
-              data={newsData.data}
-              month={nextMonth}
-            />
-          </Box>
-          {/* pagination */}
-          <Box className="r-lg:flex items-center  gap-5 hidden">
-            <Link to={`${pathKeys.news.root()}`}>
-              <Button
-                variant="outlined"
-                className=" border-black border-opacity-50 text-black lowercase"
-              >
-                Все новости
-              </Button>
-            </Link>
-            <Box className="flex items-center">
-              <IconButton
-                className="text-black"
-                onClick={() => {
-                  if (currentNew <= 1) {
-                    return
-                  }
-                  setCurrentNew((prev) => prev - 1)
-                }}
-              >
-                <KeyboardArrowUp></KeyboardArrowUp>
-              </IconButton>
-              <IconButton
-                className="text-black border"
-                onClick={() => {
-                  if (currentNew == newsData.data.length - 1) {
-                    return
-                  } else {
-                    setCurrentNew((prev) => prev + 1)
-                  }
-                }}
-              >
-                <KeyboardArrowDown></KeyboardArrowDown>
-              </IconButton>
+              <TabPanel
+                value={value}
+                index={2}
+                data={newsData.data}
+                month={nextMonth}
+              />
             </Box>
-          </Box>
+            {/* pagination */}
+            <Box className="r-lg:flex items-center gap-5 hidden">
+              <Link to={`${pathKeys.news.root()}`}>
+                <Button
+                  variant="outlined"
+                  className=" border-black border-opacity-50 text-black lowercase"
+                >
+                  Все новости
+                </Button>
+              </Link>
+              <Box className="flex items-center">
+                <IconButton
+                  className="text-black"
+                  onClick={() => {
+                    if (currentNew <= 1) {
+                      return
+                    }
+                    setCurrentNew((prev) => prev - 1)
+                  }}
+                >
+                  <KeyboardArrowUp></KeyboardArrowUp>
+                </IconButton>
+                <IconButton
+                  className="text-black border"
+                  onClick={() => {
+                    if (currentNew == newsData.data.length - 1) {
+                      return
+                    } else {
+                      setCurrentNew((prev) => prev + 1)
+                    }
+                  }}
+                >
+                  <KeyboardArrowDown></KeyboardArrowDown>
+                </IconButton>
+              </Box>
+            </Box>
+          </div>
         </Box>
       </div>
     </section>

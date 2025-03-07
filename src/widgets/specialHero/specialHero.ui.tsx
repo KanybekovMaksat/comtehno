@@ -25,7 +25,7 @@ export const SpecialHero: React.FC = () => {
 
   return (
     <Stack
-      className="r-sm:mb-20 mb-36"
+      className="r-sm:mb-20 mb-20"
       direction={"row"}
       justifyContent={"space-between"}
     >

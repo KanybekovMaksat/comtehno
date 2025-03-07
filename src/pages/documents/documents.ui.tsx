@@ -1,18 +1,18 @@
-import { Typography, Container, Box } from '@mui/material'
-import { Link as RouterLink } from 'react-router-dom'
-import { documentQueries, documentTypes } from '~entities/document'
+import { Typography, Container, Box } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { documentQueries, documentTypes } from "~entities/document";
 
 export const DocumentsPage = () => {
-  const { data: documentData } = documentQueries.useGetDocuments()
+  const { data: documentData } = documentQueries.useGetDocuments();
 
   return (
     <Container maxWidth="lg" className="py-10 px-4">
       <Typography
         variant="h4"
-        className="font-bold text-center mb-8 text-gray-800"
-        style={{ fontSize: 'clamp(1.5rem, 5vw, 2.4rem)' }}
+        className="font-normal text-center mb-8 text-gray-800"
+        style={{ fontSize: "clamp(1rem, 5vw, 2rem)" }}
       >
-        Об университете
+        Структурные подразделения
       </Typography>
       <Box
         display="flex"
@@ -42,9 +42,8 @@ export const DocumentsPage = () => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: 'text.secondary',
+                    color: "text.secondary",
                   }}
-                  className="text-center"
                 >
                   {document.subtitle}
                 </Typography>
@@ -52,10 +51,10 @@ export const DocumentsPage = () => {
                 <RouterLink
                   to={`/document/${document.slug}`}
                   style={{
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: '#1976d2',
-                    textDecoration: 'none',
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    color: "#1976d2",
+                    textDecoration: "none",
                   }}
                 >
                   Перейти
@@ -66,5 +65,5 @@ export const DocumentsPage = () => {
         )}
       </Box>
     </Container>
-  )
-}
+  );
+};

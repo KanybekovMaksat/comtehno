@@ -21,6 +21,7 @@
     "@radix-ui/react-tooltip": "^1.1.6",
     "@react-spring/web": "^9.7.5",
     "@tanstack/react-query": "^5.62.11",
+    "2gis-maps": "^3.7.5",
     "aos": "^2.3.4",
     "apexcharts": "^4.3.0",
     "axios": "^1.7.9",

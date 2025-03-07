@@ -1,7 +1,6 @@
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useFilters } from "./useFilters";
 import { Link } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
 
 export const Filters: React.FC = () => {
   const {

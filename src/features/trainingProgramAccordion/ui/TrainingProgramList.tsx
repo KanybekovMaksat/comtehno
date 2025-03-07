@@ -1,42 +1,20 @@
 import { TrainingProgramAccordion } from "./TrainingProgramAccordion";
 
 export interface courseListTypes {
-  title: string;
-  body: {
-    number: number;
-    description: string;
+  name: string;
+  modules: {
+    name: string;
   }[];
 }
 
-export const TrainingProgramList: React.FC = () => {
-  const courseList: courseListTypes[] = [
-    {
-      title: "1 курс",
-      body: [
-        { number: 1, description: "HTML & CSS" },
-        { number: 2, description: "JavaScript" },
-        { number: 3, description: "UI Библиотеки" },
-      ],
-    },
-    {
-      title: "2 курс",
-      body: [
-        { number: 1, description: "HTML & CSS" },
-        { number: 2, description: "JavaScript" },
-        { number: 3, description: "UI Библиотеки" },
-      ],
-    },
-    {
-      title: "3 курс",
-      body: [
-        { number: 1, description: "HTML & CSS" },
-        { number: 2, description: "JavaScript" },
-        { number: 3, description: "UI Библиотеки" },
-      ],
-    },
-  ];
+export interface TrainingProgramListProps {
+  courses: courseListTypes[];
+}
 
-  return courseList.map((course: courseListTypes, index: number) => (
+export const TrainingProgramList: React.FC<TrainingProgramListProps> = ({
+  courses,
+}) => {
+  return courses.map((course, index: number) => (
     <TrainingProgramAccordion {...course} key={index} />
   ));
 };

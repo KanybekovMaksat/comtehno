@@ -7,15 +7,16 @@ import {
   ListItemText,
   Stack,
   Toolbar,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { pathKeys } from '~shared/lib/react-router'
-import MenuIcon from '@mui/icons-material/Menu'
 import { useTranslation } from 'react-i18next'
 import { getLanguage, setLanguage } from '~shared/lib/i18n'
+import MenuIcon from '@mui/icons-material/Menu'
 
 interface linkItem {
   title: string
@@ -23,17 +24,43 @@ interface linkItem {
 }
 
 export const Navigate: React.FC = () => {
+  const { t } = useTranslation()
+
   const listLink: linkItem[] = [
     // { title: "Приёмная комиссия 2025", url: "/error" },
-    { title: 'О колледже', url: '/about' },
+    {
+      title: t('homepage.header.headerBottom.navigation.about'),
+      url: '/about',
+    },
     // { title: "Специальности", url: "/speciality" },
-    { title: 'Абитуриентам', url: '/reviews' },
-    { title: 'Новости', url: '/news' },
-    { title: 'Мероприятия', url: '/event' },
-    // { title: 'Подобрать программу', url: '/error' },
-    { title: 'Расписание', url: '/timetable' },
-    { title: 'Студентам', url: '/reviews' },
-    { title: 'Структурные подразделения', url: '/documents' },
+    {
+      title: t('homepage.header.headerBottom.navigation.applicants'),
+      url: '/reviews',
+    },
+    {
+      title: t('homepage.header.headerBottom.navigation.news'),
+      url: '/news',
+    },
+    {
+      title: t('homepage.header.headerBottom.navigation.events'),
+      url: '/event',
+    },
+    // {
+    //   title: t("homepage.header.headerBottom.navigation.selectProgram"),
+    //   url: "/error",
+    // },
+    {
+      title: t('homepage.header.headerBottom.navigation.schedule'),
+      url: '/timetable',
+    },
+    // {
+    //   title: t("homepage.header.headerBottom.navigation.students"),
+    //   url: "/reviews",
+    // },
+    {
+      title: t('homepage.header.headerBottom.navigation.documents'),
+      url: '/documents',
+    },
     // { title: "Отзывы", url: "/error" },
   ]
 
@@ -71,7 +98,7 @@ export const Navigate: React.FC = () => {
   const currentLanguage = languageMap[i18n.language] || 'Language'
 
   return (
-    <AppBar position="sticky" className="bg-white shadow-none">
+    <AppBar className="bg-white shadow-none static">
       <Toolbar className="flex items-center justify-between px-0 py-2">
         <Stack
           direction="row"
@@ -81,9 +108,9 @@ export const Navigate: React.FC = () => {
           <div className="r-lg:w-full r-lg:justify-between flex gap-2 items-center">
             <Link
               to={pathKeys.home()}
-              className="font-[Geologica] text-primary font-bold text-2xl"
+              className="font-[Geologica] text-[#0F766E] font-bold text-2xl"
             >
-              КОМТЕХНО
+              {t('homepage.header.headerBottom.logo')}
             </Link>
             {isMobile ? (
               <>
@@ -101,20 +128,20 @@ export const Navigate: React.FC = () => {
                 >
                   <List className="w-64">
                     {listLink.map((item, index) => (
-                      <ListItem key={index} onClick={toggleDrawer(false)}>
-                        <Link
-                          to={item.url}
-                          className="text-black w-full block p-2"
-                        >
+                      <Link
+                        to={item.url}
+                        className="text-black w-full block p-2"
+                      >
+                        <ListItem key={index} onClick={toggleDrawer(false)}>
                           <ListItemText primary={item.title} />
-                        </Link>
-                      </ListItem>
+                        </ListItem>
+                      </Link>
                     ))}
                   </List>
                 </Drawer>
               </>
             ) : (
-              <div className="flex gap-2 flex-wrap items-center">
+              <div className="flex gap-2 flex-wrap items-center max-w-[1080px]">
                 {listLink.map((item, index) => (
                   <Link
                     to={item.url}
@@ -127,6 +154,7 @@ export const Navigate: React.FC = () => {
               </div>
             )}
           </div>
+
           {/* Интернационализация */}
           <div className="relative r-lg:hidden justify-self-end">
             <button
@@ -134,7 +162,7 @@ export const Navigate: React.FC = () => {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               {/* <LanguageIcon className="mr-2" /> */}
-              {currentLanguage}
+              <Typography className="font-normal">{currentLanguage}</Typography>
               <svg
                 className={`w-5 h-5 ml-2 transition-transform ${
                   isDropdownOpen ? 'rotate-180' : ''
@@ -158,7 +186,7 @@ export const Navigate: React.FC = () => {
                   {Object.entries(languageMap).map(([key, label]) => (
                     <li key={key}>
                       <button
-                        className="text-black block px-4 py-2 hover:bg-primary hover:text-white w-full text-left"
+                        className="text-black text-sm block px-4 py-2 hover:bg-primary hover:text-white w-full text-left"
                         onClick={() => handleLanguageChange(key)}
                       >
                         {label}

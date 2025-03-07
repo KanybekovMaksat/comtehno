@@ -14,6 +14,7 @@ import { EventDetailsPageRoute } from '~pages/EventDetailPage'
 import { specialityPageRoute } from '~pages/speciality'
 import { reviewDetailPageRoute, reviewsPageRoute } from '~pages/reviews'
 import { documentDetailsPageRoute, documentsPageRoute } from '~pages/documents'
+import { shedulePageRoute } from '~pages/schedule'
 import { timetablePageRoute } from '~pages/timetable'
 
 function BubbleError() {
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
       aboutPageRoute,
       errorPageRoute,
       specialityPageRoute,
+      shedulePageRoute,
       // Events
       EventPageRoute,
       EventDetailsPageRoute,

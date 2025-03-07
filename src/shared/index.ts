@@ -1,1 +1,2 @@
-export { Filters } from "./lib";
+export { Counter } from "./ui/counter";
+export { Filters, pathLinks } from "./lib";

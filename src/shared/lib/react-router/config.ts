@@ -25,6 +25,9 @@ export const pathKeys = {
   dashboard() {
     return pathKeys.root.concat("dashboard/");
   },
+  timetable() {
+    return pathKeys.root.concat("timetable/");
+  },
   error() {
     return pathKeys.root.concat("*");
   },

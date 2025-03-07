@@ -18,6 +18,9 @@ import ormon from "./assets/img/Ormon.png";
 import danya from "./assets/img/Даня.jpg";
 import Ahmed from "./assets/img/Ахмед.jpg";
 import Kuma from "./assets/img/Кума.png";
+import { useTranslation } from "react-i18next";
+
+
 const teachers = [
   {
     id: 1,
@@ -126,6 +129,8 @@ const teachers = [
 ];
 
 export const CardSwiper: React.FC = () => {
+
+  const { t } = useTranslation();
   const swiperRef = useRef<any>(null);
   const isSmallScreen = useMediaQuery("(max-width: 1240px)");
 
@@ -150,14 +155,14 @@ export const CardSwiper: React.FC = () => {
           variant="h2"
           className="text-[44px] font-light  r-md:text-[32px]"
         >
-          Наши преподаватели
+          {t("teacherSlider.title")}
         </Typography>
 
         <Typography
           variant="h2"
           className="text-[#52525B] text-4xl font-light pt-[8px] pb-[40px] r-md:pt-0 r-md:text-[28px]"
         >
-          люди, которые вдохновляют учиться и развиваться
+          {t("teacherSlider.subtitle")}
         </Typography>
 
         <Box className="flex justify-center gap-x-[30px] ">
@@ -212,14 +217,14 @@ export const CardSwiper: React.FC = () => {
                 359: {slidesPerView:1},
                 479: {slidesPerView:2}
               }}
-              className="swiper-container max-w-[514px] max-h-[464px] py-12 r-xl-r:max-w-[767px] r-xl-r:max-h-[550px]  r-md:max-w-[605px] r-mdl:max-w-[479px] r-sm:max-w-[369px] r-sm:max-h-[380px]"
+              className="swiper-container max-w-[514px] max-h-[464px] py-12 r-xl-r:max-w-[767px] r-xl-r:max-h-[550px]  r-md:max-w-[605px] r-mdl:max-w-[479px] r-sm:max-w-[369px] r-sm:max-h-[750px]"
             >
               {teachers.map((teacher, index) => (
                 <SwiperSlide
                   key={teacher.id}
                   className="max-w-[592px] swiper-slide flex justify-center"
                 >
-                  <div className="max-w-[442px] h-[440px]  shadow-xl rounded-[20px] overflow-hidden">
+                  <div className="max-w-[442px] h-[440px]  shadow-xl  rounded-[20px] overflow-hidden">
                     <img
                       src={teacher.image}
                       alt={teacher.name}

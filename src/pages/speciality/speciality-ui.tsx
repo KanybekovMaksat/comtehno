@@ -9,7 +9,7 @@ export const SpecialityPage: React.FC = () => {
   return (
     <Container className="max-w-[1440px]">
       <SpecialHero />
-      <TrainingProgram />
+      {/* <TrainingProgram /> */}
       <ProjectsGrid />
       <Resume />
       <PriceTag />

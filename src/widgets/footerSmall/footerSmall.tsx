@@ -3,6 +3,7 @@ import {
   Instagram as InstagramIcon,
   MailOutline as MailOutlineIcon,
 } from '@mui/icons-material'
+import { Map } from './2gis/two-gis'
 
 export const FooterSmal: React.FC = () => {
   interface contactsFooterProps {
@@ -31,6 +32,7 @@ export const FooterSmal: React.FC = () => {
 
   return (
     <footer className="pt-[40px] pb-[40px]">
+      <Map/>
       <div className="flex flex-wrap justify-between">
         <div className="flex flex-row w-full max-w-[576px] r-md:flex-col mb-[24px] gap-[20px] sm:gap-[24px]">
           {contactsFooter.map(
