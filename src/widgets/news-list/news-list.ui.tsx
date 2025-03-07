@@ -99,10 +99,26 @@ export const NewsList = () => {
           </Box>
           <Box className="r-lg:flex-col r-lg:gap-3 items-center r-lg:hidden">
             <Box>
-              <Tabs value={value} onChange={handleChange}>
-                <Tab label={prevMonth} {...a11yProps(0)} />
-                <Tab label={currentMonth} {...a11yProps(1)} />
-                <Tab label={nextMonth} {...a11yProps(2)} />
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                TabIndicatorProps={{ style: { backgroundColor: '#0D9488' } }} // Меняем цвет линии
+              >
+                <Tab
+                  className={value == 0 && 'text-primary '}
+                  label={prevMonth}
+                  {...a11yProps(0)}
+                />
+                <Tab
+                  className={value == 1 && 'text-primary '}
+                  label={currentMonth}
+                  {...a11yProps(1)}
+                />
+                <Tab
+                  className={value == 2 && 'text-primary '}
+                  label={nextMonth}
+                  {...a11yProps(2)}
+                />
               </Tabs>
             </Box>
             <TabPanel

@@ -1,11 +1,14 @@
-import axios from "axios";
+import axios from 'axios'
 
-const API_URL = import.meta.env.VITE_BASE_URL as string;
+const API_URL = import.meta.env.VITE_BASE_URL as string
 
 export const getNews = () => {
-  return axios.get(`${API_URL}/posts/`);
-};
+  return axios.get(`${API_URL}/posts/`)
+}
 
 export const getNewsDetails = (slug: string) => {
-  return axios.get(`${API_URL}/posts/${slug}`);
-};
+  return axios.get(`${API_URL}/posts/${slug}`)
+}
+export const getNewsCategories = () => {
+  return axios.get(`${API_URL}/posts-category/`)
+}
