@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
-import { formatDate } from "~shared/ui/date";
 import { ReviewsDetailsProps } from "../review/reviewFilters";
+import { formatDate } from "~shared/lib";
 
 export const ReviewsDetails: React.FC = ({
   createdAt,

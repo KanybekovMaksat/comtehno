@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import { useReviewFilters } from "./useReviewFilters";
 import { Link } from "react-router-dom";
 import { reviewsQuery } from "~entities/reviews";
-import { formatDate } from "~shared/ui/date";
+import { formatDate } from "~shared/lib";
 
 export interface ReviewsDetailsProps {
   createdAt: string;

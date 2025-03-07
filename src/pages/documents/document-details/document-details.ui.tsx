@@ -55,8 +55,11 @@ export const DocumentDetailsPage = () => {
           },
         }}
       >
-        {documentData?.data.documentCollections.map((acc, i) => (
-          <Accordion className="mb-4 border border-gray shadow-none rounded">
+        {documentData?.data.documentCollections.map((acc, index) => (
+          <Accordion
+            key={index}
+            className="mb-4 border border-gray shadow-none rounded"
+          >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className="text-gray-800 font-semibold">
                 {acc.name}

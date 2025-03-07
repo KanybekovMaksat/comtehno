@@ -1,12 +1,12 @@
-import { Box, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { UpComingData } from '~features/upcoming-events/data-upcoming/upcoming-data'
-import { pathKeys } from '~shared/lib/react-router'
+import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { UpComingData } from "~features/upcoming-events/data-upcoming/upcoming-data";
+import { pathKeys } from "~shared/lib/react-router";
 
 export const Sidebar = ({ data, pathKey, title }) => {
   return (
     <Box className="max-w-[464px] r-xl:hidden">
-      <UpComingData/>
+      <UpComingData />
       <Typography
         variant="h3"
         className="mb-[8px] text-[#52525B] font-light text-[25px]"
@@ -14,8 +14,8 @@ export const Sidebar = ({ data, pathKey, title }) => {
         {title}
       </Typography>
       <Box className="flex flex-col gap-[24px] r-lg:flex-row r-lg:flex-wrap">
-        {data.map((item, i) => (
-          <Link key={i} to={pathKeys[pathKey].bySlug(item.slug)}>
+        {data.map((item, index) => (
+          <Link key={index} to={pathKeys[pathKey].bySlug(item.slug)}>
             <Box className="cursor-pointer">
               <Box className="flex  gap-x-[16px] items-start r-lg:flex-col">
                 <img
@@ -43,5 +43,5 @@ export const Sidebar = ({ data, pathKey, title }) => {
         ))}
       </Box>
     </Box>
-  )
-}
+  );
+};
