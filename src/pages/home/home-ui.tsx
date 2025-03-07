@@ -15,12 +15,12 @@ export const HomePage: React.FC = () => {
     <>
       <HomeHero />
       {/* <NewsList /> */}
+      <AboutAccordion />
       <EventsSection />
       <Speciality />
       <Startup />
       <CardSwiper />
       {/* <ReviewsSection /> */}
-      <AboutAccordion />
       <AskedQuestions />
       <Partners />
       <ContactSection />
