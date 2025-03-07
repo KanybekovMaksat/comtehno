@@ -1,9 +1,9 @@
-import { Box, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { Event } from "../eventSwiperCard";
+import { Box, Typography } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { Event } from '~entities/eventSwiperCard'
 
 export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <Box
       className="pb-[48px] max-w-[448px] r-sm:max-w-[400px] cursor-pointer group transition-all duration-300 hover:-translate-y-2"
@@ -23,7 +23,7 @@ export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
         </Typography>
         <Typography
           className={`uppercase font-normal text-base ${
-            event.colorCategory || "text-black "
+            event.colorCategory || 'text-black '
           } `}
           variant="h5"
         >
@@ -37,5 +37,5 @@ export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
         {event.title}
       </Typography>
     </Box>
-  );
-};
+  )
+}

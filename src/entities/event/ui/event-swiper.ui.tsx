@@ -3,7 +3,7 @@ import calendar from '~widgets/eventSwiper/assets/icon/calendar.png'
 import location from '~widgets/eventSwiper/assets/icon/location.png'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { useNavigate } from 'react-router-dom'
-import { Event } from './event.data'
+import { Event } from '../event.types'
 
 export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
   const navigate = useNavigate()

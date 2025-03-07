@@ -1,0 +1,4 @@
+export { EventDetails } from './ui/event-details.ui'
+export { EventCard } from './ui/event-card.ui'
+export { EventCardSwiper } from './ui/event-swiper.ui'
+export type { Event } from './event.types'
