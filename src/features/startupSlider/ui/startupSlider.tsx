@@ -25,15 +25,12 @@ export const StartupSlider: React.FC = () => {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       loop={true}
     >
-      {projectsData?.length ? (
-        projectsData.map((project: ProjectSchema, id: number) => (
-          <SwiperSlide key={id}>
-            <StartupSlide {...project} />
+      {projectsData?.data.map(
+        (projects: projectsTypes.ProjectsSchema, index: number) => (
+          <SwiperSlide key={index}>
+            <StartupSlide {...projects} />
           </SwiperSlide>
-        ))
-      ) : (
-        <div>нет данных</div>
-      )}
+        )
     </Swiper>
   );
 };

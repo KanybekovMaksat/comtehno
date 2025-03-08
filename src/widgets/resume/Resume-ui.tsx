@@ -9,8 +9,7 @@ export const Resume = () => {
   const user = {
     name: t("resume.name"),
     role: t("resume.role"),
-    avatar:
-      "https://s3-alpha-sig.figma.com/img/adb1/5f73/d293422a885d1a0b2818e825ad470162?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Il-vxZ~1krMWo2V5wxkE4b~6pRXpT0Rr6rb6E1F61OJGElWBsx4wK1VCdTwhhoTFKZGJWuEsCybeO0r2fVaQRWXRHZ2n3XBRkO86k05~GUFos4yE47OWUfzRk2x8oSA3QKvbnAW-Sofdirj1oFLUamMphIBZI6o8c-I-NePfXuzaaMNqoQlf2Blz1fgAE0Pkbbog~F6CVX-k4thBO1k3ctWve5HhfNBRG9TlGe76GARPlk6YsRTp3lErLhk-fWzcR9crvmscGVmnDDPgT9wuvgODMXUMJobH5g4Whz7bV3KY98s7mXuWYY3Nf3C8OJ~M5peitplwIqENzxhEfnxnkA__",
+    avatar: "img",
     tools: ["JavaScript", "HTML", "CSS", "React", "Vue.js", "Node.js", "Miro"],
     skills: [
       t("skillsList.skill1"),

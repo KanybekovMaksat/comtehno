@@ -14,6 +14,7 @@ export const TrainingProgram: React.FC = () => {
   } = specialityQuery.useGetSpecialityDetail(slug);
 
   if (isError) return <Typography>Error 404!</Typography>;
+
   if (isLoading)
     return (
       <div className="m-auto">

@@ -45,15 +45,15 @@ export const AboutAccordion: React.FC = () => {
   const documentList: documentListTypes = [
     {
       title: "Лицензия",
-      link: "/public/file/licenthia_comtehno.pdf",
+      link: "/file/licenthia_comtehno.pdf",
     },
     {
       title: "Устав",
-      link: "/public/file/ustav_comtehno.pdf",
+      link: "/file/ustav_comtehno.pdf",
     },
     {
       title: "Диплом",
-      link: "/public/file/diplom_comtehno.pdf",
+      link: "/file/diplom_comtehno.pdf",
     },
   ];
 

@@ -15,23 +15,27 @@ interface Startup {
   };
 }
 
-export const StartupSlide = ({title, description, fullName, photo, websiteUrl, date}) => {
+export const StartupSlide = ({
+  title,
+  description,
+  fullName,
+  photo,
+  websiteUrl,
+  date,
+}) => {
+  const startupList: Startup[] = [
+    {
+      date: {
+        icon: <CalendarMonthOutlinedIcon />,
+      },
+      person: {
+        icon: <PersonOutlineOutlinedIcon />,
+      },
+    },
+  ];
 
- const startupList: Startup[] = [
-  {
-    date: {
-      icon: <CalendarMonthOutlinedIcon />,
-     },
-     person: {
-       icon: <PersonOutlineOutlinedIcon />,
-     },
-  }
-];
-
-
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  // const theme = useTheme();
+  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div
@@ -63,9 +67,7 @@ export const StartupSlide = ({title, description, fullName, photo, websiteUrl, d
             {title}
           </Typography>
         </div>
-        <Typography className="w-[520px] mb-6">
-          {description}
-        </Typography>
+        <Typography className="w-[520px] mb-6">{description}</Typography>
         <div className="flex justify-between items-center">
           <a
             href={websiteUrl}
