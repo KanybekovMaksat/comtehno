@@ -5,21 +5,21 @@ import { useTranslation } from "react-i18next";
 
 const directions = [
   {
-    title: "college",
-    faculties: 123,
-    programs: 123,
+    title: "about",
+    department: 2,
+    speciality: 10,
     icon: <BooksIcon />,
   },
   {
     title: "courses",
-    faculties: 223,
-    programs: 124,
+    department: 2,
+    direction: 10,
     icon: <DStarIcon />,
   },
   {
     title: "bachelor",
-    faculties: 12,
-    programs: 125,
+    institutions: 8,
+    direction: 34,
     icon: <CubeIcon />,
   },
 ];
@@ -28,6 +28,8 @@ export const DirectionsList = () => {
   const { t } = useTranslation();
 
   const translatedDirections = directions.map((direction) => ({
+  
+  
     ...direction,
     title: t(`aboutPage.directions.${direction.title}`),
   }));
