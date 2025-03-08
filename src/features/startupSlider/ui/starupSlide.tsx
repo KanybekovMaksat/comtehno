@@ -15,23 +15,27 @@ interface Startup {
   };
 }
 
-export const StartupSlide = ({title, description, fullName, photo, websiteUrl, date}) => {
+export const StartupSlide = ({
+  title,
+  description,
+  fullName,
+  photo,
+  websiteUrl,
+  date,
+}) => {
+  const startupList: Startup[] = [
+    {
+      date: {
+        icon: <CalendarMonthOutlinedIcon />,
+      },
+      person: {
+        icon: <PersonOutlineOutlinedIcon />,
+      },
+    },
+  ];
 
- const startupList: Startup[] = [
-  {
-    date: {
-      icon: <CalendarMonthOutlinedIcon />,
-     },
-     person: {
-       icon: <PersonOutlineOutlinedIcon />,
-     },
-  }
-];
-
-
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  // const theme = useTheme();
+  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div
@@ -39,18 +43,21 @@ export const StartupSlide = ({title, description, fullName, photo, websiteUrl, d
       className="max-w-full h-[100%] bg-no-repeat bg-cover p-8 text-white bg-dove rounded-2xl"
     >
       <div className="flex gap-2 mb-96">
-        <span key={title}  className="flex items-center gap-3 text-black py-[10px] px-5 bg-[#F4F4F5] rounded-xl">
-        {startupList.map(el => (
-            <div>{el.date.icon}</div>
-))}
+        <span
+          key={title}
+          className="flex items-center gap-3 text-black py-[10px] px-5 bg-[#F4F4F5] rounded-xl"
+        >
+          {startupList.map((el, index) => (
+            <div key={index}>{el.date.icon}</div>
+          ))}
           <Typography variant="caption" className="font-normal">
             {date}
           </Typography>
         </span>
         <div className="flex items-center gap-3 text-black justify-between py-[10px] px-5 bg-[#F4F4F5] rounded-xl">
-          {startupList.map(el => (
-            <div>{el.person.icon}</div>
-))}
+          {startupList.map((el, index) => (
+            <div key={index}>{el.person.icon}</div>
+          ))}
           <Typography variant="caption" className="font-normal">
             {fullName}
           </Typography>
@@ -63,9 +70,7 @@ export const StartupSlide = ({title, description, fullName, photo, websiteUrl, d
             {title}
           </Typography>
         </div>
-        <Typography className="w-[520px] mb-6">
-          {description}
-        </Typography>
+        <Typography className="w-[520px] mb-6">{description}</Typography>
         <div className="flex justify-between items-center">
           <a
             href={websiteUrl}

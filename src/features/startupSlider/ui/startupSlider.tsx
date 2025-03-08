@@ -5,10 +5,16 @@ import "swiper/css/effect-fade";
 import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { StartupSlide } from "./starupSlide";
 import { projectsQueryes, projectsTypes } from "~entities/projects";
+
 export const StartupSlider: React.FC = () => {
+  const {
+    data: projectsData,
+    isError: projectsError,
+    isLoading: projectsLoading,
+  } = projectsQueryes.useGetProjects();
 
-  const { data: projectsData } = projectsQueryes.useGetProjects();
-
+  if (projectsError) <span>Error!</span>;
+  if (projectsLoading) <span>Loading...</span>;
 
   return (
     <Swiper
@@ -18,11 +24,13 @@ export const StartupSlider: React.FC = () => {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       loop={true}
     >
-       {projectsData?.data.map(
-               (projects: projectsTypes.ProjectsSchema, id: number) => (
-        <SwiperSlide key={id}>
-          <StartupSlide {...projects} />
-        </SwiperSlide>
-      ))}
+      {projectsData?.data.map(
+        (projects: projectsTypes.ProjectsSchema, index: number) => (
+          <SwiperSlide key={index}>
+            <StartupSlide {...projects} />
+          </SwiperSlide>
+        )
+      )}
     </Swiper>
-  )}
+  );
+};
