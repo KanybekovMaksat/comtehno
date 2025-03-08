@@ -18,7 +18,7 @@ export const AboutHistoryCard = () => {
             Аккредитация
           </h2>
           <p className="text-[28px] z-[2] r-sm:text-[20px] font-[300] text-[#52525B] leading-[35px]">
-            сведения о лицензиях и аккредитации колледжа.
+            сведения о лицензиях и аккредитации колледжа
           </p>
       </Link>
     <Link to="/document/direktorat"

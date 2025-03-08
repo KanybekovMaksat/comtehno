@@ -1,5 +1,11 @@
-import { z } from 'zod'
-import { ProjectsSchema, ProjectsListSchema } from './projects.contracts'
-
-export type ProjectsSchema = z.infer<typeof ProjectsSchema>
-export type ProjectsListSchema = z.infer<typeof ProjectsListSchema>
+export interface ProjectSchema {
+    title: string;
+    slug: string;
+    description: string;
+    fullName: string;
+    photo: string;
+    createdAt: string; // Дата в строковом формате ISO
+    date: string; // Дата в строковом формате
+    websiteUrl: string;
+  }
+  
