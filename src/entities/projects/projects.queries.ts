@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getDetailProjects, getProjects } from './projects.api'
+import { getDetailProjects, getProjectsData } from './projects.api'
 
 const keys = {
   root: () => ['projects'],
@@ -9,7 +9,7 @@ const keys = {
 export function useGetProjects() {
   return useQuery({
     queryKey: keys.root(),
-    queryFn: getProjects,
+    queryFn: getProjectsData,
   })
 }
 

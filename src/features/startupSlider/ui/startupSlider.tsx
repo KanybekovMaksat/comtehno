@@ -4,17 +4,18 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { StartupSlide } from "./starupSlide";
-import { projectsQueryes, projectsTypes } from "~entities/projects";
+import { projectsQueryes } from "~entities/projects";
+import { ProjectSchema } from "~entities/projects/projects.types";
 
 export const StartupSlider: React.FC = () => {
   const {
     data: projectsData,
-    isError: projectsError,
-    isLoading: projectsLoading,
+    isError: projectsDataError,
+    isLoading: projectsDataLoading,
   } = projectsQueryes.useGetProjects();
 
-  if (projectsError) <span>Error!</span>;
-  if (projectsLoading) <span>Loading...</span>;
+  if (projectsDataLoading) return <div>Загрузка...</div>;
+  if (projectsDataError) return <span>Нет результатов</span>;
 
   return (
     <Swiper
@@ -30,7 +31,6 @@ export const StartupSlider: React.FC = () => {
             <StartupSlide {...projects} />
           </SwiperSlide>
         )
-      )}
     </Swiper>
   );
 };

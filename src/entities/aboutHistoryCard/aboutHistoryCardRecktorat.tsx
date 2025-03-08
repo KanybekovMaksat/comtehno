@@ -29,7 +29,7 @@ export const AboutHistoryCardCollege = () => {
           История колледжа
         </h2>
         <p className="text-[28px] r-sm:text-[20px] font-[300] z-[2] text-[#52525B] leading-[35px]">
-          информация о становлении и развитии колледжа.
+          информация о становлении и развитии колледжа
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export const AboutHistoryCardCollege = () => {
           </h2>
           <p className="text-[28px] font-[300] r-sm:text-[20px] z-[2] text-[#52525B] leading-[35px]">
             миссия и цели образовательного учреждения. Аккредитация – сведения о
-            лицензиях и аккредитации колледжа.
+            лицензиях и аккредитации колледжа
           </p>
         </Link>
 

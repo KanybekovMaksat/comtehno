@@ -43,21 +43,18 @@ export const StartupSlide = ({
       className="max-w-full h-[100%] bg-no-repeat bg-cover p-8 text-white bg-dove rounded-2xl"
     >
       <div className="flex gap-2 mb-96">
-        <span
-          key={title}
-          className="flex items-center gap-3 text-black py-[10px] px-5 bg-[#F4F4F5] rounded-xl"
-        >
-          {startupList.map((el, index) => (
-            <div key={index}>{el.date.icon}</div>
-          ))}
+        <span className="flex items-center gap-3 text-black py-[10px] px-5 bg-[#F4F4F5] rounded-xl">
+        {startupList.map((el, index) => (
+            <div key={index} >{el.date.icon}</div>
+))}
           <Typography variant="caption" className="font-normal">
             {date}
           </Typography>
         </span>
         <div className="flex items-center gap-3 text-black justify-between py-[10px] px-5 bg-[#F4F4F5] rounded-xl">
           {startupList.map((el, index) => (
-            <div key={index}>{el.person.icon}</div>
-          ))}
+            <div key={index} >{el.person.icon}</div>
+))}
           <Typography variant="caption" className="font-normal">
             {fullName}
           </Typography>
