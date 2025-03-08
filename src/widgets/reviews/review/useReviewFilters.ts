@@ -14,7 +14,7 @@ export const useReviewFilters = () => {
   const filteredList = reviewsData?.data.filter((student) => {
     const matchesFilter =
       activeFilter === "all" || student.category.name === activeFilter;
-    const matchesSearch = student.category.name
+    const matchesSearch = student.fullName
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
     return matchesFilter && matchesSearch;

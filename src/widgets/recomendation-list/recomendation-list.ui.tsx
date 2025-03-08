@@ -1,32 +1,32 @@
-import { useRef, useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import { Box, Button, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { ChevronLeft, ChevronRight } from 'lucide-react' // Или твои иконки
-import { pathKeys } from '~shared/lib/react-router'
-import { formatDate } from '~shared/ui/date'
-import { newsTypes } from '~entities/news'
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Box, Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Или твои иконки
+import { pathKeys } from "~shared/lib/react-router";
+import { newsTypes } from "~entities/news";
+import { formatDate } from "~shared/lib";
 
 export const RecomendationList = ({ data, slug }) => {
-  const prevRef = useRef<HTMLButtonElement | null>(null)
-  const nextRef = useRef<HTMLButtonElement | null>(null)
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
 
-  const [isBeginning, setIsBeginning] = useState(true)
-  const [isEnd, setIsEnd] = useState(false)
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   return (
     <>
-      <Box className="relative  r-lg:hidden">
+      <Box className="relative r-lg:hidden">
         {/* Кастомные кнопки */}
         <button
           ref={prevRef}
-          className={`absolute left-[40%] top-[350px] z-10 h-[48px] w-[48px] 
+          className={`absolute left-[40%] top-[380px] z-10 h-[48px] w-[48px] 
             pl-[8px]  
         bg-gray-200 rounded-full bg-[#F4F4F5] transition-opacity ${
-          isBeginning ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
+          isBeginning ? "opacity-50 cursor-not-allowed" : "opacity-100"
         }`}
           disabled={isBeginning}
         >
@@ -35,9 +35,9 @@ export const RecomendationList = ({ data, slug }) => {
 
         <button
           ref={nextRef}
-          className={`absolute right-[40%] top-[350px] z-10 h-[48px] w-[48px] pl-[8px] 
+          className={`absolute right-[40%] top-[380px] z-10 h-[48px] w-[48px] pl-[8px] 
         bg-gray-200 rounded-full bg-[#F4F4F5] transition-opacity ${
-          isEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
+          isEnd ? "opacity-50 cursor-not-allowed" : "opacity-100"
         }`}
           disabled={isEnd}
         >
@@ -45,8 +45,8 @@ export const RecomendationList = ({ data, slug }) => {
         </button>
 
         <Swiper
-          slidesPerView={3.5}
-          spaceBetween={20}
+          slidesPerView={3}
+          spaceBetween={10}
           navigation={false} // Отключаем стандартные стрелки
           modules={[Navigation]}
           className="newsSwiper cursor-pointer"
@@ -54,20 +54,20 @@ export const RecomendationList = ({ data, slug }) => {
             setTimeout(() => {
               if (
                 swiper.params.navigation &&
-                typeof swiper.params.navigation !== 'boolean'
+                typeof swiper.params.navigation !== "boolean"
               ) {
-                swiper.params.navigation.prevEl = prevRef.current
-                swiper.params.navigation.nextEl = nextRef.current
-                swiper.navigation.init()
-                swiper.navigation.update()
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
               }
-            })
-            setIsBeginning(swiper.isBeginning)
-            setIsEnd(swiper.isEnd)
+            });
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
           }}
           onSlideChange={(swiper) => {
-            setIsBeginning(swiper.isBeginning)
-            setIsEnd(swiper.isEnd)
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
           }}
           breakpoints={{
             0: {
@@ -84,21 +84,25 @@ export const RecomendationList = ({ data, slug }) => {
           {data.map((item, index: number) => (
             <SwiperSlide key={index}>
               <Link to={pathKeys.news.bySlug(item.slug)}>
-                <Box className="flex flex-col">
+                <div className="flex max-w-md flex-col">
                   <Box
                     component="img"
                     src={item.photo}
                     alt={item.title}
-                    className="w-[464px] h-[264px] rounded-[8px]"
+                    className="w-[464px] h-[264px] rounded-[8px] mb-3"
                   />
-                  <Box className="flex gap-5 items-center">
-                    <Typography className="text-[20px]">
+                  <Box className="flex mb-2 gap-2 items-center">
+                    <Typography className="bg-sun text-white px-2 rounded-md text-[20px]">
                       {formatDate(item.createdAt)}
                     </Typography>
-                    <Typography>{item.category.name}</Typography>
+                    <Typography className="bg-primary text-white px-2 rounded-md">
+                      {item.category.name}
+                    </Typography>
                   </Box>
-                  <Typography>{item.title}</Typography>
-                </Box>
+                  <Typography className="bg-primary py-1 text-white px-2 rounded-md">
+                    {item.title}
+                  </Typography>
+                </div>
               </Link>
             </SwiperSlide>
           ))}
@@ -112,7 +116,7 @@ export const RecomendationList = ({ data, slug }) => {
               <Link to={`/news/${item.slug}`} key={item.slug}>
                 <Box>
                   <Box
-                    component={'img'}
+                    component={"img"}
                     src={item.photo}
                     alt={item.title}
                     className="w-full"
@@ -130,17 +134,17 @@ export const RecomendationList = ({ data, slug }) => {
                   </Typography>
                 </Box>
               </Link>
-            )
+            );
         })}
       </Box>
       <Link to={pathKeys.news.root()} className="hidden r-lg:block">
         <Button
           variant="outlined"
-          className=" w-full border-black border-opacity-50 text-black lowercase"
+          className="w-full border-black border-opacity-50 text-black lowercase"
         >
           Все новости
         </Button>
       </Link>
     </>
-  )
-}
+  );
+};

@@ -1,8 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { HeroCarousel } from "~features/heroCarousel";
-import heroBg from "./img/abstract-background-with-flowing-lines.jpg";
-import heroBgImage from "./img/abstract-background-with-flowing-lines-Agha0FmD-removebg-preview.png";
 
 import pythonImg from "./img/python-com.png";
 
@@ -16,9 +14,10 @@ export const HomeHero = () => {
 
   return (
     <section
-      className="r-sm:mx-2 r-sm:h-[360px] mx-5 bg-white rounded-3xl r-sm:mb-16 mb-[150px] relative overflow-hidden"
+      className="r-sm:mx-2 r-sm:h-[360px] mx-5 bg-white rounded-3xl r-sm:mb-16 mb-20 relative overflow-hidden"
       style={{
-        background: "linear-gradient(121.65deg, #4D5FF5 2.13%, #5649BF 36.86%, #38E569 96%)",
+        background:
+          "linear-gradient(121.65deg, #4D5FF5 2.13%, #5649BF 36.86%, #38E569 96%)",
       }}
     >
       {/* Фоновое изображение */}
@@ -32,11 +31,15 @@ export const HomeHero = () => {
         }}
       ></div> */}
 
-      <div className="h-[900px] relative py-32 r-md:py-6 px-4">
+      <div className="relative py-20 r-md:py-6 px-4">
         {/* Фоновые оттенки */}
         <div
           className="absolute w-[981px] h-[981px] rounded-full blur-[150px] z-[-300]"
-          style={{ top: "10%", left: "-33%", backgroundColor: "rgb(68, 208, 164)" }}
+          style={{
+            top: "10%",
+            left: "-33%",
+            backgroundColor: "rgb(68, 208, 164)",
+          }}
         ></div>
         <div
           className="absolute w-[981px] h-[981px] rounded-full blur-[250px] z-[-300]"
@@ -49,7 +52,11 @@ export const HomeHero = () => {
         ></div>
         <div
           className="absolute w-[981px] h-[981px] rounded-full blur-[150px] z-[-300]"
-          style={{ bottom: "-95%", right: "-25%", backgroundColor: "rgb(44, 215, 161)" }}
+          style={{
+            bottom: "-95%",
+            right: "-25%",
+            backgroundColor: "rgb(44, 215, 161)",
+          }}
         ></div>
 
         <Container className="z-[100px] max-w-[1440px]">
@@ -67,7 +74,8 @@ export const HomeHero = () => {
                 {t("homepage.title")}
               </Typography>
               <p className="text-2xl r-sm:hidden text-white w-[420px] mb-6">
-                Среднее профессиональное образование по востребованным IT-профессиям
+                Среднее профессиональное образование по востребованным
+                IT-профессиям
               </p>
               <div className="flex r-md:mb-4 flex-wrap r-md:gap-2 gap-3 max-w-5xl r-md:overflow-x-auto">
                 {premList.map((item, index) => (

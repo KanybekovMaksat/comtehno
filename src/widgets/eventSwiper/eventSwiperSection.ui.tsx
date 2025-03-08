@@ -30,7 +30,7 @@ export const EventsSection: React.FC = () => {
           variant="h6"
           className="font-light text-[44px] pb-[14px] r-sm:text-[32px]"
         >
-          Мероприятия
+          Новости
         </Typography>
 
         <Box

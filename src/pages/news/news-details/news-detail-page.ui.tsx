@@ -1,11 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { newsQueries } from "~entities/news";
-import { formatDate } from "~shared/ui/date";
 import { Sidebar } from "~features/sidebar";
 import { BackButton } from "~shared/ui/back";
 import { CalendarMonth, Place } from "@mui/icons-material";
 import { RecomendationList } from "~widgets/recomendation-list";
+import { formatDate } from "~shared/lib";
 
 export const NewsDetailPage = () => {
   const { slug } = useParams();
@@ -23,19 +23,25 @@ export const NewsDetailPage = () => {
     return <div>Ошибка при получении данных</div>;
   }
   return (
-    <div className="relative w-full container pb-20 r-lg:mt-5 r-md:container">
+    <Container className="relative w-full pb-20 r-lg:mt-5 max-w-[1440px]">
       <BackButton />
       <div className="flex justify-between r-lg:flex-col">
         <div className="max-w-[830px]">
-          <Box className="flex items-center gap-[8px]">
-            <Typography variant="subtitle2">
+          <div className="flex mb-5 items-center gap-[8px]">
+            <Typography
+              className="bg-sun text-white px-2 rounded-md"
+              variant="h6"
+            >
               {formatDate(newsData.data.createdAt)}
             </Typography>
-            <Typography className="uppercase" variant="h6">
+            <Typography
+              className="bg-primary text-white px-2 rounded-md uppercase"
+              variant="h6"
+            >
               {newsData.data.category.name}
             </Typography>
-          </Box>
-          <Typography className="r-md:text-[25px]" variant="h2">
+          </div>
+          <Typography className="r-md:text-[25px] mb-5 text-5xl" variant="h2">
             {newsData.data.title}
           </Typography>
           <img className="w-full" src={newsData.data.photo} alt="img" />
@@ -56,9 +62,11 @@ export const NewsDetailPage = () => {
         <Sidebar data={newsListData.data} title={"Новости"} pathKey={"news"} />
       </div>
       <Box className="mt-10">
-        <Typography variant="h4">Вам может понравиться</Typography>
+        <Typography className="mb-5" variant="h4">
+          Вам может понравиться
+        </Typography>
         <RecomendationList data={newsListData.data} slug={slug} />
       </Box>
-    </div>
+    </Container>
   );
 };

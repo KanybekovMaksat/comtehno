@@ -27,7 +27,7 @@ const AnimatedCounter: React.FC<{ targetValue: number }> = ({ targetValue }) => 
 }
 
 export const AboutPageCards = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const cards = [
     { value: 2005, label: t('aboutPage.cards.founded') },
@@ -58,5 +58,5 @@ export const AboutPageCards = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};

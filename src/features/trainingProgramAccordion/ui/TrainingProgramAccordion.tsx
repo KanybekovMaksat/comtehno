@@ -50,7 +50,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   // borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
-export const TrainingProgramAccordion: React.FC = ({
+export const TrainingProgramAccordion = ({
   name,
   modules,
 }: courseListTypes) => {
