@@ -28,8 +28,6 @@ export const DirectionsList = () => {
   const { t } = useTranslation();
 
   const translatedDirections = directions.map((direction) => ({
-  
-  
     ...direction,
     title: t(`aboutPage.directions.${direction.title}`),
   }));
