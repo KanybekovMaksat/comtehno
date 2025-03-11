@@ -13,7 +13,7 @@ export const Sidebar = ({ data, pathKey, title }) => {
       >
         {title}
       </Typography>
-      <Box className="flex flex-col gap-[24px] r-lg:flex-row r-lg:flex-wrap">
+      <Box className="flex flex-col overflow-x-scroll max-h-[1400px] gap-[24px] r-lg:flex-row r-lg:flex-wrap">
         {data.map((item, index) => (
           <Link key={index} to={pathKeys[pathKey].bySlug(item.slug)}>
             <Box className="cursor-pointer">

@@ -1,8 +1,8 @@
 import { AskedQuestions } from "~widgets/askedQuestions";
-import { ReviewsSection } from "~widgets/ReviewsSection";
+// import { ReviewsSection } from "~widgets/ReviewsSection";
 import { Speciality } from "~widgets/speciality";
 import { Startup } from "~widgets/startup";
-import { NewsList } from "~widgets/news-list";
+// import { NewsList } from "~widgets/news-list";
 import { Partners } from "~widgets/partners";
 import { CardSwiper } from "~widgets/teacherSwiper";
 import { ContactSection } from "~widgets/ContactSection";
