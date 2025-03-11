@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Container } from "@mui/material";
-import EventLineImage from "../svg/eventLine.svg";
-import { events } from "../model/eventData";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect } from 'react'
+import { Container } from '@mui/material'
+import EventLineImage from '../svg/eventLine.svg'
+import { events } from '../model/eventData'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export const EventLine: React.FC = () => {
   useEffect(() => {
@@ -11,17 +11,17 @@ export const EventLine: React.FC = () => {
     AOS.init({
       duration: 900,
       once: false, // Повторение анимации при повторном скроллинге
-      easing: "ease-in-out",
-    });
+      easing: 'ease-in-out',
+    })
 
     // Обработчик событий для обновления AOS при прокрутке
-    window.addEventListener("scroll", AOS.refresh);
+    window.addEventListener('scroll', AOS.refresh)
 
     return () => {
       // Очистить обработчик при размонтировании компонента
-      window.removeEventListener("scroll", AOS.refresh);
-    };
-  }, []);
+      window.removeEventListener('scroll', AOS.refresh)
+    }
+  }, [])
 
   return (
     <Container className="max-w-[1440px] px-0">
@@ -82,5 +82,5 @@ export const EventLine: React.FC = () => {
         ))}
       </div>
     </Container>
-  );
-};
+  )
+}

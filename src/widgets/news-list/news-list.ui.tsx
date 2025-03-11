@@ -1,61 +1,61 @@
-import { Box, Button, IconButton, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Button, IconButton, Tab, Tabs, Typography } from '@mui/material'
 import {
   CalendarMonth,
   ArrowForwardIos,
   KeyboardArrowUp,
   KeyboardArrowDown,
-} from "@mui/icons-material";
-import { useState } from "react";
-import { TabPanel } from "./ui/tab-panel.ui";
-import { newsQueries } from "~entities/news";
+} from '@mui/icons-material'
+import { useState } from 'react'
+import { TabPanel } from './ui/tab-panel.ui'
+import { newsQueries } from '~entities/news'
 
-import "swiper/css";
-import "swiper/css/pagination";
-import { Link } from "react-router-dom";
-import { pathKeys } from "~shared/lib/react-router";
-import { formatDate } from "~shared/lib";
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Link } from 'react-router-dom'
+import { pathKeys } from '~shared/lib/react-router'
+import { formatDate } from '~shared/lib'
 
 export const NewsList = () => {
-  const { data: newsData, isLoading, isError } = newsQueries.useGetNews();
-  const [value, setValue] = useState(1);
-  const [currentNew, setCurrentNew] = useState(0);
+  const { data: newsData, isLoading, isError } = newsQueries.useGetNews()
+  const [value, setValue] = useState(1)
+  const [currentNew, setCurrentNew] = useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+    setValue(newValue)
+  }
 
   const getMonthNames = () => {
-    const date = new Date();
-    const locale = "ru-RU";
+    const date = new Date()
+    const locale = 'ru-RU'
 
-    const currentMonth = date.toLocaleString(locale, { month: "long" });
+    const currentMonth = date.toLocaleString(locale, { month: 'long' })
 
-    const nextMonth = new Date(date);
-    nextMonth.setMonth(date.getMonth() + 1);
+    const nextMonth = new Date(date)
+    nextMonth.setMonth(date.getMonth() + 1)
 
-    const prevMonth = new Date(date);
-    prevMonth.setMonth(date.getMonth() - 1);
+    const prevMonth = new Date(date)
+    prevMonth.setMonth(date.getMonth() - 1)
 
     return {
-      prevMonth: prevMonth.toLocaleString(locale, { month: "long" }),
+      prevMonth: prevMonth.toLocaleString(locale, { month: 'long' }),
       currentMonth,
-      nextMonth: nextMonth.toLocaleString(locale, { month: "long" }),
-    };
-  };
+      nextMonth: nextMonth.toLocaleString(locale, { month: 'long' }),
+    }
+  }
 
-  const { prevMonth, currentMonth, nextMonth } = getMonthNames();
+  const { prevMonth, currentMonth, nextMonth } = getMonthNames()
 
   function a11yProps(index: number) {
     return {
       id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
-    };
+      'aria-controls': `simple-tabpanel-${index}`,
+    }
   }
   if (isError) {
-    return <div>Ошибка</div>;
+    return <div>Ошибка</div>
   }
   if (isLoading) {
-    return <div>Загрузка</div>;
+    return <div>Загрузка</div>
   }
 
   return (
@@ -82,19 +82,19 @@ export const NewsList = () => {
           </Box>
           <Box className="hidden r-lg:block">
             <Typography variant="h5" className="text-[20px]">
-              {newsData.data[currentNew].title}{" "}
+              {newsData.data[currentNew].title}{' '}
             </Typography>
             <Typography
               variant="subtitle2"
               className="text-[16px] font-normal text-primary"
             >
-              {newsData.data[currentNew].category.name}{" "}
+              {newsData.data[currentNew].category.name}{' '}
             </Typography>
             <Typography
               variant="body2"
               className="text-[14px] font-normal text-[#52525B]"
             >
-              {formatDate(newsData.data[currentNew].createdAt)}{" "}
+              {formatDate(newsData.data[currentNew].createdAt)}{' '}
             </Typography>
           </Box>
           <div>
@@ -142,9 +142,9 @@ export const NewsList = () => {
                   className="text-black"
                   onClick={() => {
                     if (currentNew <= 1) {
-                      return;
+                      return
                     }
-                    setCurrentNew((prev) => prev - 1);
+                    setCurrentNew((prev) => prev - 1)
                   }}
                 >
                   <KeyboardArrowUp></KeyboardArrowUp>
@@ -153,9 +153,9 @@ export const NewsList = () => {
                   className="text-black border"
                   onClick={() => {
                     if (currentNew == newsData.data.length - 1) {
-                      return;
+                      return
                     } else {
-                      setCurrentNew((prev) => prev + 1);
+                      setCurrentNew((prev) => prev + 1)
                     }
                   }}
                 >
@@ -167,5 +167,5 @@ export const NewsList = () => {
         </Box>
       </div>
     </section>
-  );
-};
+  )
+}
