@@ -1,4 +1,5 @@
-import { Review, ReviewsDetails } from "./reviews";
+export { Tab } from "./tab";
+export { Review, ReviewsDetails } from "./reviews";
 export { HomeHero } from "./hero";
 export { ContactSection } from "./ContactSection";
 export { AboutAccordion } from "./AboutAccordion";
