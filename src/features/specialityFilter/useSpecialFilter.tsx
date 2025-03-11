@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { specialityQuery } from "~entities/speciality";
 
-import LanguageIcon from "@mui/icons-material/Language";
+import CodeOffOutlinedIcon from "@mui/icons-material/CodeOffOutlined";
 import BrushIcon from "@mui/icons-material/Brush";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 
 export const useSpecialFilter = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -15,12 +16,21 @@ export const useSpecialFilter = () => {
 
   const filters = [
     { title: "Все", category: "all" },
-    { icon: <LanguageIcon />, title: "IT", category: "Программирование и IT" },
+    {
+      icon: <CodeOffOutlinedIcon />,
+      title: "Программирование",
+      category: "Программирование и IT",
+    },
     { icon: <BrushIcon />, title: "Дизайн", category: "Дизайн" },
     {
       icon: <WorkOutlineOutlinedIcon />,
       title: "Менеджмент",
       category: "Аналитика и управление продуктами",
+    },
+    {
+      icon: <AssignmentOutlinedIcon />,
+      title: "Аналитика",
+      category: "analityc",
     },
     // {title: "Финансы и банковское дело", category: "all"},
   ];

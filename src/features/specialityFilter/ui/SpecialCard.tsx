@@ -1,4 +1,4 @@
-import { Box, Card, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { specialCardProps } from "~entities/speciality/speciality.types";
 import { pathKeys } from "~shared/lib/react-router";

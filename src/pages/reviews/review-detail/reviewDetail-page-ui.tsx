@@ -3,14 +3,10 @@ import { useParams } from "react-router-dom";
 import { newsQueries } from "~entities/news";
 import { reviewsQuery } from "~entities/reviews";
 import { Sidebar } from "~features/sidebar";
-// import { useFilters } from "~shared/lib/filters/useFilters";
 import { BackButton } from "~shared/ui/back";
 import { ReviewsDetails } from "~widgets/reviews";
 
 export const ReviewDetailPage: React.FC = () => {
-  // const { filteredList } = useFilters();
-  // const reviewData = filteredList.find((e) => e.slug.toString() === slug);
-
   const { slug } = useParams<{ slug: string }>();
   const {
     data: reviewData,

@@ -3,6 +3,7 @@ import { Button, CircularProgress, Stack, Typography } from "@mui/material";
 import React from "react";
 import { SpecialCard } from "./SpecialCard";
 import { useSpecialFilter } from "../useSpecialFilter";
+import { specialCardProps } from "~entities/speciality/speciality.types";
 
 export const SpecialityFilter: React.FC = () => {
   const {
@@ -42,11 +43,8 @@ export const SpecialityFilter: React.FC = () => {
           </Button>
         ))}
       </div>
-      <Stack
-        className="flex-wrap gap-y-6 justify-between mb-6"
-        direction={"row"}
-      >
-        {filteredList.map((specialCard) => (
+      <Stack className="flex-wrap gap-3 mb-6" direction={"row"}>
+        {filteredList.map((specialCard: specialCardProps) => (
           <SpecialCard {...specialCard} key={specialCard.id} />
         ))}
       </Stack>
