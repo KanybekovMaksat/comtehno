@@ -9,7 +9,7 @@ export const SpecialCard: React.FC = (props: specialCardProps) => {
   return (
     <Link
       to={pathKeys.speciality.bySlug(slug)}
-      className="shadow-[0px_0px_24px_0px_#E4E8F0] hover:scale-105 transition-all cursor-pointer p-4 r-sm:w-[400px] w-[440px] r-sm:h-32 h-64 rounded-2xl overflow-hidden"
+      className="shadow-[0px_0px_24px_0px_#E4E8F0] active:scale-95 hover:scale-105 transition-all cursor-pointer p-4 r-sm:w-[400px] w-[440px] r-sm:h-32 h-64 rounded-2xl overflow-hidden"
     >
       <Stack direction={"row"} spacing={1} className="mb-4 items-center">
         <img src={category?.photo} alt="" />
