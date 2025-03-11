@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
         <div className="w-full r-sm:mb-20 mb-36 flex r-md:flex-col items-start justify-center r-sm:gap-2 gap-14 r-md:gap-6">
           <Typography
             variant="h3"
-            className="r-sm:text-[40px] font-bold text-[#0F766E] "
+            className="r-sm:text-[40px] font-bold text-[#0F766E]"
           >
             {t("aboutPage.title")}
           </Typography>
