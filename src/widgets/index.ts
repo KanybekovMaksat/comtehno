@@ -1,3 +1,4 @@
+export { Applicant } from "./applicant";
 export { Tab } from "./tab";
 export { Review, ReviewsDetails } from "./reviews";
 export { HomeHero } from "./hero";
