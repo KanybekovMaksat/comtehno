@@ -1,69 +1,69 @@
-import { useState } from "react";
+import { useState } from 'react'
 import {
   Typography,
   Box,
   Container,
   useTheme,
   useMediaQuery,
-} from "@mui/material";
-import { useTranslation } from "react-i18next";
-import clsx from "clsx";
+} from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import clsx from 'clsx'
 // import img from "./img/comtehno.png";
-import documentImg from "./img/document.jpg";
+import documentImg from './img/document.jpg'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import { Navigation } from 'swiper/modules'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const items = [
   {
-    title: "aboutPage.mission",
-    content: "aboutPage.missionContent",
+    title: 'aboutPage.mission',
+    content: 'aboutPage.missionContent',
   },
   {
-    title: "aboutPage.values",
-    content: "aboutPage.valuesContent",
+    title: 'aboutPage.values',
+    content: 'aboutPage.valuesContent',
   },
   {
-    title: "aboutPage.vision",
-    content: "aboutPage.visionContent",
+    title: 'aboutPage.vision',
+    content: 'aboutPage.visionContent',
   },
-];
+]
 
 interface DocumentItem {
-  title: string;
-  link: string;
+  title: string
+  link: string
 }
-type documentListTypes = DocumentItem[];
+type documentListTypes = DocumentItem[]
 
 export const AboutAccordion: React.FC = () => {
-  const [selected, setSelected] = useState<number | null>(0);
-  const { t } = useTranslation();
+  const [selected, setSelected] = useState<number | null>(0)
+  const { t } = useTranslation()
 
   const documentList: documentListTypes = [
     {
-      title: "Лицензия",
-      link: "/file/licenthia_comtehno.pdf",
+      title: 'Лицензия',
+      link: '/file/licenthia_comtehno.pdf',
     },
     {
-      title: "Устав",
-      link: "/file/ustav_comtehno.pdf",
+      title: 'Устав',
+      link: '/file/ustav_comtehno.pdf',
     },
     {
-      title: "Диплом",
-      link: "/file/diplom_comtehno.pdf",
+      title: 'Диплом',
+      link: '/file/diplom_comtehno.pdf',
     },
-  ];
+  ]
 
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
     <Container className="r-sm:mb-20 mb-[150px] max-w-[1440px] r-md:mb-24">
       <Typography className="mb-4 text-[#18181B] font-light text-5xl r-sm:text-[32px]">
-        {t("aboutPage.knowledgeToAction")}
+        {t('aboutPage.knowledgeToAction')}
       </Typography>
       <div className="flex items-center r-sm:mb-10 gap-10 r-lg:items-start r-lg:flex-col w-full">
         <div className="r-lg:mb-8 r-sm:mb-0 r-md:w-full">
@@ -72,10 +72,10 @@ export const AboutAccordion: React.FC = () => {
               <div key={index}>
                 <button
                   className={clsx(
-                    "text-left font-light transition-colors w-full p-2 text-4xl r-sm:text-[32px]",
+                    'text-left font-light transition-colors w-full p-2 text-4xl r-sm:text-[32px]',
                     selected === index
-                      ? "text-[#0F766E] border-l-4 border-l-[#0F766E]"
-                      : "text-gray-500"
+                      ? 'text-[#0F766E] border-l-4 border-l-[#0F766E]'
+                      : 'text-gray-500'
                   )}
                   onClick={() => setSelected(index === selected ? null : index)}
                 >
@@ -84,8 +84,8 @@ export const AboutAccordion: React.FC = () => {
 
                 <div
                   className={clsx(
-                    "transition-all duration-300 ease-in-out overflow-hidden w-full ",
-                    selected === index ? "h-36 opacity-100" : "h-0 opacity-0"
+                    'transition-all duration-300 ease-in-out overflow-hidden w-full ',
+                    selected === index ? 'h-36 opacity-100' : 'h-0 opacity-0'
                   )}
                 >
                   <div className="p-2  rounded-md shadow-sm scrollbar-thin">
@@ -112,8 +112,8 @@ export const AboutAccordion: React.FC = () => {
             centeredSlides={true}
             loop={false}
             navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
             }}
             // className="px-10"
           >
@@ -144,5 +144,5 @@ export const AboutAccordion: React.FC = () => {
         </div>
       </div>
     </Container>
-  );
-};
+  )
+}

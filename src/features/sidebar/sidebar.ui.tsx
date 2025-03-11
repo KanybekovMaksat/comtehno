@@ -1,11 +1,13 @@
-import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import { UpComingData } from "~features/upcoming-events/data-upcoming/upcoming-data";
-import { pathKeys } from "~shared/lib/react-router";
+import { Box, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { pathKeys } from '~shared/lib/react-router'
+import { UpComingData } from '~features/upcoming-events/data-upcoming/upcoming-data'
+import { formatDate } from '~shared/lib'
 
 export const Sidebar = ({ data, pathKey, title }) => {
   return (
     <Box className="max-w-[464px] r-xl:hidden">
+      <UpComingData />
       <UpComingData />
       <Typography
         variant="h3"
@@ -28,7 +30,7 @@ export const Sidebar = ({ data, pathKey, title }) => {
                     variant="body2"
                     className="font-normal text-base text-[#52525B]"
                   >
-                    {item.date}
+                    {formatDate(item.createdAt)}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -43,5 +45,5 @@ export const Sidebar = ({ data, pathKey, title }) => {
         ))}
       </Box>
     </Box>
-  );
-};
+  )
+}

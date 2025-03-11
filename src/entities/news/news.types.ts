@@ -10,3 +10,7 @@ export interface News {
   createdAt: string
   updatedAt: string
 }
+export interface NewsCategory {
+  id: number
+  name: string
+}

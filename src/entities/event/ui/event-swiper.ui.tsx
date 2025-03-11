@@ -3,9 +3,10 @@ import calendar from '~widgets/eventSwiper/assets/icon/calendar.png'
 import location from '~widgets/eventSwiper/assets/icon/location.png'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { useNavigate } from 'react-router-dom'
-import { Event } from './event.data'
+import { Event } from '../event.types'
+import { formatDate } from '~shared/lib'
 
-export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
+export const EventCardSwiper: React.FC = ({ event }: Event) => {
   const navigate = useNavigate()
   return (
     <Card className="relative overflow-hidden rounded-lg ">
@@ -25,11 +26,12 @@ export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
           </Typography>
           <Typography
             variant="h6"
-            className={`px-4 py-2 rounded-lg text-white font-normal text-[16px] uppercase ${
-              event.bgCategory || 'bg-gray-400 text-white'
-            }`}
+            className={`px-4 py-2 rounded-lg text-white font-normal text-[16px] uppercase 
+          
+            
+            `}
           >
-            {event.category}
+            {event.category.name}
           </Typography>
         </Box>
 
@@ -37,10 +39,10 @@ export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
           <Box className="flex items-center gap-x-[16px]">
             <span className="bg-[#FFFFFFCC] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
               <img className="w-[24px] h-[24px]" src={calendar} alt="" />{' '}
-              {event.date}
+              {formatDate(event.createdAt)}
             </span>
             <span className="bg-[#FFFFFFCC] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
-              <img src={location} alt="" /> {event.location}
+              <img src={location} alt="" /> {event.place}
             </span>
           </Box>
           <Button
