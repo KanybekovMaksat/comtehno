@@ -10,7 +10,13 @@ const keys = {
 export function useGetEvents() {
   return useQuery({
     queryKey: keys.root(),
-    queryFn: getEvents,
+    queryFn: () => getEvents(),
+  })
+}
+export function useGetEventsCategories() {
+  return useQuery({
+    queryKey: keys.getCategories(),
+    queryFn: () => getEventsCategories(),
   })
 }
 
@@ -18,11 +24,5 @@ export function useGetEventsDetail(slug: string) {
   return useQuery({
     queryKey: keys.getEvents(slug),
     queryFn: () => getEventsDetails(slug),
-  })
-}
-export function useGetEventsCategories() {
-  return useQuery({
-    queryKey: keys.getCategories(),
-    queryFn: () => getEventsCategories(),
   })
 }

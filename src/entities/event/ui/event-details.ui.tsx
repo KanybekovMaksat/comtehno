@@ -11,15 +11,10 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
           className="text-[#52525B] font-normal text-base"
           variant="h5"
         >
-          {event.date}
+          {event.createdAt}
         </Typography>
-        <Typography
-          className={`uppercase font-normal text-base ${
-            event.colorCategory || 'text-black'
-          }`}
-          variant="h5"
-        >
-          {event.category}
+        <Typography className={`uppercase font-normal text-base `} variant="h5">
+          {event.category.name}
         </Typography>
       </Box>
 
@@ -40,10 +35,10 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
       <Box className="flex items-center mb-4 r-sm:gap-x-2 gap-x-[16px] r-md:w-80 r-sm:grid r-sm:gap-4">
         <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
           <img className="w-[24px] h-[24px]" src={calendar} alt="" />
-          {event.date}
+          {event.createdAt}
         </span>
         <span className="bg-[#F4F4F5] text-[#18181B] flex items-center gap-x-[4px] px-[16px] py-[8px] rounded-[12px] font-normal text-[16px]">
-          <img src={location} alt="" /> {event.location}
+          <img src={location} alt="" /> {event.place}
         </span>
       </Box>
 
@@ -56,30 +51,10 @@ export const EventDetails: React.FC<{ event: Event }> = ({ event }) => {
         }}
         className="font-light text-[20px] r-sm:w-[340px]"
       >
-        <Typography className="font-light text-[20px]" variant="body2">
-          {event.description}
-        </Typography>
-        <Typography
-          className="font-light text-[20px] py-[30px]"
-          variant="body2"
-        >
-          {event.description1}
-        </Typography>
-        <Typography className="font-light text-[20px]" variant="body2">
-          {event.description2}
-        </Typography>
-        <Typography
-          className="font-light text-[20px] py-[30px]"
-          variant="body2"
-        >
-          {event.description3}
-        </Typography>
-        <Typography className="font-light text-[20px]" variant="body2">
-          {event.description4}
-        </Typography>
-        <Typography className="font-light text-[20px]" variant="body2">
-          {event.description5}
-        </Typography>
+        <div
+          className="font-light text-[20px]"
+          dangerouslySetInnerHTML={{ __html: event.content }}
+        ></div>
       </Box>
     </Box>
   )

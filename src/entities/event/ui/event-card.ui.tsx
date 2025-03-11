@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { Event } from '~entities/eventSwiperCard'
+import { Event } from '../event.types'
+import { formatDate } from '~shared/ui/date'
 
 export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const navigate = useNavigate()
@@ -19,15 +20,13 @@ export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           className="text-[#52525B] font-normal text-base"
           variant="h5"
         >
-          {event.date}
+          {formatDate(event.createdAt)}
         </Typography>
         <Typography
-          className={`uppercase font-normal text-base ${
-            event.colorCategory || 'text-black '
-          } `}
+          className={`uppercase font-normal text-base  `}
           variant="h5"
         >
-          {event.category}
+          {event.category.name}
         </Typography>
       </Box>
       <Typography

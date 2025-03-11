@@ -2,27 +2,45 @@ import React, { useRef } from 'react'
 import { Box, Typography, Container, Button, TextField } from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
-
 import { useEventFilter } from '~features/eventFilter/eventFilter.ui'
-import 'swiper/css'
-import 'swiper/css/navigation'
 import { SwiperNavigationButtons } from '~shared/ui/SwiperNavigationButtons'
-import SearchIcon from '@mui/icons-material/Search'
 import { useMediaQuery } from '@mui/material'
 import { EventCard, EventCardSwiper } from '~entities/event'
+import { eventQueries } from '~entities/event/'
+import SearchIcon from '@mui/icons-material/Search'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 export const EventsSection: React.FC = () => {
+  const {
+    data: eventCategories,
+    isError: categoriesError,
+    isLoading: categoriesLoading,
+  } = eventQueries.useGetEventsCategories()
+  const {
+    data: eventData,
+    isError: eventError,
+    isLoading: eventLoading,
+  } = eventQueries.useGetEvents()
+
+  const safeEventData = eventData?.data || [] // Защита от undefined
+
   const {
     activeFilter,
     setActiveFilter,
     searchQuery,
     setSearchQuery,
-    filters,
     filteredEvents,
-  } = useEventFilter()
-  const swiperRef = useRef(null)
+  } = useEventFilter(safeEventData)
   const isSmallScreen = useMediaQuery('(max-width: 704px)')
+  const swiperRef = useRef(null)
 
+  if (eventLoading && categoriesLoading) {
+    return <div>Загрузка</div>
+  }
+  if (eventError && categoriesError) {
+    return <div>Ошибка</div>
+  }
   return (
     <Box>
       <Container className="max-w-[1440px]">
@@ -57,25 +75,26 @@ export const EventsSection: React.FC = () => {
                 paddingBottom: '8px',
               },
             }}
+            className="w-9/12"
           >
-            {filters.map((filter) => (
+            {eventCategories.data.map((category) => (
               <Button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
+                key={category.id}
+                onClick={() => setActiveFilter(category.name)}
                 className={`border border-solid border-[#E4E4E7] px-4 transition-colors duration-300 normal-case rounded-[12px] text-[#18181B] font-normal text-base mt-[10px]
                 ${
-                  activeFilter === filter
+                  activeFilter == category.name
                     ? 'bg-[#18181B] text-white'
                     : 'hover:bg-[#18181B] hover:text-white'
                 }`}
                 sx={{ whiteSpace: 'nowrap', height: '36px', minWidth: 'unset' }}
               >
-                {filter}
+                {category.name}
               </Button>
             ))}
           </Box>
 
-          <Box>
+          <Box className="w-3/12">
             <TextField
               fullWidth
               placeholder="Поиск мероприятия"
@@ -125,7 +144,7 @@ export const EventsSection: React.FC = () => {
               }}
             >
               {filteredEvents.map((event) => (
-                <SwiperSlide key={event.id}>
+                <SwiperSlide key={event.slug}>
                   <EventCardSwiper event={event} />
                 </SwiperSlide>
               ))}
@@ -141,8 +160,8 @@ export const EventsSection: React.FC = () => {
           <Box>
             <Box className="flex-wrap flex gap-x-[24px]  justify-center pt-[24px] pb-[80px] ">
               {filteredEvents.map((event) => (
-                <Box key={event.id}>
-                  <EventCard key={event.id} event={event} />
+                <Box key={event.slug}>
+                  <EventCard key={event.slug} event={event} />
                 </Box>
               ))}
             </Box>
