@@ -12,7 +12,7 @@ export const Applicant: React.FC = () => {
   if (isError) return <span>Error 404</span>;
 
   return (
-    <div className="mb-20">
+    <div className="mb-20 mx-6">
       {applicantData?.map((data: applicantTypes.ApplicationTypes) => (
         <div key={data.id}>
           <Typography
