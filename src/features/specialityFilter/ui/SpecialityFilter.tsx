@@ -1,4 +1,4 @@
-import {  Button, CircularProgress, Stack, Typography } from "@mui/material";
+import { Button, CircularProgress, Stack, Typography } from "@mui/material";
 
 import React from "react";
 import { SpecialCard } from "./SpecialCard";
@@ -11,15 +11,15 @@ export const SpecialityFilter: React.FC = () => {
     filteredList,
     isLoading,
     filters,
-    isError
-  } = useSpecialFilter();  
+    isError,
+  } = useSpecialFilter();
 
   if (isLoading) {
-    return <CircularProgress />
+    return <CircularProgress />;
   }
 
   if (isError) {
-    return <Typography variant="h1">Error 404</Typography>
+    return <Typography variant="h1">Error 404</Typography>;
   }
 
   return (
@@ -42,14 +42,19 @@ export const SpecialityFilter: React.FC = () => {
           </Button>
         ))}
       </div>
-      <Stack className="flex-wrap gap-4 mb-6" direction={"row"}>
+      <Stack
+        className="flex-wrap gap-y-6 justify-between mb-6"
+        direction={"row"}
+      >
         {filteredList.map((specialCard) => (
           <SpecialCard {...specialCard} key={specialCard.id} />
         ))}
       </Stack>
       <div className="text-center">
-        <Button className="hover:bg-black hover:text-white py-2.5 px-4 text-black border rounded-full border-solid border-[#E4E4E7]">Показать ещё</Button>
+        <Button className="hover:bg-black hover:text-white py-2.5 px-4 text-black border rounded-full border-solid border-[#E4E4E7]">
+          Показать ещё
+        </Button>
       </div>
     </>
-  )
+  );
 };
