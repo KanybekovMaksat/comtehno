@@ -84,15 +84,15 @@ export const AboutAccordion: React.FC = () => {
 
                 <div
                   className={clsx(
-                    "transition-all duration-300 ease-in-out overflow-hidden w-full ",
-                    selected === index ? "h-36 opacity-100" : "h-0 opacity-0"
+                    "transition-all duration-300 ease-in-out w-full overflow-hidden",
+                    selected === index
+                      ? "max-h-[1000px] opacity-100"
+                      : "max-h-0 opacity-0"
                   )}
                 >
-                  <div className="p-2  rounded-md shadow-sm scrollbar-thin">
-                    <Typography className="text-[#18181B] text-2xl r-sm:text-[18px] font-light">
-                      {t(item.content)}
-                    </Typography>
-                  </div>
+                  <Typography className="text-[#18181B] mx-3 text-xl r-sm:text-base font-light">
+                    {t(item.content)}
+                  </Typography>
                 </div>
               </div>
             ))}
