@@ -24,6 +24,7 @@ export const EventsSection: React.FC = () => {
   } = eventQueries.useGetEvents()
 
   const safeEventData = eventData?.data || [] // Защита от undefined
+  const safeEventCategory = eventCategories?.data || []
 
   const {
     activeFilter,
@@ -77,7 +78,7 @@ export const EventsSection: React.FC = () => {
             }}
             className="w-9/12"
           >
-            {eventCategories.data.map((category) => (
+            {safeEventCategory.map((category) => (
               <Button
                 key={category.id}
                 onClick={() => setActiveFilter(category.name)}

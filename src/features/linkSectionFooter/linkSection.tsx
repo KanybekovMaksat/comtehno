@@ -1,25 +1,31 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const LinksSection: React.FC<{ title: string, links: string[] }> = ({ title, links }) => {
-  const formatTitleForURL = (title: string) => title.toLowerCase().replace(/\s+/g, '-');
+interface LinkItem {
+  title: string;
+  href: string;
+}
 
+interface LinksSectionProps {
+  title: string;
+  links: LinkItem[];
+}
+
+const LinksSection: React.FC<LinksSectionProps> = ({ title, links }) => {
   return (
-    <div className="block">
-      <Link 
-        to={`/${formatTitleForURL(title)}`} 
-        className="mb-[16px] text-[15px] md:text-[19px] font-[400] leading-[23.75px] text-[#18181B]"
-      >
-        {title}
-      </Link>
-      <ol className="list-none mt-[14px] flex flex-col gap-[16px] mb-[24px]">
+    <div className="flex flex-col gap-[12px]">
+      <h4 className="text-[18px] font-semibold text-[#101828]">{title}</h4>
+      <ul className="flex flex-col gap-[8px]">
         {links.map((link, index) => (
-          <li key={index} className="text-[15px] md:text-[16px] text-[#52525B]">
-            <Link to={`/${formatTitleForURL(link)}`} className="hover:underline">
-              {link}
-            </Link>
+          <li key={index}>
+            <a
+              href={link.href}
+              className="text-[16px] font-medium text-[#475467] hover:text-[#101828] transition duration-300"
+            >
+              {link.title}
+            </a>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 };

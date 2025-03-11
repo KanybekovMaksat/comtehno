@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import { documentQueries } from '~entities/document'
 // import Fancybox from '~widgets/diplom-list/Fancybox'
 
@@ -22,6 +22,7 @@ export const DocumentDetailsPage = () => {
     isError,
     isLoading,
   } = documentQueries.useGetDetailsDocuments(slug);
+
   if (isError) {
     return <div>Произошла Ошибка</div>;
   }
@@ -36,7 +37,7 @@ export const DocumentDetailsPage = () => {
   }
 
   return (
-    <Container maxWidth="lg" className="py-10">
+    <Container className="max-w-[1440px] py-10">
       <Typography
         variant="h2"
         className="font-semibold text-center mb-8 text-gray-800"
@@ -45,9 +46,35 @@ export const DocumentDetailsPage = () => {
         {documentData?.data.title}
       </Typography>
       <div
-        className="my-10"
+        className="my-10 text-base text-start"
         dangerouslySetInnerHTML={{ __html: documentData?.data.content }}
       ></div>
+      <div className="flex flex-wrap r-md:gap-3 gap-5 items-center mb-10">
+        {documentData?.data.childPages.map((card, index: number) => (
+          <Link
+            to={`/document/${card.slug}`}
+            className="shadow-[0px_0px_24px_0px_#E4E8F0] r-md:p-2 p-4 r-md:rounded-lg rounded-2xl max-w-2xl flex r-md:gap-2 gap-5 items-center cursor-pointer active:scale-95 hover:scale-105 transition-all"
+            key={index}
+          >
+            <div>
+              <Typography className="r-md:text-base text-xl mb-2" variant="h3">
+                {card?.title}
+              </Typography>
+              <Typography
+                className="r-md:text-sm text-base text-dove"
+                variant="subtitle1"
+              >
+                {card?.subtitle}
+              </Typography>
+            </div>
+            <img
+              className="r-md:max-w-24 max-w-50 r-md:h-20 h-40"
+              src={card.photo}
+              alt=""
+            />
+          </Link>
+        ))}
+      </div>
       <Fancybox
         options={{
           Carousel: {
@@ -55,8 +82,11 @@ export const DocumentDetailsPage = () => {
           },
         }}
       >
-        {documentData?.data.documentCollections.map((acc, i) => (
-          <Accordion className="mb-4 border border-gray shadow-none rounded">
+        {documentData?.data.documentCollections.map((acc, index) => (
+          <Accordion
+            key={index}
+            className="mb-4 border border-gray shadow-none rounded"
+          >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className="text-gray-800 font-semibold">
                 {acc.name}

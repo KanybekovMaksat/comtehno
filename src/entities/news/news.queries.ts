@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
-import { getNews, getNewsCategories, getNewsDetails } from './news.api'
+import { getNews, getNewsCategory, getNewsDetails } from './news.api'
 
 const keys = {
   root: () => ['news'],
+  getCategory: () => [...keys.root(), 'category'],
   getNews: (slug: string) => [...keys.root(), slug] as const,
-  getCategories: () => [...keys.root(), 'categories'] as const,
 }
 
 export function useGetNews() {
@@ -18,11 +18,13 @@ export function useGetNewsDetail(slug: string) {
   return useQuery({
     queryKey: keys.getNews(slug),
     queryFn: () => getNewsDetails(slug),
+    enabled: !!slug,
   })
 }
-export function useGetNewsCategories() {
+
+export function useGetNewsCategory() {
   return useQuery({
-    queryKey: keys.getCategories(),
-    queryFn: () => getNewsCategories(),
+    queryKey: keys.getCategory(),
+    queryFn: getNewsCategory,
   })
 }

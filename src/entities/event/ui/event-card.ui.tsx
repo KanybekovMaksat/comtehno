@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { Event } from '../event.types'
-import { formatDate } from '~shared/ui/date'
+import { formatDate } from '~shared/lib'
 
-export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
+export const EventCard: React.FC = ({ event }: Event) => {
   const navigate = useNavigate()
   return (
     <Box

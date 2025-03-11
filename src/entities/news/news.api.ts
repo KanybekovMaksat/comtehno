@@ -9,6 +9,14 @@ export const getNews = () => {
 export const getNewsDetails = (slug: string) => {
   return axios.get(`${API_URL}/posts/${slug}`)
 }
-export const getNewsCategories = () => {
-  return axios.get(`${API_URL}/posts-category/`)
+
+export const getNewsCategory = async () => {
+  try {
+    // return await axios.get(`${API_URL}/reviews-category`);
+    const response = await axios.get(`${API_URL}/posts-category`)
+    return response.data
+  } catch (error) {
+    console.error('Ошибка при получении отзывов:', error)
+    throw error // React Query обработает ошибку
+  }
 }

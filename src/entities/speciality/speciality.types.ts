@@ -1,10 +1,11 @@
 export interface specialCardProps {
-  title: string,
-  specialty: string,
-  previewPhoto: string,
+  id: number;
+  title: string;
+  specialty: string;
+  previewPhoto: string;
   category: {
-    name: string,
-    photo: string
-  },
-  slug: string,
+    name: string;
+    photo: string;
+  };
+  slug: string;
 }

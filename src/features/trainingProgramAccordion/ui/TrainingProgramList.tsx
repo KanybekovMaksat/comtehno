@@ -14,7 +14,7 @@ export interface TrainingProgramListProps {
 export const TrainingProgramList: React.FC<TrainingProgramListProps> = ({
   courses,
 }) => {
-  return courses.map((course, index: number) => (
+  return courses?.map((course, index: number) => (
     <TrainingProgramAccordion {...course} key={index} />
   ));
 };

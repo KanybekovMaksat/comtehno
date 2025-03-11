@@ -4,9 +4,9 @@ import location from '~widgets/eventSwiper/assets/icon/location.png'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { useNavigate } from 'react-router-dom'
 import { Event } from '../event.types'
-import { formatDate } from '~shared/ui/date'
+import { formatDate } from '~shared/lib'
 
-export const EventCardSwiper: React.FC<{ event: Event }> = ({ event }) => {
+export const EventCardSwiper: React.FC = ({ event }: Event) => {
   const navigate = useNavigate()
   return (
     <Card className="relative overflow-hidden rounded-lg ">

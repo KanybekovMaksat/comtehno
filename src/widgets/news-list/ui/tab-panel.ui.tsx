@@ -1,32 +1,32 @@
-import { Box, Typography, Button, IconButton } from '@mui/material'
-import { newsTypes } from '~entities/news'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import { Link } from 'react-router'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import { formatDate } from '~shared/ui/date'
-import { pathKeys } from '~shared/lib/react-router'
-import { useRef } from 'react'
-import { KeyboardArrowUp, KeyboardArrowDown } from '@mui/icons-material'
+import { Box, Typography, Button, IconButton } from "@mui/material";
+import { newsTypes } from "~entities/news";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { Link } from "react-router";
+import "swiper/css";
+import "swiper/css/pagination";
+import { pathKeys } from "~shared/lib/react-router";
+import { useRef } from "react";
+import { KeyboardArrowUp, KeyboardArrowDown } from "@mui/icons-material";
+import { formatDate } from "~shared/lib";
 
 interface TabPanelProps {
-  index: number
-  value: number
-  data: newsTypes.News[]
-  month: string
+  index: number;
+  value: number;
+  data: newsTypes.News[];
+  month: string;
 }
 
 const filterNewsByMonth = (newsList: newsTypes.News[], month: string) => {
   return newsList.filter((news) => {
-    const newsDate = new Date(news.createdAt)
-    return newsDate.toLocaleString('ru-RU', { month: 'long' }) === month
-  })
-}
+    const newsDate = new Date(news.createdAt);
+    return newsDate.toLocaleString("ru-RU", { month: "long" }) === month;
+  });
+};
 
 export function TabPanel(props: TabPanelProps) {
-  const { value, index, data, month } = props
-  const swiperRef = useRef<any>(null)
+  const { value, index, data, month } = props;
+  const swiperRef = useRef<any>(null);
 
   return (
     <div
@@ -43,7 +43,7 @@ export function TabPanel(props: TabPanelProps) {
             pagination={{
               clickable: true,
               renderBullet: (index, className) => {
-                return `<span class="${className} custom-bullet"></span>`
+                return `<span class="${className} custom-bullet"></span>`;
               },
             }}
             modules={[Pagination]}
@@ -57,7 +57,7 @@ export function TabPanel(props: TabPanelProps) {
                     <Link to={pathKeys.news.bySlug(news.slug)}>
                       <Typography variant="h6" className="r-lg:text-center">
                         {news.title.length > 25
-                          ? news.title.slice(0, 25) + '…'
+                          ? news.title.slice(0, 25) + "…"
                           : news.title}
                       </Typography>
                       <Box className="flex items-center">
@@ -70,7 +70,7 @@ export function TabPanel(props: TabPanelProps) {
                       </Box>
                     </Link>
                   </SwiperSlide>
-                )
+                );
               }
             })}
           </Swiper>
@@ -105,5 +105,5 @@ export function TabPanel(props: TabPanelProps) {
         </Box>
       )}
     </div>
-  )
+  );
 }

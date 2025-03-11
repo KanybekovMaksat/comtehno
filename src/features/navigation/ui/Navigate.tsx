@@ -129,10 +129,11 @@ export const Navigate: React.FC = () => {
                   <List className="w-64">
                     {listLink.map((item, index) => (
                       <Link
+                        key={index}
                         to={item.url}
                         className="text-black w-full block p-2"
                       >
-                        <ListItem key={index} onClick={toggleDrawer(false)}>
+                        <ListItem onClick={toggleDrawer(false)}>
                           <ListItemText primary={item.title} />
                         </ListItem>
                       </Link>

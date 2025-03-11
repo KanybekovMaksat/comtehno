@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import { useReviewFilters } from "./useReviewFilters";
 import { Link } from "react-router-dom";
 import { reviewsQuery } from "~entities/reviews";
-import { formatDate } from "~shared/ui/date";
+import { formatDate, highlightText } from "~shared/lib";
 
 export interface ReviewsDetailsProps {
   createdAt: string;
@@ -93,7 +93,13 @@ export const ReviewFilters: React.FC = () => {
               </span>
               <span>{reviewsCard.category.name}</span>
             </div>
-            <Typography className="break-words text-[22px]" variant="caption">
+            <Typography
+              className="break-words text-[22px]"
+              variant="caption"
+              // dangerouslySetInnerHTML={{
+              //   __html: highlightText(reviewsCard.fullName, searchQuery),
+              // }}
+            >
               {reviewsCard.fullName}
             </Typography>
           </div>

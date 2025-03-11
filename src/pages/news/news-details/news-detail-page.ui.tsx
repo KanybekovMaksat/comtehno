@@ -1,11 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { newsQueries } from "~entities/news";
-import { formatDate } from "~shared/ui/date";
 import { Sidebar } from "~features/sidebar";
 import { BackButton } from "~shared/ui/back";
 import { CalendarMonth, Place } from "@mui/icons-material";
 import { RecomendationList } from "~widgets/recomendation-list";
+import { formatDate } from "~shared/lib";
 
 export const NewsDetailPage = () => {
   const { slug } = useParams();

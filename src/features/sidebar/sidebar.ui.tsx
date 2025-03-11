@@ -1,12 +1,13 @@
 import { Box, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { pathKeys } from '~shared/lib/react-router'
-import { formatDate } from '~shared/ui/date'
 import { UpComingData } from '~features/upcoming-events/data-upcoming/upcoming-data'
+import { formatDate } from '~shared/lib'
 
 export const Sidebar = ({ data, pathKey, title }) => {
   return (
     <Box className="max-w-[464px] r-xl:hidden">
+      <UpComingData />
       <UpComingData />
       <Typography
         variant="h3"
@@ -14,9 +15,9 @@ export const Sidebar = ({ data, pathKey, title }) => {
       >
         {title}
       </Typography>
-      <Box className="flex flex-col gap-[24px] r-lg:flex-row r-lg:flex-wrap">
-        {data.map((item, i) => (
-          <Link key={i} to={pathKeys[pathKey].bySlug(item.slug)}>
+      <Box className="flex flex-col overflow-x-scroll max-h-[1400px] gap-[24px] r-lg:flex-row r-lg:flex-wrap">
+        {data.map((item, index) => (
+          <Link key={index} to={pathKeys[pathKey].bySlug(item.slug)}>
             <Box className="cursor-pointer">
               <Box className="flex  gap-x-[16px] items-start r-lg:flex-col">
                 <img
