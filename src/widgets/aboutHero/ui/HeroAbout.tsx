@@ -1,6 +1,7 @@
 import pythonImg from "../img/hero-bg-comtehno.png";
 import { Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import ExtensionIcon from "@mui/icons-material/Extension";
 
 export const HeroAbout = () => {
   const { t } = useTranslation();
@@ -30,6 +31,7 @@ export const HeroAbout = () => {
                 className="mt-4 r-md:mt-2 r-md:w-3xl r-md:mb-4 mb-6 leading-[70px] r-sm:text-3xl text-white font-geologica text-5xl font-[600]"
               >
                 {t("aboutPage.hero")}
+                <ExtensionIcon className="ml-3 text-5xl text-sun" />
               </Typography>
               <ul className="mb-14">
                 <li className="text-2xl r-sm:hidden text-white w-[420px] mb-3">
@@ -39,19 +41,20 @@ export const HeroAbout = () => {
                   Стань частью сообщества будущих IT-экспертов.
                 </li>
               </ul>
-              <div className="flex r-md:mb-4 flex-wrap r-md:gap-2 gap-3 max-w-5xl r-md:overflow-x-auto">
+              <div className="r-md:mb-4 r-md:gap-2 gap-3 max-w-5xl r-md:overflow-x-auto">
                 <a
-                  className="border text-[19px] r-sm:px-[70px] r-sm:py-3 r-md:text-[14px] hover:bg-white hover:text-black transition-all cursor-pointer px-[110px] py-4 rounded-full bg-sun text-white"
+                  className="border text-[19px] r-sm:px-[70px] r-sm:py-3 r-md:text-[14px] hover:bg-white hover:text-black transition-all cursor-pointer px-[80px] py-4 rounded-full bg-sun text-white"
                   href="#speciality-section"
                   onClick={handleScroll}
                 >
-                  🚀 Начать обучение
+                  Начать обучение
+                  <ExtensionIcon className="mr-5 ml-3 text-3xl text-white" />
                 </a>
               </div>
             </div>
             <div>
               <img
-                className="r-lg:hidden max-w-[900px] absolute z-[0] right-[-160px] top-[-90px]"
+                className="r-lg:hidden max-w-[900px] absolute right-[-160px] top-[-90px]"
                 src={pythonImg}
                 alt="img"
               />
