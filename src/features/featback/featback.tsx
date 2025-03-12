@@ -52,7 +52,7 @@ export const FeatBack = () => {
                 gap: 10,
               }}
             >
-              <img style={{ width: 40 }} src="/public/comtehno.png" alt="" />
+              <img style={{ width: 40 }} src="./comtehno.png" alt="" />
               <Typography
                 style={{
                   backgroundColor: "#0F766E",

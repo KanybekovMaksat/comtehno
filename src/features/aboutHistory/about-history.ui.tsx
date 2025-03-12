@@ -15,8 +15,8 @@ export const AboutHistory: React.FC = () => {
   }, []);
 
   return (
-    <Container className="max-w-[1440px]">
-      <div className="pt-[80px] pb-[80px] flex gap-[21px] flex-col ">
+    <Container className="max-w-[1440px] mb-20">
+      <div className="flex gap-[21px] flex-col ">
         <AboutHistoryCardCollege />
         <AboutHistoryCard />
         <HistoryCard />
