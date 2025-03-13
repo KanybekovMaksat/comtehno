@@ -1,21 +1,23 @@
-import { Card, CardMedia, Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 
 interface ProjectCardProps {
-  title: string;
-  image: string;
+  name: string;
+  photo: string;
 }
 
-export const ProjectCard = ({ title, image }: ProjectCardProps) => {
+export const ProjectCard: React.FC = ({ name, photo }: ProjectCardProps) => {
   return (
     <Card className="relative rounded-xl overflow-hidden shadow-md">
-      <CardMedia component="img" image={image} alt={title} className="h-56 object-cover" />
+      <img className="w-md h-64" src={photo} alt="img" />
 
       <div className="absolute bottom-1 left-1 bg-gray-900 text-white px-4 py-2 rounded-lg flex items-center">
-        <Typography variant="h6" className="px-6 py-1 rounded-lg text-lg text-[#18181B] font-semibold bg-[#FFFFFFCC]">
-          {title}
+        <Typography
+          variant="h6"
+          className="px-6 py-1 rounded-lg text-lg text-[#18181B] font-semibold bg-[#FFFFFFCC]"
+        >
+          {name}
         </Typography>
       </div>
     </Card>
   );
 };
-

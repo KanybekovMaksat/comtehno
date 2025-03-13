@@ -1,31 +1,21 @@
-import { Box, Container, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { newsQueries, newsTypes } from '~entities/news'
-import { pathKeys } from '~shared/lib/react-router'
-import { formatDate } from '~shared/ui/date'
+import { Box, CircularProgress, Container, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { newsQueries, newsTypes } from "~entities/news";
+import { formatDate } from "~shared/lib";
+import { pathKeys } from "~shared/lib/react-router";
 
 export const NewsPage = () => {
-  const { data: newsListData, isLoading, isError } = newsQueries.useGetNews()
-  const {
-    activeFilter,
-    setActiveFilter,
-    searchQuery,
-    setSearchQuery,
-    filteredData,
-    category,
-  } = useNewsFilter()
-  const swiperRef = useRef(null)
-  const isSmallScreen = useMediaQuery('(max-width: 704px)')
+  const { data: newsListData, isLoading, isError } = newsQueries.useGetNews();
 
-  if (isLoading) return <div>Загрузка</div>
+  if (isError)
+    return <Typography className="text-center">Error 404!</Typography>;
 
-  if (isError) {
+  if (isLoading)
     return (
-      <Typography className="text-center text-dove" variant="caption">
-        Нет результатов
-      </Typography>
-    )
-  }
+      <div className="m-auto">
+        <CircularProgress />;
+      </div>
+    );
 
   return (
     <Container className="max-w-[1440px]">
@@ -62,5 +52,5 @@ export const NewsPage = () => {
         ))}
       </div>
     </Container>
-  )
-}
+  );
+};

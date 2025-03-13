@@ -1,12 +1,12 @@
-import { Internship, TimeStudy } from '~entities/priceTagCard/priceTagCard'
-import { PriceTagContact } from '~entities/priceTagContact/priceTagContact'
+import { Internship, TimeStudy } from "~entities/priceTagCard/priceTagCard";
+import { PriceTagContact } from "~entities/priceTagContact/priceTagContact";
 
 export const PriceTag: React.FC = () => {
   return (
     <div className="flex flex-wrap justify-between r-lg:justify-center">
       <div className="mb-[24px] flex flex-col gap-[24px]">
         <div className="max-w-[830px] rounded-[16px] h-[164px] p-[24px] bg-[#0D9488]">
-          <h2 className="mb-[16px] text-[22px] sm:text-[36px] font-[400] sm:font-[300] leading-[27.75px] text-[#FAFAFA]">
+          <h2 className="mb-[16px] text-[28px] sm:text-[36px] font-[400] sm:font-[300] leading-[27.75px] text-[#FAFAFA]">
             Стоимость обучения
           </h2>
           <h2 className="text-[33px] md:text-[44px] font-[700] leading-[55px] text-[#FAFAFA]">
@@ -18,7 +18,7 @@ export const PriceTag: React.FC = () => {
           <Internship />
         </div>
         <div className="rounded-[16px] bg-[#F4F4F5] sm:w-[830px] p-[16px]">
-          <h2 className="mb-[16px] text-[15px] md:text-[28px] font-[400] leading-[35px] text-[#18181B]">
+          <h2 className="mb-[16px] text-[28px] md:text-[28px] font-[400] leading-[35px] text-[#18181B]">
             Навыки
           </h2>
           <ol className="flex flex-col gap-[16px]">
@@ -41,5 +41,5 @@ export const PriceTag: React.FC = () => {
         <PriceTagContact />
       </div>
     </div>
-  )
-}
+  );
+};

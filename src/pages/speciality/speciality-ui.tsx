@@ -15,7 +15,8 @@ export const SpecialityPage: React.FC = () => {
     isLoading,
   } = specialityQuery.useGetSpecialityDetail(slug);
 
-  if (isError) return <Typography>Error 404!</Typography>;
+  if (isError)
+    return <Typography className="text-center">Error 404!</Typography>;
 
   if (isLoading)
     return (
@@ -24,12 +25,18 @@ export const SpecialityPage: React.FC = () => {
       </div>
     );
 
+  const { data } = trainingProgramData || {};
+  const { trainingProgram, studentProjects, cv } = data;
+
+  if (!data || !trainingProgram)
+    return <span className="text-center">Данных нет</span>; // Добавим защиту от undefined
+
   return (
     <Container className="max-w-[1440px]">
-      <SpecialHero {...trainingProgramData.data} />
-      <TrainingProgram {...trainingProgramData?.data?.trainingProgram} />
-      <ProjectsGrid />
-      <Resume {...trainingProgramData.data.cv} />
+      <SpecialHero {...data} />
+      <TrainingProgram {...trainingProgram} />
+      <ProjectsGrid studentProjects={studentProjects} />
+      <Resume {...cv} />
       <PriceTag />
     </Container>
   );
