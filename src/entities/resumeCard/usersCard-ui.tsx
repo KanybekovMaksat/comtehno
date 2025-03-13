@@ -2,36 +2,40 @@ import { Avatar, Badge } from "./userCard-model";
 import { Stack, Typography, Box } from "@mui/material";
 
 interface UserCardProps {
-  name: string;
-  role: string;
-  avatar: string;
-  tools: string[];
+  fullName: string;
+  photo: string;
+  position: string;
+  tools: {
+    name: string;
+    photo: string;
+  }[];
 }
 
 export const UserCard: React.FC<UserCardProps> = ({
-  name,
-  role,
-  avatar,
+  fullName,
+  photo,
+  position,
   tools,
 }) => {
   return (
     <Stack spacing={2} alignItems=" ">
       <div className="flex items-center gap-4 r-sm:flex-col r-sm:items-start">
-        <Avatar src={avatar} alt={name} />
+        <Avatar src={photo} alt="profil" />
         <div className="flex flex-col justify-between">
           <Typography variant="h5" fontWeight="bold">
-            {name}
+            {fullName}
           </Typography>
-          <Typography variant="body2" color="gray">
-            {role}
+          <Typography variant="body2" color="gray" className="text-xl">
+            Должность: {position}
           </Typography>
         </div>
       </div>
-      <Box display="flex" gap={1} flexWrap="wrap">
-        {tools.map((tool) => (
-          <Badge key={tool} label={tool} />
+      <span className="text-tundora">Инструменты</span>
+      <div className="flex flex-wrap gap-4 max-w-[710px]">
+        {tools.map((tool, index) => (
+          <Badge key={index} {...tool} />
         ))}
-      </Box>
+      </div>
     </Stack>
   );
 };
