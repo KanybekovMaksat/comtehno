@@ -6,7 +6,7 @@ export const AboutHistoryCard = () => {
   return (
     <div className="flex r-md:flex-col gap-[24px]">
       <Link
-        to="/document/Accreditation"
+        to="/document/admissions_committee"
         className="flex flex-col r-md:h-[270px] r-md:w-full justify-end relative rounded-[16px] p-[24px] w-[708px] h-[324px] bg-[#F4F4F5]"
         data-aos="fade-right"
       >
@@ -24,7 +24,7 @@ export const AboutHistoryCard = () => {
         </p>
       </Link>
       <Link
-        to="/document/direktorat"
+        to="/"
         className="flex flex-col r-sm:h-[270px] r-md:w-full justify-end relative rounded-[16px] p-[24px] w-[708px] h-[324px] bg-[#F4F4F5]"
         data-aos="fade-up"
       >

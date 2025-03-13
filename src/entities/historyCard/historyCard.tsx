@@ -15,7 +15,7 @@ export const HistoryCard = () => {
         <img
           className="absolute r-sm:w-[200px] r-md:w-[240px] right-[0px] top-[10px]"
           src={ImageReyting}
-          alt=""
+          alt="img"
         />
         <h2 className="r-sm:text-[34px] mb-[24px] z-[2] text-[44px] break-words font-[300] text-[#18181B] leading-[55px]">
           Рейтинг студентов
