@@ -1,13 +1,12 @@
 import { TrainingProgramAccordion } from "./TrainingProgramAccordion";
 
-export interface courseListTypes {
+interface courseListTypes {
   name: string;
   modules: {
     name: string;
   }[];
 }
-
-export interface TrainingProgramListProps {
+interface TrainingProgramListProps {
   courses: courseListTypes[];
 }
 
