@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Container } from "@mui/material";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { HistoryCard } from "~entities/historyCard/historyCard";
 import { AboutHistoryCard } from "~entities/aboutHistoryCard/aboutHistoryCard";
 import { AboutHistoryCardCollege } from "~entities/aboutHistoryCard/aboutHistoryCardRecktorat";
+import AOS from "aos";
 
 export const AboutHistory: React.FC = () => {
   useEffect(() => {
