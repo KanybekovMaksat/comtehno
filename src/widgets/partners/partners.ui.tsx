@@ -10,7 +10,7 @@ export const Partners: React.FC = () => {
         className="mb-4 text-center r-md:text-[28px] text-[44px] font-light"
         variant="h2"
       >
-        {t('partners.title')}
+        {t("partners.title")}
       </Typography>
       <PartnersList />
     </Container>

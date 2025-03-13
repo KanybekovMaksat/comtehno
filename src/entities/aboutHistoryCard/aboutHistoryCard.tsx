@@ -24,7 +24,7 @@ export const AboutHistoryCard = () => {
         </p>
       </Link>
       <Link
-        to="/"
+        to="/#partner"
         className="flex flex-col r-sm:h-[270px] r-md:w-full justify-end relative rounded-[16px] p-[24px] w-[708px] h-[324px] bg-[#F4F4F5]"
         data-aos="fade-up"
       >
