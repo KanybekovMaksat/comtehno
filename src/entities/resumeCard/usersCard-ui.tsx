@@ -22,7 +22,7 @@ export const UserCard: React.FC<UserCardProps> = ({
       <div className="flex items-center gap-4 r-sm:flex-col r-sm:items-start">
         <Avatar src={photo} alt="profil" />
         <div className="flex flex-col justify-between">
-          <Typography variant="h5" fontWeight="bold">
+          <Typography variant="h5" className="font-medium">
             {fullName}
           </Typography>
           <Typography variant="body2" color="gray" className="text-xl">

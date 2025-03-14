@@ -23,7 +23,11 @@ export const ReviewsDetails: React.FC = ({
         Отзыв студента {course} курса {fullName} о КОМТЕХНО
       </Typography>
       <div className="max-w-[830px]">
-        <img className="w-full rounded-lg mb-6" src={photo} alt="" />
+        <img
+          className="w-full max-h-[600px] rounded-lg mb-6"
+          src={photo}
+          alt=""
+        />
         <div className="flex flex-col gap-8">
           {questionAnswers.map((reviewQuestion, index) => (
             <div key={index} className="max-w-[830px]">

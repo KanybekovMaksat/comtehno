@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import { useReviewFilters } from "./useReviewFilters";
 import { Link } from "react-router-dom";
 import { reviewsQuery } from "~entities/reviews";
@@ -36,8 +36,22 @@ export const ReviewFilters: React.FC = () => {
     isError: isTestError,
   } = reviewsQuery.useGetReviewsCategory();
 
-  if (isLoading || isTestLoading) return <div>Loading...</div>;
-  if (isError || isTestError) return <div>Error</div>;
+  if (isTestError && isError)
+    return <Typography className="text-center">Error 404!</Typography>;
+
+  if (isLoading && isTestLoading)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
+
+  if (!categoryData || !filteredList)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
 
   return (
     <div>
@@ -77,12 +91,15 @@ export const ReviewFilters: React.FC = () => {
           }}
         />
       </div>
-      <div className="flex flex-wrap gap-6">
+      <div className="grid r-sm:grid-cols-1 r-lg:grid-cols-2 grid-cols-3 gap-6">
         {filteredList.map((reviewsCard: ReviewsDetailsProps, index: number) => (
-          <div className="max-w-96" key={index}>
-            <Link to={reviewsCard.slug}>
+          <div key={index}>
+            <Link
+              className="cursor-pointer active:scale-95"
+              to={reviewsCard.slug}
+            >
               <img
-                className="rounded-lg mb-4 w-[350px] border r-sm:max-h-[220px] h-[350px]"
+                className="rounded-lg mb-4 min-w-[430px] h-[264px]"
                 src={reviewsCard.photo}
                 alt="img"
               />
@@ -93,13 +110,7 @@ export const ReviewFilters: React.FC = () => {
               </span>
               <span>{reviewsCard.category.name}</span>
             </div>
-            <Typography
-              className="break-words text-[22px]"
-              variant="caption"
-              // dangerouslySetInnerHTML={{
-              //   __html: highlightText(reviewsCard.fullName, searchQuery),
-              // }}
-            >
+            <Typography className="break-words text-[22px]" variant="caption">
               {reviewsCard.fullName}
             </Typography>
           </div>

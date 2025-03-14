@@ -32,6 +32,13 @@ export const ReviewDetailPage: React.FC = () => {
     );
   }
 
+  if (!reviewData || !newsListData)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
+
   return (
     <Container className="max-w-[1440px]">
       <BackButton />

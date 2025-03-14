@@ -3,7 +3,7 @@ import { Button, CircularProgress, Stack, Typography } from "@mui/material";
 import React from "react";
 import { SpecialCard } from "./SpecialCard";
 import { useSpecialFilter } from "../useSpecialFilter";
-import { specialCardProps } from "~entities/speciality/speciality.types";
+// import { specialCardProps } from "~entities/speciality/speciality.types";
 
 export const SpecialityFilter: React.FC = () => {
   const {
@@ -15,13 +15,26 @@ export const SpecialityFilter: React.FC = () => {
     isError,
   } = useSpecialFilter();
 
-  if (isLoading) {
-    return <CircularProgress />;
-  }
+  if (isError)
+    return (
+      <Typography variant="h2" className="text-center">
+        Error 404!
+      </Typography>
+    );
 
-  if (isError) {
-    return <Typography variant="h1">Error 404</Typography>;
-  }
+  if (isLoading)
+    return (
+      <div className="m-auto">
+        <CircularProgress />;
+      </div>
+    );
+
+  if (!filteredList)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
 
   return (
     <>
@@ -44,7 +57,7 @@ export const SpecialityFilter: React.FC = () => {
         ))}
       </div>
       <Stack className="flex-wrap gap-3 mb-6" direction={"row"}>
-        {filteredList.map((specialCard: specialCardProps) => (
+        {filteredList.map((specialCard) => (
           <SpecialCard {...specialCard} key={specialCard.id} />
         ))}
       </Stack>
