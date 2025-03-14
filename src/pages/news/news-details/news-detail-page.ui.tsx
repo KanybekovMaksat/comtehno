@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, CircularProgress, Container, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { newsQueries } from "~entities/news";
 import { Sidebar } from "~features/sidebar";
@@ -16,12 +16,23 @@ export const NewsDetailPage = () => {
   } = newsQueries.useGetNewsDetail(slug);
   const { data: newsListData, isLoading, isError } = newsQueries.useGetNews();
 
-  if (newsLoading || isLoading) {
-    return <div>Загрузка</div>;
-  }
-  if (newsError || isError) {
-    return <div>Ошибка при получении данных</div>;
-  }
+  if (newsError && isError)
+    return <Typography className="text-center">Error 404!</Typography>;
+
+  if (newsLoading && isLoading)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
+
+  if (!newsData || !newsListData)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
+
   return (
     <Container className="relative w-full pb-20 r-lg:mt-5 max-w-[1440px]">
       <BackButton />

@@ -1,4 +1,10 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Typography,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { newsQueries, newsTypes } from "~entities/news";
 import { pathKeys } from "~shared/lib/react-router";
@@ -26,8 +32,15 @@ export const NewsPage: React.FC = () => {
     newsError,
   } = useNewsFilters();
 
-  if (newsLoading || categoryLoading) return <div>Загрузка</div>;
-  if (newsError || categoryError) return <span>Нет результатов</span>;
+  if (categoryError && newsError)
+    return <Typography className="text-center">Error 404!</Typography>;
+
+  if (categoryLoading && newsLoading)
+    return (
+      <div className="m-auto">
+        <CircularProgress />;
+      </div>
+    );
 
   return (
     <Container className="max-w-[1440px]">
@@ -77,7 +90,7 @@ export const NewsPage: React.FC = () => {
                 <img
                   src={item.photo}
                   alt={item.title}
-                  className="w-full mb-4 h-[264px] rounded-[8px]"
+                  className="w-[464px] mb-4 h-[264px] rounded-[8px]"
                 />
                 <div className="flex mb-2 gap-2 items-center">
                   <Typography className="bg-primary text-white px-2 rounded-md text-[20px]">

@@ -22,10 +22,10 @@
   },
   "reviews": {
     "over": "Over",
-    "studentsCount": "1700",
+    "studentsCount": "1000+",
     "students": "students",
     "and": "and",
-    "graduatesCount": "5000",
+    "graduatesCount": "4000+",
     "graduates": "graduates",
     "shareFeedback": "share their feedback",
     "viewMore": "View more and other",
@@ -45,7 +45,7 @@
       "founded": "Founded",
       "students": "Students",
       "graduates": "Graduates",
-      "mentors": "Mentors"
+      "mentors": "Specialties"
     },
     "directions": {
       "college": "COLLEGE",

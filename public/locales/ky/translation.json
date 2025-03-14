@@ -22,10 +22,10 @@
   },
   "reviews": {
     "over": "Үстүндө",
-    "studentsCount": "1700",
+    "studentsCount": "1000+",
     "students": "студенттер",
     "and": "жана",
-    "graduatesCount": "5000",
+    "graduatesCount": "4000+",
     "graduates": "бүтүрүүчүлөр",
     "shareFeedback": "алардын пикирлерин бөлүшөбүз",
     "viewMore": "Көбүрөөк жана башка",
@@ -45,7 +45,7 @@
       "founded": "Ачылган",
       "students": "Студенттер",
       "graduates": "Бүтүрүүчүлөр",
-      "mentors": "Менторлор"
+      "mentors": "Адистер"
     },
     "directions": {
       "about": "БИЗ ЖОНУНДО",

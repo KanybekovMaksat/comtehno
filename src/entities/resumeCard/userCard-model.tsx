@@ -8,7 +8,7 @@ interface AvatarProps {
 }
 
 export const Avatar: React.FC<AvatarProps> = ({ src, alt }) => {
-  return <MuiAvatar src={src} alt={alt} sx={{ width: 80, height: 80 }} />;
+  return <MuiAvatar src={src} alt={alt} sx={{ width: 128, height: 128 }} />;
 };
 
 // const toolIcons: Record<string, JSX.Element> = {
@@ -33,7 +33,7 @@ export const Badge: React.FC<BadgeProps> = ({ name, photo }) => {
     <Chip
       label={
         <div className="flex items-center justify-center gap-2">
-          {photo && <img className="w-6" src={photo} alt="" />}
+          {photo && <img className="w-6" src={photo} alt="img" />}
           <span className="text-base">{name}</span>
         </div>
       }

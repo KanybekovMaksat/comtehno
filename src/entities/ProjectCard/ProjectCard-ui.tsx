@@ -8,8 +8,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC = ({ name, photo }: ProjectCardProps) => {
   return (
     <Card className="relative rounded-xl overflow-hidden shadow-md">
-      <img className="w-md h-64" src={photo} alt="img" />
-
+      <img className="w-[464px] h-[232px]" src={photo} alt="img" />
       <div className="absolute bottom-1 left-1 bg-gray-900 text-white px-4 py-2 rounded-lg flex items-center">
         <Typography
           variant="h6"

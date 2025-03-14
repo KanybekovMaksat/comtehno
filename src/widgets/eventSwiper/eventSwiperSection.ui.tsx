@@ -44,7 +44,12 @@ export const EventsSection: React.FC = () => {
   const isSmallScreen = useMediaQuery("(max-width: 704px)");
   const swiperRef = useRef(null);
 
-  if (categoriesError && eventError) return <Typography>Error 404!</Typography>;
+  if (categoriesError && eventError)
+    return (
+      <Typography variant="h2" className="text-center">
+        Error 404!
+      </Typography>
+    );
 
   if (categoriesLoading && eventLoading)
     return (
@@ -53,7 +58,12 @@ export const EventsSection: React.FC = () => {
       </div>
     );
 
-  if (!safeEventData) return <span className="text-center">Данных нет</span>;
+  if (!safeEventData)
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
 
   return (
     <Box>

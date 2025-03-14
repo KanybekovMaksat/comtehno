@@ -1,10 +1,10 @@
-import AccordionUsage from '../../entities/accardionDataFooter/accardionData'
-import AddressSection from '../../features/adressFooter/adressFooter'
-import LogoFooter from '../../shared/assets/svg/logoFooter.svg'
-import LinksSection from '../../features/linkSectionFooter/linkSection'
-import SpecialtiesSection from '../../entities/specialtiesSectionFooter/specialSection'
-import { Container } from '@mui/material'
-import { FooterSmal } from '~widgets/footerSmall/footerSmall'
+import AccordionUsage from "../../entities/accardionDataFooter/accardionData";
+import AddressSection from "../../features/adressFooter/adressFooter";
+import LogoFooter from "../../shared/assets/svg/logoFooter.svg";
+import LinksSection from "../../features/linkSectionFooter/linkSection";
+import SpecialtiesSection from "../../entities/specialtiesSectionFooter/specialSection";
+import { Container } from "@mui/material";
+import { FooterSmal } from "~widgets/footerSmall/footerSmall";
 
 export const Footer: React.FC = () => {
   return (
@@ -14,23 +14,23 @@ export const Footer: React.FC = () => {
           <img className="mb-[40px]" src={LogoFooter} alt="Logo" />
           <div className="footer_category flex-wrap flex justify-between">
             <AddressSection />
-            <div className="flex r-md:hidden block flex-wrap gap-[24px]">
+            <div className="flex r-md:hidden flex-wrap gap-[24px]">
               <LinksSection
                 title="Колледж"
                 links={[
-                  { title: 'О нас', href: '/about' },
-                  { title: 'Новости', href: '/news' },
-                  { title: 'Мероприятия', href: '/event' },
-                  { title: 'Отзывы', href: '/reviews' },
+                  { title: "О нас", href: "/about" },
+                  { title: "Новости", href: "/news" },
+                  { title: "Мероприятия", href: "/event" },
+                  { title: "Отзывы", href: "/reviews" },
                 ]}
               />
               <LinksSection
                 title="Полезные ссылки"
                 links={[
-                  { title: 'Makalabox', href: 'http://makalabox.com' },
-                  { title: 'Профориентация', href: '/about' },
-                  { title: 'Расписание', href: '/timetable' },
-                  { title: 'Библиотека', href: 'https://intuit.kg/faculties/lib-intuit-online/' },
+                  { title: "Makalabox", href: "http://makalabox.com" },
+                  { title: "Профориентация", href: "/about" },
+                  { title: "Расписание", href: "/timetable" },
+                  { title: "Библиотека", href: "https://lib-intuit.online/" },
                 ]}
               />
               <SpecialtiesSection />
@@ -43,5 +43,5 @@ export const Footer: React.FC = () => {
         <FooterSmal />
       </Container>
     </footer>
-  )
-}
+  );
+};

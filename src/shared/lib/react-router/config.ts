@@ -28,10 +28,12 @@ export const pathKeys = {
   timetable() {
     return pathKeys.root.concat("timetable/");
   },
+  partner() {
+    return pathKeys.root.concat("partner/");
+  },
   error() {
     return pathKeys.root.concat("*");
   },
-
   course: {
     root() {
       return pathKeys.root.concat("courses/");
