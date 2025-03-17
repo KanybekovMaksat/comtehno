@@ -6,6 +6,7 @@ import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { StartupSlide } from "./starupSlide";
 import { projectsQueryes } from "~entities/projects";
 import { ProjectSchema } from "~entities/projects/projects.types";
+import { CircularProgress, Typography } from "@mui/material";
 
 export const StartupSlider: React.FC = () => {
   const {
@@ -14,8 +15,21 @@ export const StartupSlider: React.FC = () => {
     isLoading: projectsDataLoading,
   } = projectsQueryes.useGetProjects();
 
-  if (projectsDataLoading) return <div>Загрузка...</div>;
-  if (projectsDataError) return <span>Нет результатов</span>;
+  if (projectsDataLoading || !projectsData) {
+    return (
+      <div className="m-auto">
+        <CircularProgress />
+      </div>
+    );
+  }
+
+  if (projectsDataError) {
+    return (
+      <Typography className="text-center text-2xl" variant="h1">
+        Ошибка при загрузке данных
+      </Typography>
+    );
+  }
 
   return (
     <Swiper

@@ -10,92 +10,96 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-} from '@mui/material'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { pathKeys } from '~shared/lib/react-router'
-import { useTranslation } from 'react-i18next'
-import { getLanguage, setLanguage } from '~shared/lib/i18n'
-import MenuIcon from '@mui/icons-material/Menu'
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { pathKeys } from "~shared/lib/react-router";
+import { useTranslation } from "react-i18next";
+import { getLanguage, setLanguage } from "~shared/lib/i18n";
+import MenuIcon from "@mui/icons-material/Menu";
 
 interface linkItem {
-  title: string
-  url: string
+  title: string;
+  url: string;
 }
 
 export const Navigate: React.FC = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const listLink: linkItem[] = [
     // { title: "Приёмная комиссия 2025", url: "/error" },
     {
-      title: t('homepage.header.headerBottom.navigation.about'),
-      url: '/about',
+      title: t("homepage.header.headerBottom.navigation.about"),
+      url: "/about",
     },
     // { title: "Специальности", url: "/speciality" },
     {
-      title: t('homepage.header.headerBottom.navigation.applicants'),
-      url: '/reviews',
+      title: t("homepage.header.headerBottom.navigation.applicants"),
+      url: "/reviews",
     },
     {
-      title: t('homepage.header.headerBottom.navigation.news'),
-      url: '/news',
+      title: t("homepage.header.headerBottom.navigation.news"),
+      url: "/news",
     },
     {
-      title: t('homepage.header.headerBottom.navigation.events'),
-      url: '/event',
+      title: t("homepage.header.headerBottom.navigation.events"),
+      url: "/event",
     },
     // {
     //   title: t("homepage.header.headerBottom.navigation.selectProgram"),
     //   url: "/error",
     // },
     {
-      title: t('homepage.header.headerBottom.navigation.schedule'),
-      url: '/timetable',
+      title: t("homepage.header.headerBottom.navigation.schedule"),
+      url: "/timetable",
     },
     // {
     //   title: t("homepage.header.headerBottom.navigation.students"),
     //   url: "/reviews",
     // },
     {
-      title: t('homepage.header.headerBottom.navigation.documents'),
-      url: '/documents',
+      title: t("homepage.header.headerBottom.navigation.documents"),
+      url: "/documents",
+    },
+    {
+      title: "Студенческий парламент",
+      url: "/parlaments",
     },
     // { title: "Отзывы", url: "/error" },
-  ]
+  ];
 
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const [open, setOpen] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false);
 
   // Функция управления Drawer
   const toggleDrawer = (state: boolean) => () => {
-    setOpen(state)
-  }
+    setOpen(state);
+  };
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const { i18n } = useTranslation()
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
-    const savedLanguage = getLanguage()
+    const savedLanguage = getLanguage();
     if (savedLanguage && savedLanguage !== i18n.language) {
-      i18n.changeLanguage(savedLanguage)
+      i18n.changeLanguage(savedLanguage);
     }
-  }, [i18n])
+  }, [i18n]);
 
   const handleLanguageChange = (lng: string) => {
-    setLanguage(lng)
-    window.location.reload()
-  }
+    setLanguage(lng);
+    window.location.reload();
+  };
 
   const languageMap: { [key: string]: string } = {
-    en: 'English',
-    ru: 'Русский',
-    ky: 'Кыргызча',
-  }
+    en: "English",
+    ru: "Русский",
+    ky: "Кыргызча",
+  };
 
-  const currentLanguage = languageMap[i18n.language] || 'Language'
+  const currentLanguage = languageMap[i18n.language] || "Language";
 
   return (
     <AppBar className="bg-white shadow-none static">
@@ -110,7 +114,7 @@ export const Navigate: React.FC = () => {
               to={pathKeys.home()}
               className="font-[Geologica] text-[#0F766E] font-bold text-2xl"
             >
-              {t('homepage.header.headerBottom.logo')}
+              {t("homepage.header.headerBottom.logo")}
             </Link>
             {isMobile ? (
               <>
@@ -166,7 +170,7 @@ export const Navigate: React.FC = () => {
               <Typography className="font-normal">{currentLanguage}</Typography>
               <svg
                 className={`w-5 h-5 ml-2 transition-transform ${
-                  isDropdownOpen ? 'rotate-180' : ''
+                  isDropdownOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -201,5 +205,5 @@ export const Navigate: React.FC = () => {
         </Stack>
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};

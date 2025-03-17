@@ -36,6 +36,9 @@ export const pathKeys = {
       return pathKeys.partner.root().concat(`${slug}/`)
     },
   },
+  parlaments() {
+    return pathKeys.root.concat("parlaments/");
+  },
   error() {
     return pathKeys.root.concat('*')
   },

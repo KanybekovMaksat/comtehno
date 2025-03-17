@@ -1,5 +1,5 @@
-import { Card, Typography } from '@mui/material'
-import { partnerTypes } from '~entities/partner'
+import { Card, Typography } from "@mui/material";
+import { partnerTypes } from "~entities/partner";
 
 export const PartnersCard: React.FC = ({
   icon,
@@ -15,5 +15,5 @@ export const PartnersCard: React.FC = ({
         {name}
       </Typography>
     </Card>
-  )
-}
+  );
+};
