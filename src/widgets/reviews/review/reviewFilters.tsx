@@ -93,13 +93,13 @@ export const ReviewFilters: React.FC = () => {
       </div>
       <div className="grid r-sm:grid-cols-1 r-lg:grid-cols-2 grid-cols-3 gap-6">
         {filteredList.map((reviewsCard: ReviewsDetailsProps, index: number) => (
-          <div key={index}>
+          <div key={index} className="max-w-[400px]">
             <Link
               className="cursor-pointer active:scale-95"
               to={reviewsCard.slug}
             >
               <img
-                className="rounded-lg mb-4 min-w-[430px] h-[264px] object-cover"
+                className="rounded-lg mb-4 w-full h-[264px] h-[264px] object-cover"
                 src={reviewsCard.photo}
                 alt="img"
               />
