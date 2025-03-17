@@ -1,22 +1,22 @@
-import { Button, CircularProgress, Typography } from "@mui/material";
-import { useReviewFilters } from "./useReviewFilters";
-import { Link } from "react-router-dom";
-import { reviewsQuery } from "~entities/reviews";
-import { formatDate, highlightText } from "~shared/lib";
+import { Button, CircularProgress, Typography } from '@mui/material'
+import { useReviewFilters } from './useReviewFilters'
+import { Link } from 'react-router-dom'
+import { reviewsQuery } from '~entities/reviews'
+import { formatDate, highlightText } from '~shared/lib'
 
 export interface ReviewsDetailsProps {
-  createdAt: string;
-  slug: string;
+  createdAt: string
+  slug: string
   category: {
-    name: string;
-  };
-  course: string;
-  fullName: string;
-  photo: string;
+    name: string
+  }
+  course: string
+  fullName: string
+  photo: string
   questionAnswers: {
-    question: string;
-    answer: string;
-  }[];
+    question: string
+    answer: string
+  }[]
 }
 
 export const ReviewFilters: React.FC = () => {
@@ -28,30 +28,30 @@ export const ReviewFilters: React.FC = () => {
     filteredList,
     setSearchQuery,
     searchQuery,
-  } = useReviewFilters();
+  } = useReviewFilters()
 
   const {
     data: categoryData,
     isLoading: isTestLoading,
     isError: isTestError,
-  } = reviewsQuery.useGetReviewsCategory();
+  } = reviewsQuery.useGetReviewsCategory()
 
   if (isTestError && isError)
-    return <Typography className="text-center">Error 404!</Typography>;
+    return <Typography className="text-center">Error 404!</Typography>
 
   if (isLoading && isTestLoading)
     return (
       <div className="m-auto">
         <CircularProgress />
       </div>
-    );
+    )
 
   if (!categoryData || !filteredList)
     return (
       <div className="m-auto">
         <CircularProgress />
       </div>
-    );
+    )
 
   return (
     <div>
@@ -65,10 +65,10 @@ export const ReviewFilters: React.FC = () => {
               className={`gap-2 border border-solid border-[#E4E4E7] px-4 transition-colors duration-300 normal-case rounded-[12px] text-black font-normal text-base
               ${
                 activeFilter === filter.name
-                  ? "bg-black text-white"
-                  : "hover:bg-black hover:text-white"
+                  ? 'bg-black text-white'
+                  : 'hover:bg-black hover:text-white'
               }`}
-              sx={{ whiteSpace: "nowrap", height: "36px", minWidth: "unset" }}
+              sx={{ whiteSpace: 'nowrap', height: '36px', minWidth: 'unset' }}
             >
               {filter.name}
             </Button>
@@ -80,14 +80,14 @@ export const ReviewFilters: React.FC = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
-            width: "342px",
-            height: "40px",
-            background: "#F4F4F5",
-            border: "1px solid #D4D4D8",
-            borderRadius: "12px",
-            padding: "8px 16px",
-            fontSize: "16px",
-            outline: "none",
+            width: '342px',
+            height: '40px',
+            background: '#F4F4F5',
+            border: '1px solid #D4D4D8',
+            borderRadius: '12px',
+            padding: '8px 16px',
+            fontSize: '16px',
+            outline: 'none',
           }}
         />
       </div>
@@ -99,7 +99,7 @@ export const ReviewFilters: React.FC = () => {
               to={reviewsCard.slug}
             >
               <img
-                className="rounded-lg mb-4 min-w-[430px] h-[264px]"
+                className="rounded-lg mb-4 min-w-[430px] h-[264px] object-cover"
                 src={reviewsCard.photo}
                 alt="img"
               />
@@ -117,5 +117,5 @@ export const ReviewFilters: React.FC = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
