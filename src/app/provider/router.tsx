@@ -16,6 +16,7 @@ import { newsDetailsPageRoute, newsPageRoute } from "~pages/news";
 import { reviewDetailPageRoute, reviewsPageRoute } from "~pages/reviews";
 import { timetablePageRoute } from "~pages/timetable";
 import { partnerPageRoute } from "~pages/partner";
+import { parlamentsPageRoute } from "~pages/parliaments";
 
 function BubbleError() {
   const error = useRouteError();
@@ -52,11 +53,13 @@ const router = createBrowserRouter([
       // News
       newsPageRoute,
       newsDetailsPageRoute,
-      // -----
+      // Document
       documentsPageRoute,
       documentDetailsPageRoute,
+      // --------
       timetablePageRoute,
       partnerPageRoute,
+      parlamentsPageRoute,
     ],
   },
 ]);

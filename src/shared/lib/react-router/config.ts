@@ -31,6 +31,9 @@ export const pathKeys = {
   partner() {
     return pathKeys.root.concat("partner/");
   },
+  parlaments() {
+    return pathKeys.root.concat("parlaments/");
+  },
   error() {
     return pathKeys.root.concat("*");
   },

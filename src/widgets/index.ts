@@ -13,3 +13,4 @@ export { Startup } from "./startup";
 export { AskedQuestions } from "./askedQuestions";
 export { Speciality } from "./speciality";
 export { Header } from "./header";
+export { ParlamentList } from "./parlamentList";

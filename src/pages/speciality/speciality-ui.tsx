@@ -11,25 +11,28 @@ export const SpecialityPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const {
     data: trainingProgramData,
-    isError,
-    isLoading,
+    isError: trainingProgramDataError,
+    isLoading: trainingProgramDataLoading,
   } = specialityQuery.useGetSpecialityDetail(slug);
 
-  if (isError)
-    return <Typography className="text-center">Error 404!</Typography>;
-
-  if (isLoading)
+  if (trainingProgramDataLoading || !trainingProgramData) {
     return (
       <div className="m-auto">
-        <CircularProgress />;
+        <CircularProgress />
       </div>
     );
+  }
 
-  const { data } = trainingProgramData || {};
+  if (trainingProgramDataError) {
+    return (
+      <Typography className="text-center text-2xl" variant="h1">
+        Ошибка при загрузке данных
+      </Typography>
+    );
+  }
+
+  const { data } = trainingProgramData;
   const { trainingProgram, studentProjects, cv } = data;
-
-  if (!data || !trainingProgram)
-    return <span className="text-center">Данных нет</span>; // Добавим защиту от undefined
 
   return (
     <Container className="max-w-[1440px]">

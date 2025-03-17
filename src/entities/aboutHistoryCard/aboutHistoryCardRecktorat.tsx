@@ -45,7 +45,7 @@ export const AboutHistoryCardCollege = () => {
 
       <Link
         data-aos="fade-left"
-        to="/document/uchebnyj-otdel"
+        to="/parlaments"
         className="flex r-md:h-[300px] r-lg:w-[700px] flex-col justify-end relative rounded-[16px] p-[24px] w-[400px] h-[400px] bg-[#F4F4F5]"
       >
         <img
