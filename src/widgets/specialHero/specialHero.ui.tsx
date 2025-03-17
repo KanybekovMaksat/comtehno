@@ -1,6 +1,6 @@
-import { Stack, Typography } from "@mui/material";
-import { SpecialCardProps } from "~entities/speciality/speciality.types";
-import { BackButton } from "~shared/ui/back";
+import { Stack, Typography } from '@mui/material'
+import { SpecialCardProps } from '~entities/speciality/speciality.types'
+import { BackButton } from '~shared/ui/back'
 
 export const SpecialHero: React.FC<SpecialCardProps> = ({
   photo,
@@ -12,8 +12,8 @@ export const SpecialHero: React.FC<SpecialCardProps> = ({
   return (
     <Stack
       className="r-lg:mb-10 mb-16"
-      direction={"row"}
-      justifyContent={"space-between"}
+      direction={'row'}
+      justifyContent={'space-between'}
     >
       <BackButton />
       <div>
@@ -43,10 +43,10 @@ export const SpecialHero: React.FC<SpecialCardProps> = ({
         </Typography>
       </div>
       <img
-        className="r-sm:hidden r-lg:max-w-sm r-md:max-w-xs max-w-2xl"
+        className="r-sm:hidden r-lg:max-w-sm r-md:max-w-xs max-w-2xl object-cover"
         src={photo}
         alt=""
       />
     </Stack>
-  );
-};
+  )
+}
