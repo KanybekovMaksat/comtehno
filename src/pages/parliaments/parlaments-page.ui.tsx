@@ -15,10 +15,10 @@ export const ParlamentsPage: React.FC = () => {
           <div className="flex justify-between items-center">
             <div>
               <Typography className="text-5xl font-normal r-md:mb-2 mb-4 r-lg:text-4xl">
-                Парламент Колледжа
+                Студенческое самоуправление
               </Typography>
               <p className="r-lg:text-xl r-md:text-lg text-2xl max-w-5xl">
-                это объединение инициативных студентов, которые занимаются
+                Это объединение инициативных студентов, которые занимаются
                 организацией культурных и спортивных мероприятий, контролем
                 внутреннего порядка, а также поддерживают учебный процесс. Его
                 главная цель — улучшение студенческой жизни и создание

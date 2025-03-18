@@ -1,5 +1,6 @@
 import { CircularProgress, Container, Typography } from "@mui/material";
 import { parlamentQueries } from "~entities/parlaments";
+import SchoolIcon from "@mui/icons-material/School";
 
 export const ParlamentList = () => {
   const {
@@ -24,29 +25,32 @@ export const ParlamentList = () => {
   }
   return (
     <Container className="max-w-[1440px]">
-      <div>
+      <div className="grid grid-cols-[repeat(auto-fit,300px)] gap-6">
         {parlamentsData.map((parlament, index) => (
-          <div
-            key={index}
-            className="max-w-80 bg-alto bg-opacity-50 p-3 rounded-xl"
-          >
-            <img
-              className="h-56 w-full rounded-xl object-cover mb-2"
-              src={parlament.photo}
-              alt="photo"
+          <div key={index} className="relative inline-block">
+            <SchoolIcon
+              sx={{ fontSize: 100 }}
+              className="absolute right-[-50px] top-[-50px] rotate-[22deg] text-primary"
             />
-            <Typography
-              className="bg-primary text-white py-1 px-2 rounded-xl mb-2"
-              variant="h5"
-            >
-              {parlament.fullName}
-            </Typography>
-            <Typography
-              className="bg-sun text-white py-1 px-2 rounded-xl"
-              variant="h6"
-            >
-              Должность: {parlament.description}
-            </Typography>
+            <div className="bg-tundora/20 p-2 rounded-xl">
+              <div
+                style={{ backgroundImage: `url(${parlament.photo})` }}
+                className="min-h-64 w-full bg-white rounded-tl-xl rounded-tr-xl bg-cover bg-center flex items-end"
+              >
+                <div className="text-xl bg-black/30 w-full text-white py-1 px-2">
+                  <span className="mr-1">Должность:</span>
+                  <span className="text-sun underline w-full break-words">
+                    {parlament.description}
+                  </span>
+                </div>
+              </div>
+              <Typography
+                className="bg-primary text-white py-1 px-2 rounded-bl-xl rounded-br-xl"
+                variant="h6"
+              >
+                {parlament.fullName}
+              </Typography>
+            </div>
           </div>
         ))}
       </div>
