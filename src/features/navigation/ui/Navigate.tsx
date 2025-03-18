@@ -62,7 +62,7 @@ export const Navigate: React.FC = () => {
       url: "/documents",
     },
     {
-      title: "Студенческий парламент",
+      title: "Студенческое самоуправление",
       url: "/parlaments",
     },
     // { title: "Отзывы", url: "/error" },

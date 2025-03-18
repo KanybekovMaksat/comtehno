@@ -51,14 +51,15 @@ export const AboutHistoryCardCollege = () => {
         <img
           className="absolute w-60 r-sm:w-[200px] r-md:w-[250px] right-[0px] top-[10px]"
           src={ImageManagement}
-          alt=""
+          alt="img"
         />
         <h2 className="text-[44px] mb-3 r-sm:text-[18px] z-[2] font-[300] text-[#18181B] leading-[45px]">
-          Учебный отдел
+          Студенческое самоуправление
         </h2>
         <p className="text-[28px] font-[300] r-sm:text-[20px] z-[2] text-[#52525B] leading-[35px]">
-          Учебный отдел отвечает за организацию учебного процесса и контроль его
-          качества
+          Это актив студентов, который занимается организацией мероприятий,
+          решением важных вопросов учебной и внеучебной жизни, а также
+          представляет интересы студентов перед администрацией колледжа.
         </p>
       </Link>
     </div>
