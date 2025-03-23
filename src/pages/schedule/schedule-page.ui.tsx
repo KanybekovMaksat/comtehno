@@ -1,4 +1,4 @@
-import { colors, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ErrorCard } from "~entities/errorCard/errorCard";
 
@@ -14,7 +14,7 @@ export const ShedulePage = () => {
     },
     {
       title: "РАСПИСАНИЕ 3 КУРСА",
-      link: "#",
+      link: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTI9d0ZqaEE7QJ5D3_RhAM2vuLR-BeYiHfZn4bxsvPcXuQVED42uSxuMWOENiJz2GkzoLpF3SRjKIGr/pubhtml",
     },
   ];
 
